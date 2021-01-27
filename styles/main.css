@@ -1,0 +1,92 @@
+@font-face {
+  font-family: 'Raglan Sans';
+  src: url('../public/fonts/RaglanSans-Regular.woff2') format('woff2'),
+      url('../public/fonts/RaglanSans-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  src: url('../public/fonts/SpaceMono-Regular.woff2') format('woff2'),
+      url('../public/fonts/SpaceMono-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Space Mono';
+  src: url('../public/fonts/SpaceMono-Italic.woff2') format('woff2'),
+      url('../public/fonts/SpaceMono-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Space Mono';
+  src: url('../public/fonts/SpaceMono-Bold.woff2') format('woff2'),
+      url('../public/fonts/SpaceMono-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: bold;
+  font-display: swap;
+}
+
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+
+@tailwind utilities;
+
+/* Custom */
+body {
+  @apply font-sans antialiased text-off-black bg-off-white;
+}
+  
+.content > p {
+  @apply mb-5;
+
+  &:last-of-type {
+    @apply mb-0;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply p-0 mb-6 leading-tight;
+}
+  
+h1 {
+  @apply text-4xl;
+}
+  
+h2 {
+  @apply text-3xl;
+}
+
+@responsive {
+  .upright {
+    writing-mode: vertical-rl;
+    text-orientation: sideways-right;
+    transform: rotate(180deg);
+  }
+}
+
+html.has-scroll-smooth {
+  overflow: hidden;
+}
+
+html.has-scroll-dragging {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.has-scroll-smooth body {
+  overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+  min-height: 100vh;
+}

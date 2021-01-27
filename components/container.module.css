@@ -1,0 +1,23 @@
+.container {
+  @apply px-6 max-w-screen-2xl mx-auto;
+
+  @screen md {
+    @apply px-8;
+  }
+}
+
+.container--thin {
+  @apply px-6 max-w-screen-xl mx-auto;
+
+  @screen md {
+    @apply px-8;
+  }
+}
+
+.container--bleed {
+  @apply px-0 max-w-screen-2xl mx-auto;
+  
+  @screen md {
+    @apply px-8;
+  }
+}

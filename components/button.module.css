@@ -1,0 +1,19 @@
+.btn {
+  @apply bg-green text-white px-5 py-3 uppercase tracking-wide rounded-full text-sm border-2 border-green;
+}
+
+.btn:hover, .btn:focus {
+  @apply bg-green-light border-green-light;
+}
+
+.btn--secondary {
+  @apply border-4 border-green bg-transparent text-green;
+}
+
+.btn--secondary:hover, .btn--secondary:focus {
+  @apply bg-transparent border-green-light text-green-light;
+}
+
+.btn + .btn {
+  @apply ml-4;
+}
