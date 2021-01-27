@@ -59,7 +59,7 @@ export default function Index({ subscription }) {
                   <div className="w-full bg-green relative z-10">
                     <img src="placeholder.jpeg" alt="Dog Placeholder" className="w-full" />
                   </div>
-                  <div className="h-64 w-64 bg-orange absolute bottom-0 left-0 md:left-auto md:right-0 z-0 -m-5"></div>
+                  <div className="h-12 md:h-64 w-64 bg-orange absolute bottom-0 left-0 md:left-auto md:right-0 z-0 -m-5"></div>
                 </div>
               </div>
             </Container>
@@ -85,11 +85,11 @@ export default function Index({ subscription }) {
                   <div className="w-full md:w-1/3 md:px-8">
                     <div className="h-full py-6 md:py-10 border-b md:border-b-0 md:border-l border-dotted border-off-black border-opacity-50 md:px-8">
                       <div className="flex flex-wrap -mx-4 md:mx-0" data-scroll data-scroll-speed="0.7">
-                        <div className="md:flex w-auto md:w-full mb-8 px-4 md:px-0">
+                        <div className="md:flex w-auto md:w-full mb-3 px-4 md:px-0 relative z-0" data-scroll data-scroll-speed="-0.9">
                           <div className="w-10 md:w-16 xl:w-20 h-10 md:h-16 xl:h-20 bg-orange rounded-full"></div>
                           <div className="w-10 md:w-16 xl:w-20 h-10 md:h-16 xl:h-20 -mt-5 md:mt-0 md:-ml-8 xl:-ml-10 bg-transparent border border-off-black rounded-full"></div>
                         </div>
-                        <div className="flex-1 md:w-full px-2 md:px-0">
+                        <div className="flex-1 md:w-full px-2 md:px-0 relative z-10">
                           <h3 className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter">Video<br/>Identity</h3>
                           
                           <p className="font-mono text-sm mb-5 md:mb-8">Video is usually the missing chapter of any brand guideline document. We help brands discover, grow and articulate how their brand looks, moves, sounds and feels in video.</p>
@@ -103,11 +103,11 @@ export default function Index({ subscription }) {
                   <div className="h-full w-full md:w-1/3 md:px-8">
                     <div className="py-6 md:pb-10 md:pt-64 border-b md:border-b-0 md:border-l border-dotted border-off-black border-opacity-50 md:px-8">
                       <div className="flex flex-wrap -mx-4 md:mx-0" data-scroll data-scroll-speed="1">
-                        <div className="md:flex w-auto md:w-full mb-8 px-4 md:px-0">
+                        <div className="md:flex w-auto md:w-full mb-3 px-4 md:px-0 relative z-0" data-scroll data-scroll-speed="-0.9">
                           <div className="w-10 md:w-16 xl:w-20 h-10 md:h-16 xl:h-20 bg-green rounded-full"></div>
                           <div className="w-10 md:w-16 xl:w-20 h-10 md:h-16 xl:h-20 -mt-5 md:mt-0 md:-ml-8 xl:-ml-10 bg-transparent border border-off-black rounded-full"></div>
                         </div>
-                        <div className="flex-1 md:w-full px-2 md:px-0">
+                        <div className="flex-1 md:w-full px-2 md:px-0 relative z-10">
                           <h3 className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter">Content &amp;<br/>Creative</h3>
                           
                           <p className="font-mono text-sm mb-5 md:mb-8">We work best with creatively brave multi-channel campaigns, especially when one creative through-line needs to thrive in lots of different places and durations.</p>
@@ -121,11 +121,11 @@ export default function Index({ subscription }) {
                   <div className="w-full md:w-1/3 md:px-8">
                     <div className="h-full py-6 md:pb-10 md:pt-32 border-b md:border-b-0 md:border-l md:border-r border-dotted border-off-black border-opacity-50 md:px-8">
                       <div className="flex flex-wrap -mx-4 md:mx-0" data-scroll data-scroll-speed="1.5">
-                        <div className="md:flex w-auto md:w-full mb-8 px-4 md:px-0">
+                        <div className="md:flex w-auto md:w-full mb-3 px-4 md:px-0 relative z-0" data-scroll data-scroll-speed="-0.9">
                           <div className="w-10 md:w-16 xl:w-20 h-10 md:h-16 xl:h-20 bg-purple rounded-full"></div>
                           <div className="w-10 md:w-16 xl:w-20 h-10 md:h-16 xl:h-20 -mt-5 md:mt-0 md:-ml-8 xl:-ml-10 bg-transparent border border-off-black rounded-full"></div>
                         </div>
-                        <div className="flex-1 md:w-full px-2 md:px-0">
+                        <div className="flex-1 md:w-full px-2 md:px-0 relative z-10">
                           <h3 className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter">Team<br/>Empowerment</h3>
                           
                           <p className="font-mono text-sm mb-5 md:mb-8">We don’t believe in “video strategy”, so we wrote our own model instead. Our video cycle starts and ends with the viewer. It gives clarity and direction to any sized team. We help put it into practice. </p>
