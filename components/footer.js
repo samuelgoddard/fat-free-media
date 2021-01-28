@@ -7,13 +7,11 @@ export default function Footer() {
   return (
     <footer>
       <div className="border-t border-off-black py-3">
-        <Container>
-          <div className="w-full whitespace-no-wrap text-3xl md:text-4xl xl:text-5xl tracking-tighter leading-tight">
-            <Marquee>
-              <span className="inline mx-1">Brand Campaigns</span> <span className="inline mx-1">•</span> <span className="inline mx-1">Paid Social</span> <span className="inline mx-1">•</span> <span className="inline mx-1">Video Ads</span> <span className="inline mx-1">•</span> <span className="inline mx-1">TV &amp; VOD</span> <span className="inline mx-1">•</span> <span className="inline mx-1">Concepts</span> <span className="inline mx-1">•</span> <span className="inline mx-1">Production</span> <span className="inline mx-1">•</span> <span className="inline mx-1">Motion Graphics</span> <span className="inline mx-1">•</span>
-            </Marquee>
-          </div>
-        </Container>
+        <div className="w-full whitespace-no-wrap text-3xl md:text-4xl xl:text-5xl tracking-tighter leading-tight">
+          <Marquee>
+            <span className="inline mx-1">Brand Campaigns</span> <span className="inline mx-1">•</span> <span className="inline mx-1">Paid Social</span> <span className="inline mx-1">•</span> <span className="inline mx-1">Video Ads</span> <span className="inline mx-1">•</span> <span className="inline mx-1">TV &amp; VOD</span> <span className="inline mx-1">•</span> <span className="inline mx-1">Concepts</span> <span className="inline mx-1">•</span> <span className="inline mx-1">Production</span> <span className="inline mx-1">•</span> <span className="inline mx-1">Motion Graphics</span> <span className="inline mx-1">•</span>
+          </Marquee>
+        </div>
       </div>
 
       <div className="flex flex-wrap">
@@ -57,7 +55,7 @@ export default function Footer() {
             <p className="font-mono leading-tight tracking-tight mb-3 md:mb-6 max-w-sm md:max-w-xs xl:max-w-lg mx-auto">* Fat club is a regular dose of ideas, insight and for video straight to your inbox. No spam.</p>
 
             <form>
-              <input type="text" className="bg-transparent border-b border-off-white appearance-none text-lg text-off-white font-mono text-opacity-50 block py-3 mx-auto" value="Your email address" />
+              <input type="text" className="bg-transparent border-b border-off-white appearance-none text-lg text-off-white font-mono text-opacity-50 block py-3 mx-auto" placeholder="Your email address" />
             </form>
           </div>
         </div>
