@@ -72,6 +72,29 @@ h2 {
   }
 }
 
+.bg-x {
+  @apply absolute top-0 right-0;
+  top: -300px;
+  right: -400px;
+  width: 850px;
+}
+
+@screen md {
+  .bg-x {
+    top: -600px !important;
+    right: -600px !important;
+    width: 1400px !important;
+  }
+}
+
+@screen xl {
+  .bg-x {
+    top: -700px !important;
+    right: -800px !important;
+    width: 1800px !important;
+  }
+}
+
 html.has-scroll-smooth {
   overflow: hidden;
 }
