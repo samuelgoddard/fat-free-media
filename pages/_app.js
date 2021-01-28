@@ -1,6 +1,7 @@
 import React from 'react';
 import App from 'next/app';
 import '../styles/main.css'
+import Header from '../components/header'
 import { AnimatePresence } from 'framer-motion';
 
 class MyApp extends App {
@@ -9,6 +10,7 @@ class MyApp extends App {
 
     return (
       <div data-scroll-container id="scroll-container">
+        <Header />
         <AnimatePresence exitBeforeEnter>
           <Component {...pageProps} key={router.route} />
         </AnimatePresence>

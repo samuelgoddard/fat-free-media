@@ -95,17 +95,33 @@ h2 {
   }
 }
 
-.videoWrapper {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
-  height: 0;
+.home-video {
+  height: 350px;
 }
-.videoWrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+
+@screen md {
+  .home-video {
+    height: 500px;
+  }
+}
+
+@screen lg {
+  .home-video {
+    height: 570px;
+  }
+}
+
+@screen xl {
+  .home-video {
+    height: 680px;
+  }
+}
+
+::-moz-selection {
+  @apply bg-yellow text-off-black bg-opacity-75;
+}
+::selection { 
+  @apply bg-yellow text-off-black bg-opacity-75;
 }
 
 html.has-scroll-smooth {
