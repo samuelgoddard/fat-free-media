@@ -45,4 +45,9 @@ module.exports = {
       },
     },
   },
+  variants: {
+    opacity: ['hover', 'focus', 'group-hover', 'group-focus', 'responsive'],
+    translate: ['hover', 'focus', 'group-hover', 'group-focus', 'responsive'],
+    skew: ['hover', 'focus', 'group-hover', 'group-focus', 'responsive'],
+  }
 }

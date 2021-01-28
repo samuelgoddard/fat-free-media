@@ -5,6 +5,7 @@ import Layout from "../components/layout";
 import { request } from "../lib/datocms";
 import { metaTagsFragment, responsiveImageFragment } from "../lib/fragments";
 import Container from "../components/container";
+import Footer from "../components/footer";
 import { motion } from "framer-motion"
 import { fade } from "../helpers/transitionHelper"
 import { useContext } from 'react'
@@ -26,9 +27,8 @@ export default function Index({ subscription }) {
           initial="initial"
           animate="enter"
           exit="exit"
-          className="mb-16 md:mb-20"
         >
-          <motion.div variants={fade}>
+          <motion.div variants={fade} className="mb-16 md:mb-20 pt-32 md:pt-48 xl:pt-56">
             <Container thin>
               <div className="w-full mb-12 md:mb-16 xl:mb-24">
                 <div className="mb-5 md:mb-8">
@@ -135,12 +135,13 @@ export default function Index({ subscription }) {
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
             </Container>
           </motion.div>
         </motion.div>
+
+        <Footer />
       </Layout>
     </SmoothScrollProvider>
   );
