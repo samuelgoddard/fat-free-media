@@ -9,17 +9,13 @@ import { motion } from "framer-motion"
 import { fade } from "../helpers/transitionHelper"
 import { SmoothScrollProvider } from '../contexts/SmoothScroll.context'
 
-export default function Menu({ subscription }) {
-  const {
-    data: { site },
-  } = useQuerySubscription(subscription);
-
+export default function Menu({ data: { site } }) {
   // const metaTags = about.seo.concat(site.favicon);
 
   return (
     <SmoothScrollProvider options={{ smooth: true, lerp: 0.13 }}>
       <Layout>
-        {/* <Head>{renderMetaTags(metaTags)}</Head> */}
+        <Head>{renderMetaTags(site.favicon)}</Head>
         
         <motion.div
           initial="initial"
@@ -100,27 +96,25 @@ export default function Menu({ subscription }) {
   );
 }
 
-export async function getStaticProps() {
-  const graphqlRequest = {
-    query: `
-      {
-        site: _site {
-          favicon: faviconMetaTags {
-            ...metaTagsFragment
-          }
-        }
+const MENU_QUERY = `
+  query HomePage {
+    site: _site {
+      favicon: faviconMetaTags {
+        ...metaTagsFragment
       }
+    }
+  }
+  ${metaTagsFragment}
+`
 
-      ${metaTagsFragment}
-    `
-  };
+export async function getStaticProps() {
+  const data = await request({
+    query: MENU_QUERY
+  })
 
   return {
     props: {
-      subscription: {
-        enabled: false,
-        initialData: await request(graphqlRequest),
-      }
+      data,
     },
-  };
+  }
 }
