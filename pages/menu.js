@@ -23,13 +23,13 @@ export default function Menu({ data: { site } }) {
           animate="enter"
           exit="exit"
         >
-          <motion.div variants={fade} className="pt-32 md:pt-48 xl:pt-56 bg-orange text-off-white min-h-screen flex flex-wrap items-center md:items-end overflow-hidden relative">
+          <motion.div variants={fade} className=" bg-orange text-off-white min-h-screen flex flex-wrap items-center md:items-end overflow-hidden relative">
             <BigX color="text-orange-dark" />
 
             <Container>
               <div className="flex flex-wrap relative z-10">
-                <div className="h-full w-full md:w-1/5">
-                  <Link href="/"><a aria-label="Navigate to Home" className="group block py-5 md:py-10 border-b md:border-b-0 md:border-l border-dotted border-off-white border-opacity-50 md:px-8 md:opacity-50 hover:opacity-100 focus:opacity-100 transition ease-in-out duration-500 focus:outline-none">
+                <div className="h-full w-full md:w-1/4">
+                  <Link href="/"><a aria-label="Navigate to Home" className="group block py-5 md:py-10 border-b md:border-b-0 md:border-l border-dotted border-orange-light border-opacity-50 md:px-8 transition ease-in-out duration-500 focus:outline-none text-orange-light hover:text-off-white focus:text-off-white">
                     <div className="transition-transform ease-in-out duration-500 md:transform group-hover:-translate-y-12 group-focus:-translate-y-12">
                       
                       <img src="https://placedog.net/650/900" alt="Placeholder" className="transition ease-in-out duration-500 opacity-0 group-hover:opacity-100 group-focus:opacity-100 mb-10 transform skew-y-1 hidden md:block" />
@@ -40,51 +40,51 @@ export default function Menu({ data: { site } }) {
                     </div>
                   </a></Link>
                 </div>
-                <div className="h-full w-full md:w-1/5">
-                  <Link href="/"><a aria-label="Navigate to Home" className="group block py-5 md:py-10 border-b md:border-b-0 md:border-l border-dotted border-off-white border-opacity-50 md:px-8 md:opacity-50 hover:opacity-100 focus:opacity-100 transition ease-in-out duration-500 focus:outline-none">
+                <div className="h-full w-full md:w-1/4">
+                  <Link href="/"><a aria-label="Navigate to Home" className="group block py-5 md:py-10 border-b md:border-b-0 md:border-l border-dotted border-orange-light border-opacity-50 md:px-8 transition ease-in-out duration-500 focus:outline-none text-orange-light hover:text-off-white focus:text-off-white">
                     <div className="transition-transform ease-in-out duration-500 md:transform group-hover:-translate-y-12 group-focus:-translate-y-12">
                       
                       <img src="https://placedog.net/650/900" alt="Placeholder" className="transition ease-in-out duration-500 opacity-0 group-hover:opacity-100 group-focus:opacity-100 mb-10 transform skew-y-1 hidden md:block" />
 
                       <h3 className="text-3xl md:text-3xl lg:text-4xl xl:text-5xl leading-none tracking-tighter mb-2 md:mb-5">Work</h3>
                       
-                      <p className="font-mono text-sm">An overview of what we’re about.</p>
+                      <p className="font-mono text-sm">Explore some of the projects we’ve worked on over the years</p>
                     </div>
                   </a></Link>
                 </div>
-                <div className="h-full w-full md:w-1/5">
-                  <Link href="/about"><a aria-label="Navigate to Home" className="group block py-5 md:py-10 border-b md:border-b-0 md:border-l border-dotted border-off-white border-opacity-50 md:px-8 md:opacity-50 hover:opacity-100 focus:opacity-100 transition ease-in-out duration-500 focus:outline-none">
+                <div className="h-full w-full md:w-1/4">
+                  <Link href="/about"><a aria-label="Navigate to Home" className="group block py-5 md:py-10 border-b md:border-b-0 md:border-l border-dotted border-orange-light border-opacity-50 md:px-8 transition ease-in-out duration-500 focus:outline-none text-orange-light hover:text-off-white focus:text-off-white">
                     <div className="transition-transform ease-in-out duration-500 md:transform group-hover:-translate-y-12 group-focus:-translate-y-12">
                       
                       <img src="https://placedog.net/650/900" alt="Placeholder" className="transition ease-in-out duration-500 opacity-0 group-hover:opacity-100 group-focus:opacity-100 mb-10 transform skew-y-1 hidden md:block" />
 
                       <h3 className="text-3xl md:text-3xl lg:text-4xl xl:text-5xl leading-none tracking-tighter mb-2 md:mb-5">About</h3>
                       
-                      <p className="font-mono text-sm">An overview of what we’re about.</p>
+                      <p className="font-mono text-sm">Our process, history and team.</p>
                     </div>
                   </a></Link>
                 </div>
-                <div className="h-full w-full md:w-1/5">
-                  <Link href="/"><a aria-label="Navigate to Home" className="group block py-5 md:py-10 border-b md:border-b-0 md:border-l border-dotted border-off-white border-opacity-50 md:px-8 md:opacity-50 hover:opacity-100 focus:opacity-100 transition ease-in-out duration-500 focus:outline-none">
+                {/* <div className="h-full w-full md:w-1/4">
+                  <Link href="/"><a aria-label="Navigate to Home" className="group block py-5 md:py-10 border-b md:border-b-0 md:border-l border-dotted border-orange-light border-opacity-50 md:px-8 transition ease-in-out duration-500 focus:outline-none text-orange-light hover:text-off-white focus:text-off-white">
                     <div className="transition-transform ease-in-out duration-500 md:transform group-hover:-translate-y-12 group-focus:-translate-y-12">
                       
                       <img src="https://placedog.net/650/900" alt="Placeholder" className="transition ease-in-out duration-500 opacity-0 group-hover:opacity-100 group-focus:opacity-100 mb-10 transform skew-y-1 hidden md:block" />
 
                       <h3 className="text-3xl md:text-3xl lg:text-4xl xl:text-5xl leading-none tracking-tighter mb-2 md:mb-5">Journal</h3>
                       
-                      <p className="font-mono text-sm">An overview of what we’re about.</p>
+                      <p className="font-mono text-sm">Things we’ve seen, made and thought.</p>
                     </div>
                   </a></Link>
-                </div>
-                <div className="h-full w-full md:w-1/5">
-                  <Link href="/"><a aria-label="Navigate to Home" className="group block py-5 md:py-10 border-b md:border-b-0 md:border-l border-dotted border-off-white border-opacity-50 md:px-8 md:opacity-50 hover:opacity-100 focus:opacity-100 transition ease-in-out duration-500 focus:outline-none">
+                </div> */}
+                <div className="h-full w-full md:w-1/4">
+                  <Link href="/"><a aria-label="Navigate to Home" className="group block py-5 md:py-10 border-b md:border-b-0 md:border-l md:border-r border-dotted border-orange-light border-opacity-50 md:px-8 transition ease-in-out duration-500 focus:outline-none text-orange-light hover:text-off-white focus:text-off-white">
                     <div className="transition-transform ease-in-out duration-500 md:transform group-hover:-translate-y-12 group-focus:-translate-y-12">
                       
                       <img src="https://placedog.net/650/900" alt="Placeholder" className="transition ease-in-out duration-500 opacity-0 group-hover:opacity-100 group-focus:opacity-100 mb-10 transform skew-y-1 hidden md:block" />
 
                       <h3 className="text-3xl md:text-3xl lg:text-4xl xl:text-5xl leading-none tracking-tighter mb-2 md:mb-5">Contact</h3>
                       
-                      <p className="font-mono text-sm">An overview of what we’re about.</p>
+                      <p className="font-mono text-sm">Start a new project or join the team.</p>
                     </div>
                   </a></Link>
                 </div>

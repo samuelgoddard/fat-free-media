@@ -16,7 +16,9 @@ export default function Header({theme}) {
 
           <div className="w-auto ml-auto">
             <div className="flex flex-wrap items-center ml-auto text-right">
-              <a className="underline hidden md:inline-block tracking-tight md:text-lg mx-2 md:mx-4 ml-0" href="mailto:hello@hellofatfree.com">hello@hellofatfree.com</a>
+              <a className="underline hidden md:inline-block tracking-tight md:text-lg mx-2 md:mx-4 ml-0" href="tel:0115 857 7502">0115 857 7502</a>
+
+              <a className="underline hidden md:inline-block tracking-tight md:text-lg mx-2 md:mx-4" href="mailto:hello@hellofatfree.com">hello@hellofatfree.com</a>
               
               <Link href="/"><a aria-label="Navigate to Start a Project" className="underline hidden md:inline-block tracking-tight md:text-lg mx-2 xl:mx-4">Start a project</a></Link>
 
