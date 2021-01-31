@@ -1,9 +1,12 @@
 import Head from "next/head";
+import Link from "next/link";
 import { renderMetaTags, useQuerySubscription } from "react-datocms";
 import Layout from "../components/layout";
 import { request } from "../lib/datocms";
 import { metaTagsFragment, responsiveImageFragment } from "../lib/fragments";
 import Container from "../components/container";
+import Footer from "../components/footer";
+import BigX from "../components/big-x";
 import { motion } from "framer-motion"
 import { fade } from "../helpers/transitionHelper"
 import { useContext } from 'react'
@@ -28,22 +31,104 @@ export default function About({ subscription }) {
           exit="exit"
           className="mb-16 md:mb-20"
         >
-          <motion.div variants={fade}>
+          <motion.div variants={fade} className="mb-16 md:mb-20 overflow-hidden relative">
+            <div className="bg-black text-white pt-40 md:pt-48 xl:pt-56 pb-8 md:pb-32 xl:pb-48 mb-8 md:mb-20 relative">
+              <Container thin>
+                <span data-scroll data-scroll-speed="0.4" className="block text-md md:text-lg xl:text-xl uppercase tracking-tighter leading-none mb-2 md:mb-4 xl:mb-8">A small but mighty team</span>
+
+                <h1 className="text-4xl md:text-5xl xl:text-6xl leading-none w-full max-w-4xl tracking-tighter pr-12 xl:pr-0 mb-10 md:mb-0" data-scroll data-scroll-speed="1.1">Video carries more feeling and uses more senses than any other medium. It has the potential to pull at the hearts and change the minds of those who watch it more than any other format.</h1>
+
+                <span data-scroll data-scroll-speed="0.35" className="font-mono text-xs tracking-wide leading-none md:absolute bottom-0 right-0 mb-12 mr-8">* We don’t say yes to everything, because we want to give our yes’s our everything.</span>
+              </Container>
+            </div>
+
             <Container thin>
-              <div className="content max-w-5xl">
-                <h1>Some Test Content</h1>
-                
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <div className="w-full mb-12 md:mb-16 xl:mb-24 relative z-10" data-scroll data-scroll-speed="1">
+                <div className="flex flex-wrap">
+                  <div className="w-full md:w-full max-w-md">
+                    <span className="block text-xs uppercase tracking-tighter leading-none">Information —</span>
+                    <h2 className="text-5xl md:text-6xl xl:text-7xl leading-none tracking-tighter">Our Team</h2>
+                  </div>
 
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+                  <div className="w-full md:w-1/2 max-w-md">
+                    <p className="text-lg md:text-xl leading-snug tracking-tight md:mt-8">Everything we do is underpinned by our guiding principle: to work hard and do great work.</p>
+                  </div>
+                </div>
+              </div>
 
-                <h2>Some Test Content</h2>
+              <div className="w-full mb-12 md:mb-16 xl:mb-24 relative z-10">
+                <div className="flex flex-wrap">
+                  <div className="h-full w-full md:w-1/3">
+                    <div className="h-full py-8 md:py-10 md:pt-32 border-b md:border-b-0 md:border-l border-dotted border-off-black border-opacity-50 md:px-8 lg:px-12 xl:px-16">
+                      <div data-scroll data-scroll-speed="2.25">
+                        <div className="relative mr-5 mb-5">
+                          <img src="https://placedog.net/475/575" alt="Dog Placeholder" className="w-full relative z-0" />
+                          <span className="block upright font-mono text-xs absolute top-0 right-0 -mr-5 z-0 uppercase tracking-wide leading-none">Creative Director</span>
+                        </div>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <h3 className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter">Neil Rostance</h3>
+                        
+                        <p className="font-mono text-sm mb-5 md:mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur quam id est pulvinar eleifend. Ut sed dictum urna. Nullam laoreet congue elit.</p>
 
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+                        <Link href="/"><a aria-label="Navigate to Neil Rostance's biography" className="underline tracking-tight text-lg inline-block items-center">Read bio</a></Link>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="h-full w-full md:w-1/3">
+                    <div className="h-full py-8 md:py-10 md:pt-0 border-b md:border-b-0 md:border-l border-dotted border-off-black border-opacity-50 md:px-8 lg:px-12 xl:px-16">
+                      <div data-scroll data-scroll-speed="1.25">
+                        <div className="relative mr-5 mb-5">
+                          <img src="https://placedog.net/430/540" alt="Dog Placeholder" className="w-full relative z-0" />
+                          <span className="block upright font-mono text-xs absolute top-0 right-0 -mr-5 z-0 uppercase tracking-wide leading-none">Exec Producer</span>
+                        </div>
+
+                        <h3 className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter">Kate Rostance</h3>
+                        
+                        <p className="font-mono text-sm mb-5 md:mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur quam id est pulvinar eleifend. Ut sed dictum urna. Nullam laoreet congue elit.</p>
+
+                        <Link href="/"><a aria-label="Navigate to Kate Rostance's biography" className="underline tracking-tight text-lg inline-block items-center">Read bio</a></Link>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="h-full w-full md:w-1/3">
+                    <div className="h-full py-8 md:py-10 md:pt-64 border-b md:border-b-0 md:border-l md:border-r border-dotted border-off-black border-opacity-50 md:px-8 lg:px-12 xl:px-16">
+                      <div data-scroll data-scroll-speed="1.75">
+                        <div className="relative mr-5 mb-5">
+                          <img src="https://placedog.net/450/550" alt="Dog Placeholder" className="w-full relative z-0" />
+                          <span className="block upright font-mono text-xs absolute top-0 right-0 -mr-5 z-0 uppercase tracking-wide leading-none">Producer</span>
+                        </div>
+                        <h3 className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter">Ash Gardiner</h3>
+                        
+                        <p className="font-mono text-sm mb-5 md:mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur quam id est pulvinar eleifend. Ut sed dictum urna. Nullam laoreet congue elit.</p>
+
+                        <Link href="/"><a aria-label="Navigate to Ash Gardiner's biography" className="underline tracking-tight text-lg inline-block items-center">Read bio</a></Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </Container>
+
+            <div className="bg-yellow pt-8 pb-16 md:pt-12 md:pb-20 lg:pt-16 lg:pb-24 xl:pt-20 xl:pb-32 overflow-hidden relative">
+              <BigX color="yellow-dark" />
+              <Container>
+                <div className="flex flex-wrap items-center md:-mx-12 relative z-20">
+                  <div className="w-full md:w-1/2 md:px-12 mb-6 md:mb-0" data-scroll data-scroll-speed="0.25">
+                    <img src="https://placedog.net/800/1200" alt="Dog Placeholder" className="w-full relative z-0" />
+                  </div>
+                  <div className="w-full md:w-1/2 md:px-12" data-scroll data-scroll-speed="1.05">
+                    <span className="block text-xs uppercase tracking-tighter leading-none mb-6 md:mb-10">No bullshit —</span>
+                    <p className="text-3xl md:text-4xl xl:text-5xl leading-none tracking-tighter pr-8 md:pr-8 lg:pr-16 xl:pr-20 mb-6 md:mb-10">We know that prospective clients trust personal recommendation above all else, so we concentrate our efforts on delivering the best service to brands that love what we do, and the rest falls into place.</p>
+
+                    <Link href="/"><a aria-label="Navigate to Start a project" className="underline tracking-tight text-lg inline-block items-center">Start a project</a></Link>
+                  </div>
+                </div>
+              </Container>
+            </div>
+
+            <Footer />
           </motion.div>
         </motion.div>
       </Layout>

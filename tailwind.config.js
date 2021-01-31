@@ -34,7 +34,8 @@ module.exports = {
           default: '#85729b'
         },
         yellow: {
-          default: '#e6ca69'
+          default: '#e6ca69',
+          dark: '#E3C152'
         }
       },
       fontSize: {

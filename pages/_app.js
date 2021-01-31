@@ -10,7 +10,7 @@ class MyApp extends App {
 
     return (
       <div data-scroll-container id="scroll-container">
-        <Header />
+        <Header theme={ router.route === '/menu' || router.route === '/about' ? 'white' : 'off-black' }/>
         <AnimatePresence exitBeforeEnter>
           <Component {...pageProps} key={router.route} />
         </AnimatePresence>
