@@ -112,7 +112,7 @@ export default function About({ subscription }) {
             </Container>
 
             <div className="bg-yellow pt-8 pb-16 md:pt-12 md:pb-20 lg:pt-16 lg:pb-24 xl:pt-20 xl:pb-32 overflow-hidden relative">
-              <BigX color="yellow-dark" />
+              <BigX color="text-yellow-dark" />
               <Container>
                 <div className="flex flex-wrap items-center md:-mx-12 relative z-20">
                   <div className="w-full md:w-1/2 md:px-12 mb-6 md:mb-0" data-scroll data-scroll-speed="0.25">

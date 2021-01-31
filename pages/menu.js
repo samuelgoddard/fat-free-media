@@ -24,7 +24,7 @@ export default function Menu({ data: { site } }) {
           exit="exit"
         >
           <motion.div variants={fade} className="pt-32 md:pt-48 xl:pt-56 bg-orange text-off-white min-h-screen flex flex-wrap items-center md:items-end overflow-hidden relative">
-            <BigX color="orange-dark" />
+            <BigX color="text-orange-dark" />
 
             <Container>
               <div className="flex flex-wrap relative z-10">

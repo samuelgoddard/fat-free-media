@@ -25,7 +25,7 @@ export default function Index({ data: { home, site } }) {
           exit="exit"
         >
           <motion.div variants={fade} className="mb-16 md:mb-20 pt-32 md:pt-48 xl:pt-56 overflow-hidden relative">
-            <BigX color="white" />
+            <BigX color="text-white" />
             <Container thin>
               <div className="w-full mb-12 md:mb-10 xl:mb-0 relative z-10">
                 <div className="mb-5">
