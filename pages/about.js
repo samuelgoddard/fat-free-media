@@ -34,11 +34,20 @@ export default function About({ subscription }) {
           <motion.div variants={fade} className="mb-16 md:mb-20 overflow-hidden relative">
             <div className="bg-black text-white pt-40 md:pt-48 xl:pt-56 pb-8 md:pb-32 xl:pb-48 mb-8 md:mb-20 relative">
               <Container thin>
-                <span data-scroll data-scroll-speed="0.4" className="block text-md md:text-lg xl:text-xl uppercase tracking-tighter leading-none mb-2 md:mb-4 xl:mb-8">A small but mighty team</span>
+                <div className="relative z-10">
+                  <span data-scroll data-scroll-speed="0.4" className="block text-md md:text-lg xl:text-xl uppercase tracking-tighter leading-none mb-2 md:mb-4 xl:mb-8">A small but mighty team</span>
 
-                <h1 className="text-4xl md:text-5xl xl:text-6xl leading-none w-full max-w-4xl tracking-tighter pr-12 xl:pr-0 mb-10 md:mb-0" data-scroll data-scroll-speed="1.1">Video carries more feeling and uses more senses than any other medium. It has the potential to pull at the hearts and change the minds of those who watch it more than any other format.</h1>
+                  <h1 className="text-4xl md:text-5xl xl:text-6xl leading-none w-full max-w-4xl tracking-tighter pr-12 xl:pr-0 mb-10 md:mb-0" data-scroll data-scroll-speed="1.1">Video carries more feeling and uses more senses than any other medium. It has the potential to pull at the hearts and change the minds of those who watch it more than any other format.</h1>
+                </div>
 
-                <span data-scroll data-scroll-speed="0.35" className="font-mono text-xs tracking-wide leading-none md:absolute bottom-0 right-0 mb-12 mr-8">* We don’t say yes to everything, because we want to give our yes’s our everything.</span>
+                <span data-scroll data-scroll-speed="0.35" className="font-mono text-xs tracking-wide leading-none md:absolute bottom-0 right-0 mb-12 mr-8 z-10">* We don’t say yes to everything, because we want to give our yes’s our everything.</span>
+
+                <video loop={true} autoPlay="autoplay" muted className="absolute top-0 left-0 right-0 bottom-0 w-full h-full object-cover z-0">
+                  <source src="https://test-videos.co.uk/vids/bigbuckbunny/webm/vp9/1080/Big_Buck_Bunny_1080_10s_10MB.webm" type="video/webm" />
+                  <source src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/1080/Big_Buck_Bunny_1080_10s_10MB.mp4" type="video/mp4" />
+                  
+                  Sorry. Your browser does not support the video tag.
+                </video>
               </Container>
             </div>
 
