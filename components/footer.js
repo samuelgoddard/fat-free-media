@@ -1,7 +1,7 @@
 import Container from './container'
 import Link from 'next/link'
 import Marquee from 'react-double-marquee';
-
+import BigX from "./big-x";
 
 export default function Footer({ hideMarquee }) {
   return (
@@ -17,8 +17,9 @@ export default function Footer({ hideMarquee }) {
       )}
 
       <div className="flex flex-wrap">
-        <div className="w-full md:w-1/2 py-12 md:py-20 xl:py-32 bg-green text-white">
-          <div className="max-w-2xl px-6 md:mx-auto flex flex-wrap">
+        <div className="w-full md:w-1/2 py-12 md:py-20 xl:py-32 bg-green text-white relative overflow-hidden">
+          <BigX color="text-green-dark" left bottom />
+          <div className="max-w-2xl px-6 md:mx-auto flex flex-wrap relative z-10">
             <nav className="w-full md:w-1/2 mb-6 md:mb-10 xl:mb-16">
               <span className="block text-xs font-mono uppercase tracking-tight leading-none mb-5">Our Work</span>
               <ul>
