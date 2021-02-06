@@ -1,18 +1,19 @@
 import Head from "next/head";
 import Link from "next/link";
-import { renderMetaTags } from "react-datocms";
+import { renderMetaTags, Image } from "react-datocms";
 import Layout from "../components/layout";
 import { request } from "../lib/datocms";
 import { metaTagsFragment, responsiveImageFragment } from "../lib/fragments";
 import Container from "../components/container";
 import Footer from "../components/footer";
+
 import BigX from "../components/big-x";
 import { motion } from "framer-motion"
 import { fade } from "../helpers/transitionHelper"
 import { useContext } from 'react'
 import { SmoothScrollContext, SmoothScrollProvider } from '../contexts/SmoothScroll.context'
 
-export default function About({ data: { site } }) {
+export default function About({ data: { site, about, team } }) {
   // const metaTags = about.seo.concat(site.favicon);
 
   return (
@@ -55,62 +56,54 @@ export default function About({ data: { site } }) {
                   </div>
 
                   <div className="w-full md:w-1/2 max-w-md">
-                    <p className="text-lg md:text-xl leading-snug tracking-tight md:mt-8">Everything we do is underpinned by our guiding principle: to work hard and do great work.</p>
+                    <div dangerouslySetInnerHTML={{ __html: about.ourTeamText }} className="text-lg md:text-xl leading-snug tracking-tight md:mt-8"></div>
                   </div>
                 </div>
               </div>
 
               <div className="w-full mb-12 md:mb-16 xl:mb-24 relative z-10">
                 <div className="flex flex-wrap">
-                  <div className="h-full w-full md:w-1/3">
-                    <div className="h-full py-8 md:py-10 md:pt-32 border-b md:border-b-0 md:border-l border-dotted border-off-black border-opacity-50 md:px-8 lg:px-12 xl:px-16">
-                      <div data-scroll data-scroll-speed="2.25">
-                        <div className="relative mr-5 mb-5">
-                          <img src="https://placedog.net/475/575" alt="Dog Placeholder" className="w-full relative z-0" />
-                          <span className="block upright font-mono text-xs absolute top-0 right-0 -mr-5 z-0 uppercase tracking-wide leading-none">Creative Director</span>
+
+                  {team.map((team, i) => {
+                    let scrollSpeed = 1.5;
+                    let spacing = `py-8`
+                    
+                    if (i === 0) {
+                      scrollSpeed = 2.25;
+                      spacing = `py-8 md:py-10 md:pt-32`
+                    } else if (i === 1) {
+                      scrollSpeed = 1.25;
+                      spacing = `py-8 md:py-10 md:pt-0`
+                    } else if (i === 2) {
+                      scrollSpeed = 1.75;
+                      spacing = `py-8 md:py-10 md:pt-64`
+                    }
+
+                    return (
+                      <div className="flex flex-col w-full md:w-1/3" key={i}>
+                        <div className={`h-full border-b md:border-b-0 md:border-l border-dotted border-off-black border-opacity-50 md:px-8 lg:px-12 xl:px-16 ${spacing}`}>
+                          <div data-scroll data-scroll-speed={scrollSpeed}>
+                            <div className="relative mr-5 mb-5">
+                              <Image
+                                data={{
+                                  ...team.image.responsiveImage,
+                                  alt: team.image.alt ? team.image.alt : team.image.title,
+                                }}
+                                className="w-full relative z-0"
+                              />
+                              <span className="block upright font-mono text-xs absolute top-0 right-0 -mr-5 z-0 uppercase tracking-wide leading-none">{ team.jobTitle }</span>
+                            </div>
+
+                            <h3 className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter">{ team.name }</h3>
+                              
+                            <div dangerouslySetInnerHTML={{ __html: team.shortBio }} className="font-mono text-sm mb-5 md:mb-8"></div>
+
+                            <Link href="/"><a aria-label={`Navigate to ${team.name}'s biography`} className="underline tracking-tight text-lg inline-block items-center">Read bio</a></Link>
+                          </div>
                         </div>
-
-                        <h3 className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter">Neil Rostance</h3>
-                        
-                        <p className="font-mono text-sm mb-5 md:mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur quam id est pulvinar eleifend. Ut sed dictum urna. Nullam laoreet congue elit.</p>
-
-                        <Link href="/"><a aria-label="Navigate to Neil Rostance's biography" className="underline tracking-tight text-lg inline-block items-center">Read bio</a></Link>
                       </div>
-                    </div>
-                  </div>
-
-                  <div className="h-full w-full md:w-1/3">
-                    <div className="h-full py-8 md:py-10 md:pt-0 border-b md:border-b-0 md:border-l border-dotted border-off-black border-opacity-50 md:px-8 lg:px-12 xl:px-16">
-                      <div data-scroll data-scroll-speed="1.25">
-                        <div className="relative mr-5 mb-5">
-                          <img src="https://placedog.net/430/540" alt="Dog Placeholder" className="w-full relative z-0" />
-                          <span className="block upright font-mono text-xs absolute top-0 right-0 -mr-5 z-0 uppercase tracking-wide leading-none">Exec Producer</span>
-                        </div>
-
-                        <h3 className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter">Kate Rostance</h3>
-                        
-                        <p className="font-mono text-sm mb-5 md:mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur quam id est pulvinar eleifend. Ut sed dictum urna. Nullam laoreet congue elit.</p>
-
-                        <Link href="/"><a aria-label="Navigate to Kate Rostance's biography" className="underline tracking-tight text-lg inline-block items-center">Read bio</a></Link>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="h-full w-full md:w-1/3">
-                    <div className="h-full py-8 md:py-10 md:pt-64 border-b md:border-b-0 md:border-l md:border-r border-dotted border-off-black border-opacity-50 md:px-8 lg:px-12 xl:px-16">
-                      <div data-scroll data-scroll-speed="1.75">
-                        <div className="relative mr-5 mb-5">
-                          <img src="https://placedog.net/450/550" alt="Dog Placeholder" className="w-full relative z-0" />
-                          <span className="block upright font-mono text-xs absolute top-0 right-0 -mr-5 z-0 uppercase tracking-wide leading-none">Producer</span>
-                        </div>
-                        <h3 className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter">Ash Gardiner</h3>
-                        
-                        <p className="font-mono text-sm mb-5 md:mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur quam id est pulvinar eleifend. Ut sed dictum urna. Nullam laoreet congue elit.</p>
-
-                        <Link href="/"><a aria-label="Navigate to Ash Gardiner's biography" className="underline tracking-tight text-lg inline-block items-center">Read bio</a></Link>
-                      </div>
-                    </div>
-                  </div>
+                    )
+                  })}
                 </div>
               </div>
             </Container>
@@ -120,11 +113,19 @@ export default function About({ data: { site } }) {
               <Container>
                 <div className="flex flex-wrap items-center md:-mx-12 relative z-20">
                   <div className="w-full md:w-1/2 md:px-12 mb-6 md:mb-0" data-scroll data-scroll-speed="0.25">
-                    <img src="https://placedog.net/800/1200" alt="Dog Placeholder" className="w-full relative z-0" />
+                    <Image
+                      data={{
+                        ...about.calloutImage.responsiveImage,
+                        alt: about.calloutImage.alt ? about.calloutImage.alt : about.calloutImage.title,
+                      }}
+                      className="w-full relative z-0"
+                    />
                   </div>
                   <div className="w-full md:w-1/2 md:px-12" data-scroll data-scroll-speed="1.05">
-                    <span className="block text-xs uppercase tracking-tighter leading-none mb-6 md:mb-10">No bullshit —</span>
-                    <p className="text-3xl md:text-4xl xl:text-5xl leading-none tracking-tighter pr-8 md:pr-8 lg:pr-16 xl:pr-20 mb-6 md:mb-10">We know that prospective clients trust personal recommendation above all else, so we concentrate our efforts on delivering the best service to brands that love what we do, and the rest falls into place.</p>
+                    { about.calloutMetaText && (
+                      <span className="block text-xs uppercase tracking-tighter leading-none mb-6 md:mb-10">{ about.calloutMetaText } —</span>
+                    )}
+                    <p className="text-3xl md:text-4xl xl:text-5xl leading-none tracking-tighter pr-8 md:pr-8 lg:pr-16 xl:pr-20 mb-6 md:mb-10">{ about.calloutHeading }</p>
 
                     <Link href="/"><a aria-label="Navigate to Start a project" className="underline tracking-tight text-lg inline-block items-center">Start a project</a></Link>
                   </div>
@@ -147,8 +148,34 @@ const ABOUT_QUERY = `
         ...metaTagsFragment
       }
     }
+    team: allTeams {
+      id
+      name
+      shortBio
+      slug
+      jobTitle
+      image {
+        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 600, h: 850 }) {
+          ...responsiveImageFragment
+        }
+      }
+    }
+    about {
+      title
+      ourTeamText
+      calloutImage {
+        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 800, h: 1050 }) {
+          ...responsiveImageFragment
+        }
+        title
+        alt
+      }
+      calloutMetaText
+      calloutHeading
+    }
   }
   ${metaTagsFragment}
+  ${responsiveImageFragment}
 `
 
 export async function getStaticProps() {

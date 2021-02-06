@@ -77,7 +77,7 @@ export default function Menu({ data: { site } }) {
                   </a></Link>
                 </div> */}
                 <div className="h-full w-full md:w-1/4">
-                  <Link href="/"><a aria-label="Navigate to Home" className="group block py-5 md:py-10 border-b md:border-b-0 md:border-l md:border-r border-dotted border-orange-light border-opacity-50 md:px-8 transition ease-in-out duration-500 focus:outline-none text-orange-light hover:text-off-white focus:text-off-white">
+                  <Link href="/contact"><a aria-label="Navigate to Home" className="group block py-5 md:py-10 border-b md:border-b-0 md:border-l md:border-r border-dotted border-orange-light border-opacity-50 md:px-8 transition ease-in-out duration-500 focus:outline-none text-orange-light hover:text-off-white focus:text-off-white">
                     <div className="transition-transform ease-in-out duration-500 md:transform group-hover:-translate-y-12 group-focus:-translate-y-12">
                       
                       <img src="https://placedog.net/650/900" alt="Placeholder" className="transition ease-in-out duration-500 opacity-0 group-hover:opacity-100 group-focus:opacity-100 mb-10 transform skew-y-1 hidden md:block" />
