@@ -79,11 +79,32 @@ h2 {
   width: 850px;
 }
 
+.bg-x--left {
+  top: -350px;
+  left: -330px;
+  right: auto;
+}
+
+.bg-x--bottom {
+  top: auto;
+  bottom: -350px;
+}
+
 @screen md {
   .bg-x {
     top: -600px !important;
     right: -600px !important;
     width: 1400px !important;
+  }
+
+  .bg-x--left {
+    left: -600px !important;
+    right: auto !important;
+  }
+
+  .bg-x--bottom {
+    top: auto !important;
+    bottom: -600px !important;
   }
 }
 
@@ -92,6 +113,17 @@ h2 {
     top: -700px !important;
     right: -800px !important;
     width: 1800px !important;
+  }
+
+  .bg-x--left {
+    top: -800px !important;
+    left: -700px !important;
+    right: auto !important;
+  }
+
+  .bg-x--bottom {
+    top: auto !important;
+    bottom: -800px !important;
   }
 }
 
@@ -141,4 +173,103 @@ html.has-scroll-dragging {
 
 .has-scroll-smooth [data-scroll-container] {
   min-height: 100vh;
+}
+
+.burger {
+  width: 15px;
+  height: 15px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+
+  @screen md {
+    width: 31px;
+    height: 31px;
+  }
+}
+
+.burger span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: theme('colors.off-white');
+  border-radius: 10px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+
+  @screen md {
+    height: 3px;
+  }
+}
+
+.burger span:nth-child(1) {
+  top: 0px;
+}
+
+.burger span:nth-child(2), .burger span:nth-child(3) {
+  top: 6px;
+  width: 80%;
+  left: auto;
+  right: 0;
+
+  @screen md {
+    top: 10px;
+  }
+}
+
+.burger span:nth-child(4) {
+  top: 12px;
+
+  @screen md {
+    top: 20px;
+  }
+}
+
+.burger.open span:nth-child(1) {
+  top: 6px;
+  width: 0%;
+  left: 50%;
+  
+  @screen md {
+    top: 10px;
+  }
+}
+
+.burger.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.burger.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.burger.open span:nth-child(4) {
+  top: 6px;
+  width: 0%;
+  left: 50%;
+
+  @screen md {
+    top: 10px;
+  }
 }

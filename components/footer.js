@@ -3,16 +3,18 @@ import Link from 'next/link'
 import Marquee from 'react-double-marquee';
 
 
-export default function Footer() {
+export default function Footer({ hideMarquee }) {
   return (
     <footer>
-      <div className="border-t border-off-black py-3">
-        <div className="w-full whitespace-no-wrap text-3xl md:text-4xl xl:text-5xl tracking-tighter leading-tight">
-          <Marquee>
-            <span className="inline mx-1">Brand Campaigns</span> <span className="inline mx-1">•</span> <span className="inline mx-1">Paid Social</span> <span className="inline mx-1">•</span> <span className="inline mx-1">Video Ads</span> <span className="inline mx-1">•</span> <span className="inline mx-1">TV &amp; VOD</span> <span className="inline mx-1">•</span> <span className="inline mx-1">Concepts</span> <span className="inline mx-1">•</span> <span className="inline mx-1">Production</span> <span className="inline mx-1">•</span> <span className="inline mx-1">Motion Graphics</span> <span className="inline mx-1">•</span>
-          </Marquee>
+      { !hideMarquee && (
+        <div className="border-t border-off-black py-3">
+          <div className="w-full whitespace-no-wrap text-3xl md:text-4xl xl:text-5xl tracking-tighter leading-tight">
+            <Marquee>
+              <span className="inline mx-1">Brand Campaigns</span> <span className="inline mx-1">•</span> <span className="inline mx-1">Paid Social</span> <span className="inline mx-1">•</span> <span className="inline mx-1">Video Ads</span> <span className="inline mx-1">•</span> <span className="inline mx-1">TV &amp; VOD</span> <span className="inline mx-1">•</span> <span className="inline mx-1">Concepts</span> <span className="inline mx-1">•</span> <span className="inline mx-1">Production</span> <span className="inline mx-1">•</span> <span className="inline mx-1">Motion Graphics</span> <span className="inline mx-1">•</span>
+            </Marquee>
+          </div>
         </div>
-      </div>
+      )}
 
       <div className="flex flex-wrap">
         <div className="w-full md:w-1/2 py-12 md:py-20 xl:py-32 bg-green text-white">

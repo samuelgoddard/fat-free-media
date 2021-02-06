@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import { renderMetaTags, useQuerySubscription } from "react-datocms";
+import { renderMetaTags } from "react-datocms";
 import Layout from "../components/layout";
 import { request } from "../lib/datocms";
 import { metaTagsFragment, responsiveImageFragment } from "../lib/fragments";
@@ -12,12 +12,7 @@ import { fade } from "../helpers/transitionHelper"
 import { useContext } from 'react'
 import { SmoothScrollContext, SmoothScrollProvider } from '../contexts/SmoothScroll.context'
 
-export default function About({ subscription }) {
-  const { scroll } = useContext(SmoothScrollContext)
-  const {
-    data: { site },
-  } = useQuerySubscription(subscription);
-
+export default function About({ data: { site } }) {
   // const metaTags = about.seo.concat(site.favicon);
 
   return (
@@ -145,27 +140,25 @@ export default function About({ subscription }) {
   );
 }
 
-export async function getStaticProps() {
-  const graphqlRequest = {
-    query: `
-      {
-        site: _site {
-          favicon: faviconMetaTags {
-            ...metaTagsFragment
-          }
-        }
+const ABOUT_QUERY = `
+  query AboutPage {
+    site: _site {
+      favicon: faviconMetaTags {
+        ...metaTagsFragment
       }
+    }
+  }
+  ${metaTagsFragment}
+`
 
-      ${metaTagsFragment}
-    `
-  };
+export async function getStaticProps() {
+  const data = await request({
+    query: ABOUT_QUERY
+  })
 
   return {
     props: {
-      subscription: {
-        enabled: false,
-        initialData: await request(graphqlRequest),
-      }
+      data,
     },
-  };
+  }
 }
