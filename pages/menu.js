@@ -36,7 +36,7 @@ export default function Menu({ data: { site } }) {
 
                       <h3 className="text-3xl md:text-3xl lg:text-4xl xl:text-5xl leading-none tracking-tighter mb-2 md:mb-5">Home</h3>
                       
-                      <p className="font-mono text-sm">An overview of what we’re about.</p>
+                      <p className="font-mono text-sm">An overview of what we’re about</p>
                     </div>
                   </a></Link>
                 </div>
@@ -48,7 +48,7 @@ export default function Menu({ data: { site } }) {
 
                       <h3 className="text-3xl md:text-3xl lg:text-4xl xl:text-5xl leading-none tracking-tighter mb-2 md:mb-5">Work</h3>
                       
-                      <p className="font-mono text-sm">Explore some of the projects we’ve worked on over the years</p>
+                      <p className="font-mono text-sm">A selection of our best bits</p>
                     </div>
                   </a></Link>
                 </div>
@@ -60,7 +60,7 @@ export default function Menu({ data: { site } }) {
 
                       <h3 className="text-3xl md:text-3xl lg:text-4xl xl:text-5xl leading-none tracking-tighter mb-2 md:mb-5">About</h3>
                       
-                      <p className="font-mono text-sm">Our process, history and team.</p>
+                      <p className="font-mono text-sm">Get to know us a little better</p>
                     </div>
                   </a></Link>
                 </div>
@@ -72,7 +72,7 @@ export default function Menu({ data: { site } }) {
 
                       <h3 className="text-3xl md:text-3xl lg:text-4xl xl:text-5xl leading-none tracking-tighter mb-2 md:mb-5">Journal</h3>
                       
-                      <p className="font-mono text-sm">Things we’ve seen, made and thought.</p>
+                      <p className="font-mono text-sm">Things we’ve thought, made and seen</p>
                     </div>
                   </a></Link>
                 </div> */}
@@ -84,7 +84,7 @@ export default function Menu({ data: { site } }) {
 
                       <h3 className="text-3xl md:text-3xl lg:text-4xl xl:text-5xl leading-none tracking-tighter mb-2 md:mb-5">Contact</h3>
                       
-                      <p className="font-mono text-sm">Start a new project or join the team.</p>
+                      <p className="font-mono text-sm">It would be lovely to hear from you</p>
                     </div>
                   </a></Link>
                 </div>

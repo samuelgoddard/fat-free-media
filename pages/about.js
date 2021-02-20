@@ -31,12 +31,10 @@ export default function About({ data: { site, about, team } }) {
             <div className="bg-black text-white pt-40 md:pt-48 xl:pt-56 pb-8 md:pb-32 xl:pb-48 mb-8 md:mb-20 relative">
               <Container thin>
                 <div className="relative z-10">
-                  <span data-scroll data-scroll-speed="0.4" className="block text-md md:text-lg xl:text-xl uppercase tracking-tighter leading-none mb-2 md:mb-4 xl:mb-8">A small but mighty team</span>
+                  <span data-scroll data-scroll-speed="0.9" className="block text-md md:text-lg xl:text-xl uppercase tracking-tighter leading-none mb-3">A small but mighty team</span>
 
-                  <h1 className="text-4xl md:text-5xl xl:text-6xl leading-none w-full max-w-4xl tracking-tighter pr-12 xl:pr-0 mb-10 md:mb-0" data-scroll data-scroll-speed="1.1">Video carries more feeling and uses more senses than any other medium. It has the potential to pull at the hearts and change the minds of those who watch it more than any other format.</h1>
+                  <h1 className="text-4xl md:text-5xl xl:text-6xl leading-none w-full max-w-4xl tracking-tighter pr-12 xl:pr-0 mb-10 md:mb-0" data-scroll data-scroll-speed="1.1">Video carries more feeling and uses more senses than any other medium. It has the potential to pull at the hearts and change the minds of those who watch it more than any other format. That’s why we spent the last 2 decades working hard and honing our craft. </h1>
                 </div>
-
-                <span data-scroll data-scroll-speed="0.35" className="font-mono text-xs tracking-wide leading-none md:absolute bottom-0 right-0 mb-12 mr-8 z-10">* We don’t say yes to everything, because we want to give our yes’s our everything.</span>
 
                 <video loop={true} playsInline autoPlay="autoplay" muted className="absolute top-0 left-0 right-0 bottom-0 w-full h-full object-cover z-0">
                   <source src="https://test-videos.co.uk/vids/bigbuckbunny/webm/vp9/1080/Big_Buck_Bunny_1080_10s_10MB.webm" type="video/webm" />
@@ -108,7 +106,7 @@ export default function About({ data: { site, about, team } }) {
               </div>
             </Container>
 
-            <div className="bg-yellow pt-8 pb-16 md:pt-12 md:pb-20 lg:pt-16 lg:pb-24 xl:pt-20 xl:pb-32 overflow-hidden relative">
+            <div className="bg-yellow yellow-highlight pt-8 pb-16 md:pt-12 md:pb-20 lg:pt-16 lg:pb-24 xl:pt-20 xl:pb-32 overflow-hidden relative">
               <BigX color="text-yellow-dark" />
               <Container>
                 <div className="flex flex-wrap items-center md:-mx-12 relative z-20">

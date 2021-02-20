@@ -11,13 +11,13 @@ import { motion } from "framer-motion"
 import { fade } from "../helpers/transitionHelper"
 import { SmoothScrollProvider } from '../contexts/SmoothScroll.context'
 
-export default function Index({ data: { site } }) {
-  // const metaTags = home.seo.concat(site.favicon);
+export default function Index({ data: { site, contact } }) {
+  const metaTags = contact.seo.concat(site.favicon);
 
   return (
     <SmoothScrollProvider options={{ smooth: true, lerp: 0.13 }}>
       <Layout>
-      {/* <Head>{renderMetaTags(metaTags)}</Head> */}
+      <Head>{renderMetaTags(metaTags)}</Head>
         <motion.div
           initial="initial"
           animate="enter"
@@ -42,9 +42,9 @@ export default function Index({ data: { site } }) {
                         <div className="flex-1 md:w-full px-2 md:px-0 relative z-10">
                           <h3 className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter">Collaborate with us</h3>
                           
-                          <p className="font-mono text-sm mb-5 md:mb-8">If you’re ready to do great things, pop your details into the form opposite, and Kate will be back in touch to find out more</p>
+                          <div className="font-mono text-sm mb-5 md:mb-8 content" dangerouslySetInnerHTML={{ __html: contact.collaborateText }}></div>
 
-                          <a aria-label="Email us at hello@hellofatfree.com" href="mailto:hello@hellofatfree.com" className="underline tracking-tight text-lg inline-block items-center">hello@hellofatfree.com</a>
+                          <a aria-label={`Email us at ${ contact.emailAddress }`} href={`mailto:${contact.emailAddress}`} className="underline tracking-tight text-lg inline-block items-center">{ contact.emailAddress }</a>
                         </div>
                       </div>
                     </div>
@@ -60,9 +60,9 @@ export default function Index({ data: { site } }) {
                         <div className="flex-1 md:w-full px-2 md:px-0 relative z-10">
                           <h3 className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter">Join our team</h3>
                           
-                          <p className="font-mono text-sm mb-5 md:mb-8">We’re always looking for exceptionally talented freelancers to work with. Send your showreel and tell us a bit more about you.</p>
+                          <div className="font-mono text-sm mb-5 md:mb-8 content" dangerouslySetInnerHTML={{ __html: contact.teamText }}></div>
 
-                          <a aria-label="Email us at team@hellofatfree.com" href="mailto:team@hellofatfree.com" className="underline tracking-tight text-lg inline-block items-center">team@hellofatfree.com</a>
+                          <a aria-label={`Email us at ${ contact.teamEmailAddress }`} href={`mailto:${contact.teamEmailAddress}`} className="underline tracking-tight text-lg inline-block items-center">{ contact.teamEmailAddress }</a>
                         </div>
                       </div>
                     </div>
@@ -78,9 +78,9 @@ export default function Index({ data: { site } }) {
                         <div className="flex-1 md:w-full px-2 md:px-0 relative z-10">
                           <h3 className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter">Something else</h3>
                           
-                          <p className="font-mono text-sm mb-5 md:mb-8">Panel events, industry talks, key note speeches, podcasts and interviews are right up our street. Just let us know what you need!</p>
+                          <div className="font-mono text-sm mb-5 md:mb-8 content" dangerouslySetInnerHTML={{ __html: contact.somethingElseText }}></div>
 
-                          <a aria-label="Email us at speaking@hellofatfree.com" href="mailto:speaking@hellofatfree.com" className="underline tracking-tight text-lg inline-block items-center">speaking@hellofatfree.com</a>
+                          <a aria-label={`Email us at ${ contact.speakingEmailAddress }`} href={`mailto:${contact.speakingEmailAddress}`} className="underline tracking-tight text-lg inline-block items-center">{ contact.speakingEmailAddress }</a>
                         </div>
                       </div>
                     </div>
@@ -103,6 +103,19 @@ const CONTACTPAGE_QUERY = `
       favicon: faviconMetaTags {
         ...metaTagsFragment
       }
+    }
+    contact: contact {
+      seo: _seoMetaTags {
+        ...metaTagsFragment
+      }
+      title
+      emailAddress
+      teamEmailAddress
+      speakingEmailAddress
+      collaborateText
+      teamText
+      somethingElseText
+      slug
     }
   }
   ${metaTagsFragment}
