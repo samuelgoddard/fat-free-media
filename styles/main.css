@@ -89,6 +89,12 @@
   }
 }
 
+@screen 2xl {
+  .home-video {
+    height: 740px;
+  }
+}
+
 html.has-scroll-smooth {
   overflow: hidden;
 }

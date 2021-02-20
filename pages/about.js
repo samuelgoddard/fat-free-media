@@ -14,12 +14,12 @@ import { useContext } from 'react'
 import { SmoothScrollContext, SmoothScrollProvider } from '../contexts/SmoothScroll.context'
 
 export default function About({ data: { site, about, team } }) {
-  // const metaTags = about.seo.concat(site.favicon);
+  const metaTags = about.seo.concat(site.favicon);
 
   return (
     <SmoothScrollProvider options={{ smooth: true, lerp: 0.13 }}>
       <Layout>
-        {/* <Head>{renderMetaTags(metaTags)}</Head> */}
+        <Head>{renderMetaTags(metaTags)}</Head>
         
         <motion.div
           initial="initial"
@@ -159,6 +159,9 @@ const ABOUT_QUERY = `
       }
     }
     about {
+      seo: _seoMetaTags {
+        ...metaTagsFragment
+      }
       title
       ourTeamText
       calloutImage {
