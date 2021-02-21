@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import { renderMetaTags } from "react-datocms";
+import { renderMetaTags, Image } from "react-datocms";
 import Layout from "../../components/layout";
 import { request } from "../../lib/datocms";
 import { metaTagsFragment, responsiveImageFragment } from "../../lib/fragments";
@@ -71,6 +71,97 @@ export default function WorkSingle({ data: { site, work } }) {
 
               <div className="relative overflow-hidden pt-16 md:pt-20 xl:pt-24 pb-12 md:pb-20 xl:pb-32">
                 <BigX color="text-white" bottom />
+  
+                {/* Modular Content */}
+                <div className="relative pb-12 md:pb-20 xl:pb-32">
+                  {
+                    work.contentBlocks.map((block) => (
+                      <div key={block.id} className="pb-8 md:pb-12 xl:pb-16" data-scroll data-scroll-speed="1.6">
+                        {
+                          block._modelApiKey === 'text' &&
+                          <Container thin>
+                            <div className="flex flex-wrap md:-mx-5">
+                              <div className="w-full md:w-1/3 md:px-5">
+                                <div className="w-full max-w-xs">
+                                  { block.headingMetaText && (
+                                    <span className="block text-xs uppercase tracking-tighter leading-none">— { block.headingMetaText }</span>
+                                  )}
+                                  { block.heading && (
+                                    <h2 className="text-4xl md:text-5xl xl:text-6xl leading-none tracking-tighter">{ block.heading }</h2>
+                                  )}
+                                </div>
+                              </div>
+                              <div className="w-full md:w-2/3 md:px-5">
+                                <div className="content text-xl md:text-2xl tracking-tighter leading-tight max-w-3xl" dangerouslySetInnerHTML={{ __html: block.text }}></div>
+                              </div>
+                            </div>
+                          </Container>
+                        }
+                        {
+                          block._modelApiKey === 'image' &&
+                          <Container>
+                            <Image
+                              data={{
+                                ...block.image.responsiveImage,
+                                alt: block.image.alt ? block.image.alt : block.image.title,
+                              }}
+                              className="w-full"
+                            />
+                          </Container>
+                        }
+                        {
+                          block._modelApiKey === 'images3_square' &&
+                          <div className="overflow-hidden">
+                            <div className="flex flex-wrap -mx-24 md:-mx-48 xl:-mx-64">
+                              { block.images.map((image, i) => (
+                                <div key={i} className="w-1/3 px-5 md:px-8 xl:px-12">
+                                  <Image
+                                    data={{
+                                      ...image.responsiveImage,
+                                      alt: image.alt ? image.alt : image.title,
+                                    }}
+                                    className="w-full"
+                                  />
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        }
+                        {
+                          block._modelApiKey === 'images4_square' &&
+                          <div className="overflow-hidden">
+                            <div className="flex flex-wrap -mx-12 md:-mx-16 xl:-mx-24">
+                              { block.images.map((image, i) => (
+                                <div key={i} className="w-1/4 px-5 md:px-8 xl:px-12">
+                                  <Image
+                                    data={{
+                                      ...image.responsiveImage,
+                                      alt: image.alt ? image.alt : image.title,
+                                    }}
+                                    className="w-full"
+                                  />
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        }
+                        {
+                          block._modelApiKey === 'video' &&
+                          <Container>
+                            <video controls={true} className="w-full home-video object-cover">
+                              <source src={ block.videoUrl } type="video/mp4" />
+                              
+                              Sorry. Your browser does not support the video tag.
+                            </video>
+                          </Container>
+                        }
+                      </div>
+                    ))
+                  }
+                </div>
+
+
+                {/* FAKE CONTENT */}
                 <Container thin>
                   {/* Text Block */}
                   <div className="flex flex-wrap mb-16 md:mb-20 xl:mb-32 relative z-10" data-scroll data-scroll-speed="1.25">
@@ -198,10 +289,47 @@ const WORK_SINGLE_QUERY = `
         slug
         title
       }
+      contentBlocks {
+        ... on TextRecord {
+          id
+          _modelApiKey
+          headingMetaText
+          heading
+          text
+        }
+        ... on Images3SquareRecord {
+          id
+          _modelApiKey
+          images {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1200, h: 1200 }) {
+              ...responsiveImageFragment
+            }
+            title
+            alt
+          }
+        }
+        ... on Images4SquareRecord {
+          id
+          _modelApiKey
+          images {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1200, h: 1200 }) {
+              ...responsiveImageFragment
+            }
+            title
+            alt
+          }
+        }
+        ... on VideoRecord {
+          id
+          _modelApiKey
+          videoUrl
+        }
+      }
       slug
     }
   }
   ${metaTagsFragment}
+  ${responsiveImageFragment}
 `
 
 export async function getStaticProps({ params }) {

@@ -100,7 +100,7 @@ export default function ServiceSingle({ data: { site, service } }) {
                 }
               </div>
               
-              { service.services && (
+              { service.services.length > 0 && (
                 <div className="bg-yellow text-black yellow-highlight py-12 md:py-24 xl:py-32">
                   <Container>
                     <ul>

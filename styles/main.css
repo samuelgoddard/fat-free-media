@@ -67,11 +67,7 @@
   }
 }
 
-/* .home-video {
-  aspect-ratio: attr(width) / attr(height);
-} */
-
-/* @screen md {
+@screen md {
   .home-video {
     height: 500px;
   }
@@ -93,7 +89,13 @@
   .home-video {
     height: 740px;
   }
-} */
+}
+
+@screen 3xl {
+  .home-video {
+    height: 820px;
+  }
+}
 
 html.has-scroll-smooth {
   overflow: hidden;
