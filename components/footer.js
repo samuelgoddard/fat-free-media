@@ -26,7 +26,7 @@ export default function Footer({ hideMarquee }) {
                 <li className="inline-block md:block mr-4 md:mr-0"><Link href="/work"><a aria-label="Navigate to Portfolio" className="underline tracking-tight xl:text-lg mb-1">Portfolio</a></Link></li>
                 <li className="inline-block md:block mr-4 md:mr-0"><Link href="/services/video-identity"><a aria-label="Navigate to Video Identity" className="underline tracking-tight xl:text-lg mb-1">Video identity</a></Link></li>
                 <li className="inline-block md:block mr-4 md:mr-0"><Link href="/services/content-and-creative"><a aria-label="Navigate to Content &amp; Creative" className="underline tracking-tight xl:text-lg mb-1">Content &amp; Creative</a></Link></li>
-                <li className="inline-block md:block mr-4 md:mr-0"><Link href="/services/strategic-partner"><a aria-label="Navigate to Strategic Partner" className="underline tracking-tight xl:text-lg mb-1">Strategic Partner</a></Link></li>
+                <li className="inline-block md:block mr-4 md:mr-0"><Link href="/services/strategy-and-consultancy"><a aria-label="Navigate to Strategy &amp; Consultancy" className="underline tracking-tight xl:text-lg mb-1">Strategy &amp; Consultancy</a></Link></li>
               </ul>
             </nav>
             <nav className="w-full md:w-1/2 mb-6 md:mb-10 xl:mb-16">

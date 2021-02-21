@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import { renderMetaTags } from "react-datocms";
+import { renderMetaTags, Image } from "react-datocms";
 import Layout from "../../components/layout";
 import { request } from "../../lib/datocms";
 import { metaTagsFragment, responsiveImageFragment } from "../../lib/fragments";
@@ -44,35 +44,143 @@ export default function ServiceSingle({ data: { site, service } }) {
               </Container>
 
               <Container thin>
-                <div className="relative pb-12 md:pb-20 xl:pb-32" data-scroll data-scroll-speed="1.4">
+                <div className="relative pb-12 md:pb-12 xl:pb-12" data-scroll data-scroll-speed="1.4">
                   <div className="text-xl md:text-xl xl:text-2xl leading-none w-full tracking-tighter max-w-sm md:max-w-xl xl:max-w-xl uppercase" dangerouslySetInnerHTML={{ __html: service.heroText }}></div>
                 </div>
               </Container>
 
-              <Container>
-              {
-                service.contentBlocks.map((block) => (
-                  <div key={block.id} className="pb-8 md:pb-16 xl:pb-20" data-scroll data-scroll-speed="1.2">
-                    {
-                      block._modelApiKey === 'text' &&
-                      <div className="flex flex-wrap md:-mx-5">
-                        <div className="w-full md:w-1/3 md:px-5">
-                          { block.headingMetaText && (
-                            <span className="block text-xs uppercase tracking-tighter leading-none">— { block.headingMetaText }</span>
-                          )}
-                          { block.heading && (
-                            <h2 className="text-4xl md:text-5xl xl:text-6xl leading-none tracking-tighter">{ block.heading }</h2>
-                          )}
-                        </div>
-                        <div className="w-full md:w-2/3 md:px-5">
-                          <div className="content text-xl md:text-2xl tracking-tighter leading-tight max-w-3xl" dangerouslySetInnerHTML={{ __html: block.text }}></div>
-                        </div>
-                      </div>
-                    }
-                  </div>
-                ))
-              }
-              </Container>
+              <div className="relative pb-12 md:pb-20 xl:pb-32">
+                {
+                  service.contentBlocks.map((block) => (
+                    <div key={block.id} className="pb-8 md:pb-16 xl:pb-20" data-scroll data-scroll-speed="1.6">
+                      {
+                        block._modelApiKey === 'text' &&
+                        <Container thin>
+                          <div className="flex flex-wrap md:-mx-5">
+                            <div className="w-full md:w-1/3 md:px-5">
+                              <div className="w-full max-w-xs">
+                                { block.headingMetaText && (
+                                  <span className="block text-xs uppercase tracking-tighter leading-none">— { block.headingMetaText }</span>
+                                )}
+                                { block.heading && (
+                                  <h2 className="text-4xl md:text-5xl xl:text-6xl leading-none tracking-tighter">{ block.heading }</h2>
+                                )}
+                              </div>
+                            </div>
+                            <div className="w-full md:w-2/3 md:px-5">
+                              <div className="content text-xl md:text-2xl tracking-tighter leading-tight max-w-3xl" dangerouslySetInnerHTML={{ __html: block.text }}></div>
+                            </div>
+                          </div>
+                        </Container>
+                      }
+                      {
+                        block._modelApiKey === 'image' &&
+                        <Container>
+                          <Image
+                            data={{
+                              ...block.image.responsiveImage,
+                              alt: block.image.alt ? block.image.alt : block.image.title,
+                            }}
+                            className="w-full"
+                          />
+                        </Container>
+                      }
+                      {
+                        block._modelApiKey === 'video' &&
+                        <Container>
+                          <video controls={true} className="w-full home-video object-cover">
+                            <source src={ block.videoUrl } type="video/mp4" />
+                            
+                            Sorry. Your browser does not support the video tag.
+                          </video>
+                        </Container>
+                      }
+                    </div>
+                  ))
+                }
+              </div>
+              
+              { service.services && (
+                <div className="bg-yellow text-black yellow-highlight py-12 md:py-24 xl:py-32">
+                  <Container>
+                    <ul>
+                      {
+                        service.services.map((block, i) => {
+                          let scrollAmount = -1.3;
+                          let paddingClass = 'pl-0 md:pl-8 xl:pl-12';
+                          let alignClass = 'justify-start';
+
+                          if (i === 0) {
+                            scrollAmount = 0.4;
+                            paddingClass = 'pl-0 md:pl-8 xl:pl-12';
+                            alignClass = 'justify-start'
+                          } else if (i === 1) {
+                            scrollAmount = 0.95;
+                            paddingClass = 'pl-12 md:pl-48 xl:pl-64';
+                            alignClass = 'justify-center'
+                          } else if (i === 2) {
+                            scrollAmount = -0.45;
+                            paddingClass = 'pr-0 md:pr-12 xl:pr-16';
+                            alignClass = 'justify-center'
+                          } else if (i === 3) {
+                            scrollAmount = 0.65;
+                            paddingClass = 'pr-0 md:pr-24 xl:pr-32';
+                            alignClass = 'justify-end'
+                          } else if (i === 4) {
+                            scrollAmount = -0.96;
+                            paddingClass = 'pr-0 md:pr-16 xl:pr-24';
+                            alignClass = 'justify-center'
+                          } else if (i === 5) {
+                            scrollAmount = 0.85;
+                            paddingClass = 'pl-0 md:pl-16 xl:pl-24';
+                            alignClass = 'justify-start'
+                          } else if (i === 6) {
+                            scrollAmount = -0.45;
+                            paddingClass = 'pl-0 md:pr-16 xl:pr-20';
+                            alignClass = 'justify-end'
+                          } else if (i === 7) {
+                            scrollAmount = -0.95;
+                            paddingClass = 'pl-0 md:pl-12 xl:pl-16';
+                            alignClass = 'justify-start'
+                          } else if (i === 8) {
+                            scrollAmount = 0.75;
+                            paddingClass = 'pl-0 md:pl-8 xl:pl-12';
+                            alignClass = 'justify-center'
+                          } else if (i === 9) {
+                            scrollAmount = -0.9;
+                            paddingClass = 'pl-0 md:pl-8 xl:pl-12';
+                            alignClass = 'justify-center'
+                          }
+
+                          return ( 
+                            <li key={block.id} className={`pb-4 lg:pb-6 pt-3 lg:pt-4 text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter leading-tight block border-b-2 border-black ${paddingClass}`}>
+                              { i > 8 ? (
+                                <span className={`flex ${alignClass}`} data-scroll data-scroll-direction="horizontal" data-scroll-speed={scrollAmount}>
+                                  <span className="text-xl lg:text-3xl mr-1 lg:mr-3">{ i + 1 }</span> <span>{ block.title }</span>
+                                </span>
+                              ) : (
+                                <span className={`flex ${alignClass}`} data-scroll data-scroll-direction="horizontal" data-scroll-speed={scrollAmount}>
+                                  <span className="text-xl lg:text-3xl mr-1 lg:mr-3">0{ i + 1 }</span> <span>{ block.title }</span>
+                                </span>
+                              )}
+                            </li>
+                          )
+                        })
+                      }
+                    </ul>
+                  </Container>
+                </div>
+              )}
+
+              <div className="bg-off-black">
+                <Link href="/contact">
+                  <a aria-label="Navigate to Contact Page" className="pt-6 md:pt-8 pb-6 md:pb-10 block text-center text-off-white text-4xl md:text-5xl xl:text-6xl tracking-tighter leading-none">
+                    <span className="inline-block border-b-2 border-off-white">
+                      Let's talk about it
+                    </span>
+                  </a>
+                </Link>
+              </div>
               <Footer hideMarquee />
             </div>
           </motion.div>
@@ -98,16 +206,40 @@ const SERVICE_SINGLE_QUERY = `
       heroText
       slug
       contentBlocks {
-        _modelApiKey
-        id
-        headingMetaText
-        heading
+        ... on TextRecord {
+          id
+          _modelApiKey
+          headingMetaText
+          heading
+          text
+        }
+        ... on ImageRecord {
+          id
+          _modelApiKey
+          image {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1600, h: 920 }) {
+              ...responsiveImageFragment
+            }
+            title
+            alt
+          }
+        }
+        ... on VideoRecord {
+          id
+          _modelApiKey
+          videoUrl
+        }
+      }
+      services {
         text
+        title
       }
     }
   }
   ${metaTagsFragment}
+  ${responsiveImageFragment}
 `
+
 
 export async function getStaticProps({ params }) {
   const data = await request({
@@ -116,11 +248,14 @@ export async function getStaticProps({ params }) {
       slug: params.slug,
     },
   })
+  
+  // key is needed here
+  data.key = params.slug 
 
   return {
-    props: {
-      data,
-    },
+      props: {
+        data
+      }
   }
 }
 

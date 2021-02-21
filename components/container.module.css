@@ -1,5 +1,5 @@
 .container {
-  @apply px-6 max-w-screen-2xl mx-auto;
+  @apply px-6 max-w-screen-3xl mx-auto;
 
   @screen md {
     @apply px-8;
@@ -11,6 +11,16 @@
 
   @screen md {
     @apply px-8;
+  }
+}
+
+@screen 3xl {
+  .container--thin {
+    @apply px-6 max-w-screen-2xl mx-auto;
+  
+    @screen md {
+      @apply px-8;
+    }
   }
 }
 
