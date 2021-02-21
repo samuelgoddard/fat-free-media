@@ -25,7 +25,7 @@
 }
 
 .container--bleed {
-  @apply px-0 max-w-screen-2xl mx-auto;
+  @apply px-0 max-w-screen-3xl mx-auto;
   
   @screen md {
     @apply px-8;

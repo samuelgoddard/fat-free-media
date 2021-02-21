@@ -69,31 +69,31 @@
 
 @screen md {
   .home-video {
-    height: 500px;
+    height: 550px;
   }
 }
 
 @screen lg {
   .home-video {
-    height: 570px;
+    height: 620px;
   }
 }
 
 @screen xl {
   .home-video {
-    height: 680px;
+    height: 730px;
   }
 }
 
 @screen 2xl {
   .home-video {
-    height: 740px;
+    height: 830px;
   }
 }
 
 @screen 3xl {
   .home-video {
-    height: 820px;
+    height: 920px;
   }
 }
 
