@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import { renderMetaTags } from "react-datocms";
+import { renderMetaTags, Image } from "react-datocms";
 import Layout from "../../components/layout";
 import { request } from "../../lib/datocms";
 import { metaTagsFragment, responsiveImageFragment } from "../../lib/fragments";
@@ -11,9 +11,14 @@ import { motion } from "framer-motion"
 import { fade } from "../../helpers/transitionHelper"
 import { useContext } from 'react'
 import { SmoothScrollContext, SmoothScrollProvider } from '../../contexts/SmoothScroll.context'
+var at = require('lodash/at');
 
 export default function Work({ data: { site, work } }) {
   // const metaTags = about.seo.concat(site.favicon);
+
+  const gridMainPosts = at(work, [0,2,3,5,7]);
+  const gridSidebarPosts = at(work, [1,4,6]);
+  const morePosts = work.slice(7);
 
   return (
     <SmoothScrollProvider options={{ smooth: true, lerp: 0.13 }}>
@@ -30,7 +35,7 @@ export default function Work({ data: { site, work } }) {
             <BigX color="text-white" />
             <div className="pt-40 md:pt-48 xl:pt-56 relative">
               <Container>
-                <h1 className="text-6xl md:text-7xl xl:text-8xl leading-none w-full max-w-4xl tracking-tighter mb-4 md:mb-6 xl:mb-8">Our Collabs</h1>
+                <h1 className="text-6xl md:text-7xl xl:text-8xl 3xl:text-9xl leading-none w-full max-w-4xl tracking-tighter mb-4 md:mb-6 xl:mb-8">Our Collabs</h1>
 
                 <nav className="border-t border-b border-off-black py-2 mb-8 md:mb-12 xl:mb-20 relative">
                   <ul className="flex flex-wrap">
@@ -49,21 +54,116 @@ export default function Work({ data: { site, work } }) {
                   </ul>
                 </nav>
 
-                <div className="overflow-hidden">
-                  <div className="flex flex-wrap md:-mx-8">
-                    {work.map((post, i) => (
-                      <div className="w-full md:w-1/2 mb-8 md:mb-16 md:px-8" key={i}>
-                        <Link href={`/work/${post.slug}`}>
-                          <a aria-label="Navigate to Work Item" className="w-full block">
-                            <div className="w-full h-48 bg-off-black mb-2"></div>
-                            <div className="flex flex-wrap items-center">
-                              <span className="text-2xl md:text-2xl xl:text-3xl leading-none tracking-tighter">{ post.title }</span>
-                              <span className="block text-xs uppercase tracking-tighter leading-none ml-auto">Luxury Fashion</span>
+                <div className="overflow-hidden mb-12 md:mb-20 xl:mb-24 3xl:mb-32">
+                  <div className="flex flex-wrap md:-mx-4 lg:-mx-8 2xl:-mx-12">
+                    <div className="w-full md:w-7/12 lg:w-8/12 md:px-4 lg:px-8 2xl:px-12">
+                      <div className="flex flex-wrap md:-mx-4 lg:-mx-8">
+                        {gridMainPosts.map((work, i) => {
+                          let widthClass = 'w-full';
+                          let image = work.teaserImage;
+                          let innerSpacingClass = '';
+                          
+                          if (i === 0) { 
+                            image = work.teaserImageLandscape;
+                          } else if (i === 1 ) {
+                            widthClass = 'w-full md:w-1/2';
+                            image = work.teaserImageSquare;
+                          } else if (i === 2 ) {
+                            widthClass = 'w-full md:w-1/2';
+                            innerSpacingClass = 'md:p-4 lg:p-8 xl:p-12 2xl:p-16';
+                            image = work.teaserImageSquare;
+                          } else if (i === 3 ) {
+                            widthClass = 'w-full md:w-full';
+                            image = work.teaserImageLandscape;
+                          } else if (i === 4 ) {
+                            widthClass = 'w-full md:w-2/3 md:mx-auto';
+                            image = work.teaserImageLandscape;
+                          }
+
+                          return (
+                            <div key={i} className={`${widthClass} md:px-4 lg:px-8`}>
+                              <div className={`mb-8 md:mb-16 ${innerSpacingClass}`}>
+                                <Link href={`/work/${work.slug}`}>
+                                  <a aria-label="Navigate to Work Item" className="w-full block group">
+                                    <div className="relative overflow-hidden mb-2">
+                                      { image && (
+                                        <Image
+                                          data={{
+                                            ...image.responsiveImage,
+                                            alt: image.alt ? image.alt : image.title,
+                                          }}
+                                          className="w-full relative z-0 transform group-hover:scale-110 transition ease-in-out duration-500"
+                                        />
+                                      )}
+                                      { work.teaserVideo && (
+                                        <div className="transform group-hover:scale-110 transition ease-in-out duration-500 absolute top-0 left-0 right-0 bottom-0">
+                                          <video loop={true} playsInline autoPlay="autoplay" muted className="w-full h-full object-cover z-10 w-full">
+                                            <source src={ work.teaserVideo.video.mp4Url } type="video/mp4" />
+                                            
+                                            Sorry. Your browser does not support the video tag.
+                                          </video>
+                                        </div>
+                                      )}
+                                    </div>
+                                    <div className="flex flex-wrap items-center">
+                                      <span className="text-2xl md:text-2xl xl:text-3xl leading-none tracking-tighter">{ work.title }</span>
+                                      <span className="block text-xs uppercase tracking-tighter leading-none ml-auto">Luxury Fashion</span>
+                                    </div>
+                                  </a>
+                                </Link>
+                              </div>
                             </div>
-                          </a>
-                        </Link>
+                          )
+                        })}
                       </div>
-                    ))}
+                    </div>
+
+                    {/* Sidebar */}
+                    <div className="w-full md:w-5/12 lg:w-4/12 md:px-4 lg:px-8 2xl:px-12">
+                      {gridSidebarPosts.map((work, i) => {
+                        let widthClass = 'w-full';
+                        let image = work.teaserImagePortrait
+
+                        if (i === 2) { 
+                          image = work.teaserImageSquare;
+                        }
+                        
+                        return (
+                          <div key={i} className={`${widthClass} md:px-4 lg:px-8`}>
+                            <div className="mb-8 md:mb-16">
+                              <Link href={`/work/${work.slug}`}>
+                                <a aria-label="Navigate to Work Item" className="w-full block group">
+                                  <div className="relative overflow-hidden mb-2">
+                                    { image && (
+                                      <Image
+                                        data={{
+                                          ...image.responsiveImage,
+                                          alt: image.alt ? image.alt : image.title,
+                                        }}
+                                        className="w-full relative z-0 transform group-hover:scale-110 transition ease-in-out duration-500"
+                                      />
+                                    )}
+                                    { work.teaserVideo && (
+                                      <div className="transform group-hover:scale-110 transition ease-in-out duration-500 absolute top-0 left-0 right-0 bottom-0">
+                                        <video loop={true} playsInline autoPlay="autoplay" muted className="w-full h-full object-cover z-10 w-full">
+                                          <source src={ work.teaserVideo.video.mp4Url } type="video/mp4" />
+                                          
+                                          Sorry. Your browser does not support the video tag.
+                                        </video>
+                                      </div>
+                                    )}
+                                  </div>
+                                  <div className="flex flex-wrap items-center">
+                                    <span className="text-2xl md:text-2xl xl:text-3xl leading-none tracking-tighter">{ work.title }</span>
+                                    <span className="block text-xs uppercase tracking-tighter leading-none ml-auto">Luxury Fashion</span>
+                                  </div>
+                                </a>
+                              </Link>
+                            </div>
+                          </div>
+                        )
+                      })}
+                    </div>
                   </div>
                 </div>
               </Container>
@@ -83,13 +183,41 @@ const WORK_QUERY = `
         ...metaTagsFragment
       }
     }
-    work: allWorks {
+    work: allWorks(orderBy: position_ASC) {
       id
       slug
       title
+      teaserImageSquare: teaserImage {
+        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 900, h: 900 }) {
+          ...responsiveImageFragment
+        }
+        title
+        alt
+      }
+      teaserImageLandscape: teaserImage {
+        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1100, h: 620 }) {
+          ...responsiveImageFragment
+        }
+        title
+        alt
+      }
+      teaserImagePortrait: teaserImage {
+        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 600, h: 1000 }) {
+          ...responsiveImageFragment
+        }
+        title
+        alt
+      }
+
+      teaserVideo {
+        video {
+          mp4Url
+        }
+      }
     }
   }
   ${metaTagsFragment}
+  ${responsiveImageFragment}
 `
 
 export async function getStaticProps() {

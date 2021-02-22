@@ -86,7 +86,7 @@ export default function Index({ data: { home, site } }) {
                 </div>
               </div>
 
-              <div className="w-full mb-12 md:mb-16 xl:mb-24 3xl:mb-40 relative z-10">
+              <div className="w-full mb-12 md:mb-16 xl:mb-24 2xl:mb-32 3xl:mb-40 relative z-10">
                 <div className="flex flex-wrap">
                   <div className="w-full md:w-1/3 md:px-8">
                     <div className="h-full py-6 md:py-10 border-b md:border-b-0 md:border-l border-dotted border-off-black border-opacity-50 md:px-8">
