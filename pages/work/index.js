@@ -81,7 +81,7 @@ export default function Work({ data: { site, work } }) {
                           }
 
                           return (
-                            <div key={i} className={`${widthClass} md:px-4 lg:px-8`}>
+                            <div key={i} className={`${widthClass} md:px-4 lg:px-8 `}>
                               <div className={`mb-8 md:mb-16 ${innerSpacingClass}`}>
                                 <Link href={`/work/${work.slug}`}>
                                   <a aria-label="Navigate to Work Item" className="w-full block group">
