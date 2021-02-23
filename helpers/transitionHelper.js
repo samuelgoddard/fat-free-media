@@ -48,6 +48,7 @@ export const scaleDown = {
   },
 	exit: {
     scale: 0,
+    opacity: 0,
 		transition: { duration: 0.75, ease: [0.83, 0, 0.17, 1] }
 	}
 }
@@ -61,6 +62,7 @@ export const scaleDownSmall = {
   },
 	exit: {
     scale: 0.9,
+    opacity: 0,
 		transition: { duration: 0.75, ease: [0.83, 0, 0.17, 1] }
 	}
 }
@@ -74,6 +76,7 @@ export const menuMovement = {
   },
 	exit: {
     y: '1vh',
+    opacity: 0,
 		transition: { duration: 0.75, ease: [0.83, 0, 0.17, 1] }
 	}
 }
@@ -87,6 +90,7 @@ export const menuMovementOne = {
   },
 	exit: {
     y: '-9vh',
+    opacity: 0,
 		transition: { duration: 0.75, ease: [0.83, 0, 0.17, 1] }
 	}
 }
@@ -100,6 +104,7 @@ export const menuMovementTwo = {
   },
 	exit: {
     y: '-19vh',
+    opacity: 0,
 		transition: { duration: 0.75, ease: [0.83, 0, 0.17, 1] }
 	}
 }
@@ -113,6 +118,7 @@ export const menuMovementThree = {
   },
 	exit: {
     y: '-5vh',
+    opacity: 0,
 		transition: { duration: 0.75, ease: [0.83, 0, 0.17, 1] }
 	}
 }
