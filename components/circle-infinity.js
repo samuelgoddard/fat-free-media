@@ -1,3 +1,6 @@
+import { motion } from "framer-motion"
+import { scaleDown } from "../helpers/transitionHelper"
+
 export default function CircleInfinity({color, small}) {
 
   let size = 'w-10 md:w-16 xl:w-20 h-10 md:h-16 xl:h-20'
@@ -9,8 +12,8 @@ export default function CircleInfinity({color, small}) {
   }
   return (
     <div className="md:flex w-auto md:w-full px-4 md:px-0 relative z-0 md:mb-5">
-      <div className={`${size} ${color} rounded-full`}></div>
-      <div className={`${size} -mt-5 md:mt-0 ${offset} bg-transparent border border-off-black rounded-full`}></div>
+      <motion.div variants={scaleDown} className={`${size} ${color} rounded-full`}></motion.div>
+      <motion.div variants={scaleDown} className={`${size} -mt-5 md:mt-0 ${offset} bg-transparent border border-off-black rounded-full`}></motion.div>
     </div>
   )
 }

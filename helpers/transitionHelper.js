@@ -53,14 +53,66 @@ export const scaleDown = {
 }
 
 export const scaleDownSmall = {
-	initial: { opacity: 0, scale: 0.8 },
+	initial: { opacity: 0, scale: 0.9 },
   enter: { 
     opacity: 1,
     scale: 1,
     transition: { duration: 1, ease: [0.83, 0, 0.17, 1] }
   },
 	exit: {
-    scale: 0.8,
+    scale: 0.9,
+		transition: { duration: 0.75, ease: [0.83, 0, 0.17, 1] }
+	}
+}
+
+export const menuMovement = {
+	initial: { opacity: 0, y: '0vh' },
+  enter: { 
+    opacity: 1,
+    y: '-2vh',
+    transition: { duration: 1.5, ease: [0.83, 0, 0.17, 1] }
+  },
+	exit: {
+    y: '1vh',
+		transition: { duration: 0.75, ease: [0.83, 0, 0.17, 1] }
+	}
+}
+
+export const menuMovementOne = {
+	initial: { opacity: 0, y: '0vh' },
+  enter: { 
+    opacity: 1,
+    y: '-12vh',
+    transition: { duration: 1.5, ease: [0.83, 0, 0.17, 1] }
+  },
+	exit: {
+    y: '-9vh',
+		transition: { duration: 0.75, ease: [0.83, 0, 0.17, 1] }
+	}
+}
+
+export const menuMovementTwo = {
+	initial: { opacity: 0, y: '0vh' },
+  enter: { 
+    opacity: 1,
+    y: '-22vh',
+    transition: { duration: 1.5, ease: [0.83, 0, 0.17, 1] }
+  },
+	exit: {
+    y: '-19vh',
+		transition: { duration: 0.75, ease: [0.83, 0, 0.17, 1] }
+	}
+}
+
+export const menuMovementThree = {
+	initial: { opacity: 0, y: '0vh' },
+  enter: { 
+    opacity: 1,
+    y: '-8vh',
+    transition: { duration: 1.5, ease: [0.83, 0, 0.17, 1] }
+  },
+	exit: {
+    y: '-5vh',
 		transition: { duration: 0.75, ease: [0.83, 0, 0.17, 1] }
 	}
 }
