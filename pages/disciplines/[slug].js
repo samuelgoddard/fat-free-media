@@ -15,12 +15,8 @@ import { useContext } from 'react'
 import { SmoothScrollContext, SmoothScrollProvider } from '../../contexts/SmoothScroll.context'
 var at = require('lodash/at');
 
-export default function Work({ data: { site, work, disciplines } }) {
+export default function Work({ data: { site, work, current, allDisciplines } }) {
   // const metaTags = about.seo.concat(site.favicon);
-
-  const gridMainPosts = at(work, [0,2,3,5,7]);
-  const gridSidebarPosts = at(work, [1,4,6]);
-  const morePosts = work.slice(7);
 
   return (
     <SmoothScrollProvider options={{ smooth: true, lerp: 0.13 }}>
@@ -39,12 +35,13 @@ export default function Work({ data: { site, work, disciplines } }) {
             <div className="pt-40 md:pt-48 xl:pt-56 relative">
               <Container>
                 <div className="relative overflow-hidden mb-4 md:mb-6 xl:mb-8">
-                  <motion.h1 variants={reveal} className="text-6xl md:text-7xl xl:text-8xl 3xl:text-9xl leading-none w-full max-w-4xl tracking-tighter mb-0 pb-0">Our Collabs</motion.h1>
+                  <motion.h1 variants={reveal} className="text-6xl md:text-7xl xl:text-8xl 3xl:text-9xl leading-tight w-full max-w-4xl tracking-tighter mb-0 pb-0">{current.title}</motion.h1>
                 </div>
+
                 <nav className="border-t border-b border-off-black py-2 mb-8 md:mb-12 xl:mb-20 relative">
                   <ul className="flex flex-wrap">
                   
-                    {disciplines.map((discipline, i) => {
+                    {allDisciplines.map((discipline, i) => {
                       return (
                         <li key={i} className="text-2xl md:text-3xl xl:text-4xl leading-tight tracking-tighter= relative pr-5 mr-1 md:mr-3 flex my-2 md:my-3 overflow-hidden">
                           <motion.span variants={reveal}>
@@ -57,7 +54,6 @@ export default function Work({ data: { site, work, disciplines } }) {
                         </li>
                       )
                     })}
-
                     <li className="text-2xl md:text-3xl xl:text-4xl leading-none tracking-tighter relative block my-2 md:my-3 ml-auto overflow-hidden">
                       <motion.span variants={reveal}>
                         <Link href={`/work`}>
@@ -76,69 +72,32 @@ export default function Work({ data: { site, work, disciplines } }) {
                   <div className="flex flex-wrap md:-mx-4 lg:-mx-8 2xl:-mx-12">
                     <div className="w-full md:w-7/12 lg:w-8/12 md:px-4 lg:px-8 2xl:px-12">
                       <div className="flex flex-wrap md:-mx-4 lg:-mx-8">
-                        {gridMainPosts.map((work, i) => {
+                        {work.map((work, i) => {
                           let widthClass = 'w-full';
-                          let image = work.teaserImage;
+                          let image = work.teaserImageLandscape;
                           let innerSpacingClass = '';
-                          
-                          if (i === 0) { 
-                            image = work.teaserImageLandscape;
-                          } else if (i === 1 ) {
-                            widthClass = 'w-full md:w-1/2';
-                            image = work.teaserImageSquare;
-                          } else if (i === 2 ) {
-                            widthClass = 'w-full md:w-1/2';
-                            innerSpacingClass = 'md:p-4 lg:p-8 xl:p-12 2xl:p-16';
-                            image = work.teaserImageSquare;
-                          } else if (i === 3 ) {
-                            widthClass = 'w-full md:w-full';
-                            image = work.teaserImageLandscape;
-                          } else if (i === 4 ) {
-                            widthClass = 'w-full md:w-2/3 md:mx-auto';
-                            image = work.teaserImageLandscape;
-                          }
+                          let exists = work.disciplinesUsed.some( work => work['slug'] === current.slug )
+
 
                           return (
                             <div key={i} className={`${widthClass} md:px-4 lg:px-8 `}>
-                              <div className={`mb-8 md:mb-16 ${innerSpacingClass}`}>
-                                <Teaser 
-                                  link={`/work/${work.slug}`}
-                                  image={image}
-                                  video={work.teaserVideo ? work.teaserVideo.video.mp4Url : null}
-                                  title={work.title}
-                                  meta={'Luxury Fashion'}
-                                />
-                              </div>
+                              { exists && (
+                                <div>
+                                  <div className={`mb-8 md:mb-16 ${innerSpacingClass}`}>
+                                    <Teaser 
+                                      link={`/work/${work.slug}`}
+                                      image={image}
+                                      video={work.teaserVideo ? work.teaserVideo.video.mp4Url : null}
+                                      title={work.title}
+                                      meta={'Luxury Fashion'}
+                                    />
+                                  </div>
+                                </div>
+                              )}
                             </div>
                           )
                         })}
                       </div>
-                    </div>
-
-                    {/* Sidebar */}
-                    <div className="w-full md:w-5/12 lg:w-4/12 md:px-4 lg:px-8 2xl:px-12">
-                      {gridSidebarPosts.map((work, i) => {
-                        let widthClass = 'w-full';
-                        let image = work.teaserImagePortrait
-
-                        if (i === 2) { 
-                          image = work.teaserImageSquare;
-                        }
-                        
-                        return (
-                          <div key={i} className={`${widthClass} md:px-4 lg:px-8`}>
-                            <div className="mb-8 md:mb-16">
-                              <Teaser 
-                                link={`/work/${work.slug}`}
-                                image={image}
-                                video={work.teaserVideo ? work.teaserVideo.video.mp4Url : null}
-                                title={work.title}
-                                meta={'Luxury Fashion'}
-                              />
-                            </div>
-                          </div>
-                        )
-                      })}
                     </div>
                   </div>
                 </div>
@@ -152,22 +111,31 @@ export default function Work({ data: { site, work, disciplines } }) {
   );
 }
 
-const WORK_QUERY = `
-  query WorkPage {
+const DISCIPLINE_QUERY = `
+  query DisciplinePage($id: [ItemId], $slug: String!) {
     site: _site {
       favicon: faviconMetaTags {
         ...metaTagsFragment
       }
     }
-    disciplines: allDisciplines {
-      id
-      slug
+    allDisciplines {
       title
+      slug
     }
-    work: allWorks(orderBy: position_ASC) {
+    current: discipline(filter: {slug: {eq: $slug}}) {
+      title
+      slug
+    }
+    work: allWorks(
+      orderBy: position_ASC,
+      filter: {disciplinesUsed: {anyIn: $id}}
+    ) {
       id
       slug
       title
+      disciplinesUsed {
+        slug
+      }
       teaserImageSquare: teaserImage {
         responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 900, h: 900 }) {
           ...responsiveImageFragment
@@ -201,9 +169,13 @@ const WORK_QUERY = `
   ${responsiveImageFragment}
 `
 
-export async function getStaticProps() {
+export async function getStaticProps({ params }) {
   const data = await request({
-    query: WORK_QUERY
+    query: DISCIPLINE_QUERY,
+    variables: {
+      slug: params.slug,
+      id: params.id,
+    },
   })
 
   return {
@@ -211,4 +183,14 @@ export async function getStaticProps() {
       data,
     },
   }
+}
+
+
+export async function getStaticPaths() {
+  const data = await request({ query: `{ allDisciplines { slug, id } }` });
+
+  return {
+    paths: data.allDisciplines.map((discipline) => `/disciplines/${discipline.slug}`),
+    fallback: false,
+  };
 }

@@ -40,7 +40,7 @@ export default function Header({theme}) {
               
               <div className="relative overflow-hidden mx-2 md:mx-4">
                 <motion.div variants={reveal}>
-                  <Link href="/"><a aria-label="Navigate to Start a Project" className="underline hidden md:inline-block tracking-tight md:text-lg mx-2 xl:mx-4">Start a project</a></Link>
+                  <Link href="/contact"><a aria-label="Navigate to Contact page" className="underline hidden md:inline-block tracking-tight md:text-lg">Let's talk</a></Link>
                 </motion.div>
               </div>
               

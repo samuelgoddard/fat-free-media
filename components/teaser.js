@@ -1,6 +1,8 @@
 import styles from './button.module.css'
 import { Image } from "react-datocms";
 import Link from 'next/link'
+import { motion } from "framer-motion"
+import { reveal, scaleDown } from "../helpers/transitionHelper"
 import cn from 'classnames'
 
 export default function Teaser({link, image, video, title, meta}) {
@@ -28,9 +30,13 @@ export default function Teaser({link, image, video, title, meta}) {
           )}
         </div>
         <div className="flex flex-wrap items-center">
-          <span className="text-2xl md:text-2xl xl:text-3xl leading-none tracking-tighter">{ title }</span>
+          <div className="relative overflow-hidden">
+            <motion.span variants={reveal} className="block text-2xl md:text-2xl xl:text-3xl leading-none tracking-tighter">{ title }</motion.span>
+          </div>
           { meta && (
-            <span className="block text-xs uppercase tracking-tighter leading-none ml-auto">{ meta }</span>
+            <div className="relative overflow-hidden ml-auto">
+              <motion.span variants={reveal} className="block text-xs uppercase tracking-tighter leading-none">{ meta }</motion.span>
+            </div>
           )}
         </div>
       </a>

@@ -10,7 +10,7 @@ import Footer from "../components/footer";
 
 import BigX from "../components/big-x";
 import { motion } from "framer-motion"
-import { fade } from "../helpers/transitionHelper"
+import { fade, reveal } from "../helpers/transitionHelper"
 import { useContext } from 'react'
 import { SmoothScrollContext, SmoothScrollProvider } from '../contexts/SmoothScroll.context'
 
@@ -33,7 +33,9 @@ export default function About({ data: { site, about, team } }) {
             <div className="bg-black text-white pt-40 md:pt-48 xl:pt-56 pb-8 md:pb-32 xl:pb-48 mb-8 md:mb-20 relative">
               <Container thin>
                 <div className="relative z-10">
-                  <span data-scroll data-scroll-speed="0.9" className="block text-md md:text-lg xl:text-xl uppercase tracking-tighter leading-none mb-3">A small but mighty team</span>
+                  <div className="relative overflow-hidden mb-3" data-scroll data-scroll-speed="0.9">
+                    <motion.span variants={reveal} className="block text-md md:text-lg xl:text-xl uppercase tracking-tighter leading-none">A small but mighty team</motion.span>
+                  </div>
 
                   <h1 className="text-4xl md:text-5xl xl:text-6xl leading-none w-full max-w-4xl tracking-tighter pr-12 xl:pr-0 mb-10 md:mb-0" data-scroll data-scroll-speed="1.1">Video carries more feeling and uses more senses than any other medium. It has the potential to pull at the hearts and change the minds of those who watch it more than any other format. That’s why we spent the last 2 decades working hard and honing our craft. </h1>
                 </div>
@@ -51,7 +53,9 @@ export default function About({ data: { site, about, team } }) {
               <div className="w-full mb-12 md:mb-16 xl:mb-24 relative z-10" data-scroll data-scroll-speed="1">
                 <div className="flex flex-wrap">
                   <div className="w-full md:w-full max-w-md">
-                    <span className="block text-xs uppercase tracking-tighter leading-none">Information —</span>
+                    <div className="overflow-hidden relative">
+                      <motion.span variants={reveal} className="block text-xs uppercase tracking-tighter leading-none">Information —</motion.span>
+                    </div>
                     <h2 className="text-5xl md:text-6xl xl:text-7xl leading-none tracking-tighter">Our Team</h2>
                   </div>
 
@@ -94,7 +98,9 @@ export default function About({ data: { site, about, team } }) {
                               <span className="block upright font-mono text-xs absolute top-0 right-0 -mr-5 z-0 uppercase tracking-wide leading-none">{ team.jobTitle }</span>
                             </div>
 
-                            <h3 className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter">{ team.name }</h3>
+                            <div className="relative overflow-hidden mb-3 md:mb-5">
+                              <motion.h3 variants={reveal} className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter mb-0 pb-0">{ team.name }</motion.h3>
+                            </div>
                               
                             <div dangerouslySetInnerHTML={{ __html: team.shortBio }} className="font-mono text-sm mb-5 md:mb-8"></div>
 

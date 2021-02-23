@@ -218,7 +218,7 @@ export default function Menu({ data: { site, home, about, work, contact } }) {
                             <motion.h3 variants={reveal} className="text-3xl md:text-3xl lg:text-4xl xl:text-5xl leading-none tracking-tighter mb-0">Contact</motion.h3>
                           </div>
                           <div className="relative overflow-hidden">
-                            <motion.p variants={reveal} className="font-mono text-sm mb-0 pb-0">{ contact.menutext }</motion.p>
+                            <motion.p variants={reveal} className="font-mono text-sm mb-0 pb-0">{ contact.menuText }</motion.p>
                           </div>
                         </motion.div>
                       </div>

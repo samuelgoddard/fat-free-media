@@ -144,7 +144,7 @@ export default function Index({ data: { home, site } }) {
                       <div className="flex flex-wrap -mx-4 md:mx-0" data-scroll data-scroll-speed="1.75">
                         <CircleInfinity color="bg-purple" />
                         <div className="flex-1 md:w-full px-2 md:px-0 relative z-10">
-                          <h3 className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter">Strategic<br/>Partner</h3>
+                          <h3 className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter">Strategy &amp;<br/>Consultancy</h3>
                           
                           <p className="font-mono text-sm mb-5 md:mb-8">We help brands plan, create and measure video. We help upskill internal talent to build and grow your video ecosystem like an extension of the team.</p>
 
