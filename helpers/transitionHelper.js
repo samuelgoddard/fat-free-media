@@ -38,3 +38,29 @@ export const xRoll = {
 		transition: { duration: 0.75, ease: [0.83, 0, 0.17, 1] }
 	}
 }
+
+export const scaleDown = {
+	initial: { opacity: 0, scale: 0 },
+  enter: { 
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 1, ease: [0.83, 0, 0.17, 1] }
+  },
+	exit: {
+    scale: 0,
+		transition: { duration: 0.75, ease: [0.83, 0, 0.17, 1] }
+	}
+}
+
+export const scaleDownSmall = {
+	initial: { opacity: 0, scale: 0.8 },
+  enter: { 
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 1, ease: [0.83, 0, 0.17, 1] }
+  },
+	exit: {
+    scale: 0.8,
+		transition: { duration: 0.75, ease: [0.83, 0, 0.17, 1] }
+	}
+}

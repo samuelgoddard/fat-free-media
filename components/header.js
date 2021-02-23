@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { reveal } from "../helpers/transitionHelper"
+import { reveal, scaleDown } from "../helpers/transitionHelper"
 import Container from '../components/container'
 import Link from 'next/link'
 
@@ -45,7 +45,7 @@ export default function Header({theme}) {
               </div>
               
               <div className="relative overflow-hidden mx-2 md:mx-4 mr-0 xl:mr-0">
-                <motion.div variants={reveal}>
+                <motion.div variants={scaleDown}>
                   <Link href="/menu"><a aria-label="Navigate to Menu" className="inline-block w-10 md:w-16 relative">
                     <div className="burger absolute top-0 left-0 z-10 mt-3 md:mt-5 ml-3 md:ml-4">
                       <span></span>
