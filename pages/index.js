@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import Header from '../components/header'
 import { request } from "../lib/datocms";
 import Layout from "../components/layout";
 import { renderMetaTags, useQuerySubscription } from "react-datocms";
@@ -9,7 +10,7 @@ import Footer from "../components/footer";
 import BigX from "../components/big-x";
 import CircleInfinity from "../components/circle-infinity";
 import { motion } from "framer-motion"
-import { fade } from "../helpers/transitionHelper"
+import { reveal, fade } from "../helpers/transitionHelper"
 import { SmoothScrollProvider } from '../contexts/SmoothScroll.context'
 // import ReactPlayer from 'react-player'
 
@@ -20,25 +21,43 @@ export default function Index({ data: { home, site } }) {
     <SmoothScrollProvider options={{ smooth: true, lerp: 0.13 }}>
       <Layout>
       <Head>{renderMetaTags(metaTags)}</Head>
+
         <motion.div
           initial="initial"
           animate="enter"
           exit="exit"
         >
+          <Header theme="off-black" />
+          
           <motion.div variants={fade} className="mb-16 md:mb-20 pt-32 md:pt-48 xl:pt-56 overflow-hidden relative">
             <BigX color="text-white" />
             <Container thin>
-              <div className="w-full mb-12 md:mb-10 xl:mb-0 relative z-10">
+
+              <motion.div
+                initial="initial"
+                animate="enter"
+                exit="exit"
+                variants={{
+                  enter: { transition: { staggerChildren: 0.1 } }
+                }}
+                className="w-full mb-12 md:mb-10 xl:mb-0 relative z-10"
+              >
                 <div className="mb-5">
-                  <div className="flex mb-2" data-scroll data-scroll-speed="1">
-                    <div className="w-5 h-5 bg-off-black rounded-full"></div>
-                    <div className="w-5 h-5 -ml-2 bg-transparent border border-off-black rounded-full"></div>
+                  <div className="relative overflow-hidden mb-2" data-scroll data-scroll-speed="1">
+                    <motion.div variants={reveal} className="flex">
+                      <div className="w-5 h-5 bg-off-black rounded-full"></div>
+                      <div className="w-5 h-5 -ml-2 bg-transparent border border-off-black rounded-full"></div>
+                    </motion.div>
                   </div>
-                  <span data-scroll data-scroll-speed="1" className="block font-mono text-lg md:text-xl xl:text-2xl leading-none mb-1">2006—{ new Date().getFullYear() } </span>
-                  <span data-scroll data-scroll-speed="1" className="block text-xs uppercase tracking-tighter leading-none">{ home.heroMetaText }</span>
+                  <div className="relative overflow-hidden" data-scroll data-scroll-speed="1">
+                    <motion.span variants={reveal} className="block font-mono text-lg md:text-xl xl:text-2xl leading-none mb-1">2006—{ new Date().getFullYear() } </motion.span>
+                  </div>
+                  <div className="relative overflow-hidden" data-scroll data-scroll-speed="1">
+                    <motion.span variants={reveal} className="block text-xs uppercase tracking-tighter leading-none">{ home.heroMetaText }</motion.span>
+                  </div>
                 </div>
                 <h1 className="text-5xl md:text-6xl xl:text-7xl leading-none w-full max-w-4xl tracking-tighter pr-12 xl:pr-0" data-scroll data-scroll-speed="1.35">{ home.heroHeading }</h1>
-              </div>
+              </motion.div>
             </Container>
 
             <Container bleed>

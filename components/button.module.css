@@ -3,7 +3,7 @@
 }
 
 .btn:hover, .btn:focus {
-  @apply bg-green-light border-green-light;
+  @apply bg-green-dark border-green-dark;
 }
 
 .btn--secondary {
@@ -11,7 +11,7 @@
 }
 
 .btn--secondary:hover, .btn--secondary:focus {
-  @apply bg-transparent border-green-light text-green-light;
+  @apply bg-transparent border-green-dark text-green-dark;
 }
 
 .btn + .btn {

@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { renderMetaTags, Image } from "react-datocms";
 import Layout from "../components/layout";
+import Header from "../components/header";
 import { request } from "../lib/datocms";
 import { metaTagsFragment, responsiveImageFragment } from "../lib/fragments";
 import Container from "../components/container";
@@ -27,6 +28,7 @@ export default function About({ data: { site, about, team } }) {
           exit="exit"
           className="mb-16 md:mb-20"
         >
+          <Header theme="white" />
           <motion.div variants={fade} className="mb-16 md:mb-20 overflow-hidden relative">
             <div className="bg-black text-white pt-40 md:pt-48 xl:pt-56 pb-8 md:pb-32 xl:pb-48 mb-8 md:mb-20 relative">
               <Container thin>

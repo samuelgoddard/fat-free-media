@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { request } from "../lib/datocms";
+import Header from "../components/header";
 import Layout from "../components/layout";
 import { renderMetaTags, useQuerySubscription } from "react-datocms";
 import { metaTagsFragment, responsiveImageFragment } from "../lib/fragments";
@@ -24,6 +25,7 @@ export default function Index({ data: { site, contact } }) {
           exit="exit"
         >
           <motion.div variants={fade} className="mb-16 md:mb-20 pt-32 md:pt-48 xl:pt-56 overflow-hidden relative">
+            <Header theme="off-black" />
             <BigX color="text-white" />
             <Container thin>
               <div className="w-full mb-12 md:mb-24 xl:mb-32 relative z-10">

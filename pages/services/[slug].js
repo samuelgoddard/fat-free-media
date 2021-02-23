@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { renderMetaTags, Image } from "react-datocms";
+import Header from "../../components/header";
 import Layout from "../../components/layout";
 import { request } from "../../lib/datocms";
 import { metaTagsFragment, responsiveImageFragment } from "../../lib/fragments";
@@ -27,6 +28,7 @@ export default function ServiceSingle({ data: { site, service } }) {
           className=""
         >
           <motion.div variants={fade} className=" overflow-hidden relative">
+            <Header theme="off-black" />
             <BigX color="text-white" />
             <div className="relative">
               <Container>

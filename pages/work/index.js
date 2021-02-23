@@ -1,10 +1,12 @@
 import Head from "next/head";
 import Link from "next/link";
 import { renderMetaTags, Image } from "react-datocms";
+import Header from "../../components/header";
 import Layout from "../../components/layout";
 import { request } from "../../lib/datocms";
 import { metaTagsFragment, responsiveImageFragment } from "../../lib/fragments";
 import Container from "../../components/container";
+import Teaser from "../../components/teaser";
 import Footer from "../../components/footer";
 import BigX from "../../components/big-x";
 import { motion } from "framer-motion"
@@ -32,6 +34,7 @@ export default function Work({ data: { site, work } }) {
           className=""
         >
           <motion.div variants={fade} className=" overflow-hidden relative">
+            <Header theme="off-black" />
             <BigX color="text-white" />
             <div className="pt-40 md:pt-48 xl:pt-56 relative">
               <Container>
@@ -83,34 +86,13 @@ export default function Work({ data: { site, work } }) {
                           return (
                             <div key={i} className={`${widthClass} md:px-4 lg:px-8 `}>
                               <div className={`mb-8 md:mb-16 ${innerSpacingClass}`}>
-                                <Link href={`/work/${work.slug}`}>
-                                  <a aria-label="Navigate to Work Item" className="w-full block group">
-                                    <div className="relative overflow-hidden mb-2">
-                                      { image && (
-                                        <Image
-                                          data={{
-                                            ...image.responsiveImage,
-                                            alt: image.alt ? image.alt : image.title,
-                                          }}
-                                          className="w-full relative z-0 transform group-hover:scale-110 transition ease-in-out duration-500"
-                                        />
-                                      )}
-                                      { work.teaserVideo && (
-                                        <div className="transform group-hover:scale-110 transition ease-in-out duration-500 absolute top-0 left-0 right-0 bottom-0">
-                                          <video loop={true} playsInline autoPlay="autoplay" muted className="w-full h-full object-cover z-10 w-full">
-                                            <source src={ work.teaserVideo.video.mp4Url } type="video/mp4" />
-                                            
-                                            Sorry. Your browser does not support the video tag.
-                                          </video>
-                                        </div>
-                                      )}
-                                    </div>
-                                    <div className="flex flex-wrap items-center">
-                                      <span className="text-2xl md:text-2xl xl:text-3xl leading-none tracking-tighter">{ work.title }</span>
-                                      <span className="block text-xs uppercase tracking-tighter leading-none ml-auto">Luxury Fashion</span>
-                                    </div>
-                                  </a>
-                                </Link>
+                                <Teaser 
+                                  link={`/work/${work.slug}`}
+                                  image={image}
+                                  video={work.teaserVideo ? work.teaserVideo.video.mp4Url : null}
+                                  title={work.title}
+                                  meta={'Luxury Fashion'}
+                                />
                               </div>
                             </div>
                           )
@@ -131,34 +113,13 @@ export default function Work({ data: { site, work } }) {
                         return (
                           <div key={i} className={`${widthClass} md:px-4 lg:px-8`}>
                             <div className="mb-8 md:mb-16">
-                              <Link href={`/work/${work.slug}`}>
-                                <a aria-label="Navigate to Work Item" className="w-full block group">
-                                  <div className="relative overflow-hidden mb-2">
-                                    { image && (
-                                      <Image
-                                        data={{
-                                          ...image.responsiveImage,
-                                          alt: image.alt ? image.alt : image.title,
-                                        }}
-                                        className="w-full relative z-0 transform group-hover:scale-110 transition ease-in-out duration-500"
-                                      />
-                                    )}
-                                    { work.teaserVideo && (
-                                      <div className="transform group-hover:scale-110 transition ease-in-out duration-500 absolute top-0 left-0 right-0 bottom-0">
-                                        <video loop={true} playsInline autoPlay="autoplay" muted className="w-full h-full object-cover z-10 w-full">
-                                          <source src={ work.teaserVideo.video.mp4Url } type="video/mp4" />
-                                          
-                                          Sorry. Your browser does not support the video tag.
-                                        </video>
-                                      </div>
-                                    )}
-                                  </div>
-                                  <div className="flex flex-wrap items-center">
-                                    <span className="text-2xl md:text-2xl xl:text-3xl leading-none tracking-tighter">{ work.title }</span>
-                                    <span className="block text-xs uppercase tracking-tighter leading-none ml-auto">Luxury Fashion</span>
-                                  </div>
-                                </a>
-                              </Link>
+                              <Teaser 
+                                link={`/work/${work.slug}`}
+                                image={image}
+                                video={work.teaserVideo ? work.teaserVideo.video.mp4Url : null}
+                                title={work.title}
+                                meta={'Luxury Fashion'}
+                              />
                             </div>
                           </div>
                         )

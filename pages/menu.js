@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { renderMetaTags } from "react-datocms";
+import Header from '../components/header'
 import Link from "next/link";
 import Layout from "../components/layout";
 import { request } from "../lib/datocms";
@@ -24,6 +25,8 @@ export default function Menu({ data: { site } }) {
           exit="exit"
         >
           <motion.div variants={fade} className=" bg-orange text-off-white min-h-screen flex flex-wrap items-center md:items-end overflow-hidden relative">
+            <Header theme="white" />
+
             <BigX color="text-orange-dark" />
 
             <Container>
