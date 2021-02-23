@@ -43,7 +43,7 @@ export default function Work({ data: { site, work, current, allDisciplines } }) 
                   
                     {allDisciplines.map((discipline, i) => {
                       return (
-                        <li key={i} className="text-2xl md:text-3xl xl:text-4xl leading-tight tracking-tighter= relative pr-5 mr-1 md:mr-3 flex my-2 md:my-3 overflow-hidden">
+                        <li key={i} className="text-2xl md:text-3xl xl:text-4xl leading-tight tracking-tighter relative pr-5 mr-1 md:mr-3 flex my-2 md:my-3 overflow-hidden">
                           <motion.span variants={reveal}>
                             <Link href={`/disciplines/${discipline.slug}`}>
                               <a aria-label={`Navigate to ${discipline.title} Discipline page`} className="flex">
