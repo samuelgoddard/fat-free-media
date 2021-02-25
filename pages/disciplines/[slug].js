@@ -73,17 +73,14 @@ export default function Work({ data: { site, work, current, allDisciplines } }) 
                     <div className="w-full md:w-7/12 lg:w-8/12 md:px-4 lg:px-8 2xl:px-12">
                       <div className="flex flex-wrap md:-mx-4 lg:-mx-8">
                         {work.map((work, i) => {
-                          let widthClass = 'w-full';
                           let image = work.teaserImageLandscape;
-                          let innerSpacingClass = '';
                           let exists = work.disciplinesUsed.some( work => work['slug'] === current.slug )
 
-
                           return (
-                            <div key={i} className={`${widthClass} md:px-4 lg:px-8 `}>
+                            <div key={i} className="w-full md:px-4 lg:px-8">
                               { exists && (
                                 <div>
-                                  <div className={`mb-8 md:mb-16 ${innerSpacingClass}`}>
+                                  <div className="mb-8 md:mb-16">
                                     <Teaser 
                                       link={`/work/${work.slug}`}
                                       image={image}
@@ -174,7 +171,8 @@ export async function getStaticProps({ params }) {
     query: DISCIPLINE_QUERY,
     variables: {
       slug: params.slug,
-      id: params.id,
+      // I want to get the ID here....
+      id: data.id,
     },
   })
 
@@ -187,7 +185,7 @@ export async function getStaticProps({ params }) {
 
 
 export async function getStaticPaths() {
-  const data = await request({ query: `{ allDisciplines { slug, id } }` });
+  const data = await request({ query: `{ allDisciplines { slug } }` });
 
   return {
     paths: data.allDisciplines.map((discipline) => `/disciplines/${discipline.slug}`),

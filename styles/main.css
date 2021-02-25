@@ -230,3 +230,19 @@ html.has-scroll-dragging {
     @apply text-off-white;
   }
 }
+
+.contact-form {
+  ::-webkit-input-placeholder {
+    @apply text-off-black text-opacity-50;
+  }
+  ::-moz-placeholder {
+    @apply text-off-black text-opacity-50;
+  }
+  :-ms-input-placeholder {
+    @apply text-off-black text-opacity-50;
+  }
+  :-moz-placeholder {
+    @apply text-off-black text-opacity-50;
+  }
+}
+

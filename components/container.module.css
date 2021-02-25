@@ -1,5 +1,5 @@
 .container {
-  @apply px-6 max-w-screen-3xl mx-auto;
+  @apply px-6 max-w-screen-3xl mx-auto w-full;
 
   @screen md {
     @apply px-8;
@@ -7,7 +7,7 @@
 }
 
 .container--thin {
-  @apply px-6 max-w-screen-xl mx-auto;
+  @apply px-6 max-w-screen-xl mx-auto w-full;
 
   @screen md {
     @apply px-8;
@@ -16,7 +16,7 @@
 
 @screen 3xl {
   .container--thin {
-    @apply px-6 max-w-screen-2xl mx-auto;
+    @apply px-6 max-w-screen-2xl mx-auto w-full;
   
     @screen md {
       @apply px-8;
@@ -25,7 +25,7 @@
 }
 
 .container--bleed {
-  @apply px-0 max-w-screen-3xl mx-auto;
+  @apply px-0 max-w-screen-3xl mx-auto w-full;
   
   @screen md {
     @apply px-8;
