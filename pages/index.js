@@ -112,7 +112,9 @@ export default function Index({ data: { home, site } }) {
                   <div className="w-full md:w-1/3 md:px-8">
                     <div className="h-full py-6 md:py-10 border-b md:border-b-0 md:border-l border-dotted border-off-black border-opacity-50 md:px-8">
                       <div className="flex flex-wrap -mx-4 md:mx-0" data-scroll data-scroll-speed="1.25">
-                        <CircleInfinity color="bg-orange" />
+                        <div className="text-orange w-full">
+                          <CircleInfinity />
+                        </div>
                         <div className="flex-1 md:w-full px-2 md:px-0 relative z-10">
                           <h3 className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter">Video<br/>Identity</h3>
                           
@@ -127,7 +129,9 @@ export default function Index({ data: { home, site } }) {
                   <div className="h-full w-full md:w-1/3 md:px-8">
                     <div className="py-6 md:pb-10 md:pt-64 border-b md:border-b-0 md:border-l border-dotted border-off-black border-opacity-50 md:px-8">
                       <div className="flex flex-wrap -mx-4 md:mx-0" data-scroll data-scroll-speed="2.25">
-                        <CircleInfinity color="bg-green" />
+                        <div className="text-green w-full">
+                          <CircleInfinity />
+                        </div>
                         <div className="flex-1 md:w-full px-2 md:px-0 relative z-10">
                           <h3 className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter">Content &amp;<br/>Creative</h3>
                           
@@ -142,7 +146,9 @@ export default function Index({ data: { home, site } }) {
                   <div className="w-full md:w-1/3 md:px-8">
                     <div className="h-full py-6 md:pb-10 md:pt-32 border-b md:border-b-0 md:border-l md:border-r border-dotted border-off-black border-opacity-50 md:px-8">
                       <div className="flex flex-wrap -mx-4 md:mx-0" data-scroll data-scroll-speed="1.75">
-                        <CircleInfinity color="bg-purple" />
+                        <div className="text-purple w-full">
+                          <CircleInfinity />
+                        </div>
                         <div className="flex-1 md:w-full px-2 md:px-0 relative z-10">
                           <h3 className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter">Strategy &amp;<br/>Consultancy</h3>
                           

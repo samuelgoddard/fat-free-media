@@ -17,25 +17,35 @@ export default function Footer({ hideMarquee }) {
       )}
 
       <div className="flex flex-wrap">
-        <div className="w-full md:w-1/2 py-12 md:py-20 xl:py-32 bg-green text-white relative overflow-hidden">
+        <div className="w-full md:w-1/2 py-12 md:py-20 xl:pt-32 bg-green text-white relative overflow-hidden">
           <BigX color="text-green-dark" left bottom />
-          <div className="max-w-2xl px-6 md:mx-auto flex flex-wrap relative z-10">
-            <nav className="w-full md:w-1/2 mb-6 md:mb-10 xl:mb-16">
-              <span className="block text-xs font-mono uppercase tracking-tight leading-none mb-5">Our Work</span>
+          <div className="max-w-xl px-6 md:mx-auto flex flex-wrap relative z-10">
+            <nav className="w-full mb-6 md:mb-10 xl:mb-16">
+              <span className="block text-xs font-mono uppercase tracking-tight leading-none mb-5">What Now?</span>
               <ul>
-                <li className="inline-block md:block mr-4 md:mr-0"><Link href="/work"><a aria-label="Navigate to Portfolio" className="underline tracking-tight xl:text-lg mb-1">Portfolio</a></Link></li>
-                <li className="inline-block md:block mr-4 md:mr-0"><Link href="/services/video-identity"><a aria-label="Navigate to Video Identity" className="underline tracking-tight xl:text-lg mb-1">Video identity</a></Link></li>
+                <li className="block"><Link href="#"><a aria-label="Navigate to Portfolio" className="tracking-tight text-off-white text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl mb-1 w-full border-b border-off-white border-dotted border-opacity-25 py-3 flex">
+                  <span className="block text-base md:text-lg xl:text-xl mt-1 mr-2 md:mr-4">01</span>
+                  <span>Watch Our Showreel</span>
+                </a></Link></li>
+
+                <li className="block"><Link href="/work"><a aria-label="Navigate to Portfolio" className="tracking-tight text-off-white text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl mb-1 w-full border-b border-off-white border-dotted border-opacity-25 py-3 flex">
+                  <span className="block text-base md:text-lg xl:text-xl mt-1 mr-2 md:mr-4">02</span>
+                  <span>See Our Portfolio</span>
+                </a></Link></li>
+
+                <li className="block"><Link href="/work"><a aria-label="Navigate to Portfolio" className="tracking-tight text-off-white text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl mb-1 w-full py-3 flex">
+                  <span className="block text-base md:text-lg xl:text-xl mt-1 mr-2 md:mr-4">03</span>
+                  <span>Get In Touch</span>
+                </a></Link></li>
+                {/* <li className="inline-block md:block mr-4 md:mr-0"><Link href="/services/video-identity"><a aria-label="Navigate to Video Identity" className="underline tracking-tight xl:text-lg mb-1">Video identity</a></Link></li>
                 <li className="inline-block md:block mr-4 md:mr-0"><Link href="/services/content-and-creative"><a aria-label="Navigate to Content &amp; Creative" className="underline tracking-tight xl:text-lg mb-1">Content &amp; Creative</a></Link></li>
-                <li className="inline-block md:block mr-4 md:mr-0"><Link href="/services/strategy-and-consultancy"><a aria-label="Navigate to Strategy &amp; Consultancy" className="underline tracking-tight xl:text-lg mb-1">Strategy &amp; Consultancy</a></Link></li>
+                <li className="inline-block md:block mr-4 md:mr-0"><Link href="/services/strategy-and-consultancy"><a aria-label="Navigate to Strategy &amp; Consultancy" className="underline tracking-tight xl:text-lg mb-1">Strategy &amp; Consultancy</a></Link></li> */}
               </ul>
             </nav>
-            <nav className="w-full md:w-1/2 mb-6 md:mb-10 xl:mb-16">
+            {/* <nav className="w-full md:w-1/2 mb-6 md:mb-10 xl:mb-16">
               <span className="block text-xs font-mono uppercase tracking-tight leading-none mb-5">Company</span>
               <ul>
                 <li className="inline-block md:block mr-4 md:mr-0"><Link href="/about"><a aria-label="Navigate to About Us" className="underline tracking-tight xl:text-lg mb-1">About Us</a></Link></li>
-                {/* <li className="inline-block md:block mr-4 md:mr-0"><Link href="/"><a aria-label="Navigate to Journal" className="underline tracking-tight xl:text-lg mb-1">Journal</a></Link></li> */}
-                {/* <li className="inline-block md:block mr-4 md:mr-0"><Link href="/"><a aria-label="Navigate to Collaboration" className="underline tracking-tight xl:text-lg mb-1">Collaboration</a></Link></li> */}
-                {/* <li className="inline-block md:block mr-4 md:mr-0"><Link href="/"><a aria-label="Navigate to Start A Project" className="underline tracking-tight xl:text-lg mb-1">Start A Project</a></Link></li> */}
                 <li className="inline-block md:block mr-4 md:mr-0"><Link href="/contact"><a aria-label="Navigate to Contact" className="underline tracking-tight xl:text-lg mb-1">Contact</a></Link></li>
               </ul>
             </nav>
@@ -47,7 +57,7 @@ export default function Footer({ hideMarquee }) {
                 <li><a aria-label="Navigate to Instagram" href="/" className="underline tracking-tight xl:text-lg mb-1">Instagram</a></li>
                 <li><a aria-label="Navigate to Twitter" href="/" className="underline tracking-tight xl:text-lg mb-1">Twitter</a></li>
               </ul>
-            </nav>
+            </nav> */}
           </div>
         </div>
 
@@ -62,6 +72,34 @@ export default function Footer({ hideMarquee }) {
             </form>
           </div>
         </div>
+      </div>
+
+      <div className="bg-off-white text-off-black py-6 md:py-8">
+        <Container>
+          <div className="flex flex-wrap items-center lg:-mx-4">
+            <nav className="w-full lg:w-7/12 lg:px-4 mb-5 lg:mb-0">
+              <span className="block text-xs font-mono uppercase tracking-tight leading-none mb-3">Useful Links</span>
+              <ul>
+                <li className="inline-block mr-3"><Link href="/about"><a aria-label="Navigate to About Us" className="tracking-tight text-xl md:text-2xl 3xl:text-3xl mb-1">About Us</a></Link></li>
+                <li className="inline-block mr-3 text-xl md:text-2xl 3xl:text-3xl">&bull;</li>
+                <li className="inline-block mr-3"><Link href="/services/video-identity"><a aria-label="Navigate to Video Identity" className="tracking-tight text-xl md:text-2xl 3xl:text-3xl mb-1">Video identity</a></Link></li>
+                <li className="inline-block mr-3 text-xl md:text-2xl 3xl:text-3xl">&bull;</li>
+                <li className="inline-block mr-3"><Link href="/services/content-and-creative"><a aria-label="Navigate to Content &amp; Creative" className="tracking-tight text-xl md:text-2xl 3xl:text-3xl mb-1">Content &amp; Creative</a></Link></li>
+                <li className="inline-block mr-3 text-xl md:text-2xl 3xl:text-3xl">&bull;</li>
+                <li className="inline-block mr-3"><Link href="/services/strategy-and-consultancy"><a aria-label="Navigate to Strategy &amp; Consultancy" className="tracking-tight text-xl md:text-2xl 3xl:text-3xl mb-1">Strategy &amp; Consultancy</a></Link></li>
+              </ul>
+            </nav>
+
+            <nav className="w-full lg:w-5/12 lg:px-4">
+              <span className="block text-xs font-mono uppercase tracking-tight leading-none lg:text-right mb-3">Lets talk</span>
+              <ul className="lg:text-right">
+                <li className="inline-block mr-3 lg:mr-0 lg:ml-3"><a aria-label="Call us" className="tracking-tight text-xl md:text-2xl 3xl:text-3xl mb-1" href="tel:0115 857 7502">0115 857 7502</a></li>
+                <li className="inline-block mr-3 lg:mr-0 lg:ml-3 text-xl md:text-2xl 3xl:text-3xl">&bull;</li>
+                <li className="inline-block mr-3 lg:mr-0 lg:ml-3"><a aria-label="Email us" className="tracking-tight text-xl md:text-2xl 3xl:text-3xl mb-1" href="mailto:hello@hellofatfree.com">hello@hellofatfree.com</a></li>
+              </ul>
+            </nav>
+          </div>
+        </Container>
       </div>
 
       <div className="bg-off-black text-white pt-4 pb-5">
