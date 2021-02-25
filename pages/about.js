@@ -7,14 +7,14 @@ import { request } from "../lib/datocms";
 import { metaTagsFragment, responsiveImageFragment } from "../lib/fragments";
 import Container from "../components/container";
 import Footer from "../components/footer";
-
+import CircleInfinity from "../components/circle-infinity";
 import BigX from "../components/big-x";
 import { motion } from "framer-motion"
 import { fade, reveal } from "../helpers/transitionHelper"
 import { useContext } from 'react'
 import { SmoothScrollContext, SmoothScrollProvider } from '../contexts/SmoothScroll.context'
 
-export default function About({ data: { site, about, team } }) {
+export default function About({ data: { site, about, team, services } }) {
   const metaTags = about.seo.concat(site.favicon);
 
   return (
@@ -114,6 +114,55 @@ export default function About({ data: { site, about, team } }) {
               </div>
             </Container>
 
+            <div className="mb-16 md:mb-24 xl:mb-32 2xl:mb-40">
+              <Container>
+                <div className="relative about-text">
+                  <div className="w-full h-full absolute top-0 left-0 right-0 bottom-0 flex flex-wrap items-center justify-center">
+                    <span data-scroll data-scroll-speed="2.75" className="block w-32 md:w-48 xl:w-64 h-32 md:h-48 xl:h-64 bg-yellow rounded-full"></span>
+                  </div>
+                  <span className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl 3xl:text-8xl leading-none w-full tracking-tighter pr-12 md:pr-16 z-10 block mb-8 md:mb-5 relative" dangerouslySetInnerHTML={{ __html: about.aboutText }}></span>
+                </div>
+              </Container>
+            </div>
+
+            <div className="mb-16 md:mb-24 xl:mb-32 2xl:mb-40">
+              <Container thin>
+                <span className="block text-xs uppercase tracking-tighter leading-none pb-6 md:pb-10 border-b border-dotted border-off-black border-opacity-50">What We Do —</span>
+
+                {services.map((service, i) => {
+                  let paddingClass = 'pl-0';
+
+                  if (i === 0) {
+                  } else if (i === 1) {
+                    paddingClass = 'pl-0 md:pl-24 xl:pl-32';
+                  } else if (i === 2) {
+                    paddingClass = 'pl-0 md:pl-12 xl:pl-16';
+                  }
+                  
+                  let colour = { color: service.shapeColour.hex };
+                  return(
+                    <div key={i} className={`py-6 md:py-10 border-b border-dotted border-off-black border-opacity-50 ${paddingClass}`}>
+                      <div className="flex flex-wrap -mx-2 md:mx-0">
+                        <div className="w-auto md:pr-12" style={ colour }>
+                          <CircleInfinity />
+                        </div>
+                        <div className="flex-1 flex flex-wrap px-2 md:px-0">
+                          <div className="w-full md:w-48 xl:w-56 2xl:w-64">
+                            <h3 className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter md:pr-8 xl:pr-16">{ service.title }</h3>
+                          </div>
+                          <div className="flex-1 md:w-full relative z-10 pr-5">
+                            <div className="font-mono text-sm mb-3 md:max-w-xl" dangerouslySetInnerHTML={{ __html: service.heroText }}></div>
+
+                            <Link href={`/services/${service.slug}`}><a aria-label="Navigate to Video identity" className="underline tracking-tight text-lg inline-block items-center">Learn more</a></Link>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </Container>
+            </div>
+
             <div className="bg-yellow yellow-highlight pt-8 pb-16 md:pt-12 md:pb-20 lg:pt-16 lg:pb-24 xl:pt-20 xl:pb-32 overflow-hidden relative">
               <BigX color="text-yellow-dark" />
               <Container>
@@ -166,12 +215,21 @@ const ABOUT_QUERY = `
         }
       }
     }
+    services: allServices {
+      title
+      shapeColour {
+        hex
+      }
+      heroText
+      slug
+    }
     about {
       seo: _seoMetaTags {
         ...metaTagsFragment
       }
       title
       ourTeamText
+      aboutText
       calloutImage {
         responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 800, h: 1050 }) {
           ...responsiveImageFragment

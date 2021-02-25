@@ -48,7 +48,7 @@ export default function Menu({ data: { site, home, about, work, contact } }) {
                     animation={menuMovementOne}
                     image={work.menuImage}
                     video={work.menuVideo ? work.menuVideo : null}
-                    heading="work"
+                    heading="Work"
                     text={work.menuText}
                   />
                 </div>
@@ -91,7 +91,7 @@ export default function Menu({ data: { site, home, about, work, contact } }) {
                     animation={fade}
                     image={work.menuImage}
                     video={work.menuVideo ? work.menuVideo : null}
-                    heading="work"
+                    heading="Work"
                     text={work.menuText}
                   />
                 </div>

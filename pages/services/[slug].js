@@ -15,6 +15,7 @@ import {  SmoothScrollProvider } from '../../contexts/SmoothScroll.context'
 
 export default function ServiceSingle({ data: { site, service } }) {
   const metaTags = service._seoMetaTags.concat(site.favicon);
+  let shapeColour = { color: service.shapeColour.hex };
 
   return (
     <SmoothScrollProvider options={{ smooth: true, lerp: 0.13 }}>
@@ -34,8 +35,8 @@ export default function ServiceSingle({ data: { site, service } }) {
               <Container>
                 <div className="pt-40 md:pt-48 xl:pt-56 2xl:pt-64 relative pb-8 md:pb-16 xl:pb-20" data-scroll data-scroll-speed="1.4">
                   <div className="flex flex-wrap items-center justify-center md:-mx-2 lg:-mx-8">
-                    <div className="w-auto md:w-2/12 lg:w-3/12 md:px-2 lg:px-8 hidden md:block">
-                      <CircleInfinity color="bg-orange" small />
+                    <div className="w-auto md:w-2/12 lg:w-3/12 md:px-2 lg:px-8 hidden md:block" style={shapeColour}>
+                      <CircleInfinity small />
                       <div className="flex-1 h-px -mt-3 bg-off-black"></div>
                     </div>
                     <div className="flex-1 text-center md:px-2 lg:px-8">
@@ -204,6 +205,9 @@ const SERVICE_SINGLE_QUERY = `
         ...metaTagsFragment
       }
       title
+      shapeColour {
+        hex
+      }
       heroHeading
       heroText
       slug

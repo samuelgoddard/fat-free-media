@@ -27,7 +27,7 @@ export default function Index({ data: { site, contact } }) {
           exit="exit"
         >
           <motion.div variants={fade} className="mb-16 md:mb-20 pt-32 md:pt-48 xl:pt-56 overflow-hidden relative">
-            <Header theme="off-black" />
+            <Header theme="off-black" contact />
             <BigX color="text-white" />
             <Container thin>
               <div className="w-full mb-12 md:mb-24 xl:mb-32 relative z-10 overflow-hidden" data-scroll data-scroll-speed="1.35">

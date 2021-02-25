@@ -12,7 +12,7 @@ export default function CircleInfinity({color, small}) {
   }
   return (
     <div className="md:flex w-auto md:w-full px-4 md:px-0 relative z-0 md:mb-5">
-      <motion.div variants={scaleDown} className={`${size} ${color} rounded-full`}></motion.div>
+      <motion.div variants={scaleDown} className={`${size} bg-current rounded-full`}></motion.div>
       <motion.div variants={scaleDown} className={`${size} -mt-5 md:mt-0 ${offset} bg-transparent border border-off-black rounded-full`}></motion.div>
     </div>
   )

@@ -3,7 +3,7 @@ import { reveal, scaleDown } from "../helpers/transitionHelper"
 import Container from '../components/container'
 import Link from 'next/link'
 
-export default function Header({theme}) {
+export default function Header({theme, contact}) {
   return (
     <header className={`absolute top-0 left-0 right-0 z-20 text-${theme} transition-colors ease-in-out duration-300`}>
       <Container>
@@ -38,11 +38,13 @@ export default function Header({theme}) {
                 <motion.a variants={reveal} className="underline hidden md:inline-block tracking-tight md:text-lg" href="mailto:hello@hellofatfree.com">hello@hellofatfree.com</motion.a>
               </div>
               
-              <div className="relative overflow-hidden mx-2 md:mx-4">
-                <motion.div variants={reveal}>
-                  <Link href="/contact"><a aria-label="Navigate to Contact page" className="underline hidden md:inline-block tracking-tight md:text-lg">Let's talk</a></Link>
-                </motion.div>
-              </div>
+              {!contact && (
+                <div className="relative overflow-hidden mx-2 md:mx-4">
+                  <motion.div variants={reveal}>
+                    <Link href="/contact"><a aria-label="Navigate to Contact page" className="underline hidden md:inline-block tracking-tight md:text-lg">Let's talk</a></Link>
+                  </motion.div>
+                </div>
+              )}
               
               <div className="relative overflow-hidden mx-2 md:mx-4 mr-0 xl:mr-0">
                 <motion.div variants={scaleDown}>

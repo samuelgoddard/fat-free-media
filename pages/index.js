@@ -118,7 +118,7 @@ export default function Index({ data: { home, site } }) {
                           
                           <p className="font-mono text-sm mb-5 md:mb-8">Video identity is the missing chapter of most brand guideline documents. We help brands articulate how their brand looks, moves, sounds and feels in video.</p>
 
-                          <Link href="/"><a aria-label="Navigate to Video identity" className="underline tracking-tight text-lg inline-block items-center">Learn more</a></Link>
+                          <Link href="/services/video-identity"><a aria-label="Navigate to Video identity" className="underline tracking-tight text-lg inline-block items-center">Learn more</a></Link>
                         </div>
                       </div>
                     </div>
@@ -133,7 +133,7 @@ export default function Index({ data: { home, site } }) {
                           
                           <p className="font-mono text-sm mb-5 md:mb-8">We work best with creatively brave multi-channel campaigns, especially when one creative through-line needs to thrive in different places and durations.</p>
 
-                          <Link href="/"><a aria-label="Navigate to Video identity" className="underline tracking-tight text-lg inline-block items-center">Learn more</a></Link>
+                          <Link href="/services/content-and-creative"><a aria-label="Navigate to Content &amp; Creative" className="underline tracking-tight text-lg inline-block items-center">Learn more</a></Link>
                         </div>
                       </div>
                     </div>
@@ -148,7 +148,7 @@ export default function Index({ data: { home, site } }) {
                           
                           <p className="font-mono text-sm mb-5 md:mb-8">We help brands plan, create and measure video. We help upskill internal talent to build and grow your video ecosystem like an extension of the team.</p>
 
-                          <Link href="/"><a aria-label="Navigate to Video identity" className="underline tracking-tight text-lg inline-block items-center">Learn more</a></Link>
+                          <Link href="/services/strategy-and-consultancy"><a aria-label="Navigate to Strategy &amp; Consultancy" className="underline tracking-tight text-lg inline-block items-center">Learn more</a></Link>
                         </div>
                       </div>
                     </div>
