@@ -10,7 +10,7 @@ export default function MenuItem({link, animation, image, video, heading, text})
         <motion.div variants={animation}>
           <div className="transition-transform ease-in-out duration-500 md:transform group-hover:-translate-y-12 group-focus:-translate-y-12">
             
-            <div className="relative transition ease-in-out duration-500 opacity-25 group-hover:opacity-100 group-focus:opacity-100 mb-10 transform skew-y-2 hidden md:block z-0">
+            <div className="relative transition ease-in-out duration-500 opacity-25 group-hover:opacity-100 group-focus:opacity-100 mb-10 transform skew-y-2 hidden md:block z-0 w-10/12">
               <Image
                 data={{
                   ...image.responsiveImage,
