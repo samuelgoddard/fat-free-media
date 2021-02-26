@@ -53,7 +53,7 @@ export default function WorkSingle({ data: { site, work } }) {
                 </div>
               </div>
 
-              <div className="relative overflow-hidden pt-6 md:pb-20 xl:pb-32">
+              <div className="relative overflow-hidden pt-6 md:pb-20 xl:pb-32 xl:-mt-12 2xl:-mt-16">
                 <BigX color="text-white" bottom />
   
                 {/* Modular Content */}
