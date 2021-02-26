@@ -187,6 +187,43 @@ export default function WorkSingle({ data: { site, work } }) {
                           </Container>
                         }
                         {
+                          block._modelApiKey === 'image_grid_right' &&
+                          <Container>
+                            <div className="flex flex-wrap md:-mx-12 xl:-mx-24">
+                              <div className="w-full md:w-1/2 px-8 md:px-12 xl:px-24" data-scroll data-scroll-speed="1.6">
+                                <div className="md:pt-24 xl:pt-32 md:px-12 mx-auto">
+                                  <figure className="w-full xl:w-10/12 mx-auto">
+                                    <Image
+                                      data={{
+                                        ...block.image1.responsiveImage,
+                                        alt: block.image1.alt ? block.image1.alt : block.image1.title,
+                                      }}
+                                      className="w-full mb-3"
+                                    />
+                                    { block.image1.alt && (
+                                      <figcaption className="block text-sm md:text-base uppercase tracking-tighter leading-none text-right">{block.image1.alt}</figcaption>
+                                    )}
+                                  </figure>
+                                </div>
+                              </div>
+                              <div className="w-full md:w-1/2 md:pr-12 xl:pr-24 mb-12 md:mb-0" data-scroll data-scroll-speed="0.5">
+                                <figure className="w-full relative">
+                                  <Image
+                                    data={{
+                                      ...block.image2.responsiveImage,
+                                      alt: block.image2.alt ? block.image2.alt : block.image2.title,
+                                    }}
+                                    className="w-full mb-3"
+                                  />
+                                  { block.image2.alt && (
+                                    <figcaption className="block md:upright md:absolute top-0 left-0 md:-ml-6 z-0 uppercase text-sm md:text-base tracking-tighter leading-none">{block.image2.alt}</figcaption>
+                                  )}
+                                </figure>
+                              </div>
+                            </div>
+                          </Container>
+                        }
+                        {
                           block._modelApiKey === 'image_grid_with_text_left' &&
                           <Container>
                             <div className="flex flex-wrap md:-mx-12 xl:-mx-24">
@@ -221,6 +258,45 @@ export default function WorkSingle({ data: { site, work } }) {
                                     )}
                                   </figure>
                                 </div>
+                              </div>
+                            </div>
+                          </Container>
+                        }
+                        {
+                          block._modelApiKey === 'image_grid_with_text_right' &&
+                          <Container>
+                            <div className="flex flex-wrap md:-mx-12 xl:-mx-24">
+                              <div className="w-full md:w-5/12 xl:w-7/12 px-8 md:px-12 xl:px-24" data-scroll data-scroll-speed="1.6">
+                                <div className="md:pt-24 xl:pt-32">
+                                  <figure className="w-full xl:w-11/12 ml-auto mb-8 md:mb-16 xl:mb-24">
+                                    <Image
+                                      data={{
+                                        ...block.image1.responsiveImage,
+                                        alt: block.image1.alt ? block.image1.alt : block.image1.title,
+                                      }}
+                                      className="w-full mb-3"
+                                    />
+                                    { block.image1.alt && (
+                                      <figcaption className="block text-sm md:text-base uppercase tracking-tighter leading-none text-right">{block.image1.alt}</figcaption>
+                                    )}
+                                  </figure>
+                                </div>
+                              </div>
+                              <div className="w-full md:w-7/12 xl:w-5/12 md:pr-12 xl:pr-24 mb-12 md:mb-0" data-scroll data-scroll-speed="0">
+                                <figure className="w-full mb-8 md:mb-16 xl:mb-24 relative">
+                                  <Image
+                                    data={{
+                                      ...block.image2.responsiveImage,
+                                      alt: block.image2.alt ? block.image2.alt : block.image2.title,
+                                    }}
+                                    className="w-full mb-3"
+                                  />
+                                  { block.image2.alt && (
+                                    <figcaption className="block md:upright md:absolute top-0 left-0 md:-ml-6 z-0 uppercase text-sm md:text-base tracking-tighter leading-none">{block.image2.alt}</figcaption>
+                                  )}
+                                </figure>
+
+                                <div className="text-2xl md:text-2xl lg:text-3xl xl:text-3xl leading-none w-full tracking-tighter pr-12 md:pr-16 z-10 block mb-8 md:mb-5 relative content" dangerouslySetInnerHTML={{ __html: block.text }}></div>
                               </div>
                             </div>
                           </Container>
@@ -429,6 +505,24 @@ const WORK_SINGLE_QUERY = `
             alt
           }
         }
+        ... on ImageGridRightRecord {
+          id
+          _modelApiKey
+          image1 {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 900, h: 1400 }) {
+              ...responsiveImageFragment
+            }
+            title
+            alt
+          }
+          image2 {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1200, h: 1200 }) {
+              ...responsiveImageFragment
+            }
+            title
+            alt
+          }
+        }
         ... on ImageGridWithTextLeftRecord {
           id
           _modelApiKey
@@ -441,6 +535,25 @@ const WORK_SINGLE_QUERY = `
           }
           image2 {
             responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1200, h: 1200 }) {
+              ...responsiveImageFragment
+            }
+            title
+            alt
+          }
+          text
+        }
+        ... on ImageGridWithTextRightRecord {
+          id
+          _modelApiKey
+          image1 {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1200, h: 1200 }) {
+              ...responsiveImageFragment
+            }
+            title
+            alt
+          }
+          image2 {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1200, h: 800 }) {
               ...responsiveImageFragment
             }
             title
