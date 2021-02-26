@@ -115,7 +115,7 @@ export default function WorkSingle({ data: { site, work } }) {
                         }
                         {
                           block._modelApiKey === 'images3_square' &&
-                          <div data-scroll data-scroll-direction="horizontal" data-scroll-speed="0.8">
+                          <div>
                             <div className="flex flex-wrap -mx-24 md:-mx-48 xl:-mx-64">
                               { block.images.map((image, i) => (
                                 <div key={i} className="w-1/3 px-5 md:px-8 xl:px-12">
@@ -133,7 +133,7 @@ export default function WorkSingle({ data: { site, work } }) {
                         }
                         {
                           block._modelApiKey === 'images4_square' &&
-                          <div data-scroll data-scroll-direction="horizontal" data-scroll-speed="-0.8">
+                          <div>
                             <div className="flex flex-wrap -mx-16 md:-mx-24 xl:-mx-32">
                               { block.images.map((image, i) => (
                                 <div key={i} className="w-1/4 px-5 md:px-8 xl:px-12">
