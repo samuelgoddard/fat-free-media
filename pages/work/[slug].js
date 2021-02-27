@@ -60,10 +60,10 @@ export default function WorkSingle({ data: { site, work } }) {
                 <BigX color="text-white" bottom />
   
                 {/* Modular Content */}
-                <div className="relative pb-12 md:pb-20 xl:pb-32">
+                <div className="relative pb-0 md:pb-20 xl:pb-32">
                   {
                     work.contentBlocks.map((block) => (
-                      <div key={block.id} className="pb-8 md:pb-12 xl:pb-16" data-scroll data-scroll-speed="1.6">
+                      <div key={block.id} className="pb-12 md:pb-12 xl:pb-16" data-scroll data-scroll-speed="1.6">
                         {
                           block._modelApiKey === 'text' &&
                           <Container thin>
@@ -317,7 +317,7 @@ export default function WorkSingle({ data: { site, work } }) {
                                 <div className="w-full h-full absolute top-0 left-0 right-0 bottom-0 flex flex-wrap items-center justify-center">
                                   <span data-scroll data-scroll-speed="2.75" className="block w-32 md:w-48 xl:w-64 h-32 md:h-48 xl:h-64 bg-yellow rounded-full"></span>
                                 </div>
-                                <span className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl 3xl:text-8xl leading-none w-full tracking-tighter pr-12 md:pr-16 z-10 block mb-8 md:mb-5 relative">“ { block.text } ”</span>
+                                <span className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl 3xl:text-8xl leading-none w-full tracking-tighter pr-6 md:pr-16 z-10 block mb-8 md:mb-5 relative">“ { block.text } ”</span>
                               </div>
                             </Container>
                             <Container thin>
@@ -353,7 +353,7 @@ export default function WorkSingle({ data: { site, work } }) {
                                   { block.metaText && (
                                     <span className="block text-xs uppercase tracking-tighter leading-none mb-6 md:mb-10">{ block.metaText } —</span>
                                   )}
-                                  <div className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter pr-8 md:pr-8 lg:pr-16 xl:pr-20 mb-6 md:mb-10 content" dangerouslySetInnerHTML={{ __html: block.text }}></div>
+                                  <div className="text-2xl md:text-3xl xl:text-4xl leading-none tracking-tighter pr-8 md:pr-8 lg:pr-16 xl:pr-20 mb-6 md:mb-10 content" dangerouslySetInnerHTML={{ __html: block.text }}></div>
                                 </div>
                               </div>
                             </Container>

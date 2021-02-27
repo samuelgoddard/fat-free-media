@@ -27,10 +27,10 @@ export default function About({ data: { site, about, team, services } }) {
           initial="initial"
           animate="enter"
           exit="exit"
-          className="mb-16 md:mb-20"
+          className="mb-20 md:mb-20"
         >
           <Header theme="white" />
-          <motion.div variants={fade} className="mb-16 md:mb-20 overflow-hidden relative">
+          <motion.div variants={fade} className="mb-20 md:mb-20 overflow-hidden relative">
             <div className="bg-black text-white pt-40 md:pt-48 xl:pt-56 pb-8 md:pb-32 xl:pb-48 mb-8 md:mb-20 relative">
               <Container thin>
                 <div className="relative z-10">
@@ -117,18 +117,18 @@ export default function About({ data: { site, about, team, services } }) {
               </div>
             </Container>
 
-            <div className="mb-16 md:mb-24 xl:mb-32 2xl:mb-40">
+            <div className="mb-20 md:mb-24 xl:mb-32 2xl:mb-40">
               <Container>
                 <div className="relative about-text">
                   <div className="w-full h-full absolute top-0 left-0 right-0 bottom-0 flex flex-wrap items-center justify-center">
                     <span data-scroll data-scroll-speed="2.75" className="block w-32 md:w-48 xl:w-64 h-32 md:h-48 xl:h-64 bg-yellow rounded-full"></span>
                   </div>
-                  <span className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl 3xl:text-8xl leading-none w-full tracking-tighter pr-12 md:pr-16 z-10 block mb-8 md:mb-5 relative" dangerouslySetInnerHTML={{ __html: about.aboutText }}></span>
+                  <span className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl 3xl:text-8xl leading-none w-full tracking-tighter pr-8 md:pr-16 z-10 block mb-8 md:mb-5 relative" dangerouslySetInnerHTML={{ __html: about.aboutText }}></span>
                 </div>
               </Container>
             </div>
 
-            <div className="mb-16 md:mb-24 xl:mb-32 2xl:mb-40">
+            <div className="mb-20 md:mb-24 xl:mb-32 2xl:mb-40">
               <Container thin>
                 <span className="block text-xs uppercase tracking-tighter leading-none pb-6 md:pb-10 border-b border-dotted border-off-black border-opacity-50">What We Do —</span>
 
