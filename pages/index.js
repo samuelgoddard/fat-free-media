@@ -70,7 +70,7 @@ export default function Index({ data: { home, site } }) {
                   </motion.div>
                 </div>
 
-                <VideoRevealer videoUrl={home.videoRawUrl} />
+                <VideoRevealer videoAutoplayUrl={home.videoAutoplayUrl} videoFullUrl={home.videoFullUrl} />
               </div>
             </Container>
 
@@ -175,7 +175,8 @@ const HOMEPAGE_QUERY = `
       }
       heroMetaText
       heroHeading
-      videoRawUrl
+      videoAutoplayUrl
+      videoFullUrl
       whatWeDoText
     }
   }

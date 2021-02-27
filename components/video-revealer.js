@@ -65,7 +65,7 @@ class VideoRevealer extends Component {
             animate={!overlayCollapsed ? open : closed}
           >
             <video loop={true} playsInline autoPlay="autoplay" muted className="w-full home-video object-cover">
-              <source src={this.props.videoUrl} type="video/mp4" />
+              <source src={this.props.videoAutoplayUrl} type="video/mp4" />
               Sorry. Your browser does not support the video tag.
             </video>
           </motion.div>
@@ -75,7 +75,7 @@ class VideoRevealer extends Component {
             className="w-full relative z-10"
           >
             <video loop={false} controls={true} className="w-full home-video object-cover relative z-10" ref={video => this.video = video}>
-              <source src={this.props.videoUrl} type="video/mp4" />
+              <source src={this.props.videoFullUrl} type="video/mp4" />
               Sorry. Your browser does not support the video tag.
             </video>
           </motion.div>
