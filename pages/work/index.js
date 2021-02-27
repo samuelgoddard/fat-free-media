@@ -10,6 +10,7 @@ import Teaser from "../../components/teaser";
 import Footer from "../../components/footer";
 import BigX from "../../components/big-x";
 import { motion } from "framer-motion"
+import FilterLink from "../../components/filter-link";
 import { fade, reveal, scaleDown } from "../../helpers/transitionHelper"
 import { useContext } from 'react'
 import { SmoothScrollContext, SmoothScrollProvider } from '../../contexts/SmoothScroll.context'
@@ -41,32 +42,32 @@ export default function Work({ data: { site, work, disciplines } }) {
                 <div className="relative overflow-hidden mb-4 md:mb-6 xl:mb-8">
                   <motion.h1 variants={reveal} className="text-6xl md:text-7xl xl:text-8xl 3xl:text-9xl leading-none w-full max-w-4xl tracking-tighter mb-0 pb-0">Our Work</motion.h1>
                 </div>
-                <nav className="border-t border-b border-off-black py-2 mb-8 md:mb-12 xl:mb-20 relative">
-                  <ul className="flex flex-wrap">
+                <nav className="border-t border-b border-off-black py-2 mb-8 md:mb-12 xl:mb-20 md:pb-6 relative">
+                  <ul className="flex flex-wrap pr-8 md:pr-16 xl:pr-20">
                   
                     {disciplines.map((discipline, i) => {
                       return (
-                        <li key={i} className="text-2xl md:text-3xl xl:text-4xl leading-tight tracking-tighter relative pr-5 mr-1 md:mr-3 flex my-2 md:my-3 overflow-hidden">
+                        <li key={i} className="text-2xl md:text-3xl xl:text-4xl leading-tight tracking-tighter relative pr-2 md:pr-4 flex  overflow-hidden">
                           <motion.span variants={reveal}>
-                            <Link href={`/disciplines/${discipline.slug}`}>
+                            {/* <Link href={`/disciplines/${discipline.slug}`}>
                               <a aria-label={`Navigate to ${discipline.title} Discipline page`} className="flex">
                                 {discipline.title} <span className="block text-xl tracking-normal -mt-1 ml-1">(3)</span>
                               </a>
-                            </Link>
+                            </Link> */}
+                            <FilterLink link={`/disciplines/${discipline.slug}`} a11yText={`Navigate to ${discipline.title} Discipline page`} text={discipline.title} amount={Math.floor(Math.random() * 20)} />
                           </motion.span>
+                          { i !== (disciplines.length - 1) &&(
+                            <motion.span variants={reveal}>
+                              <span className="block text-2xl md:text-3xl xl:text-4xl tracking-normal leading-none mt-3 ml-2 md:ml-4">&bull;</span>
+                            </motion.span>
+                          )}
                         </li>
                       )
                     })}
 
-                    <li className="text-2xl md:text-3xl xl:text-4xl leading-none tracking-tighter relative block my-2 md:my-3 ml-auto overflow-hidden">
+                    <li className="text-2xl md:text-3xl xl:text-4xl leading-none tracking-tighter block pb-3 md:pb-4 ml-auto overflow-hidden absolute bottom-0 right-0">
                       <motion.span variants={reveal}>
-                        <Link href={`/work`}>
-                          <a aria-label={`Navigate to Work page`} className="flex">
-                            <span className="relative z-10 flex">All <span className="block text-xl tracking-normal -mt-1 ml-1">(3)</span></span>
-
-                            <motion.span variants={scaleDown} className="w-6 md:w-8 xl:w-10 h-6 md:h-8 xl:h-10 rounded-full bg-yellow absolute top-0 left-0 ml-0 mt-0 z-0 block"></motion.span>
-                          </a>
-                        </Link>
+                        <FilterLink link={`/work`} a11yText={`Navigate to Work page`} text={"All"} amount={12} active={true} />
                       </motion.span>
                     </li>
                   </ul>

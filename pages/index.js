@@ -10,6 +10,7 @@ import Footer from "../components/footer";
 import BigX from "../components/big-x";
 import CircleInfinity from "../components/circle-infinity";
 import MagneticButton from "../components/magnetic-button";
+import FancyLink from "../components/fancy-link";
 import { motion } from "framer-motion"
 import { reveal, fade, scaleDown } from "../helpers/transitionHelper"
 import { SmoothScrollProvider } from '../contexts/SmoothScroll.context'
@@ -63,14 +64,9 @@ export default function Index({ data: { home, site } }) {
 
             <Container bleed>
               <div className="w-full mb-16 xl:mb-24 relative z-10" data-scroll data-scroll-speed="1.3">
-                <div className="relative overflow-hidden mb-4 md:mb-6">
-                  <motion.div variants={reveal} className="text-right px-6 md:px-0">
-                    <Link href="/work"><a aria-label="Navigate to Our Work" className="underline tracking-tight text-lg inline-block items-center">
-                      <div className="flex items-center">
-                        <span className="w-3 h-3 mt-px bg-off-black rounded-full mr-1 block"></span>
-                        <span className="block">See our work</span>
-                      </div>
-                    </a></Link>
+                <div className="relative overflow-hidden">
+                  <motion.div variants={reveal} className="text-right px-6 md:px-0 mb-2 md:mb-4 text-workLanding">
+                    <FancyLink link={`/work`} text="See Our Work" a11yText="Navigate to Our Work Page" />
                   </motion.div>
                 </div>
 
@@ -102,9 +98,11 @@ export default function Index({ data: { home, site } }) {
                   </div>
 
                   <div className="w-full md:w-1/2 max-w-md">
-                    <p className="text-lg md:text-xl leading-snug tracking-tight mb-5 md:mb-8">We believe that every moment with a viewer is a privilege, and brands deserve creative bravery without the ego. That’s why you won’t find clickbait or talking heads in our portfolio.</p>
+                    <p className="text-lg md:text-xl leading-snug tracking-tight mb-4 md:mb-6">We believe that every moment with a viewer is a privilege, and brands deserve creative bravery without the ego. That’s why you won’t find clickbait or talking heads in our portfolio.</p>
 
-                    <Link href="/contact"><a aria-label="Navigate to Contact us" className="underline tracking-tight text-lg inline-block items-center">Contact us</a></Link>
+                    <span className="text-lg">
+                      <FancyLink link="/contact" text="Contact us" a11yText="Navigate to contact us page" />
+                    </span>
                   </div>
                 </div>
               </div>
@@ -120,9 +118,11 @@ export default function Index({ data: { home, site } }) {
                         <div className="flex-1 md:w-full px-2 md:px-0 relative z-10">
                           <h3 className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter">Video<br/>Identity</h3>
                           
-                          <p className="font-mono text-sm mb-5 md:mb-8">Video identity is the missing chapter of most brand guideline documents. We help brands articulate how their brand looks, moves, sounds and feels in video.</p>
+                          <p className="font-mono text-sm mb-4 md:mb-6">Video identity is the missing chapter of most brand guideline documents. We help brands articulate how their brand looks, moves, sounds and feels in video.</p>
 
-                          <Link href="/services/video-identity"><a aria-label="Navigate to Video identity" className="underline tracking-tight text-lg inline-block items-center">Learn more</a></Link>
+                          <span className="text-lg">
+                            <FancyLink link="/services/video-identity" text="Learn more" a11yText="Navigate to video identity page" />
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -137,9 +137,11 @@ export default function Index({ data: { home, site } }) {
                         <div className="flex-1 md:w-full px-2 md:px-0 relative z-10">
                           <h3 className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter">Content &amp;<br/>Creative</h3>
                           
-                          <p className="font-mono text-sm mb-5 md:mb-8">We work best with creatively brave multi-channel campaigns, especially when one creative through-line needs to thrive in different places and durations.</p>
+                          <p className="font-mono text-sm mb-4 md:mb-6">We work best with creatively brave multi-channel campaigns, especially when one creative through-line needs to thrive in different places and durations.</p>
 
-                          <Link href="/services/content-and-creative"><a aria-label="Navigate to Content &amp; Creative" className="underline tracking-tight text-lg inline-block items-center">Learn more</a></Link>
+                          <span className="text-lg">
+                            <FancyLink link="/services/content-and-creative" text="Learn more" a11yText="Navigate to content &amp; creative page" />
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -154,9 +156,11 @@ export default function Index({ data: { home, site } }) {
                         <div className="flex-1 md:w-full px-2 md:px-0 relative z-10">
                           <h3 className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter">Strategy &amp;<br/>Consultancy</h3>
                           
-                          <p className="font-mono text-sm mb-5 md:mb-8">We help brands plan, create and measure video. We help upskill internal talent to build and grow your video ecosystem like an extension of the team.</p>
+                          <p className="font-mono text-sm mb-4 md:mb-6">We help brands plan, create and measure video. We help upskill internal talent to build and grow your video ecosystem like an extension of the team.</p>
 
-                          <Link href="/services/strategy-and-consultancy"><a aria-label="Navigate to Strategy &amp; Consultancy" className="underline tracking-tight text-lg inline-block items-center">Learn more</a></Link>
+                          <span className="text-lg">
+                            <FancyLink link="/services/strategy-and-consultancy" text="Learn more" a11yText="Navigate to strategy &amp; consultancy page" />
+                          </span>
                         </div>
                       </div>
                     </div>

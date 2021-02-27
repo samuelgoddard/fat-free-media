@@ -9,6 +9,7 @@ import Container from "../components/container";
 import Footer from "../components/footer";
 import CircleInfinity from "../components/circle-infinity";
 import BigX from "../components/big-x";
+import FancyLink from "../components/fancy-link";
 import { motion } from "framer-motion"
 import { fade, reveal } from "../helpers/transitionHelper"
 import { useContext } from 'react'
@@ -102,9 +103,11 @@ export default function About({ data: { site, about, team, services } }) {
                               <motion.h3 variants={reveal} className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter mb-0 pb-0">{ team.name }</motion.h3>
                             </div>
                               
-                            <div dangerouslySetInnerHTML={{ __html: team.shortBio }} className="font-mono text-sm mb-5 md:mb-8"></div>
+                            <div dangerouslySetInnerHTML={{ __html: team.shortBio }} className="font-mono text-sm mb-3 md:mb-5"></div>
 
-                            <Link href="/"><a aria-label={`Navigate to ${team.name}'s biography`} className="underline tracking-tight text-lg inline-block items-center">Read bio</a></Link>
+                            <span className="text-lg">
+                              <FancyLink link="/" text="Read bio" a11yText={`Read ${team.name}'s biography`} />
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -151,9 +154,12 @@ export default function About({ data: { site, about, team, services } }) {
                             <h3 className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter md:pr-8 xl:pr-16">{ service.title }</h3>
                           </div>
                           <div className="flex-1 md:w-full relative z-10 pr-5">
-                            <div className="font-mono text-sm mb-3 md:max-w-xl" dangerouslySetInnerHTML={{ __html: service.heroText }}></div>
+                            <div className="font-mono text-sm mb-2 md:max-w-xl" dangerouslySetInnerHTML={{ __html: service.heroText }}></div>
 
-                            <Link href={`/services/${service.slug}`}><a aria-label="Navigate to Video identity" className="underline tracking-tight text-lg inline-block items-center">Learn more</a></Link>
+
+                            <span className="text-lg">
+                              <FancyLink link={`/services/${service.slug}`} text="Learn more" a11yText={`Navigate to ${service.title} page`} />
+                            </span>
                         </div>
                         </div>
                       </div>
@@ -164,7 +170,9 @@ export default function About({ data: { site, about, team, services } }) {
             </div>
 
             <div className="bg-yellow yellow-highlight pt-8 pb-16 md:pt-12 md:pb-20 lg:pt-16 lg:pb-24 xl:pt-20 xl:pb-32 overflow-hidden relative">
-              <BigX color="text-yellow-dark" />
+              <div data-scroll data-scroll-speed="-1.25">
+                <BigX color="text-yellow-dark" />
+              </div>
               <Container>
                 <div className="flex flex-wrap items-center md:-mx-12 relative z-20">
                   <div className="w-full md:w-1/2 md:px-12 mb-6 md:mb-0" data-scroll data-scroll-speed="0.25">

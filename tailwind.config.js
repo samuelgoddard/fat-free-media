@@ -25,7 +25,8 @@ module.exports = {
         orange: {
           light: '#ffb288',
           default: '#d18d67',
-          dark: '#ce8860'
+          dark: '#ce8860',
+          darker: '#C77546'
         },
         green: {
           default: '#4f8680',
@@ -46,12 +47,18 @@ module.exports = {
         '8xl': '6.25rem',
         '9xl': '7rem',
       },
+      opacity: {
+        '65': '.65',
+      }
     },
   },
   variants: {
     opacity: ['hover', 'focus', 'group-hover', 'group-focus', 'responsive'],
     translate: ['hover', 'focus', 'group-hover', 'group-focus', 'responsive'],
     scale: ['hover', 'focus', 'group-hover', 'group-focus', 'responsive'],
+    rotate: ['hover', 'focus', 'group-hover', 'group-focus', 'responsive'],
     skew: ['hover', 'focus', 'group-hover', 'group-focus', 'responsive'],
+    width: ['hover', 'focus', 'group-hover', 'group-focus', 'responsive'],
+    textColor: ['hover', 'focus', 'group-hover', 'group-focus', 'responsive'],
   }
 }

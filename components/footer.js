@@ -2,6 +2,8 @@ import Container from './container'
 import Link from 'next/link'
 import Marquee from 'react-double-marquee';
 import BigX from "./big-x";
+import FancyLink from "../components/fancy-link";
+import FancyLinkExternal from "../components/fancy-link-external";
 
 export default function Footer({ hideMarquee }) {
   return (
@@ -18,7 +20,9 @@ export default function Footer({ hideMarquee }) {
 
       <div className="flex flex-wrap">
         <div className="w-full md:w-1/2 py-12 md:py-20 xl:pt-32 bg-green text-white relative overflow-hidden">
-          <BigX color="text-green-dark" left bottom />
+          <div data-scroll data-scroll-speed="1.75">
+            <BigX color="text-green-dark" left bottom />
+          </div>
           <div className="max-w-xl px-6 md:mx-auto flex flex-wrap relative z-10">
             <nav className="w-full mb-6 md:mb-10 xl:mb-16">
               <span className="block text-xs font-mono uppercase tracking-tight leading-none mb-5">What Now?</span>
@@ -80,22 +84,34 @@ export default function Footer({ hideMarquee }) {
             <nav className="w-full lg:w-7/12 lg:px-4 mb-5 lg:mb-0">
               <span className="block text-xs font-mono uppercase tracking-tight leading-none mb-3">Useful Links</span>
               <ul>
-                <li className="inline-block mr-3"><Link href="/about"><a aria-label="Navigate to About Us" className="tracking-tight text-xl md:text-2xl 3xl:text-3xl mb-1">About Us</a></Link></li>
+                <li className="inline-block mr-3 text-xl md:text-2xl 3xl:text-3xl">
+                  <FancyLink link="/about" a11yText="Navigate to about us page" text="About Us" />
+                </li>
                 <li className="inline-block mr-3 text-xl md:text-2xl 3xl:text-3xl">&bull;</li>
-                <li className="inline-block mr-3"><Link href="/services/video-identity"><a aria-label="Navigate to Video Identity" className="tracking-tight text-xl md:text-2xl 3xl:text-3xl mb-1">Video identity</a></Link></li>
+                <li className="inline-block mr-3 text-xl md:text-2xl 3xl:text-3xl">
+                  <FancyLink link="/services/video-identity" a11yText="Navigate to video identity page" text="Video Identity" />
+                </li>
                 <li className="inline-block mr-3 text-xl md:text-2xl 3xl:text-3xl">&bull;</li>
-                <li className="inline-block mr-3"><Link href="/services/content-and-creative"><a aria-label="Navigate to Content &amp; Creative" className="tracking-tight text-xl md:text-2xl 3xl:text-3xl mb-1">Content &amp; Creative</a></Link></li>
+                <li className="inline-block mr-3 text-xl md:text-2xl 3xl:text-3xl">
+                  <FancyLink link="/services/content-and-creative" a11yText="Navigate to content &amp; creative page" text="Content &amp; Creative" />
+                </li>
                 <li className="inline-block mr-3 text-xl md:text-2xl 3xl:text-3xl">&bull;</li>
-                <li className="inline-block mr-3"><Link href="/services/strategy-and-consultancy"><a aria-label="Navigate to Strategy &amp; Consultancy" className="tracking-tight text-xl md:text-2xl 3xl:text-3xl mb-1">Strategy &amp; Consultancy</a></Link></li>
+                <li className="inline-block mr-3 text-xl md:text-2xl 3xl:text-3xl">
+                  <FancyLink link="/services/strategy-and-consultancy" a11yText="Navigate to strategy &amp; consultancy page" text="Strategy &amp; Consultancy" />
+                </li>
               </ul>
             </nav>
 
             <nav className="w-full lg:w-5/12 lg:px-4">
               <span className="block text-xs font-mono uppercase tracking-tight leading-none lg:text-right mb-3">Lets talk</span>
               <ul className="lg:text-right">
-                <li className="inline-block mr-3 lg:mr-0 lg:ml-3"><a aria-label="Call us" className="tracking-tight text-xl md:text-2xl 3xl:text-3xl mb-1" href="tel:0115 857 7502">0115 857 7502</a></li>
+                <li className="inline-block mr-3 lg:mr-0 lg:ml-3 text-xl md:text-2xl 3xl:text-3xl">
+                  <FancyLinkExternal link="tel:0115 857 7502" a11yText="Call us" text="0115 857 7502" />
+                </li>
                 <li className="inline-block mr-3 lg:mr-0 lg:ml-3 text-xl md:text-2xl 3xl:text-3xl">&bull;</li>
-                <li className="inline-block mr-3 lg:mr-0 lg:ml-3"><a aria-label="Email us" className="tracking-tight text-xl md:text-2xl 3xl:text-3xl mb-1" href="mailto:hello@hellofatfree.com">hello@hellofatfree.com</a></li>
+                <li className="inline-block mr-3 lg:mr-0 lg:ml-3 text-xl md:text-2xl 3xl:text-3xl">
+                  <FancyLinkExternal link="mailto:hello@hellofatfree.com" a11yText="Email us" text="hello@hellofatfree.com" />
+                </li>
               </ul>
             </nav>
           </div>
@@ -109,12 +125,20 @@ export default function Footer({ hideMarquee }) {
               <small className="tracking-tight block leading-tight">&copy; { new Date().getFullYear() } by Fat Free Media Ltd, Video Strategy &amp; Production, Nottingham, UK, All rights reserved.</small>
             </div>
 
-            <div className="w-full md:w-auto md:text-right">
-              <Link href="/"><a aria-label="Navigate to Site Terms" className="underline tracking-tight text-sm inline-block mx-3 ml-0">Site Terms</a></Link>
+            <div className="w-full md:w-auto md:text-right text-sm">
+              <nav>
+                <li className="inline-block mx-3 ml-0">
+                  <FancyLink link="/" a11yText="Navigate to site terms page" text="Site Terms" noCircle />
+                </li>
 
-              <Link href="/"><a aria-label="Navigate to Cookie Policy" className="underline tracking-tight text-sm inline-block mx-3">Cookie Policy</a></Link>
+                <li className="inline-block mx-3">
+                  <FancyLink link="/" a11yText="Navigate to cookie policy page" text="Cookie Policy" noCircle />
+                </li>
 
-              <Link href="/"><a aria-label="Navigate to Privacy Policy" className="underline tracking-tight text-sm inline-block mx-3 mr-0">Privacy Policy</a></Link>
+                <li className="inline-block mx-3 mr-0">
+                  <FancyLink link="/" a11yText="Navigate to privacy policy page" text="Privacy Policy" noCircle />
+                </li>
+              </nav>
             </div>
           </div>
         </Container>

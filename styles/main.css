@@ -141,14 +141,10 @@ html.has-scroll-dragging {
   position: absolute;
   height: 2px;
   width: 100%;
-  background: theme('colors.off-white');
+  background: currentColor;
   border-radius: 10px;
   opacity: 1;
   left: 0;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
   -webkit-transition: .25s ease-in-out;
   -moz-transition: .25s ease-in-out;
   -o-transition: .25s ease-in-out;
@@ -161,6 +157,8 @@ html.has-scroll-dragging {
 
 .burger span:nth-child(1) {
   top: 0px;
+  right: 0;
+  left: auto;
 }
 
 .burger span:nth-child(2), .burger span:nth-child(3) {
@@ -176,43 +174,25 @@ html.has-scroll-dragging {
 
 .burger span:nth-child(4) {
   top: 12px;
+  left: auto;
+  right: 0;
 
   @screen md {
     top: 20px;
   }
 }
 
-.burger.open span:nth-child(1) {
-  top: 6px;
-  width: 0%;
-  left: 50%;
-  
-  @screen md {
-    top: 10px;
+.burger-wrap:hover,
+.burger-wrap:focus {
+  .burger span:nth-child(1) {
+    width: 80%;
   }
-}
 
-.burger.open span:nth-child(2) {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-.burger.open span:nth-child(3) {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-
-.burger.open span:nth-child(4) {
-  top: 6px;
-  width: 0%;
-  left: 50%;
-
-  @screen md {
-    top: 10px;
+  .burger span:nth-child(2), .burger span:nth-child(3) {
+    width: 40%;
+  }
+  .burger span:nth-child(4) {
+    width: 75%;
   }
 }
 
@@ -286,4 +266,21 @@ html.has-scroll-dragging {
   .safe-wrap{
     margin: 1.25rem;
   }
+}
+
+.magnetic-size-link {
+  position: absolute;
+  /*width: 100%;
+  height: 100%; */
+  left: 0;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  z-index: 1;
+}
+
+.safe-wrap-link {
+  margin: 0.25rem;
 }

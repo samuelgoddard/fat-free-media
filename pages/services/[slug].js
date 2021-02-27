@@ -9,6 +9,7 @@ import Container from "../../components/container";
 import Footer from "../../components/footer";
 import BigX from "../../components/big-x";
 import CircleInfinity from "../../components/circle-infinity";
+import FancyLink from "../../components/fancy-link";
 import { motion } from "framer-motion"
 import { fade } from "../../helpers/transitionHelper"
 import {  SmoothScrollProvider } from '../../contexts/SmoothScroll.context'
@@ -175,14 +176,8 @@ export default function ServiceSingle({ data: { site, service } }) {
                 </div>
               )}
 
-              <div className="bg-off-black">
-                <Link href="/contact">
-                  <a aria-label="Navigate to Contact Page" className="pt-6 md:pt-8 pb-6 md:pb-10 block text-center text-off-white text-4xl md:text-5xl xl:text-6xl tracking-tighter leading-none">
-                    <span className="inline-block border-b-2 border-off-white">
-                      Let's talk about it
-                    </span>
-                  </a>
-                </Link>
+              <div className="bg-off-black pt-6 md:pt-8 pb-6 md:pb-10 block text-center text-off-white text-4xl md:text-5xl xl:text-6xl tracking-tighter leading-none">
+                <FancyLink link="/contact" a11yText="Navigate to contact page" text="Let's talk about it" thicc />
               </div>
               <Footer hideMarquee />
             </div>

@@ -10,6 +10,8 @@ import Footer from "../components/footer";
 import BigX from "../components/big-x";
 import ShapeSquare from "../components/shape-square";
 import ShapeSquareOutline from "../components/shape-square-outline";
+import FancyLink from "../components/fancy-link";
+import FancyLinkExternal from "../components/fancy-link-external";
 import { motion } from "framer-motion"
 import { fade, reveal } from "../helpers/transitionHelper"
 import { SmoothScrollProvider } from '../contexts/SmoothScroll.context'
@@ -54,7 +56,9 @@ export default function Index({ data: { site, contact } }) {
                           <div className="font-mono text-sm mb-5 md:mb-8 content" dangerouslySetInnerHTML={{ __html: contact.collaborateText }}></div>
 
                           <div className="relative overflow-hidden mb-5 md:mb-8">
-                            <motion.a variants={reveal} aria-label={`Email us at ${ contact.emailAddress }`} href={`mailto:${contact.emailAddress}`} className="underline tracking-tight text-lg inline-block items-center">{ contact.emailAddress }</motion.a>
+                            <motion.div variants={reveal} className="text-lg pb-1">
+                              <FancyLinkExternal link={`mailto:${contact.emailAddress}`} text={contact.emailAddress} a11yText="Email Us" />
+                            </motion.div>
                           </div>
 
 
@@ -76,7 +80,8 @@ export default function Index({ data: { site, contact } }) {
                                 <label className="sr-only" htmlFor="message">Message</label>
                                 <textarea rows="3" className="appearance-none w-full py-3 px-4 leading-tight border-transparent border-2 focus:outline-none focus:border-green text-xl transition ease-in-out duration-200 textb-off-lack" id="message" placeholder="Message" />
                               </div>
-                              <button class="text-lg block ml-auto text-right underline" type="submit">
+
+                              <button className="text-lg block ml-auto text-right underline" type="submit">
                                 Send Message
                               </button>
                             </form>
@@ -102,9 +107,11 @@ export default function Index({ data: { site, contact } }) {
                           </div>
                           
                           <div className="font-mono text-sm mb-5 md:mb-8 content" dangerouslySetInnerHTML={{ __html: contact.teamText }}></div>
-                          
+
                           <div className="relative overflow-hidden">
-                            <motion.a variants={reveal} aria-label={`Email us at ${ contact.teamEmailAddress }`} href={`mailto:${contact.teamEmailAddress}`} className="underline tracking-tight text-lg inline-block items-center">{ contact.teamEmailAddress }</motion.a>
+                            <motion.div variants={reveal} className="text-lg pb-1">
+                              <FancyLinkExternal link={`mailto:${contact.teamEmailAddress}`} text={contact.teamEmailAddress} a11yText={`Email us at ${contact.teamEmailAddress}`} />
+                            </motion.div>
                           </div>
                         </div>
                       </div>
@@ -125,15 +132,22 @@ export default function Index({ data: { site, contact } }) {
                             <motion.h3 variants={reveal} className="text-3xl md:text-3xl xl:text-4xl leading-tight tracking-tighter mb-0 pb-0">Something else</motion.h3>
                           </div>
                           
-                          <div className="font-mono text-sm mb-5 md:mb-8 content" dangerouslySetInnerHTML={{ __html: contact.somethingElseText }}></div>
+                          <div className="font-mono text-sm mb-3 md:mb-4 content" dangerouslySetInnerHTML={{ __html: contact.somethingElseText }}></div>
 
-                          <div className="relative overflow-hidden mb-5 md:mb-8">
-                            <motion.a variants={reveal} aria-label={`Email us at ${ contact.speakingEmailAddress }`} href={`mailto:${contact.speakingEmailAddress}`} className="underline tracking-tight text-lg inline-block items-center">{ contact.speakingEmailAddress }</motion.a>
+                          <div className="relative overflow-hidden mb-1 md:mb-3">
+                            <motion.div variants={reveal} className="text-lg pb-1">
+                              <FancyLinkExternal link={`mailto:${contact.speakingEmailAddress}`} text={contact.speakingEmailAddress} a11yText={`Email us at ${contact.speakingEmailAddress}`} />
+                            </motion.div>
                           </div>
 
-                          <address className="not-italic text-lg mb-5 md:mb-8 leading-tight tracking-tight" dangerouslySetInnerHTML={{ __html: contact.address }}></address>
+                          <address className="not-italic text-lg mb-3 md:mb-5 leading-tight tracking-tight" dangerouslySetInnerHTML={{ __html: contact.address }}></address>
 
-                          <a href={`tel:${contact.phoneNumber}`} className="text-lg leading-tight tracking-tight">Call us on {contact.phoneNumber}</a>
+                          <div className="relative overflow-hidden">
+                            <motion.div variants={reveal} className="text-lg pb-1">
+                              <span>Call us on </span>
+                              <FancyLinkExternal link={`tel:${contact.phoneNumber}`} text={`${contact.phoneNumber}`} a11yText={`Call us`} />
+                            </motion.div>
+                          </div>
                         </div>
                       </div>
                     </div>
