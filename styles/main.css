@@ -264,26 +264,26 @@ html.has-scroll-dragging {
 
 @screen md {
   .magnetic-size {
-    bottom: -1.55rem;
-    top: -1.55rem;
-    left: -1.55rem;
-    right: -1.55rem;
+    bottom: -1rem;
+    top: -1rem;
+    left: -1rem;
+    right: -1rem;
   }
 
   .safe-wrap{
-    margin: 1.55rem;
+    margin: 1rem;
   }
 }
 
 @screen xl {
   .magnetic-size {
-    bottom: -1.8;
-    top: -1.8;
-    left: -1.8;
-    right: -1.8;
+    bottom: -1.25rem;
+    top: -1.25rem;
+    left: -1.25rem;
+    right: -1.25rem;
   }
 
   .safe-wrap{
-    margin: 1.8;
+    margin: 1.25rem;
   }
 }
