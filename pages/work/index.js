@@ -105,7 +105,7 @@ export default function Work({ data: { site, work, disciplines } }) {
                                 <Teaser 
                                   link={`/work/${work.slug}`}
                                   image={image}
-                                  video={work.teaserVideo ? work.teaserVideo.video.mp4Url : null}
+                                  video={null}
                                   title={work.title}
                                   meta={'Luxury Fashion'}
                                 />
@@ -132,7 +132,7 @@ export default function Work({ data: { site, work, disciplines } }) {
                               <Teaser 
                                 link={`/work/${work.slug}`}
                                 image={image}
-                                video={work.teaserVideo ? work.teaserVideo.video.mp4Url : null}
+                                video={null}
                                 title={work.title}
                                 meta={'Luxury Fashion'}
                               />
@@ -189,13 +189,7 @@ const WORK_QUERY = `
         }
         title
         alt
-      }
-
-      teaserVideo {
-        video {
-          mp4Url
-        }
-      }
+      }      
     }
   }
   ${metaTagsFragment}

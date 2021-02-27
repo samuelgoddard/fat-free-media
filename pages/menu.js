@@ -37,7 +37,7 @@ export default function Menu({ data: { site, home, about, work, contact } }) {
                     link="/"
                     animation={menuMovement}
                     image={home.menuImage}
-                    video={home.menuVideo ? home.menuVideo : null}
+                    video={null}
                     heading="Home"
                     text={home.menuText}
                   />
@@ -47,7 +47,7 @@ export default function Menu({ data: { site, home, about, work, contact } }) {
                     link="/work"
                     animation={menuMovementOne}
                     image={work.menuImage}
-                    video={work.menuVideo ? work.menuVideo : null}
+                    video={null}
                     heading="Work"
                     text={work.menuText}
                   />
@@ -57,7 +57,7 @@ export default function Menu({ data: { site, home, about, work, contact } }) {
                     link="/about"
                     animation={menuMovementTwo}
                     image={about.menuImage}
-                    video={about.menuVideo ? about.menuVideo : null}
+                    video={null}
                     heading="About"
                     text={about.menuText}
                   />
@@ -67,7 +67,7 @@ export default function Menu({ data: { site, home, about, work, contact } }) {
                     link="/contact"
                     animation={menuMovementThree}
                     image={contact.menuImage}
-                    video={contact.menuVideo ? contact.menuVideo : null}
+                    video={null}
                     heading="Contact"
                     text={contact.menuText}
                   />
@@ -80,7 +80,7 @@ export default function Menu({ data: { site, home, about, work, contact } }) {
                     link="/"
                     animation={fade}
                     image={home.menuImage}
-                    video={home.menuVideo ? home.menuVideo : null}
+                    video={null}
                     heading="Home"
                     text={home.menuText}
                   />
@@ -90,7 +90,7 @@ export default function Menu({ data: { site, home, about, work, contact } }) {
                     link="/work"
                     animation={fade}
                     image={work.menuImage}
-                    video={work.menuVideo ? work.menuVideo : null}
+                    video={null}
                     heading="Work"
                     text={work.menuText}
                   />
@@ -100,7 +100,7 @@ export default function Menu({ data: { site, home, about, work, contact } }) {
                     link="/about"
                     animation={fade}
                     image={about.menuImage}
-                    video={about.menuVideo ? about.menuVideo : null}
+                    video={null}
                     heading="About"
                     text={about.menuText}
                   />
@@ -110,7 +110,7 @@ export default function Menu({ data: { site, home, about, work, contact } }) {
                     link="/contact"
                     animation={fade}
                     image={contact.menuImage}
-                    video={contact.menuVideo ? contact.menuVideo : null}
+                    video={null}
                     heading="Contact"
                     text={contact.menuText}
                   />
@@ -139,11 +139,6 @@ const MENU_QUERY = `
         title
         alt
       }
-      menuVideo {
-        video {
-          mp4Url
-        }
-      }
       menuText
     }
     about {
@@ -153,11 +148,6 @@ const MENU_QUERY = `
         }
         title
         alt
-      }
-      menuVideo {
-        video {
-          mp4Url
-        }
       }
       menuText
     }
@@ -169,11 +159,6 @@ const MENU_QUERY = `
         title
         alt
       }
-      menuVideo {
-        video {
-          mp4Url
-        }
-      }
       menuText
     }
     contact {
@@ -183,11 +168,6 @@ const MENU_QUERY = `
         }
         title
         alt
-      }
-      menuVideo {
-        video {
-          mp4Url
-        }
       }
       menuText
     }

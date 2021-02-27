@@ -130,7 +130,7 @@ export default function Work({ data: { site, work, current, allDisciplines } }) 
                                     <TeaserFull
                                       link={`/work/${work.slug}`}
                                       image={image}
-                                      video={work.teaserVideo ? work.teaserVideo.video.mp4Url : null}
+                                      video={null}
                                       title={work.title}
                                       text={work.teaserText}
                                     />
@@ -201,11 +201,6 @@ const DISCIPLINE_QUERY = `
         alt
       }
       teaserText
-      teaserVideo {
-        video {
-          mp4Url
-        }
-      }
     }
   }
   ${metaTagsFragment}
