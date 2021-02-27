@@ -68,13 +68,14 @@ class VideoRevealer extends Component {
               <source src={this.props.videoAutoplayUrl} type="video/mp4" />
               Sorry. Your browser does not support the video tag.
             </video>
+
           </motion.div>
 
           <motion.div
             animate={!overlayCollapsed ? open : closedScaleUp}
             className="w-full relative z-10"
           >
-            <video controls={true} preload="none" className="w-full home-video object-cover relative z-10" ref={video => this.video = video}>
+            <video controls={true} preload="metadata" className="w-full home-video object-cover relative z-10" ref={video => this.video = video}>
               <source src={this.props.videoFullUrl} type="video/mp4" />
               Sorry. Your browser does not support the video tag.
             </video>
