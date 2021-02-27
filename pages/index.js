@@ -77,7 +77,7 @@ export default function Index({ data: { home, site } }) {
                 <div className="relative">
                   <span className="block upright font-mono text-xs absolute top-0 left-0 -ml-5 z-0 uppercase tracking-wide leading-none">Our Showreel</span>
                   <div className="w-full bg-green relative z-10">
-                    <div className="absolute top-0 left-0 mt-8 ml-8 md:ml-2 md:mt-2 xl:ml-6 xl:mt-6 3xl:mt-10 3xl:ml-10 z-20">
+                    <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center z-20">
                       <MagneticButton text="Watch our Showreel" />
                     </div>
                     <video loop={true} playsInline autoPlay="autoplay" muted className="w-full home-video object-cover">
