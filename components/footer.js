@@ -135,8 +135,19 @@ export default function Footer({ hideMarquee }) {
                   <FancyLink link="/" a11yText="Navigate to cookie policy page" text="Cookie Policy" noCircle />
                 </li>
 
-                <li className="inline-block mx-3 mr-0">
+                <li className="inline-block mx-3">
                   <FancyLink link="/" a11yText="Navigate to privacy policy page" text="Privacy Policy" noCircle />
+                </li>
+
+                <li className="inline-block mx-3 mr-0">
+                  Site by
+                  <span className="inline-block mx-1">
+                    <FancyLinkExternal link="https://ijpowell.co.uk" a11yText="Navigate to Isaac Powell Portfolio in a new tab" text="IJP" noCircle newTab />
+                  </span>
+                  &amp;
+                  <span className="inline-block mx-1">
+                    <FancyLinkExternal link="https://samgoddard.co.uk" a11yText="Navigate to Sam Goddard Portfolio in a new tab" text="SG" noCircle newTab />
+                  </span>
                 </li>
               </nav>
             </div>

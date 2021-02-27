@@ -11,6 +11,7 @@ import BigX from "../components/big-x";
 import ShapeSquare from "../components/shape-square";
 import ShapeSquareOutline from "../components/shape-square-outline";
 import FancyLink from "../components/fancy-link";
+import Form from "../components/form.js"
 import FancyLinkExternal from "../components/fancy-link-external";
 import { motion } from "framer-motion"
 import { fade, reveal } from "../helpers/transitionHelper"
@@ -63,28 +64,7 @@ export default function Index({ data: { site, contact } }) {
 
 
                           <div className="w-full max-w-xs">
-                            <form className="contact-form">
-                              <div className="mb-4">
-                                <label className="sr-only" htmlFor="name">Name</label>
-                                <input className="appearance-none w-full py-3 px-4 leading-tight border-transparent border-2 focus:outline-none focus:border-green text-xl transition ease-in-out duration-200 textb-off-lack" id="name" type="text" placeholder="Name" required />
-                              </div>
-                              <div className="mb-4">
-                                <label className="sr-only" htmlFor="email">Email</label>
-                                <input className="appearance-none w-full py-3 px-4 leading-tight border-transparent border-2 focus:outline-none focus:border-green text-xl transition ease-in-out duration-200 textb-off-lack" id="email" type="email" placeholder="Email" required />
-                              </div>
-                              <div className="mb-4">
-                                <label className="sr-only" htmlFor="tel">Phone</label>
-                                <input className="appearance-none w-full py-3 px-4 leading-tight border-transparent border-2 focus:outline-none focus:border-green text-xl transition ease-in-out duration-200 textb-off-lack" id="tel" type="tel" placeholder="Phone" required />
-                              </div>
-                              <div className="mb-4">
-                                <label className="sr-only" htmlFor="message">Message</label>
-                                <textarea rows="3" className="appearance-none w-full py-3 px-4 leading-tight border-transparent border-2 focus:outline-none focus:border-green text-xl transition ease-in-out duration-200 textb-off-lack" id="message" placeholder="Message" />
-                              </div>
-
-                              <button className="text-lg block ml-auto text-right underline" type="submit">
-                                Send Message
-                              </button>
-                            </form>
+                            <Form />
                           </div>
                         </div>
                       </div>

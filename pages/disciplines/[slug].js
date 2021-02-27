@@ -88,7 +88,7 @@ export default function Work({ data: { site, work, current, allDisciplines } }) 
                         active = true;
                       }
                       return (
-                        <li key={i} className="text-2xl md:text-3xl xl:text-4xl leading-tight tracking-tighter relative pr-2 md:pr-4 flex  overflow-hidden">
+                        <li key={i} className="text-base md:text-3xl xl:text-4xl leading-tight tracking-tighter relative pr-2 md:pr-4 flex  overflow-hidden">
                           <motion.span variants={reveal}>
                             {/* <Link href={`/disciplines/${discipline.slug}`}>
                               <a aria-label={`Navigate to ${discipline.title} Discipline page`} className="flex">
@@ -99,7 +99,7 @@ export default function Work({ data: { site, work, current, allDisciplines } }) 
                           </motion.span>
                           { i !== (allDisciplines.length - 1) &&(
                             <motion.span variants={reveal}>
-                              <span className="block text-2xl md:text-3xl xl:text-4xl tracking-normal leading-none mt-3 ml-2 md:ml-4">&bull;</span>
+                              <span className="block text-2xl md:text-3xl xl:text-4xl tracking-normal leading-none mt-1 md:mt-3 ml-2 md:ml-4">&bull;</span>
                             </motion.span>
                           )}
                         </li>
