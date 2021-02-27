@@ -29,7 +29,7 @@ class VideoRevealer extends Component {
     };
 
     const closedScaleUp = {
-      scale: 1.06,
+      scaleX: 1.06,
       transition: { duration: 1, ease: [0.83, 0, 0.17, 1] }
     };
 
