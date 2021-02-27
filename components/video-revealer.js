@@ -4,12 +4,18 @@ import { motion } from "framer-motion"
 // import gsap from 'gsap';
 
 class VideoRevealer extends Component {
+  constructor(props){
+    super(props);
+    this.video = null;
+  }
+
   state = {
     overlayCollapsed: false
   };
   
   toggleOverlay = () => {
     this.setState({ overlayCollapsed: !this.state.sidebarCollapsed });
+    this.video.play();
   };
 
   render(){
@@ -29,7 +35,6 @@ class VideoRevealer extends Component {
     };
 
     const closedScaleUp = {
-      scaleX: 1.06,
       transition: { duration: 1, ease: [0.83, 0, 0.17, 1] }
     };
 
@@ -69,7 +74,7 @@ class VideoRevealer extends Component {
             animate={!overlayCollapsed ? open : closedScaleUp}
             className="w-full relative z-10"
           >
-            <video loop={false} controls={true} className="w-full home-video object-cover relative z-10">
+            <video loop={false} controls={true} className="w-full home-video object-cover relative z-10" ref={video => this.video = video}>
               <source src={this.props.videoUrl} type="video/mp4" />
               Sorry. Your browser does not support the video tag.
             </video>
