@@ -45,7 +45,7 @@ class VideoRevealer extends Component {
     return (
       <div className="relative">
         <span className="block upright font-mono text-xs absolute top-0 left-0 -ml-5 z-0 uppercase tracking-wide leading-none">Our Showreel</span>
-        <div className="w-full bg-green relative">
+        <div className="w-full bg-green relative overflow-hidden">
           <motion.div 
             className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center z-30"
             animate={!overlayCollapsed ? open : closed}
