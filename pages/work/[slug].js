@@ -334,7 +334,7 @@ export default function WorkSingle({ data: { site, work } }) {
                         }
                         {
                           block._modelApiKey === 'callout_yellow' &&
-                          <div className="bg-yellow yellow-highlight pt-8 pb-16 md:pt-12 md:pb-20 lg:pt-16 lg:pb-24 xl:pt-20 xl:pb-32 overflow-hidden relative">
+                          <div className="bg-yellow yellow-highlight pt-8 pb-16 md:pt-12 md:pb-20 lg:pt-16 lg:pb-24 xl:pt-20 xl:pb-32 overflow-hidden relative text-black">
                             <div data-scroll data-scroll-speed="-1.5">
                               <BigX color="text-yellow-dark" />
                             </div>

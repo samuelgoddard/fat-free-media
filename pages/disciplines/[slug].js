@@ -95,7 +95,7 @@ export default function Work({ data: { site, work, current, allDisciplines } }) 
                                 {discipline.title} <span className="block text-xl tracking-normal -mt-1 ml-1">(3)</span>
                               </a>
                             </Link> */}
-                            <FilterLink link={`/disciplines/${discipline.slug}`} a11yText={`Navigate to ${discipline.title} Discipline page`} text={discipline.title} active={active} amount={Math.floor(Math.random() * 20)} />
+                            <FilterLink link={`/disciplines/${discipline.slug}`} a11yText={`Navigate to ${discipline.title} Discipline page`} text={discipline.title} active={active} amount={12} />
                           </motion.span>
                           { i !== (allDisciplines.length - 1) &&(
                             <motion.span variants={reveal}>

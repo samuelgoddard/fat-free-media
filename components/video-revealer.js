@@ -74,7 +74,7 @@ class VideoRevealer extends Component {
             animate={!overlayCollapsed ? open : closedScaleUp}
             className="w-full relative z-10"
           >
-            <video loop={false} controls={true} className="w-full home-video object-cover relative z-10" ref={video => this.video = video}>
+            <video controls={true} preload="none" className="w-full home-video object-cover relative z-10" ref={video => this.video = video}>
               <source src={this.props.videoFullUrl} type="video/mp4" />
               Sorry. Your browser does not support the video tag.
             </video>
