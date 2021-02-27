@@ -284,3 +284,8 @@ html.has-scroll-dragging {
 .safe-wrap-link {
   margin: 0.25rem;
 }
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}

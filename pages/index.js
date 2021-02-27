@@ -9,7 +9,7 @@ import Container from "../components/container";
 import Footer from "../components/footer";
 import BigX from "../components/big-x";
 import CircleInfinity from "../components/circle-infinity";
-import MagneticButton from "../components/magnetic-button";
+import VideoRevealer from "../components/video-revealer";
 import FancyLink from "../components/fancy-link";
 import { motion } from "framer-motion"
 import { reveal, fade, scaleDown } from "../helpers/transitionHelper"
@@ -70,22 +70,7 @@ export default function Index({ data: { home, site } }) {
                   </motion.div>
                 </div>
 
-                <div className="relative">
-                  <span className="block upright font-mono text-xs absolute top-0 left-0 -ml-5 z-0 uppercase tracking-wide leading-none">Our Showreel</span>
-                  <div className="w-full bg-green relative z-10">
-                    <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center z-20">
-                      <div data-scroll data-scroll-speed="2">
-                        <MagneticButton text="Watch our Showreel" />
-                      </div>
-                    </div>
-                    <video loop={true} playsInline autoPlay="autoplay" muted className="w-full home-video object-cover">
-                      <source src={ home.videoRawUrl } type="video/mp4" />
-                      
-                      Sorry. Your browser does not support the video tag.
-                    </video>
-                  </div>
-                  <div className="h-12 md:h-64 w-64 bg-orange absolute bottom-0 left-0 md:left-auto md:right-0 z-0 -m-5"></div>
-                </div>
+                <VideoRevealer videoUrl={home.videoRawUrl} />
               </div>
             </Container>
 
