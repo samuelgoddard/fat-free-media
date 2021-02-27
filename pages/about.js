@@ -176,7 +176,7 @@ export default function About({ data: { site, about, team, services } }) {
                       className="w-full relative z-0"
                     />
                   </div>
-                  <div className="w-full md:w-1/2 md:px-12" data-scroll data-scroll-speed="1.05">
+                  <div className="w-full md:w-1/2 md:px-12 text-black" data-scroll data-scroll-speed="1.05">
                     { about.calloutMetaText && (
                       <span className="block text-xs uppercase tracking-tighter leading-none mb-6 md:mb-10">{ about.calloutMetaText } —</span>
                     )}

@@ -43,11 +43,14 @@ export default function WorkSingle({ data: { site, work } }) {
               <div data-scroll data-scroll-speed="1.3" className="border-t border-b border-off-black pt-3 pb-4 mb-5 md:mb-8 xl:mb-0">
                 <div className="w-full whitespace-no-wrap text-3xl md:text-4xl xl:text-5xl tracking-tighter leading-tight">
                   <Marquee>
-                    {work.disciplinesUsed.map((discipline, i) => (
-                      <span className="inline-block"key={i}><span className="inline mx-1">{ discipline.title }</span> <span className="inline mx-3">•</span></span>
+                    {work.tickerText.map((ticker, i) => (
+                      <span className="inline-block"key={i}><span className="inline mx-1">{ ticker.text }</span> <span className="inline mx-3">•</span></span>
                     ))}
-                    {work.disciplinesUsed.map((discipline, i) => (
-                      <span className="inline-block"key={i}><span className="inline mx-1">{ discipline.title }</span> <span className="inline mx-3">•</span></span>
+                    {work.tickerText.map((ticker, i) => (
+                      <span className="inline-block"key={i}><span className="inline mx-1">{ ticker.text }</span> <span className="inline mx-3">•</span></span>
+                    ))}
+                    {work.tickerText.map((ticker, i) => (
+                      <span className="inline-block"key={i}><span className="inline mx-1">{ ticker.text }</span> <span className="inline mx-3">•</span></span>
                     ))}
                   </Marquee>
                 </div>
@@ -425,6 +428,9 @@ const WORK_SINGLE_QUERY = `
       title
       heroHeading
       heroMeta
+      tickerText {
+        text
+      }
       disciplinesUsed {
         slug
         title
