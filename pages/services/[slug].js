@@ -92,11 +92,13 @@ export default function ServiceSingle({ data: { site, service } }) {
                       {
                         block._modelApiKey === 'video' &&
                         <Container>
-                          <video controls={true} className="w-full home-video object-cover">
-                            <source src={ block.videoUrl } type="video/mp4" />
-                            
-                            Sorry. Your browser does not support the video tag.
-                          </video>
+                          <VideoRevealer 
+                            text="Watch in full"
+                            videoAutoplayUrl={block.videoUrlAutoplayingCover}
+                            videoFullHd={block.videoUrl1080p} 
+                            videoHd={block.videoUrl720p} 
+                            videoSd={block.videoUrl540p} 
+                          />
                         </Container>
                       }
                     </div>
@@ -228,7 +230,10 @@ const SERVICE_SINGLE_QUERY = `
         ... on VideoRecord {
           id
           _modelApiKey
-          videoUrl
+          videoUrlAutoplayingCover
+          videoUrl1080p
+          videoUrl720p
+          videoUrl540p
         }
       }
       services {
