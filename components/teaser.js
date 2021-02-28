@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import { reveal, scaleDown } from "../helpers/transitionHelper"
 import cn from 'classnames'
 
-export default function Teaser({link, image, video, title, meta}) {
+export default function Teaser({link, image, video, title, meta, videoAlwaysOn }) {
   return (
     <Link href={link}>
       <a aria-label="Navigate to Work Item" className="w-full block group">
@@ -20,7 +20,7 @@ export default function Teaser({link, image, video, title, meta}) {
             />
           )}
           { video && (
-            <div className="transform group-hover:scale-110 transition ease-in-out duration-500 absolute top-0 left-0 right-0 bottom-0">
+            <div className={`transform transition ease-in-out duration-500 absolute top-0 left-0 right-0 bottom-0 ${videoAlwaysOn ? 'opacity-100' : 'opacity-0 group-hover:opacity-100' }`}>
               <video loop={true} playsInline autoPlay="autoplay" muted className="w-full h-full object-cover z-10">
                 <source src={ video } type="video/mp4" />
                 

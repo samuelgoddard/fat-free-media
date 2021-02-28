@@ -70,7 +70,11 @@ export default function Index({ data: { home, site } }) {
                   </motion.div>
                 </div>
 
-                <VideoRevealer videoAutoplayUrl={home.videoAutoplayUrl} videoFullUrl={home.videoFullUrl} />
+                <VideoRevealer
+                  videoAutoplayUrl={home.videoAutoplayUrl}
+                  videoFullHd={home.videoFullUrl}
+                  metaText="Our Showreel"
+                />
               </div>
             </Container>
 

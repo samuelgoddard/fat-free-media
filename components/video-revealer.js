@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 class VideoRevealer extends Component {
   constructor(props){
     super(props);
-    this.video = null;
+    this.videoFullHdRef = null;
   }
 
   state = {
@@ -15,7 +15,7 @@ class VideoRevealer extends Component {
   
   toggleOverlay = () => {
     this.setState({ overlayCollapsed: !this.state.sidebarCollapsed });
-    this.video.play();
+    this.videoFullHdRef.play();
   };
 
   render(){
@@ -44,7 +44,9 @@ class VideoRevealer extends Component {
 
     return (
       <div className="relative">
-        <span className="block upright font-mono text-xs absolute top-0 left-0 -ml-5 z-0 uppercase tracking-wide leading-none">Our Showreel</span>
+        { this.props.metaText && (
+          <span className="block upright font-mono text-xs absolute top-0 left-0 -ml-5 z-0 uppercase tracking-wide leading-none">{ this.props.metaText }</span>
+        )}
         <div className="w-full bg-green relative overflow-hidden">
           <motion.div 
             className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center z-30"
@@ -55,7 +57,7 @@ class VideoRevealer extends Component {
                 className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center z-40"
                 animate={!overlayCollapsed ? open : closedScale}
               >
-                <MagneticButton text="Watch our Showreel" function={this.toggleOverlay} />
+                <MagneticButton text={ this.props.text ? this.props.text : "Watch our Showreel" } function={this.toggleOverlay} />
               </motion.div>
             </div>
           </motion.div>
@@ -75,10 +77,17 @@ class VideoRevealer extends Component {
             animate={!overlayCollapsed ? open : closedScaleUp}
             className="w-full relative z-10"
           >
-            <video controls={true} preload="metadata" className="w-full home-video object-cover relative z-10" ref={video => this.video = video}>
-              <source src={this.props.videoFullUrl} type="video/mp4" />
-              Sorry. Your browser does not support the video tag.
-            </video>
+            { this.props.videoFullHd && (
+              <video 
+                controls={true}
+                preload="metadata"
+                className="w-full home-video object-cover relative z-10 block"
+                ref={videoFullHdRef => this.videoFullHdRef = videoFullHdRef}
+              >
+                <source src={this.props.videoFullHd} type="video/mp4"/>
+                Sorry. Your browser does not support the video tag.
+              </video>
+            )}
           </motion.div>
         </div>
         <div className="h-12 md:h-64 w-64 bg-orange absolute bottom-0 left-0 md:left-auto md:right-0 z-0 -m-5"></div>

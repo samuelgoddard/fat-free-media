@@ -22,7 +22,7 @@ export default function MenuItem({link, animation, image, video, heading, text})
               { video && (
                 <div className="absolute top-0 left-0 right-0 bottom-0 z-10 opacity-0 group-hover:opacity-100 transition ease-in-out duration-300">
                   <video loop={true} playsInline autoPlay="autoplay" muted className="w-full h-full object-cover z-10">
-                    <source src={ video.video.mp4Url } type="video/mp4" />
+                    <source src={ video } type="video/mp4" />
                     
                     Sorry. Your browser does not support the video tag.
                   </video>

@@ -37,7 +37,7 @@ export default function Menu({ data: { site, home, about, work, contact } }) {
                     link="/"
                     animation={menuMovement}
                     image={home.menuImage}
-                    video={null}
+                    video={home.menuVideoUrl ? home.menuVideoUrl : null}
                     heading="Home"
                     text={home.menuText}
                   />
@@ -47,7 +47,7 @@ export default function Menu({ data: { site, home, about, work, contact } }) {
                     link="/work"
                     animation={menuMovementOne}
                     image={work.menuImage}
-                    video={null}
+                    video={work.menuVideoUrl ? work.menuVideoUrl : null}
                     heading="Work"
                     text={work.menuText}
                   />
@@ -57,7 +57,7 @@ export default function Menu({ data: { site, home, about, work, contact } }) {
                     link="/about"
                     animation={menuMovementTwo}
                     image={about.menuImage}
-                    video={null}
+                    video={about.menuVideoUrl ? about.menuVideoUrl : null}
                     heading="About"
                     text={about.menuText}
                   />
@@ -67,7 +67,7 @@ export default function Menu({ data: { site, home, about, work, contact } }) {
                     link="/contact"
                     animation={menuMovementThree}
                     image={contact.menuImage}
-                    video={null}
+                    video={contact.menuVideoUrl ? contact.menuVideoUrl : null}
                     heading="Contact"
                     text={contact.menuText}
                   />
@@ -140,6 +140,7 @@ const MENU_QUERY = `
         alt
       }
       menuText
+      menuVideoUrl
     }
     about {
       menuImage {
@@ -149,6 +150,7 @@ const MENU_QUERY = `
         title
         alt
       }
+      menuVideoUrl
       menuText
     }
     work: workLanding {
@@ -159,6 +161,7 @@ const MENU_QUERY = `
         title
         alt
       }
+      menuVideoUrl
       menuText
     }
     contact {
@@ -169,6 +172,7 @@ const MENU_QUERY = `
         title
         alt
       }
+      menuVideoUrl
       menuText
     }
   }

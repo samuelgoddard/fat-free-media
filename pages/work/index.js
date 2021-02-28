@@ -105,7 +105,8 @@ export default function Work({ data: { site, work, disciplines } }) {
                                 <Teaser 
                                   link={`/work/${work.slug}`}
                                   image={image}
-                                  video={null}
+                                  video={work.teaserVideo720p ? work.teaserVideo720p : null}
+                                  videoAlwaysOn={work.teaserAutoplayAlwaysOn}
                                   title={work.title}
                                   meta={'Luxury Fashion'}
                                 />
@@ -132,7 +133,8 @@ export default function Work({ data: { site, work, disciplines } }) {
                               <Teaser 
                                 link={`/work/${work.slug}`}
                                 image={image}
-                                video={null}
+                                video={work.teaserVideo720p ? work.teaserVideo720p : null}
+                                videoAlwaysOn={work.teaserAutoplayAlwaysOn}
                                 title={work.title}
                                 meta={'Luxury Fashion'}
                               />
@@ -189,7 +191,9 @@ const WORK_QUERY = `
         }
         title
         alt
-      }      
+      }
+      teaserVideo720p
+      teaserAutoplayAlwaysOn   
     }
   }
   ${metaTagsFragment}
