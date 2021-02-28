@@ -127,12 +127,13 @@ export default function Work({ data: { site, work, current, allDisciplines } }) 
                               { exists && (
                                 <div>
                                   <div className="mb-8 md:mb-16">
-                                    <TeaserFull
+                                    <TeaserFull 
                                       link={`/work/${work.slug}`}
                                       image={image}
-                                      video={null}
+                                      video={work.teaserVideo720p ? work.teaserVideo720p : null}
+                                      videoAlwaysOn={work.teaserAutoplayAlwaysOn}
                                       title={work.title}
-                                      text={work.teaserText}
+                                      meta={'Luxury Fashion'}
                                     />
                                   </div>
                                 </div>
@@ -201,6 +202,8 @@ const DISCIPLINE_QUERY = `
         alt
       }
       teaserText
+      teaserVideo720p
+      teaserAutoplayAlwaysOn
     }
   }
   ${metaTagsFragment}

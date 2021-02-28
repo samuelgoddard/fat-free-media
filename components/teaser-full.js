@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { motion } from "framer-motion"
 import { reveal, scaleDown } from "../helpers/transitionHelper"
 
-export default function TeaserFull({link, image, video, title, text}) {
+export default function TeaserFull({link, image, video, title, text, videoAlwaysOn}) {
   return (
     <Link href={link}>
       <a aria-label="Navigate to Work Item" className="flex flex-wrap group items-center">
@@ -19,7 +19,7 @@ export default function TeaserFull({link, image, video, title, text}) {
             />
           )}
           { video && (
-            <div className="transform group-hover:scale-110 transition ease-in-out duration-500 absolute top-0 left-0 right-0 bottom-0">
+            <div className={`transform transition ease-in-out duration-500 absolute top-0 left-0 right-0 bottom-0 ${videoAlwaysOn ? 'opacity-100' : 'opacity-0 group-hover:opacity-100' }`}>
               <video loop={true} playsInline autoPlay="autoplay" muted className="w-full h-full object-cover z-10">
                 <source src={ video } type="video/mp4" />
                 
