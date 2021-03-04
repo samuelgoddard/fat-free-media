@@ -592,11 +592,6 @@ const WORK_SINGLE_QUERY = `
         slug
         heroMeta
       }
-      randomProject {
-        title
-        slug
-        heroMeta
-      }
       slug
     }
   }
