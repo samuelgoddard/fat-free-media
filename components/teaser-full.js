@@ -31,7 +31,7 @@ export default function TeaserFull({link, image, video, title, text, videoAlways
         <div className="w-full md:w-4/12">
           <div className="w-full md:pl-12">
             <div className="relative overflow-hidden mb-3 md:mb-5">
-              <motion.span variants={reveal} className="block text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-none tracking-tighter">{ title }</motion.span>
+              <motion.span variants={reveal} className="block text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-none tracking-tighter max-w-md">{ title }</motion.span>
             </div>
 
             { text && (

@@ -68,7 +68,7 @@ export default function Footer({ hideMarquee }) {
         <div className="w-full md:w-1/2 py-12 md:py-20 xl:py-32 bg-orange text-off-white flex items-center">
           <div className="max-w-2xl px-6 mx-auto text-center">
             <span className="block mb-3 md:mb-6 text-4xl md:text-4xl lg:text-5xl xl:text-6xl leading-none tracking-tighter">Stay in the loop</span>
-            <p className="font-mono leading-tight tracking-tight mb-3 md:mb-6 max-w-sm md:max-w-xs xl:max-w-lg mx-auto">When we've got something great to say, we write a newsletter for brand teams. We curate the best of video, creativity and insights to inspire and delight.</p>
+            <p className="font-mono text-sm mb-4 md:mb-6 max-w-sm md:max-w-xs xl:max-w-lg mx-auto">When we've got something great to say, we write a newsletter for brand teams. We curate the best of video, creativity and insights to inspire and delight.</p>
 
             <form className="newsletter-form">
               <label htmlFor="email" className="sr-only">Email Address</label>

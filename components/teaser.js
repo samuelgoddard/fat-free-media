@@ -30,11 +30,11 @@ export default function Teaser({link, image, video, title, meta, videoAlwaysOn }
           )}
         </div>
         <div className="flex flex-wrap items-center">
-          <div className="relative overflow-hidden">
+          <div className="relative overflow-hidden flex-1">
             <motion.span variants={reveal} className="block text-2xl md:text-2xl xl:text-3xl leading-none tracking-tighter">{ title }</motion.span>
           </div>
           { meta && (
-            <div className="relative overflow-hidden ml-auto">
+            <div className="relative overflow-hidden flex-1 text-right">
               <motion.span variants={reveal} className="block text-xs uppercase tracking-tighter leading-none">{ meta }</motion.span>
             </div>
           )}

@@ -133,6 +133,7 @@ export default function Work({ data: { site, work, current, allDisciplines } }) 
                                       video={work.teaserVideo720p ? work.teaserVideo720p : null}
                                       videoAlwaysOn={work.teaserAutoplayAlwaysOn}
                                       title={work.title}
+                                      text={work.teaserText}
                                       meta={'Luxury Fashion'}
                                     />
                                   </div>

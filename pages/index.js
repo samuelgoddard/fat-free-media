@@ -74,6 +74,7 @@ export default function Index({ data: { home, site } }) {
                   videoAutoplayUrl={home.videoAutoplayUrl}
                   videoFullHd={home.videoFullUrl}
                   metaText="Our Showreel"
+                  text="WATCH"
                 />
               </div>
             </Container>

@@ -7,6 +7,7 @@ import { request } from "../../lib/datocms";
 import { metaTagsFragment, responsiveImageFragment } from "../../lib/fragments";
 import Container from "../../components/container";
 import Footer from "../../components/footer";
+import FancyLink from "../../components/fancy-link";
 import BigX from "../../components/big-x";
 import VideoRevealer from "../../components/video-revealer";
 import { motion } from "framer-motion"
@@ -35,9 +36,9 @@ export default function WorkSingle({ data: { site, work } }) {
               <Container>
                 <div className="text-center pt-40 md:pt-48 xl:pt-56 relative pb-8 md:pb-16 xl:pb-20">
                   <div className="relative overflow-hidden mb-2 md:mb-0" data-scroll data-scroll-speed="1.6">
-                    <motion.span variants={reveal} className="block md:text-lg uppercase tracking-tighter leading-none">{ work.heroMeta }</motion.span>
+                    <motion.span variants={reveal} className="block md:text-lg uppercase tracking-tighter leading-none">{ work.heroHeading }</motion.span>
                   </div>
-                  <h1 data-scroll data-scroll-speed="1.4" className="text-6xl md:text-7xl xl:text-8xl leading-none w-full tracking-tighter mb-4 md:mb-6 xl:mb-8 max-w-md md:max-w-xl xl:max-w-2xl mx-auto">{ work.heroHeading }</h1>
+                  <h1 data-scroll data-scroll-speed="1.4" className="text-6xl md:text-7xl xl:text-8xl leading-none w-full tracking-tighter mb-4 md:mb-6 xl:mb-8 max-w-md md:max-w-xl xl:max-w-2xl mx-auto">Fat Free x { work.heroMeta }</h1>
               </div>
               </Container>
 
@@ -364,11 +365,9 @@ export default function WorkSingle({ data: { site, work } }) {
                           block._modelApiKey === 'video' &&
                           <Container bleed>
                             <VideoRevealer 
-                              text="Watch in full"
+                              text="WATCH"
                               videoAutoplayUrl={block.videoUrlAutoplayingCover}
-                              videoFullHd={block.videoUrl1080p} 
-                              videoHd={block.videoUrl720p} 
-                              videoSd={block.videoUrl540p} 
+                              videoFullHd={block.videoUrl1080p}
                             />
                           </Container>
                         }
@@ -387,7 +386,7 @@ export default function WorkSingle({ data: { site, work } }) {
                       <div className="w-full md:w-7/12 text-lg md:text-xl xl:text-2xl leading-snug tracking-tighter">
                         {
                           work.credits.map((block, i) => (
-                            <div key={i} className="flex flex-wrap items-center max-w-sm mb-2 md:mb-3">
+                            <div key={i} className="flex flex-wrap items-center max-w-xl mb-2 md:mb-3">
                               <span className="block text-xs uppercase tracking-tighter leading-none">{ block.title }</span>
                               <span className="block text-lg font-mono ml-auto">{ block.name }</span>
                             </div>
@@ -398,6 +397,18 @@ export default function WorkSingle({ data: { site, work } }) {
                   </Container>
                 </div>
               </div>
+              
+              { work.relatedProject && (
+                <div className="bg-off-black pt-6 md:pt-8 pb-6 md:pb-10 block text-center text-off-white text-4xl md:text-5xl xl:text-6xl tracking-tighter leading-none">
+                  <span className="block text-xs uppercase tracking-tighter leading-none w-full">Next project</span>
+                  <FancyLink
+                    link={`/work/${work.relatedProject.slug}`}
+                    a11yText={`Navigate to ${work.relatedProject.title} project`}
+                    text={`Fat Free x ${work.relatedProject.heroMeta}`}
+                    thicc
+                  />
+                </div>
+              )}
 
               <Footer hideMarquee />
             </div>
@@ -566,8 +577,6 @@ const WORK_SINGLE_QUERY = `
           _modelApiKey
           videoUrlAutoplayingCover
           videoUrl1080p
-          videoUrl720p
-          videoUrl540p
         }
         ... on QuoteRecord {
           id
@@ -577,6 +586,16 @@ const WORK_SINGLE_QUERY = `
           authorName
           authorJobTitle
         }
+      }
+      relatedProject {
+        title
+        slug
+        heroMeta
+      }
+      randomProject {
+        title
+        slug
+        heroMeta
       }
       slug
     }

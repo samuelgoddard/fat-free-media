@@ -93,11 +93,9 @@ export default function ServiceSingle({ data: { site, service } }) {
                         block._modelApiKey === 'video' &&
                         <Container>
                           <VideoRevealer 
-                            text="Watch in full"
+                            text="WATCH"
                             videoAutoplayUrl={block.videoUrlAutoplayingCover}
                             videoFullHd={block.videoUrl1080p} 
-                            videoHd={block.videoUrl720p} 
-                            videoSd={block.videoUrl540p} 
                           />
                         </Container>
                       }
@@ -232,8 +230,6 @@ const SERVICE_SINGLE_QUERY = `
           _modelApiKey
           videoUrlAutoplayingCover
           videoUrl1080p
-          videoUrl720p
-          videoUrl540p
         }
       }
       services {

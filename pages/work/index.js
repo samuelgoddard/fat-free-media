@@ -74,12 +74,12 @@ export default function Work({ data: { site, work, disciplines } }) {
                 </nav>
 
                 <div className="overflow-hidden mb-12 md:mb-20 xl:mb-24 3xl:mb-32">
-                  <div className="flex flex-wrap md:-mx-4 lg:-mx-8 2xl:-mx-12">
+                  <div className="flex flex-wrap md:-mx-4 lg:-mx-8 2xl:-mx-12 mb-6 md:mb-8 xl:mb-16">
                     <div className="w-full md:w-7/12 lg:w-8/12 md:px-4 lg:px-8 2xl:px-12">
                       <div className="flex flex-wrap md:-mx-4 lg:-mx-8">
                         {gridMainPosts.map((work, i) => {
                           let widthClass = 'w-full';
-                          let image = work.teaserImage;
+                          let image = work.teaserImageLandscape;
                           let innerSpacingClass = '';
                           
                           if (i === 0) { 
@@ -107,8 +107,8 @@ export default function Work({ data: { site, work, disciplines } }) {
                                   image={image}
                                   video={work.teaserVideo720p ? work.teaserVideo720p : null}
                                   videoAlwaysOn={work.teaserAutoplayAlwaysOn}
-                                  title={work.title}
-                                  meta={'Luxury Fashion'}
+                                  title={work.heroMeta}
+                                  meta={work.heroHeading}
                                 />
                               </div>
                             </div>
@@ -135,14 +135,40 @@ export default function Work({ data: { site, work, disciplines } }) {
                                 image={image}
                                 video={work.teaserVideo720p ? work.teaserVideo720p : null}
                                 videoAlwaysOn={work.teaserAutoplayAlwaysOn}
-                                title={work.title}
-                                meta={'Luxury Fashion'}
+                                title={work.heroMeta}
+                                meta={work.heroHeading}
                               />
                             </div>
                           </div>
                         )
                       })}
                     </div>
+                  </div>
+                    
+                  <div className="border-b border-black mb-8">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-3 pb-0">More Work</h2>
+                  </div>
+                  <div className="flex flex-wrap md:-mx-4 lg:-mx-8">
+                    {morePosts.map((work, i) => {
+                      let widthClass = 'w-full md:w-1/2';
+                      let image = work.teaserImageLandscape;
+                      let innerSpacingClass = '';
+
+                      return (
+                        <div key={i} className={`${widthClass} md:px-4 lg:px-8 `}>
+                          <div className={`mb-8 md:mb-16 ${innerSpacingClass}`}>
+                            <Teaser 
+                              link={`/work/${work.slug}`}
+                              image={image}
+                              video={work.teaserVideo720p ? work.teaserVideo720p : null}
+                              videoAlwaysOn={work.teaserAutoplayAlwaysOn}
+                              title={work.heroMeta}
+                              meta={work.heroHeading}
+                            />
+                          </div>
+                        </div>
+                      )
+                    })}
                   </div>
                 </div>
               </Container>
@@ -192,6 +218,8 @@ const WORK_QUERY = `
         title
         alt
       }
+      heroMeta
+      heroHeading
       teaserVideo720p
       teaserAutoplayAlwaysOn   
     }
