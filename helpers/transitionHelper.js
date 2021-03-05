@@ -85,11 +85,11 @@ export const menuMovement = {
 	initial: { opacity: 0, y: '0vh' },
   enter: { 
     opacity: 1,
-    y: '-2vh',
+    y: '-5vh',
     transition: { duration: 1.5, ease: [0.83, 0, 0.17, 1] }
   },
 	exit: {
-    y: '1vh',
+    y: '-3vh',
     opacity: 0,
 		transition: { duration: 0.75, ease: [0.83, 0, 0.17, 1] }
 	}
@@ -99,11 +99,11 @@ export const menuMovementOne = {
 	initial: { opacity: 0, y: '0vh' },
   enter: { 
     opacity: 1,
-    y: '-12vh',
+    y: '-1vh',
     transition: { duration: 1.5, ease: [0.83, 0, 0.17, 1] }
   },
 	exit: {
-    y: '-9vh',
+    y: '0vh',
     opacity: 0,
 		transition: { duration: 0.75, ease: [0.83, 0, 0.17, 1] }
 	}
@@ -113,11 +113,11 @@ export const menuMovementTwo = {
 	initial: { opacity: 0, y: '0vh' },
   enter: { 
     opacity: 1,
-    y: '-22vh',
+    y: '-5vh',
     transition: { duration: 1.5, ease: [0.83, 0, 0.17, 1] }
   },
 	exit: {
-    y: '-19vh',
+    y: '-3vh',
     opacity: 0,
 		transition: { duration: 0.75, ease: [0.83, 0, 0.17, 1] }
 	}
@@ -127,11 +127,11 @@ export const menuMovementThree = {
 	initial: { opacity: 0, y: '0vh' },
   enter: { 
     opacity: 1,
-    y: '-8vh',
+    y: '-1vh',
     transition: { duration: 1.5, ease: [0.83, 0, 0.17, 1] }
   },
 	exit: {
-    y: '-5vh',
+    y: '0vh',
     opacity: 0,
 		transition: { duration: 0.75, ease: [0.83, 0, 0.17, 1] }
 	}

@@ -256,7 +256,85 @@ export default function About({ data: { site, about, team, services } }) {
               </Container>
             </div>
 
-            <Footer />
+            { about.beliefs.length > 0 && (
+                <div className="bg-yellow text-black yellow-highlight pb-12 md:pb-24 xl:pb-32 -mt-1">
+                  <Container thin>
+                  <div className="relative overflow-hidden mb-12 md:mb-12 xl:mb-20">
+                    <motion.span variants={reveal} className="block text-xs uppercase tracking-tighter leading-none">Our beliefs —</motion.span>
+                  </div>
+                    <ul className="border-t-2 border-black">
+                      {
+                        about.beliefs.map((block, i) => {
+                          let scrollAmount = -1.3;
+                          let paddingClass = 'pl-0 md:pl-8 xl:pl-12';
+                          let alignClass = 'justify-start';
+
+                          if (i === 0) {
+                            scrollAmount = 0.4;
+                            paddingClass = 'pl-0 md:pl-8 xl:pl-12';
+                            alignClass = 'justify-start'
+                          } else if (i === 1) {
+                            scrollAmount = 0.95;
+                            paddingClass = 'pl-12 md:pl-48 xl:pl-64';
+                            alignClass = 'justify-center'
+                          } else if (i === 2) {
+                            scrollAmount = -0.45;
+                            paddingClass = 'pr-0 md:pr-12 xl:pr-16';
+                            alignClass = 'justify-center'
+                          } else if (i === 3) {
+                            scrollAmount = 0.65;
+                            paddingClass = 'pr-0 md:pr-24 xl:pr-32';
+                            alignClass = 'justify-end'
+                          } else if (i === 4) {
+                            scrollAmount = -0.96;
+                            paddingClass = 'pr-0 md:pr-16 xl:pr-24';
+                            alignClass = 'justify-center'
+                          } else if (i === 5) {
+                            scrollAmount = 0.85;
+                            paddingClass = 'pl-0 md:pl-16 xl:pl-24';
+                            alignClass = 'justify-start'
+                          } else if (i === 6) {
+                            scrollAmount = -0.45;
+                            paddingClass = 'pl-0 md:pr-16 xl:pr-20';
+                            alignClass = 'justify-end'
+                          } else if (i === 7) {
+                            scrollAmount = -0.95;
+                            paddingClass = 'pl-0 md:pl-12 xl:pl-16';
+                            alignClass = 'justify-start'
+                          } else if (i === 8) {
+                            scrollAmount = 0.75;
+                            paddingClass = 'pl-0 md:pl-8 xl:pl-12';
+                            alignClass = 'justify-center'
+                          } else if (i === 9) {
+                            scrollAmount = -0.9;
+                            paddingClass = 'pl-0 md:pl-8 xl:pl-12';
+                            alignClass = 'justify-center'
+                          }
+
+                          return ( 
+                            <li key={block.id} className={`pb-4 lg:pb-6 pt-3 lg:pt-4 text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter leading-tight block border-b-2 border-black ${paddingClass}`}>
+                              { i > 8 ? (
+                                <button className={`flex w-full ${alignClass}`} data-scroll data-scroll-direction="horizontal" data-scroll-speed={scrollAmount}>
+                                  <span className="text-xl lg:text-3xl mr-1 lg:mr-3">{ i + 1 }</span> <span>{ block.title }</span>
+                                </button>
+                              ) : (
+                                <button className={`flex w-full ${alignClass}`} data-scroll data-scroll-direction="horizontal" data-scroll-speed={scrollAmount}>
+                                  <span className="text-xl lg:text-3xl mr-1 lg:mr-3">0{ i + 1 }</span> <span>{ block.title }</span>
+                                </button>
+                              )}
+                            </li>
+                          )
+                        })
+                      }
+                    </ul>
+                  </Container>
+                </div>
+              )}
+
+            <div className="bg-off-white pt-6 md:pt-8 pb-6 md:pb-10 block text-center text-off-black text-4xl md:text-5xl xl:text-6xl tracking-tighter leading-none">
+              <FancyLink link="/contact" a11yText="Navigate to contact page" text="Let's talk about it" thicc />
+            </div>
+            <Footer hideMarquee />
           </motion.div>
         </motion.div>
       </Layout>
@@ -315,6 +393,10 @@ const ABOUT_QUERY = `
       }
       calloutMetaText
       calloutHeading
+      beliefs {
+        text
+        title
+      }
     }
   }
   ${metaTagsFragment}
