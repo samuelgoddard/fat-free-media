@@ -19,7 +19,7 @@ export default function TeaserFull({link, image, video, title, text, videoAlways
             />
           )}
           { video && (
-            <div className={`transform transition ease-in-out duration-500 absolute top-0 left-0 right-0 bottom-0 ${videoAlwaysOn ? 'opacity-100' : 'opacity-0 group-hover:opacity-100' }`}>
+            <div className={`transform transition ease-in-out duration-500 absolute top-0 left-0 right-0 bottom-0 ${videoAlwaysOn ? 'opacity-100' : 'hidden md:block opacity-0 group-hover:opacity-100' }`}>
               <video loop={true} playsInline autoPlay="autoplay" muted className="w-full h-full object-cover z-10">
                 <source src={ video } type="video/mp4" />
                 
@@ -31,7 +31,7 @@ export default function TeaserFull({link, image, video, title, text, videoAlways
         <div className="w-full md:w-4/12">
           <div className="w-full md:pl-12">
             <div className="relative overflow-hidden mb-3 md:mb-5">
-              <motion.span variants={reveal} className="block text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-none tracking-tighter max-w-md">{ title }</motion.span>
+              <motion.span variants={reveal} className="block text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl leading-none tracking-tighter max-w-md">{ title }</motion.span>
             </div>
 
             { text && (

@@ -60,5 +60,6 @@ module.exports = {
     skew: ['hover', 'focus', 'group-hover', 'group-focus', 'responsive'],
     width: ['hover', 'focus', 'group-hover', 'group-focus', 'responsive'],
     textColor: ['hover', 'focus', 'group-hover', 'group-focus', 'responsive'],
+    margin: ['hover', 'focus', 'group-hover', 'group-focus', 'responsive'],
   }
 }

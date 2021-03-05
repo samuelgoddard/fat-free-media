@@ -289,3 +289,17 @@ html.has-scroll-dragging {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
 }
+
+.ReactModal__Overlay {
+  background: rgba(41, 46, 54, 0.95) !important;
+  z-index: 100 !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0px !important;
+}
+
+.ReactModal__Content {
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0px !important;
+}

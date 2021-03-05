@@ -67,6 +67,20 @@ export const scaleDownSmall = {
 	}
 }
 
+export const xAnimation = {
+	initial: { opacity: 0, scale: 0.9 },
+  enter: { 
+    opacity: 0.65,
+    scale: 1,
+    transition: { duration: 1, ease: [0.83, 0, 0.17, 1] }
+  },
+	exit: {
+    scale: 0.9,
+    opacity: 0,
+		transition: { duration: 0.75, ease: [0.83, 0, 0.17, 1] }
+	}
+}
+
 export const menuMovement = {
 	initial: { opacity: 0, y: '0vh' },
   enter: { 

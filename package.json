@@ -24,6 +24,7 @@
     "react-datocms": "1.4.5",
     "react-dom": "^17.0.1",
     "react-double-marquee": "^1.0.7",
+    "react-modal": "^3.12.1",
     "react-player": "^2.8.2",
     "tailwindcss": "^1.9.6",
     "tiny-json-http": "^7.3.0"

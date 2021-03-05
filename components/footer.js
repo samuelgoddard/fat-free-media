@@ -70,9 +70,12 @@ export default function Footer({ hideMarquee }) {
             <span className="block mb-3 md:mb-6 text-4xl md:text-4xl lg:text-5xl xl:text-6xl leading-none tracking-tighter">Stay in the loop</span>
             <p className="font-mono text-sm mb-4 md:mb-6 max-w-sm md:max-w-xs xl:max-w-lg mx-auto">When we've got something great to say, we write a newsletter for brand teams. We curate the best of video, creativity and insights to inspire and delight.</p>
 
-            <form className="newsletter-form">
+            <form className="newsletter-form max-w-xs w-full mx-auto relative">
               <label htmlFor="email" className="sr-only">Email Address</label>
-              <input type="email" id="email" className="bg-transparent border-b border-off-white appearance-none text-lg text-off-white font-mono block py-3 mx-auto px-2 focus:border-none focus:outline-none" placeholder="Your email address" />
+              <input type="email" id="email" className="bg-transparent border-b border-off-white appearance-none text-lg text-off-white font-mono block py-3 w-full px-2 focus:border-none focus:outline-none" placeholder="Your email address" />
+              <button type="submit" className="absolute bottom-0 right-0 text-3xl leading-none pb-0 h-full w-10 bg-orange mb-px mr-0 hover:-mr-2 focus:-mr-2 transition-all duration-300 ease-in-out">
+                <span className="-mt-2 block">→</span>
+              </button>
             </form>
           </div>
         </div>

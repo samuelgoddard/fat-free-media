@@ -28,7 +28,17 @@ export default function Menu({ data: { site, home, about, work, contact } }) {
           <motion.div variants={fade} className=" bg-orange text-off-white min-h-screen flex flex-wrap items-center md:items-end overflow-hidden relative">
             <Header theme="white" activeMenu />
 
-            <BigX color="text-orange-darker " />
+            <motion.div
+              initial="initial"
+              animate="enter"
+              exit="exit"
+              variants={{
+                enter: { transition: { delayChildren: 0.25 } }
+              }}
+              className="w-full mb-12 md:mb-10 xl:mb-0 relative z-10"
+            >
+              <BigX color="text-orange-darker " />
+            </motion.div>
 
             <Container>
               <div className="relative z-10 hidden md:flex flex-wrap w-full">

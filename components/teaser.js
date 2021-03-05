@@ -20,7 +20,7 @@ export default function Teaser({link, image, video, title, meta, videoAlwaysOn }
             />
           )}
           { video && (
-            <div className={`transform transition ease-in-out duration-500 absolute top-0 left-0 right-0 bottom-0 ${videoAlwaysOn ? 'opacity-100' : 'opacity-0 group-hover:opacity-100' }`}>
+            <div className={`transform transition ease-in-out duration-500 absolute top-0 left-0 right-0 bottom-0 ${videoAlwaysOn ? 'opacity-100' : 'hidden md:block opacity-0 group-hover:opacity-100' }`}>
               <video loop={true} playsInline autoPlay="autoplay" muted className="w-full h-full object-cover z-10">
                 <source src={ video } type="video/mp4" />
                 
