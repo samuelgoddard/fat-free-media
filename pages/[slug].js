@@ -15,7 +15,6 @@ import {  SmoothScrollProvider } from '../contexts/SmoothScroll.context'
 
 export default function ServiceSingle({ data: { site, legal } }) {
   const metaTags = legal._seoMetaTags.concat(site.favicon);
-  let shapeColour = { color: 'D18D67' };
 
   return (
     <SmoothScrollProvider options={{ smooth: true, lerp: 0.13 }}>
@@ -45,7 +44,7 @@ export default function ServiceSingle({ data: { site, legal } }) {
               <div className="pb-12 md:pb-20 xl:pb-32 2xl:pb-40">
                 <Container thinner>
                   <div className="max-w-4xl mx-auto">
-                    <div className="content" dangerouslySetInnerHTML={{ __html:legal.content}}></div>
+                    <div className="content text-lg" dangerouslySetInnerHTML={{ __html:legal.content}}></div>
                   </div>
                 </Container>
               </div>

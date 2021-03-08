@@ -27,20 +27,34 @@ export default function Footer({ hideMarquee }) {
             <nav className="w-full mb-6 md:mb-10 xl:mb-16">
               <span className="block text-xs font-mono uppercase tracking-tight leading-none mb-5">What Now?</span>
               <ul>
-                <li className="block"><Link href="#"><a aria-label="Navigate to Portfolio" className="tracking-tight text-off-white text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl mb-1 w-full border-b border-off-white border-dotted border-opacity-25 py-3 flex">
+                <li className="block text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl text-off-white w-full">
+                  {/* <Link href="#"><a aria-label="Navigate to Portfolio" className="tracking-tight text-off-white text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl mb-1 w-full border-b border-off-white border-dotted border-opacity-25 py-3 flex">
                   <span className="block text-base md:text-lg xl:text-xl mt-1 mr-2 md:mr-4">01</span>
                   <span>Watch Our Showreel</span>
-                </a></Link></li>
+                </a></Link> */}
 
-                <li className="block"><Link href="/work"><a aria-label="Navigate to Portfolio" className="tracking-tight text-off-white text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl mb-1 w-full border-b border-off-white border-dotted border-opacity-25 py-3 flex">
-                  <span className="block text-base md:text-lg xl:text-xl mt-1 mr-2 md:mr-4">02</span>
-                  <span>See Our Portfolio</span>
-                </a></Link></li>
+                  <FancyLink link="#" a11yText="Navigate to our showreel" text="Watch Our Showreel" opaque circleColor="text-off-black opacity-0" number="01"/>
+                </li>
 
-                <li className="block"><Link href="/work"><a aria-label="Navigate to Portfolio" className="tracking-tight text-off-white text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl mb-1 w-full py-3 flex">
-                  <span className="block text-base md:text-lg xl:text-xl mt-1 mr-2 md:mr-4">03</span>
-                  <span>Get In Touch</span>
-                </a></Link></li>
+                <li className="block text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl text-off-white w-full">
+                  {/* <Link href="/work">
+                    <a aria-label="Navigate to Portfolio" className="tracking-tight text-off-white text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl mb-1 w-full border-b border-off-white border-dotted border-opacity-25 py-3 flex">
+                      <span className="block text-base md:text-lg xl:text-xl mt-1 mr-2 md:mr-4">02</span>
+                      <span>See Our Portfolio</span>
+                    </a>
+                  </Link> */}
+                
+                  <FancyLink link="/work" a11yText="Navigate to about work page" text="See Our Portfolio" opaque circleColor="text-off-black opacity-0" number="02"/>
+                </li>
+
+
+                <li className="block text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl text-off-white w-full">
+                  {/* <Link href="/contact"><a aria-label="Navigate to Portfolio" className="tracking-tight text-off-white text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl mb-1 w-full py-3 flex">
+                    <span className="block text-base md:text-lg xl:text-xl mt-1 mr-2 md:mr-4">03</span>
+                    <span>Get In Touch</span>
+                  </a></Link> */}
+                  <FancyLink link="/contact" a11yText="Navigate to contact page" text="Get In Touch" opaque circleColor="text-off-black opacity-0" number="03"/>
+                </li>
                 {/* <li className="inline-block md:block mr-4 md:mr-0"><Link href="/services/video-identity"><a aria-label="Navigate to Video Identity" className="underline tracking-tight xl:text-lg mb-1">Video identity</a></Link></li>
                 <li className="inline-block md:block mr-4 md:mr-0"><Link href="/services/content-and-creative"><a aria-label="Navigate to Content &amp; Creative" className="underline tracking-tight xl:text-lg mb-1">Content &amp; Creative</a></Link></li>
                 <li className="inline-block md:block mr-4 md:mr-0"><Link href="/services/strategy-and-consultancy"><a aria-label="Navigate to Strategy &amp; Consultancy" className="underline tracking-tight xl:text-lg mb-1">Strategy &amp; Consultancy</a></Link></li> */}

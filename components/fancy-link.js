@@ -1,13 +1,18 @@
 import Link from "next/link";
 
-export default function FancyLink({link, a11yText, text, noCircle, thicc, circleColor}) {
+export default function FancyLink({link, a11yText, text, noCircle, thicc, circleColor, extraClasses, opaque, number}) {
   return (
     <Link href={link}>
-      <a aria-label={a11yText} className="tracking-tight inline-block items-center group">
+      <a aria-label={a11yText} className={`tracking-tight inline-block items-center group ${extraClasses}`}>
         <div className="flex items-center relative mb-2 pt-2">
-          <span className="block relative z-10">{ text }</span>
+          <span className="block relative z-10">
+            { number && (
+              <span className="inline-block text-base md:text-lg xl:text-xl mt-1 mr-2 md:mr-4 align-top">{number}</span>
+            )}
+            { text }
+          </span>
 
-          <span className={`absolute top-0 right-0 bottom-0 z-0 w-full border-current group-hover:w-0 group-focus:w-0 transition-all ease-in-out duration-300 ${ thicc ? 'border-b-2 -mb-1' : 'border-b'}`}></span>
+          <span className={`absolute top-0 right-0 bottom-0 z-0 w-full border-current group-hover:w-0 group-focus:w-0 transition-all ease-in-out duration-300 ${ thicc ? 'border-b-2 -mb-1 ' : 'border-b '} ${ opaque ? 'border-opacity-25 ' : 'border-opacity-25 '}`}></span>
 
           { !noCircle && (
             <span className={`flex items-center justify-center absolute z-0 w-full h-full ${ circleColor ? circleColor : 'text-yellow' }`}>

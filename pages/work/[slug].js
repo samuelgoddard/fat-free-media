@@ -39,11 +39,11 @@ export default function WorkSingle({ data: { site, work } }) {
                   <div className="relative overflow-hidden mb-2 md:mb-0" data-scroll data-scroll-speed="1.6">
                     <motion.span variants={reveal} className="block md:text-lg uppercase tracking-tighter leading-none">{ work.heroHeading }</motion.span>
                   </div>
-                  <h1 data-scroll data-scroll-speed="1.4" className="text-6xl md:text-7xl xl:text-8xl leading-none w-full tracking-tighter mb-4 md:mb-6 xl:mb-8 max-w-md md:max-w-xl xl:max-w-2xl mx-auto">Fat Free x { work.heroMeta }</h1>
+                  <h1 data-scroll data-scroll-speed="1.2" className="text-6xl md:text-7xl xl:text-8xl leading-none w-full tracking-tighter mb-4 md:mb-6 xl:mb-8 max-w-md md:max-w-xl xl:max-w-3xl mx-auto">Fat Free x { work.heroMeta }</h1>
               </div>
               </Container>
 
-              <div data-scroll data-scroll-speed="1.3" className="border-t border-b border-off-black pt-3 pb-4 mb-5 md:mb-8 xl:mb-0">
+              <div data-scroll data-scroll-speed="1" className="border-t border-b border-off-black pt-3 pb-4">
                 <div className="w-full whitespace-no-wrap text-3xl md:text-4xl xl:text-5xl tracking-tighter leading-tight">
                   <Marquee>
                     {work.tickerText.map((ticker, i) => (
@@ -59,14 +59,14 @@ export default function WorkSingle({ data: { site, work } }) {
                 </div>
               </div>
 
-              <div className="relative overflow-hidden pt-6 md:pb-20 xl:pb-32 md:-mt-4 lg:-mt-20 xl:-mt-12 2xl:-mt-16">
+              <div className="relative overflow-hidden pt-6 md:pb-20 xl:pb-32">
                 <BigX color="text-white" bottom />
   
                 {/* Modular Content */}
-                <div className="relative pb-0 md:pb-20 xl:pb-32">
+                <div className="relative pb-0 md:pb-20 xl:pb-24">
                   {
-                    work.contentBlocks.map((block) => (
-                      <div key={block.id} className="pb-12 md:pb-12 xl:pb-16" data-scroll data-scroll-speed="1.6">
+                    work.contentBlocks.map((block, i) => (
+                      <div key={block.id} className={`pb-16 md:pb-24 xl:pb-32 ${(i === 0 && block._modelApiKey === 'text') ? 'pt-12 md:pt-24 xl:pt-32' : 'md:-mt-8 xl:-mt-12'}`} data-scroll data-scroll-speed="1.6">
                         {
                           block._modelApiKey === 'text' &&
                           <Container thin>
