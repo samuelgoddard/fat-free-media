@@ -10,6 +10,7 @@ import Footer from "../../components/footer";
 import FancyLink from "../../components/fancy-link";
 import BigX from "../../components/big-x";
 import VideoRevealer from "../../components/video-revealer";
+import Carousel from "../../components/carousel";
 import { motion } from "framer-motion"
 import { fade, reveal, scaleDown } from "../../helpers/transitionHelper"
 import {  SmoothScrollProvider } from '../../contexts/SmoothScroll.context'
@@ -115,6 +116,14 @@ export default function WorkSingle({ data: { site, work } }) {
                                   </div>
                                 ))}
                               </div>
+                            </Container>
+                          </div>
+                        }
+                        {
+                          block._modelApiKey === 'images_carousel' &&
+                          <div className="overflow-hidden">
+                            <Container>
+                              <Carousel images={block.images}/>
                             </Container>
                           </div>
                         }
@@ -470,6 +479,17 @@ const WORK_SINGLE_QUERY = `
           _modelApiKey
           image {
             responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1500, h: 740 }) {
+              ...responsiveImageFragment
+            }
+            title
+            alt
+          }
+        }
+        ... on ImagesCarouselRecord {
+          id
+          _modelApiKey
+          images {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1500, h: 1000 }) {
               ...responsiveImageFragment
             }
             title

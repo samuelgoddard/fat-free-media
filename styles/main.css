@@ -290,6 +290,7 @@ html.has-scroll-dragging {
   -webkit-touch-callout: none;
 }
 
+/* Vendor Stuff... */
 .ReactModal__Overlay {
   background: rgba(41, 46, 54, 0.95) !important;
   z-index: 100 !important;
@@ -302,4 +303,24 @@ html.has-scroll-dragging {
   padding: 0 !important;
   border: none !important;
   border-radius: 0px !important;
+}
+
+.embla {
+  overflow: hidden;
+  margin-left: -20vw;
+  margin-right: -20vw;
+}
+
+@screen md {
+  .embla {
+    margin-left: -15vw;
+    margin-right: -15vw;
+  }
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  position: relative;
+  min-width: 50%;
 }
