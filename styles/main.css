@@ -324,3 +324,10 @@ html.has-scroll-dragging {
   position: relative;
   min-width: 50%;
 }
+
+.thin-underline {
+  text-decoration-line: underline!important;
+  text-decoration-style: solid!important;
+  text-decoration-color: white!important;
+  text-decoration-thickness: 3px!important;
+}

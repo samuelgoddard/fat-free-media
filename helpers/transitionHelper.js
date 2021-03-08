@@ -136,3 +136,64 @@ export const menuMovementThree = {
 		transition: { duration: 0.75, ease: [0.83, 0, 0.17, 1] }
 	}
 }
+
+
+export const aboutRevealLast = {
+	initial: { opacity: 0 },
+  enter: { 
+    opacity: 0.5,
+    transition: { duration: 1.5, ease: [0.83, 0, 0.17, 1], delay: 2.75 }
+  },
+	exit: {
+    opacity: 0,
+		transition: { duration: 0.75, ease: [0.83, 0, 0.17, 1] }
+	}
+}
+
+export const aboutRevealLastLast = {
+	initial: { opacity: 0 },
+  enter: { 
+    opacity: 0.5,
+    transition: { duration: 1.5, ease: [0.83, 0, 0.17, 1], delay: 3 }
+  },
+	exit: {
+    opacity: 0,
+		transition: { duration: 0.75, ease: [0.83, 0, 0.17, 1] }
+	}
+}
+
+export const aboutRevealFeeling = {
+	initial: { opacity: 0 },
+  enter: { 
+    opacity: 1,
+    transition: { duration: 1.5, ease: [0.83, 0, 0.17, 1], delay: 0.25 }
+  },
+	exit: {
+    opacity: 0,
+		transition: { duration: 0.75, ease: [0.83, 0, 0.17, 1] }
+	}
+}
+
+export const aboutRevealHearts = {
+	initial: { opacity: 0 },
+  enter: { 
+    opacity: 1,
+    transition: { duration: 1.5, ease: [0.83, 0, 0.17, 1], delay: 1 }
+  },
+	exit: {
+    opacity: 0,
+		transition: { duration: 0.75, ease: [0.83, 0, 0.17, 1] }
+	}
+}
+
+export const aboutRevealChange = {
+	initial: { opacity: 0 },
+  enter: { 
+    opacity: 1,
+    transition: { duration: 1.5, ease: [0.83, 0, 0.17, 1], delay: 1.75 }
+  },
+	exit: {
+    opacity: 0,
+		transition: { duration: 0.75, ease: [0.83, 0, 0.17, 1] }
+	}
+}

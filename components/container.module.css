@@ -24,6 +24,24 @@
   }
 }
 
+.container--thinner {
+  @apply px-6 max-w-screen-lg mx-auto w-full;
+
+  @screen md {
+    @apply px-8;
+  }
+}
+
+@screen 3xl {
+  .container--thinner {
+    @apply px-6 max-w-screen-xl mx-auto w-full;
+  
+    @screen md {
+      @apply px-8;
+    }
+  }
+}
+
 .container--bleed {
   @apply px-0 max-w-screen-3xl mx-auto w-full;
   
