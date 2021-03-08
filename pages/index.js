@@ -99,7 +99,48 @@ export default function Index({ data: { home, site } }) {
 
               <div className="w-full mb-12 md:mb-16 xl:mb-24 2xl:mb-32 3xl:mb-40 relative z-10">
                 <div className="flex flex-wrap">
-                  <div className="w-full md:w-1/3 md:px-8">
+
+                {home.whatWeDoBlocks.map((item, i) => {
+                  let color = 'text-orange';
+                  let scrollSpeed = 1.25;
+                  let paddingClass = 'py-6 md:py-10';
+                  
+                  if (i === 0) { 
+                    color = 'text-orange';
+                    scrollSpeed = 1.25;
+                    paddingClass = 'py-6 md:py-10';
+                  } else if (i === 1 ) {
+                    color = 'text-green';
+                    scrollSpeed = 2.25;
+                    paddingClass = 'py-6 md:pb-10 md:pt-64';
+                  } else if (i === 2 ) {
+                    color = 'text-purple'
+                    scrollSpeed = 1.75;
+                    paddingClass = 'py-6 md:pb-10 md:pt-32';
+                  }
+                  return (
+                    <div className="w-full md:w-1/3 md:px-8">
+                      <div className={`h-full border-b md:border-b-0 md:border-l border-dotted border-off-black border-opacity-50 md:px-8 ${ paddingClass}`}>
+                        <div className="flex flex-wrap -mx-4 md:mx-0" data-scroll data-scroll-speed={scrollSpeed}>
+                          <div className={`${color} w-full`}>
+                            <CircleInfinity />
+                          </div>
+                          <div className="flex-1 md:w-full px-2 md:px-0 relative z-10">
+                            <h3 className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter">{ item.heading }</h3>
+                            
+                            <div className="font-mono text-sm mb-4 md:mb-6" dangerouslySetInnerHTML={{ __html: item.text }}></div>
+
+                            <span className="text-lg">
+                              <FancyLink link={`/services/${item.serviceLink.slug}`} text="Learn more" a11yText={`Navigate to ${item.serviceLink.title} page`} />
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+
+                  {/* <div className="w-full md:w-1/3 md:px-8">
                     <div className="h-full py-6 md:py-10 border-b md:border-b-0 md:border-l border-dotted border-off-black border-opacity-50 md:px-8">
                       <div className="flex flex-wrap -mx-4 md:mx-0" data-scroll data-scroll-speed="1.25">
                         <div className="text-orange w-full">
@@ -154,7 +195,7 @@ export default function Index({ data: { home, site } }) {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </Container>
@@ -183,6 +224,14 @@ const HOMEPAGE_QUERY = `
       videoAutoplayUrl
       videoFullUrl
       whatWeDoText
+      whatWeDoBlocks {
+        heading
+        text
+        serviceLink {
+          title
+          slug
+        }
+      }
     }
   }
   ${metaTagsFragment}

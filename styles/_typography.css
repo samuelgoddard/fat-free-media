@@ -22,6 +22,10 @@ body {
   }
 }
 
+.content > a {
+  @apply underline;
+}
+
 .about-text {
   text-indent: 3rem;
 }
