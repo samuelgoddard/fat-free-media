@@ -146,15 +146,11 @@ export default function Footer({ hideMarquee }) {
             <div className="w-full md:w-auto md:text-right text-sm">
               <nav>
                 <li className="inline-block mx-3 ml-0">
-                  <FancyLink link="/" a11yText="Navigate to site terms page" text="Site Terms" noCircle />
+                  <FancyLink link="/terms-of-use" a11yText="Navigate to site terms page" text="Site Terms" noCircle />
                 </li>
 
                 <li className="inline-block mx-3">
-                  <FancyLink link="/" a11yText="Navigate to cookie policy page" text="Cookie Policy" noCircle />
-                </li>
-
-                <li className="inline-block mx-3">
-                  <FancyLink link="/" a11yText="Navigate to privacy policy page" text="Privacy Policy" noCircle />
+                  <FancyLink link="/privacy-policy" a11yText="Navigate to privacy policy page" text="Privacy Policy" noCircle />
                 </li>
 
                 <li className="inline-block mx-3 mr-0">

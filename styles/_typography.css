@@ -14,7 +14,7 @@ body {
   @apply my-5 list-inside list-disc;
 
   li {
-    @apply block mb-4;
+    @apply block mb-2;
   }
 
   li:before {
@@ -22,8 +22,12 @@ body {
   }
 }
 
-.content > a {
+.content > p a {
   @apply underline;
+
+  &:hover, &:focus {
+    @apply text-green;
+  }
 }
 
 .about-text {

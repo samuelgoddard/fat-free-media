@@ -35,20 +35,18 @@ export default function ServiceSingle({ data: { site, legal } }) {
               <Container>
                 <div className="pt-40 md:pt-48 xl:pt-56 2xl:pt-64 relative pb-8 md:pb-16 xl:pb-20" data-scroll data-scroll-speed="1.4">
                   <div className="flex flex-wrap items-center justify-center md:-mx-2 lg:-mx-8">
-                    <div className="w-auto md:w-2/12 lg:w-3/12 md:px-2 lg:px-8 hidden md:block" style={shapeColour}>
-                      <CircleInfinity small />
-                      <div className="flex-1 h-px -mt-3 bg-off-black"></div>
-                    </div>
                     <div className="flex-1 text-center md:px-2 lg:px-8">
-                      <h1 className="text-6xl md:text-7xl xl:text-8xl 2xl:text-9xl leading-none w-full tracking-tighter max-w-sm md:max-w-xl xl:max-w-2xl mt-8 mx-auto md:mx-0">{ legal.title }</h1>
+                      <h1 className="text-6xl md:text-7xl xl:text-8xl 2xl:text-9xl leading-none w-full tracking-tighter mt-8 mx-auto md:mx-0">{ legal.title }</h1>
                     </div>
                   </div>
                 </div>
               </Container>
 
-              <div className="pb-12 md:pb-20 xl:pb-32">
+              <div className="pb-12 md:pb-20 xl:pb-32 2xl:pb-40">
                 <Container thinner>
-                  <div className="content" dangerouslySetInnerHTML={{ __html:legal.content}}></div>
+                  <div className="max-w-4xl mx-auto">
+                    <div className="content" dangerouslySetInnerHTML={{ __html:legal.content}}></div>
+                  </div>
                 </Container>
               </div>
 
