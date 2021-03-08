@@ -11,10 +11,10 @@ import CircleInfinity from "../components/circle-infinity";
 import BigX from "../components/big-x";
 import FancyLink from "../components/fancy-link";
 import TeamModal from "../components/team-modal";
+import AboutHero from "../components/about-hero";
 import { motion } from "framer-motion"
 import { fade, reveal } from "../helpers/transitionHelper"
-import { useContext } from 'react'
-import { SmoothScrollContext, SmoothScrollProvider } from '../contexts/SmoothScroll.context'
+import { SmoothScrollProvider } from '../contexts/SmoothScroll.context'
 
 export default function About({ data: { site, about, team, services } }) {
   const metaTags = about.seo.concat(site.favicon);
@@ -32,24 +32,7 @@ export default function About({ data: { site, about, team, services } }) {
         >
           <Header theme="white" />
           <motion.div variants={fade} className="mb-20 md:mb-20 overflow-hidden relative">
-            <div className="bg-black text-white pt-40 md:pt-48 xl:pt-56 pb-8 md:pb-32 xl:pb-48 mb-8 md:mb-20 relative">
-              <Container thin>
-                <div className="relative z-10">
-                  <div className="relative overflow-hidden mb-3" data-scroll data-scroll-speed="0.9">
-                    <motion.span variants={reveal} className="block text-md md:text-lg xl:text-xl uppercase tracking-tighter leading-none">A small but mighty team</motion.span>
-                  </div>
-
-                  <h1 className="text-4xl md:text-5xl xl:text-6xl leading-none w-full max-w-4xl tracking-tighter pr-12 xl:pr-0 mb-10 md:mb-0" data-scroll data-scroll-speed="1.1">Video carries more feeling and uses more senses than any other medium. It has the potential to pull at the hearts and change the minds of those who watch it more than any other format. That’s why we spent the last 2 decades working hard and honing our craft. </h1>
-                </div>
-
-                <video loop={true} playsInline autoPlay="autoplay" muted className="absolute top-0 left-0 right-0 bottom-0 w-full h-full object-cover z-0">
-                  <source src="https://test-videos.co.uk/vids/bigbuckbunny/webm/vp9/1080/Big_Buck_Bunny_1080_10s_10MB.webm" type="video/webm" />
-                  <source src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/1080/Big_Buck_Bunny_1080_10s_10MB.mp4" type="video/mp4" />
-                  
-                  Sorry. Your browser does not support the video tag.
-                </video>
-              </Container>
-            </div>
+            <AboutHero />
 
             <Container thin>
               <div className="w-full mb-12 md:mb-16 xl:mb-24 relative z-10" data-scroll data-scroll-speed="1">

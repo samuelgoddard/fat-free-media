@@ -70,13 +70,68 @@ export default function Footer({ hideMarquee }) {
             <span className="block mb-3 md:mb-6 text-4xl md:text-4xl lg:text-5xl xl:text-6xl leading-none tracking-tighter">Stay in the loop</span>
             <p className="font-mono text-sm mb-4 md:mb-6 max-w-sm md:max-w-xs xl:max-w-lg mx-auto">When we've got something great to say, we write a newsletter for brand teams. We curate the best of video, creativity and insights to inspire and delight.</p>
 
-            <form className="newsletter-form max-w-xs w-full mx-auto relative">
-              <label htmlFor="email" className="sr-only">Email Address</label>
-              <input type="email" id="email" className="bg-transparent border-b border-off-white appearance-none text-lg text-off-white font-mono block py-3 w-full px-2 focus:border-none focus:outline-none" placeholder="Your email address" />
-              <button type="submit" className="absolute bottom-0 right-0 text-3xl leading-none pb-0 h-full w-10 bg-orange mb-px mr-0 hover:-mr-2 focus:-mr-2 transition-all duration-300 ease-in-out">
-                <span className="-mt-2 block">→</span>
-              </button>
-            </form>
+            {/* <div id="mc_embed_signup">
+              <form action="https://fatfreemedia.us2.list-manage.com/subscribe/post?u=0707fd5fce6636484cfe36669&amp;id=f4fff79bc3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
+                <div id="mc_embed_signup_scroll">
+                  <h2>Subscribe</h2>
+                  <div className="indicates-required">
+                    <span className="asterisk">*</span> indicates required
+                  </div>
+                  <div className="mc-field-group">
+                    <label htmlFor="mce-EMAIL" className="sr-only">Email Address  <span className="asterisk">*</span>
+                  </label>
+                    <input type="email" placeholder="email" name="EMAIL" className="required email" id="mce-EMAIL" />
+                  </div>
+                  <div id="mergeRow-gdpr" className="mergeRow gdpr-mergeRow content__gdprBlock mc-field-group">
+                    <div className="content__gdpr">
+                      <label>Marketing Permissions</label>
+                      <p>We would never spam you, ever. But it would be great if you can let us know you're ok to use this e-mail to get in touch every now and again provide updates and some very occasional marketing e-mails about Fat Free. So if that sounds ok, then click below. </p>
+                      <fieldset className="mc_fieldset gdprRequired mc-field-group" name="interestgroup_field">
+                        <label className="checkbox subfield" htmlFor="gdpr_1137"><input type="checkbox" id="gdpr_1137" name="gdpr[1137]" className="av-checkbox gdpr" /><span>I'm happy for you to contact me by e-mail</span> </label>
+                      </fieldset>
+                      <p>You can change your mind at any time by clicking the unsubscribe link in the footer of any email you receive from us, or by contacting us at neil@fatfreemedia.co.uk. We will treat your information with respect. For more information about our privacy practices please visit our website. By clicking below, you agree that we may process your information in accordance with these terms.</p>
+                    </div>
+                    <div className="content__gdprLegal">
+                      <p>We use Mailchimp as our marketing platform. By clicking below to subscribe, you acknowledge that your information will be transferred to Mailchimp for processing. <a href="https://mailchimp.com/legal/" target="_blank">Learn more about Mailchimp's privacy practices here.</a></p>
+                    </div>
+                  </div>
+                  <div id="mce-responses" className="clear">
+                    <div className="response hidden" id="mce-error-response"></div>
+                    <div className="response hidden" id="mce-success-response"></div>
+                  </div>
+                  <div className="sr-only" aria-hidden="true">
+                    <input type="text" name="b_0707fd5fce6636484cfe36669_f4fff79bc3" tabIndex="-1" placeholder="email" />
+                  </div>
+                  <div className="clear">
+                    <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" className="button">Send</button>
+                  </div>
+                </div>
+              </form>
+            </div> */}
+                          
+            
+            <div id="mc_embed_signup">
+              <form className="newsletter-form max-w-xs w-full mx-auto relative validate" action="https://fatfreemedia.us2.list-manage.com/subscribe/post?u=0707fd5fce6636484cfe36669&amp;id=f4fff79bc3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" noValidate>
+                <div id="mc_embed_signup_scroll">
+                  <div className="mc-field-group">
+                    <label htmlFor="mce-EMAIL" className="sr-only">Email Address</label>
+                    <input name="EMAIL" type="email" id="mce-EMAIL" className="bg-transparent border-b border-off-white appearance-none text-lg text-off-white font-mono block py-3 w-full px-2 focus:border-none focus:outline-none required email" placeholder="Your email address" />
+                  </div>
+
+                  <div id="mce-responses" className="clear">
+                    <div className="response" id="mce-error-response" className="hidden"></div>
+                    <div className="response" id="mce-success-response" className="hidden"></div>
+                  </div>
+
+                  <div className="sr-only" aria-hidden="true">
+                    <input type="text" name="b_0707fd5fce6636484cfe36669_f4fff79bc3" tabIndex="-1" />
+                  </div>
+                  <button type="submit" name="subscribe" id="mc-embedded-subscribe" className="absolute bottom-0 right-0 text-3xl leading-none pb-0 h-full w-10 bg-orange mb-px mr-0 hover:-mr-2 focus:-mr-2 transition-all duration-300 ease-in-out">
+                    <span className="-mt-2 block">→</span>
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>

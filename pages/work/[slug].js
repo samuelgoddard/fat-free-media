@@ -465,6 +465,17 @@ const WORK_SINGLE_QUERY = `
           }
           text
         }
+        ... on ImageRecord {
+          id
+          _modelApiKey
+          image {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1500, h: 740 }) {
+              ...responsiveImageFragment
+            }
+            title
+            alt
+          }
+        }
         ... on Images2SquareRecord {
           id
           _modelApiKey
