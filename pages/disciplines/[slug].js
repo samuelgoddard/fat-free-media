@@ -147,7 +147,7 @@ export default function Work({ data: { site, work, current, allDisciplines } }) 
                   </div>
                 </div>
               </Container>
-              <Footer />
+              <Footer disciplines={allDisciplines} />
             </div>
           </motion.div>
         </motion.div>

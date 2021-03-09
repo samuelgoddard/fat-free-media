@@ -14,7 +14,8 @@ import Carousel from "../../components/carousel";
 import { motion } from "framer-motion"
 import { fade, reveal, scaleDown } from "../../helpers/transitionHelper"
 import {  SmoothScrollProvider } from '../../contexts/SmoothScroll.context'
-import Marquee from 'react-double-marquee';
+// import Marquee from 'react-double-marquee';
+import Marquee from "react-fast-marquee";
 
 export default function WorkSingle({ data: { site, work } }) {
   const metaTags = work._seoMetaTags.concat(site.favicon);
@@ -45,15 +46,15 @@ export default function WorkSingle({ data: { site, work } }) {
 
               <div data-scroll data-scroll-speed="1" className="border-t border-b border-off-black pt-3 pb-4">
                 <div className="w-full whitespace-no-wrap text-3xl md:text-4xl xl:text-5xl tracking-tighter leading-tight">
-                  <Marquee>
+                  <Marquee pauseOnHover={false} gradient={false} speed={75}>
                     {work.tickerText.map((ticker, i) => (
-                      <span className="inline-block"key={i}><span className="inline mx-1">{ ticker.text }</span> <span className="inline mx-3">•</span></span>
+                      <span className="inline-block"key={i}><span className="inline mx-1 md:mx-2">{ ticker.text }</span> <span className="inline mx-1 md:mx-2 md:mr-3">•</span></span>
                     ))}
                     {work.tickerText.map((ticker, i) => (
-                      <span className="inline-block"key={i}><span className="inline mx-1">{ ticker.text }</span> <span className="inline mx-3">•</span></span>
+                      <span className="inline-block"key={i}><span className="inline mx-1 md:mx-2">{ ticker.text }</span> <span className="inline mx-1 md:mx-2">•</span></span>
                     ))}
                     {work.tickerText.map((ticker, i) => (
-                      <span className="inline-block"key={i}><span className="inline mx-1">{ ticker.text }</span> <span className="inline mx-3">•</span></span>
+                      <span className="inline-block"key={i}><span className="inline mx-1 md:mx-2">{ ticker.text }</span> <span className="inline mx-1 md:mx-2">•</span></span>
                     ))}
                   </Marquee>
                 </div>

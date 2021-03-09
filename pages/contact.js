@@ -17,7 +17,7 @@ import { motion } from "framer-motion"
 import { fade, reveal } from "../helpers/transitionHelper"
 import { SmoothScrollProvider } from '../contexts/SmoothScroll.context'
 
-export default function Index({ data: { site, contact } }) {
+export default function Index({ data: { site, contact, disciplines } }) {
   const metaTags = contact.seo.concat(site.favicon);
 
   return (
@@ -136,7 +136,7 @@ export default function Index({ data: { site, contact } }) {
               </div>
             </Container>
 
-            <Footer />
+            <Footer disciplines={disciplines} />
           </motion.div>
         </motion.div>
       </Layout>
@@ -165,6 +165,10 @@ const CONTACTPAGE_QUERY = `
       phoneNumber
       address
       slug
+    }
+    disciplines: allDisciplines {
+      slug 
+      title
     }
   }
   ${metaTagsFragment}

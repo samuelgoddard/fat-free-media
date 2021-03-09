@@ -17,7 +17,7 @@ import { reveal, fade, scaleDown } from "../helpers/transitionHelper"
 import { SmoothScrollProvider } from '../contexts/SmoothScroll.context'
 // import ReactPlayer from 'react-player'
 
-export default function Index({ data: { home, site } }) {
+export default function Index({ data: { home, site, disciplines } }) {
   const metaTags = home.seo.concat(site.favicon);
 
   return (
@@ -214,7 +214,7 @@ export default function Index({ data: { home, site } }) {
               </div>
             </Container>
 
-            <Footer />
+            <Footer disciplines={disciplines} />
           </motion.div>
         </motion.div>
       </Layout>
@@ -246,6 +246,10 @@ const HOMEPAGE_QUERY = `
           slug
         }
       }
+    }
+    disciplines: allDisciplines {
+      slug 
+      title
     }
   }
   ${metaTagsFragment}

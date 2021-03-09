@@ -172,7 +172,7 @@ export default function Work({ data: { site, work, disciplines } }) {
                   </div>
                 </div>
               </Container>
-              <Footer />
+              <Footer disciplines={disciplines} />
             </div>
           </motion.div>
         </motion.div>

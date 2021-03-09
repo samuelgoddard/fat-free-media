@@ -1,21 +1,31 @@
 import Container from './container'
 import Link from 'next/link'
-import Marquee from 'react-double-marquee';
+// import Marquee from 'react-double-marquee';
+import Marquee from "react-fast-marquee";
 import BigX from "./big-x";
 import FancyLink from "../components/fancy-link";
 import FancyLinkExternal from "../components/fancy-link-external";
 
-export default function Footer({ hideMarquee }) {
+export default function Footer({ hideMarquee, disciplines }) {
   return (
     <footer>
       { !hideMarquee && (
-        <div className="border-t border-off-black py-3">
-          <div className="w-full whitespace-no-wrap text-3xl md:text-4xl xl:text-5xl tracking-tighter leading-tight">
-            <Marquee>
-              <span className="inline mx-1">Video Identity</span> <span className="inline mx-1">•</span> <span className="inline mx-1">TV Commercials</span> <span className="inline mx-1">•</span> <span className="inline mx-1">Creative Campaigns</span> <span className="inline mx-1">•</span> <span className="inline mx-1">Video Brand Strategy</span> <span className="inline mx-1">•</span> <span className="inline mx-1">TV &amp; VOD</span> <span className="inline mx-1">•</span> <span className="inline mx-1">Paid Social Content</span> <span className="inline mx-1">•</span> <span className="inline mx-1">Brand Campaigns</span> <span className="inline mx-1">•</span> <span className="inline mx-1">Video Brand Guidelines</span> <span className="inline mx-1">•</span> <span className="inline mx-1">Production</span> <span className="inline mx-1">•</span> <span className="inline mx-1">Live-action</span> <span className="inline mx-1">•</span> <span className="inline mx-1">Art Direction</span> <span className="inline mx-1">•</span> <span className="inline mx-1">Motion Graphics</span> <span className="inline mx-1">•</span>
-            </Marquee>
+        <>
+        { disciplines && (
+          <div className="border-t border-off-black py-3">
+            <div className="w-full whitespace-no-wrap text-3xl md:text-4xl xl:text-5xl tracking-tighter leading-tight">
+              <Marquee pauseOnHover={true} gradient={false} speed={75}>
+                {disciplines.map((discipline, i) => (
+                  <span className="block" key={i} className="mb-1 md:mb-2">
+                    <FancyLink link={`/disciplines/${discipline.slug}`} a11yText={`Navigate to ${discipline.title} work`} text={discipline.title} extraClasses="mx-2 md:mx-3"/>
+                    <span className="inline mx-2 md:mx-3">•</span>
+                  </span>
+                ))}
+              </Marquee>
+            </div>
           </div>
-        </div>
+        )}
+        </>
       )}
 
       <div className="flex flex-wrap">

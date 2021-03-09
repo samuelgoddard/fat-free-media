@@ -349,3 +349,7 @@ html.has-scroll-dragging {
 .split-child {
   display: inline-block;
 }
+
+.marquee {
+  margin-right: 0 !important;
+}

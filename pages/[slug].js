@@ -52,6 +52,7 @@ export default function ServiceSingle({ data: { site, legal } }) {
               <div className="bg-off-black pt-6 md:pt-8 pb-6 md:pb-10 block text-center text-off-white text-4xl md:text-5xl xl:text-6xl tracking-tighter leading-none">
                 <FancyLink link="/contact" a11yText="Navigate to contact page" text="Let's talk about it" thicc />
               </div>
+              
               <Footer hideMarquee />
             </div>
           </motion.div>
