@@ -12,6 +12,7 @@ import BigX from "../components/big-x";
 import FancyLink from "../components/fancy-link";
 import TeamModal from "../components/team-modal";
 import AboutHero from "../components/about-hero";
+import BeliefHover from "../components/belief-hover";
 import { motion } from "framer-motion"
 import { fade, reveal } from "../helpers/transitionHelper"
 import { SmoothScrollProvider } from '../contexts/SmoothScroll.context'
@@ -251,6 +252,7 @@ export default function About({ data: { site, about, team, services } }) {
                           let scrollAmount = -1.3;
                           let paddingClass = 'pl-0 md:pl-8 xl:pl-12';
                           let alignClass = 'justify-start';
+                          let properIndex = i + 1;
 
                           if (i === 0) {
                             scrollAmount = 0.4;
@@ -295,15 +297,11 @@ export default function About({ data: { site, about, team, services } }) {
                           }
 
                           return ( 
-                            <li key={block.id} className={`pb-4 lg:pb-6 pt-3 lg:pt-4 text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter leading-tight block border-b-2 border-black ${paddingClass}`}>
+                            <li key={block.id} className={`pb-4 lg:pb-6 pt-3 lg:pt-4 text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter leading-tight block border-b-2 border-black relative ${paddingClass}`}>
                               { i > 8 ? (
-                                <button className={`flex w-full ${alignClass}`} data-scroll data-scroll-direction="horizontal" data-scroll-speed={scrollAmount}>
-                                  <span className="text-xl lg:text-3xl mr-1 lg:mr-3">{ i + 1 }</span> <span>{ block.title }</span>
-                                </button>
+                                <BeliefHover alignClass={alignClass} scrollAmount={scrollAmount} index={ properIndex } title={block.title} />
                               ) : (
-                                <button className={`flex w-full ${alignClass}`} data-scroll data-scroll-direction="horizontal" data-scroll-speed={scrollAmount}>
-                                  <span className="text-xl lg:text-3xl mr-1 lg:mr-3">0{ i + 1 }</span> <span>{ block.title }</span>
-                                </button>
+                                <BeliefHover alignClass={alignClass} scrollAmount={scrollAmount} index={`0${ properIndex }`} title={block.title} />
                               )}
                             </li>
                           )

@@ -19,7 +19,6 @@ module.exports = {
       'mono': ['Space Mono', 'Arial', 'sans-serif'],
     },
     extend: {
-      
       colors: {
         'off-black': '#373c42',
         'off-white': '#EAE8E4',
@@ -47,6 +46,12 @@ module.exports = {
         '7xl': '4.5rem',
         '8xl': '6.25rem',
         '9xl': '7rem',
+      },
+      spacing: {
+        '72': '18rem',
+        '80': '20rem',
+        '96': '24rem',
+        '120': '32rem',
       },
       opacity: {
         '65': '.65',
