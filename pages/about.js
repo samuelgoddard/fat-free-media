@@ -304,6 +304,7 @@ export default function About({ data: { site, about, team, services } }) {
                               scrollAmount={scrollAmount}
                               index={ i > 8 ? properIndex : properIndexTrimmed }
                               title={block.title}
+                              text={"This is some placeholder text that Sam needs @todo"}
                               key={block.id}
                             />
                           )

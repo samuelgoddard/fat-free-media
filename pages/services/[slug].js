@@ -8,6 +8,7 @@ import { metaTagsFragment, responsiveImageFragment } from "../../lib/fragments";
 import Container from "../../components/container";
 import Footer from "../../components/footer";
 import BigX from "../../components/big-x";
+import BeliefHover from "../../components/belief-hover";
 import CircleInfinity from "../../components/circle-infinity";
 import FancyLink from "../../components/fancy-link";
 import { motion } from "framer-motion"
@@ -113,6 +114,8 @@ export default function ServiceSingle({ data: { site, service } }) {
                           let scrollAmount = -1.3;
                           let paddingClass = 'pl-0 md:pl-8 xl:pl-12';
                           let alignClass = 'justify-start';
+                          let properIndex = i + 1;
+                          let properIndexTrimmed = `0${i + 1}`;
 
                           if (i === 0) {
                             scrollAmount = 0.4;
@@ -157,17 +160,15 @@ export default function ServiceSingle({ data: { site, service } }) {
                           }
 
                           return ( 
-                            <li key={block.id} className={`pb-4 lg:pb-6 pt-3 lg:pt-4 text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter leading-tight block border-b-2 border-black ${paddingClass}`}>
-                              { i > 8 ? (
-                                <span className={`flex ${alignClass}`} data-scroll data-scroll-direction="horizontal" data-scroll-speed={scrollAmount}>
-                                  <span className="text-xl lg:text-3xl mr-1 lg:mr-3">{ i + 1 }</span> <span>{ block.title }</span>
-                                </span>
-                              ) : (
-                                <span className={`flex ${alignClass}`} data-scroll data-scroll-direction="horizontal" data-scroll-speed={scrollAmount}>
-                                  <span className="text-xl lg:text-3xl mr-1 lg:mr-3">0{ i + 1 }</span> <span>{ block.title }</span>
-                                </span>
-                              )}
-                            </li>
+                            <BeliefHover
+                              alignClass={alignClass}
+                              paddingClass={paddingClass}
+                              scrollAmount={scrollAmount}
+                              index={ i > 8 ? properIndex : properIndexTrimmed }
+                              title={block.title}
+                              text={block.text}
+                              key={block.id}
+                            />
                           )
                         })
                       }
