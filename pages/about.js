@@ -253,6 +253,7 @@ export default function About({ data: { site, about, team, services } }) {
                           let paddingClass = 'pl-0 md:pl-8 xl:pl-12';
                           let alignClass = 'justify-start';
                           let properIndex = i + 1;
+                          let properIndexTrimmed = `0${i + 1}`;
 
                           if (i === 0) {
                             scrollAmount = 0.4;
@@ -297,13 +298,14 @@ export default function About({ data: { site, about, team, services } }) {
                           }
 
                           return ( 
-                            <li key={block.id} className={`pb-4 lg:pb-6 pt-3 lg:pt-4 text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter leading-tight block border-b-2 border-black relative ${paddingClass}`}>
-                              { i > 8 ? (
-                                <BeliefHover alignClass={alignClass} scrollAmount={scrollAmount} index={ properIndex } title={block.title} />
-                              ) : (
-                                <BeliefHover alignClass={alignClass} scrollAmount={scrollAmount} index={`0${ properIndex }`} title={block.title} />
-                              )}
-                            </li>
+                            <BeliefHover
+                              alignClass={alignClass}
+                              paddingClass={paddingClass}
+                              scrollAmount={scrollAmount}
+                              index={ i > 8 ? properIndex : properIndexTrimmed }
+                              title={block.title}
+                              key={block.id}
+                            />
                           )
                         })
                       }
