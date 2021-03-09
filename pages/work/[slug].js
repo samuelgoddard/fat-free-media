@@ -395,9 +395,9 @@ export default function WorkSingle({ data: { site, work } }) {
                       <div className="w-full md:w-7/12 text-lg md:text-xl xl:text-2xl leading-snug tracking-tighter">
                         {
                           work.credits.map((block, i) => (
-                            <div key={i} className="flex flex-wrap items-center max-w-xl mb-2 md:mb-3">
-                              <span className="block text-xs uppercase tracking-tighter leading-none">{ block.title }</span>
-                              <span className="block text-lg font-mono ml-auto">{ block.name }</span>
+                            <div key={i} className="flex flex-wrap items-start max-w-xl mb-2 md:mb-3">
+                              <span className="block w-5/12 text-xs uppercase tracking-tighter leading-none">{ block.title }</span>
+                              <span className="block w-7/12 text-right text-lg font-mono ml-auto">{ block.name }</span>
                             </div>
                           ))
                         }

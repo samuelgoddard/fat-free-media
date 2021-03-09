@@ -19,6 +19,7 @@ module.exports = {
       'mono': ['Space Mono', 'Arial', 'sans-serif'],
     },
     extend: {
+      
       colors: {
         'off-black': '#373c42',
         'off-white': '#EAE8E4',

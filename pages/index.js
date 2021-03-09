@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Head from "next/head";
 import Link from "next/link";
 import Header from '../components/header'
@@ -14,6 +15,8 @@ import FancyLink from "../components/fancy-link";
 import { motion } from "framer-motion"
 import { reveal, fade, scaleDown } from "../helpers/transitionHelper"
 import { SmoothScrollProvider } from '../contexts/SmoothScroll.context'
+import SplitRevealHeading from "../components/split-reveal-heading"
+
 // import ReactPlayer from 'react-player'
 
 export default function Index({ data: { home, site } }) {
@@ -22,7 +25,10 @@ export default function Index({ data: { home, site } }) {
   return (
     <SmoothScrollProvider options={{ smooth: true, lerp: 0.13 }}>
       <Layout>
-      <Head>{renderMetaTags(metaTags)}</Head>
+      <Head>
+        <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/SplitText3.min.js"></script>
+        {renderMetaTags(metaTags)}
+      </Head>
 
         <motion.div
           initial="initial"
@@ -58,7 +64,9 @@ export default function Index({ data: { home, site } }) {
                     <motion.span variants={reveal} className="block text-xs uppercase tracking-tighter leading-none">{ home.heroMetaText }</motion.span>
                   </div>
                 </div>
-                <h1 className="text-5xl md:text-6xl xl:text-7xl leading-none w-full max-w-4xl tracking-tighter pr-12 xl:pr-0" data-scroll data-scroll-speed="1.35">{ home.heroHeading }</h1>
+                <div data-scroll data-scroll-speed="1.35" className="text-5xl md:text-6xl xl:text-7xl leading-none w-full max-w-4xl tracking-tighter pr-12 xl:pr-0">
+                  <SplitRevealHeading text={home.heroHeading} />
+                </div>
               </motion.div>
             </Container>
 

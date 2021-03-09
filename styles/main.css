@@ -331,3 +331,21 @@ html.has-scroll-dragging {
   text-decoration-color: white!important;
   text-decoration-thickness: 3px!important;
 }
+
+.split {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+.split > div {
+  position: relative;
+  margin: 0;
+}
+.split-parent {
+  overflow: hidden;
+  padding-bottom: 8px !important;
+  margin-top: -8px !important;
+}
+.split-child {
+  display: inline-block;
+}
