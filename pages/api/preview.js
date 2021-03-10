@@ -11,10 +11,15 @@ export default async (req, res) => {
     return res.status(401).json({ message: "Invalid token" });
   }
 
+  const post = await getPostBySlug(req.query.slug)
   // Enable Preview Mode by setting the cookies
   res.setPreviewData({});
 
-  // Redirect to the homepage
+  if (!post) {
+    return res.status(401).json({ message: 'Invalid slug' })
+  }
+
+  res.setPreviewData({})
   
   res.redirect(post.slug)
   res.end();
