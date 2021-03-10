@@ -15,6 +15,6 @@ export default async (req, res) => {
   res.setPreviewData({});
 
   // Redirect to the homepage
-  // res.writeHead(307, { Location: "/" });
+  res.writeHead(307, { Location: post.slug })
   res.end();
 };
