@@ -17,12 +17,12 @@ import { SmoothScrollContext, SmoothScrollProvider } from '../../contexts/Smooth
 var at = require('lodash/at');
 
 export default function Work({ data: { site, work, current, allDisciplines } }) {
-  // const metaTags = about.seo.concat(site.favicon);
+  const metaTags = current.seo.concat(site.favicon);
 
   return (
     <SmoothScrollProvider options={{ smooth: true, lerp: 0.13 }}>
       <Layout>
-        {/* <Head>{renderMetaTags(metaTags)}</Head> */}
+        <Head>{renderMetaTags(metaTags)}</Head>
         
         <motion.div
           initial="initial"
@@ -170,6 +170,9 @@ const DISCIPLINE_QUERY = `
     current: discipline(filter: {slug: {eq: $slug}}) {
       title
       slug
+      seo: _seoMetaTags {
+        ...metaTagsFragment
+      }
     }
     work: allWorks(
       orderBy: position_ASC,

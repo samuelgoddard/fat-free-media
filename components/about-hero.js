@@ -46,25 +46,25 @@ class AboutHero extends Component {
           </div>
 
           <video loop={true} playsInline autoPlay="autoplay" muted className={`absolute top-0 left-0 transition ease-in-out duration-500 right-0 bottom-0 w-full h-full object-cover ${ this.state.defaultHover ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
-            <source src="https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_1920_18MG.mp4" type="video/mp4" />
+            <source src={this.props.defaultVideo} type="video/mp4" />
             
             Sorry. Your browser does not support the video tag.
           </video>
           
           <video loop={true} playsInline autoPlay="autoplay" muted className={`absolute top-0 left-0 transition ease-in-out duration-500 right-0 bottom-0 w-full h-full object-cover ${ this.state.feelingHover ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
-            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" type="video/mp4" />
+            <source src={this.props.feelingVideo} type="video/mp4" />
             
             Sorry. Your browser does not support the video tag.
           </video>
 
           <video loop={true} playsInline autoPlay="autoplay" muted className={`absolute top-0 left-0 transition ease-in-out duration-500 right-0 bottom-0 w-full h-full object-cover ${ this.state.heartHover ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
-            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4" />
+            <source src={this.props.heartVideo} type="video/mp4" />
             
             Sorry. Your browser does not support the video tag.
           </video>
 
           <video loop={true} playsInline autoPlay="autoplay" muted className={`absolute top-0 left-0 transition ease-in-out duration-500 right-0 bottom-0 w-full h-full object-cover ${ this.state.changeHover ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
-            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4" />
+            <source src={this.props.changeVideo} type="video/mp4" />
             
             Sorry. Your browser does not support the video tag.
           </video>

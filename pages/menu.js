@@ -2,6 +2,7 @@ import Head from "next/head";
 import { renderMetaTags, Image } from "react-datocms";
 import Header from '../components/header'
 import Link from "next/link";
+import { NextSeo } from 'next-seo';
 import Layout from "../components/layout";
 import { request } from "../lib/datocms";
 import { metaTagsFragment, responsiveImageFragment } from "../lib/fragments";
@@ -13,12 +14,15 @@ import { fade, menuMovement, menuMovementOne, menuMovementTwo, menuMovementThree
 import { SmoothScrollProvider } from '../contexts/SmoothScroll.context'
 
 export default function Menu({ data: { site, home, about, work, contact } }) {
-  // const metaTags = about.seo.concat(site.favicon);
+  const metaTags = home.seo.concat(site.favicon);
 
   return (
     <SmoothScrollProvider options={{ smooth: true, lerp: 0.13 }}>
       <Layout>
-        <Head>{renderMetaTags(site.favicon)}</Head>
+
+        <Head>
+          {renderMetaTags(metaTags)}
+        </Head>
         
         <motion.div
           initial="initial"
@@ -142,6 +146,9 @@ const MENU_QUERY = `
       }
     }
     home {
+      seo: _seoMetaTags {
+        ...metaTagsFragment
+      }
       menuImage {
         responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 720, h: 1000 }) {
           ...responsiveImageFragment

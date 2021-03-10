@@ -16,8 +16,8 @@ import { useContext } from 'react'
 import { SmoothScrollContext, SmoothScrollProvider } from '../../contexts/SmoothScroll.context'
 var at = require('lodash/at');
 
-export default function Work({ data: { site, work, disciplines } }) {
-  // const metaTags = about.seo.concat(site.favicon);
+export default function Work({ data: { site, work, disciplines, workLanding } }) {
+  const metaTags = workLanding.seo.concat(site.favicon);
 
   const gridMainPosts = at(work, [0,2,3,5,7]);
   const gridSidebarPosts = at(work, [1,4,6]);
@@ -26,7 +26,7 @@ export default function Work({ data: { site, work, disciplines } }) {
   return (
     <SmoothScrollProvider options={{ smooth: true, lerp: 0.13 }}>
       <Layout>
-        {/* <Head>{renderMetaTags(metaTags)}</Head> */}
+        <Head>{renderMetaTags(metaTags)}</Head>
         
         <motion.div
           initial="initial"
@@ -192,6 +192,11 @@ const WORK_QUERY = `
       id
       slug
       title
+    }
+    workLanding {
+      seo: _seoMetaTags {
+        ...metaTagsFragment
+      }
     }
     work: allWorks(orderBy: position_ASC) {
       id

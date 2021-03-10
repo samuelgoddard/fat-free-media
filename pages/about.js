@@ -33,7 +33,12 @@ export default function About({ data: { site, about, team, services } }) {
         >
           <Header theme="white" />
           <motion.div variants={fade} className="mb-20 md:mb-20 overflow-hidden relative">
-            <AboutHero />
+            <AboutHero 
+              defaultVideo={about.defaultHeroVideoUrl}
+              feelingVideo={about.feelingHeroVideoUrl}
+              heartVideo={about.heartHeroVideoUrl}
+              changeVideo={about.changeHeroVideoUrl}
+            />
 
             <Container thin>
               <div className="w-full mb-12 md:mb-16 xl:mb-24 relative z-10" data-scroll data-scroll-speed="1">
@@ -368,6 +373,10 @@ const ABOUT_QUERY = `
       title
       ourTeamText
       aboutText
+      defaultHeroVideoUrl
+      feelingHeroVideoUrl
+      heartHeroVideoUrl
+      changeHeroVideoUrl
       calloutImage {
         responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 800, h: 1050 }) {
           ...responsiveImageFragment
