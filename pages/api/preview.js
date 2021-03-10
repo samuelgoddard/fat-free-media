@@ -1,4 +1,20 @@
-import { getPreviewWorkBySlug } from '@/lib/api'
+function getPreviewWorkBySlug(slug) {
+  const data = await fetchAPI(
+    `
+    query WorkBySlug($slug: String) {
+      work(filter: {slug: {eq: $slug}}) {
+        slug
+      }
+    }`,
+    {
+      preview: true,
+      variables: {
+        slug,
+      },
+    }
+  )
+  return data?.post
+}
 
 export default async function preview(req, res) {
   // Check the secret and next parameters
