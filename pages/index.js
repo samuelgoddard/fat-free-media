@@ -226,57 +226,55 @@ export default function Index({ subscription }) {
   );
 }
 
-const HOMEPAGE_QUERY = `
-  query HomePage {
-    site: _site {
-      favicon: faviconMetaTags {
-        ...metaTagsFragment
-      }
-    }
-    home {
-      seo: _seoMetaTags {
-        ...metaTagsFragment
-      }
-      heroMetaText
-      heroHeading
-      videoAutoplayUrl
-      videoFullUrl
-      whatWeDoText
-      whatWeDoBlocks {
-        heading
-        text
-        serviceLink {
+export async function getStaticProps({ preview }) {
+  const HOMEPAGE_QUERY = {
+    query: `
+      { 
+        site: _site {
+          favicon: faviconMetaTags {
+            ...metaTagsFragment
+          }
+        }
+        home {
+          seo: _seoMetaTags {
+            ...metaTagsFragment
+          }
+          heroMetaText
+          heroHeading
+          videoAutoplayUrl
+          videoFullUrl
+          whatWeDoText
+          whatWeDoBlocks {
+            heading
+            text
+            serviceLink {
+              title
+              slug
+            }
+          }
+        }
+        disciplines: allDisciplines {
+          slug 
           title
-          slug
         }
       }
-    }
-    disciplines: allDisciplines {
-      slug 
-      title
-    }
-  }
-  ${metaTagsFragment}
-`
-
-export async function getStaticProps({ preview }) {
-  const data = {
-    query: HOMEPAGE_QUERY,
-    preview
-  }
+      ${metaTagsFragment}
+    `,
+    preview,
+  };
 
   return {
     props: {
       subscription: preview
         ? {
-            ...graphqlRequest,
-            initialData: await request(data),
+            ...HOMEPAGE_QUERY,
+            initialData: await request(HOMEPAGE_QUERY),
             token: process.env.NEXT_EXAMPLE_CMS_DATOCMS_API_TOKEN,
             environment: process.env.NEXT_DATOCMS_ENVIRONMENT || null,
           }
         : {
             enabled: false,
-            initialData: await request(data),
+            initialData: await request(HOMEPAGE_QUERY),
           },
     },
   };
