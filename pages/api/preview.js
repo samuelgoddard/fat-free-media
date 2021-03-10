@@ -1,25 +1,8 @@
+import { getPreviewWorkBySlug } from './helpers'
+
 export default async function preview(req, res) {
   // Check the secret and next parameters
   // This secret should only be known to this API route and the CMS
-
-  function getPreviewWorkBySlug(slug) {
-    const data = await fetchAPI(
-      `
-      query WorkBySlug($slug: String) {
-        work(filter: {slug: {eq: $slug}}) {
-          slug
-        }
-      }`,
-      {
-        preview: true,
-        variables: {
-          slug,
-        },
-      }
-    )
-    return data?.post
-  }
-  
   if (
     req.query.secret !== process.env.DATOCMS_PREVIEW_SECRET ||
     !req.query.slug
