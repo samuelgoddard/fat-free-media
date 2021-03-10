@@ -17,12 +17,16 @@ import { reveal, fade, scaleDown } from "../helpers/transitionHelper"
 import { SmoothScrollProvider } from '../contexts/SmoothScroll.context'
 // import ReactPlayer from 'react-player'
 
-export default function Index({ data: { home, site, disciplines } }) {
+export default function Index({ subscription }) {
+  const {
+    data: { home, site, disciplines },
+  } = useQuerySubscription(subscription);
+
   const metaTags = home.seo.concat(site.favicon);
 
   return (
     <SmoothScrollProvider options={{ smooth: true, lerp: 0.13 }}>
-      <Layout>
+      <Layout preview={subscription.preview}>
       <Head>
         {renderMetaTags(metaTags)}
       </Head>
@@ -255,14 +259,25 @@ const HOMEPAGE_QUERY = `
   ${metaTagsFragment}
 `
 
-export async function getStaticProps() {
-  const data = await request({
-    query: HOMEPAGE_QUERY
-  })
+export async function getStaticProps({ preview }) {
+  const data = {
+    query: HOMEPAGE_QUERY,
+    preview
+  }
 
   return {
     props: {
-      data,
+      subscription: preview
+        ? {
+            ...graphqlRequest,
+            initialData: await request(data),
+            token: process.env.NEXT_EXAMPLE_CMS_DATOCMS_API_TOKEN,
+            environment: process.env.NEXT_DATOCMS_ENVIRONMENT || null,
+          }
+        : {
+            enabled: false,
+            initialData: await request(data),
+          },
     },
-  }
+  };
 }

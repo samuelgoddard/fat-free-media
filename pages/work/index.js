@@ -21,7 +21,7 @@ export default function Work({ data: { site, work, disciplines } }) {
 
   const gridMainPosts = at(work, [0,2,3,5,7]);
   const gridSidebarPosts = at(work, [1,4,6]);
-  const morePosts = work.slice(7);
+  const morePosts = work.slice(8);
 
   return (
     <SmoothScrollProvider options={{ smooth: true, lerp: 0.13 }}>
