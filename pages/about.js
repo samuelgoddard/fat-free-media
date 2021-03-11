@@ -358,7 +358,7 @@ const ABOUT_QUERY = `
         }
       }
     }
-    services: allServices {
+    services: allServices(orderBy: position_ASC) {
       title
       shapeColour {
         hex
