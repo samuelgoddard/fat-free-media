@@ -10,24 +10,26 @@ export default function MenuItem({link, animation, image, video, heading, text})
         <motion.div variants={animation}>
           <div className="transition-transform ease-in-out duration-500 md:transform group-hover:-translate-y-12 group-focus:-translate-y-12">
             
-            <div className="relative transition ease-in-out duration-500 opacity-75 group-hover:opacity-100 group-focus:opacity-100 mb-10 transform skew-y-2 hidden md:block z-0 w-10/12">
-              <Image
-                data={{
-                  ...image.responsiveImage,
-                  alt: image.alt ? image.alt : image.title,
-                }}
-                className="w-full"
-              />
+            <div className="relative overflow-hidden transform skew-y-2">
+              <div className="relative transition ease-in-out duration-500 opacity-75 group-hover:opacity-100 group-focus:opacity-100 mb-10 hidden md:block z-0 w-10/12 transform group-hover:scale-105">
+                <Image
+                  data={{
+                    ...image.responsiveImage,
+                    alt: image.alt ? image.alt : image.title,
+                  }}
+                  className="w-full"
+                />
 
-              { video && (
-                <div className="absolute top-0 left-0 right-0 bottom-0 z-10 opacity-0 group-hover:opacity-100 transition ease-in-out duration-300">
-                  <video loop={true} playsInline autoPlay="autoplay" muted className="w-full h-full object-cover z-10">
-                    <source src={ video } type="video/mp4" />
-                    
-                    Sorry. Your browser does not support the video tag.
-                  </video>
-                </div>
-              )}
+                {/* { video && (
+                  <div className="absolute top-0 left-0 right-0 bottom-0 z-10 opacity-0 group-hover:opacity-100 transition ease-in-out duration-300">
+                    <video loop={true} playsInline autoPlay="autoplay" muted className="w-full h-full object-cover z-10">
+                      <source src={ video } type="video/mp4" />
+                      
+                      Sorry. Your browser does not support the video tag.
+                    </video>
+                  </div>
+                )} */}
+              </div>
             </div>
 
             <motion.div
