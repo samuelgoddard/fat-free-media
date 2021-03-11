@@ -338,7 +338,7 @@ const ABOUT_QUERY = `
         ...metaTagsFragment
       }
     }
-    team: allTeams {
+    team: allTeams(orderBy: position_ASC) {
       id
       name
       shortBio
