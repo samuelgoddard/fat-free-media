@@ -1,7 +1,7 @@
 import { Component } from "react";
 import Container from "../components/container"
 import { motion } from "framer-motion"
-import { reveal, aboutRevealLast, aboutRevealFeeling, aboutRevealHearts, aboutRevealChange, aboutRevealLastLast } from "../helpers/transitionHelper"
+import { reveal, aboutRevealLast, aboutRevealFeeling, aboutRevealHearts, aboutRevealChange, aboutRevealLastLast, aboutRevealLastFull } from "../helpers/transitionHelper"
 
 class AboutHero extends Component {
   constructor(props){
@@ -24,7 +24,7 @@ class AboutHero extends Component {
         <Container thinner>
           <div className="relative z-20">
             <div className="relative overflow-hidden mb-3" data-scroll data-scroll-speed="0.9">
-              <motion.span variants={aboutRevealLast} className="block text-md md:text-lg xl:text-xl uppercase tracking-tighter leading-none">A small but mighty team</motion.span>
+              <motion.span variants={aboutRevealLastFull} className="block text-md md:text-lg xl:text-xl uppercase tracking-tighter leading-none">A small but mighty team</motion.span>
             </div>
 
             <h1 className="text-4xl md:text-5xl xl:text-6xl leading-none w-full max-w-4xl tracking-tighter pr-12 xl:pr-0 mb-10 md:mb-0" data-scroll data-scroll-speed="1.1">

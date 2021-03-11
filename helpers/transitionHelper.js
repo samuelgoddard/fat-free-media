@@ -148,6 +148,18 @@ export const aboutRevealLast = {
 	}
 }
 
+export const aboutRevealLastFull = {
+	initial: { opacity: 0 },
+  enter: { 
+    opacity: 1,
+    transition: { duration: 1.5, ease: [0.83, 0, 0.17, 1], delay: 2.75 }
+  },
+	exit: {
+    opacity: 0,
+		transition: { duration: 0.75, ease: [0.83, 0, 0.17, 1] }
+	}
+}
+
 export const aboutRevealLastLast = {
 	initial: { opacity: 0 },
   enter: { 
