@@ -11,6 +11,7 @@ import BigX from "../../components/big-x";
 import BeliefHover from "../../components/belief-hover";
 import CircleInfinity from "../../components/circle-infinity";
 import FancyLink from "../../components/fancy-link";
+import VideoRevealer from "../../components/video-revealer";
 import { motion } from "framer-motion"
 import { fade } from "../../helpers/transitionHelper"
 import {  SmoothScrollProvider } from '../../contexts/SmoothScroll.context'
