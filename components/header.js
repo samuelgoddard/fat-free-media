@@ -5,13 +5,13 @@ import Link from 'next/link'
 import FancyLink from '../components/fancy-link'
 import FancyLinkExternal from '../components/fancy-link-external'
 
-export default function Header({theme, contact, activeMenu}) {
+export default function Header({theme, contact, activeMenu, workBack}) {
   return (
     <header className={`absolute top-0 left-0 right-0 z-20 text-${theme} transition-colors ease-in-out duration-300`}>
       <Container>
         <div className="flex flex-wrap items-center pt-8">
           <div className="w-auto">
-            <div className="relative overflow-hidden">
+            <div className="relative overflow-hidden flex flex-wrap items-center">
               <motion.div variants={reveal}>
                 <Link href="/">
                   <a aria-label="Navigate to Home" className="group">
@@ -19,6 +19,14 @@ export default function Header({theme, contact, activeMenu}) {
                   </a>
                 </Link>
               </motion.div>
+
+              { workBack && (
+                <div className="relative overflow-hidden ml-6 md:ml-12 md:text-lg pb-1">
+                  <motion.div variants={reveal}>
+                    <FancyLink link="/work" text="Back to all work" a11yText="Navigate back to all work" circleColor={ theme === 'white' ? 'text-orange-darker' : 'text-yellow'} />
+                  </motion.div>
+                </div>
+              )}
             </div>
           </div>
 

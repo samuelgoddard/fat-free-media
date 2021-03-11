@@ -32,7 +32,7 @@ export default function WorkSingle({ data: { site, work } }) {
           className=""
         >
           <motion.div variants={fade} className=" overflow-hidden relative">
-            <Header theme="off-black" />
+            <Header theme="off-black" workBack />
             <BigX color="text-white" left />
             <div className="relative">
               <Container>

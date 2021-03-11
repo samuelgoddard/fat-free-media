@@ -41,7 +41,7 @@ class AboutHero extends Component {
             
               <motion.span variants={aboutRevealChange} className="change inline cursor-pointer" onMouseOver={() => this.setState({ changeHover: true, defaultHover: false })} onMouseOut={() => this.setState({ changeHover: false, defaultHover: true })}>change </motion.span>
             
-              <motion.span variants={aboutRevealLast} className="inline">the minds of those who watch it more than any other format. That’s why we spent the last 2 decades working hard and honing our craft.</motion.span>
+              <motion.span variants={aboutRevealLast} className="inline">the minds of those who watch it more than any other format.</motion.span>
             </h1>
           </div>
 
