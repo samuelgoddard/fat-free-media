@@ -4,7 +4,7 @@ import BigX from "./big-x";
 import FancyLink from "../components/fancy-link";
 import ShowreelModal from "../components/showreel-modal";
 import FancyLinkExternal from "../components/fancy-link-external";
-import Vimeo from '@u-wave/react-vimeo';
+// import Vimeo from '@u-wave/react-vimeo';
 
 export default function Footer({ hideMarquee, disciplines }) {
   return (
@@ -39,15 +39,15 @@ export default function Footer({ hideMarquee, disciplines }) {
               <ul>
                 <ShowreelModal>
                   <div className="flex flex-wrap w-full">
-                    <div className="bg-off-white p-3 lg:p-5 xl:p-8 video-modal">
-                      
-                      <Vimeo
-                        video={503395940}
-                        className="w-full h-auto relative z-10 block"
-                        width={'100%'}
-                        height={'100%'}
-                        responsive={true}
-                      />
+                    <div className="bg-off-white p-3 lg:p-5 xl:p-8">
+                      <video 
+                        controls={true}
+                        preload="metadata"
+                        className="w-full home-video object-cover relative z-10 block"
+                      >
+                        <source src="https://player.vimeo.com/external/521509719.hd.mp4?s=e8606428a6bbe63e4ffa0029463f09267de421d0&profile_id=175" type="video/mp4"/>
+                        Sorry. Your browser does not support the video tag.
+                      </video>
                     </div>
                   </div>
                 </ShowreelModal>

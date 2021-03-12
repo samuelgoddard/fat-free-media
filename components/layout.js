@@ -1,14 +1,14 @@
 import React from 'react'
-import { initGA, logPageView } from '../helpers/analytics'
+// import { initGA, logPageView } from '../helpers/analytics'
 
 export default class Layout extends React.Component {
-  componentDidMount () {
-    if (!window.GA_INITIALIZED) {
-      initGA()
-      window.GA_INITIALIZED = true
-    }
-    logPageView()
-  }
+  // componentDidMount () {
+  //   if (!window.GA_INITIALIZED) {
+  //     initGA()
+  //     window.GA_INITIALIZED = true
+  //   }
+  //   logPageView()
+  // }
   render () {
     return (
       <>

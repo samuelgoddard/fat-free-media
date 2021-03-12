@@ -12,7 +12,7 @@ import { motion } from "framer-motion"
 import FilterLink from "../../components/filter-link";
 import { fade, reveal } from "../../helpers/transitionHelper"
 import { SmoothScrollProvider } from '../../contexts/SmoothScroll.context'
-var at = require('lodash/at');
+var at = require('lodash.at');
 
 export default function Work({ data: { site, work, disciplines, workLanding } }) {
   const metaTags = workLanding.seo.concat(site.favicon);

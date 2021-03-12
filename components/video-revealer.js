@@ -1,7 +1,7 @@
 import { Component } from "react";
 import MagneticButton from "../components/magnetic-button";
 import { motion } from "framer-motion"
-import Vimeo from '@u-wave/react-vimeo';
+// import Vimeo from '@u-wave/react-vimeo';
 
 // import gsap from 'gsap';
 
@@ -17,7 +17,7 @@ class VideoRevealer extends Component {
   
   toggleOverlay = () => {
     this.setState({ overlayCollapsed: !this.state.sidebarCollapsed });
-    this.videoFullHdRef.player.play();
+    this.videoFullHdRef.play();
   };
 
   render(){
@@ -68,7 +68,7 @@ class VideoRevealer extends Component {
             className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-full z-20"
             animate={!overlayCollapsed ? open : closed}
           >
-            <video loop={true} playsInline autoPlay="autoplay" muted className="w-full h-auto object-cover">
+            <video loop={true} playsInline autoPlay="autoplay" muted className="w-full h-auto home-video object-cover">
               <source src={this.props.videoAutoplayUrl} type="video/mp4" />
               Sorry. Your browser does not support the video tag.
             </video>
@@ -80,24 +80,24 @@ class VideoRevealer extends Component {
             className="w-full relative z-10"
           >
             { this.props.videoFullHd && (
-              // <video 
-              //   controls={true}
-              //   preload="metadata"
-              //   className="w-full home-video object-cover relative z-10 block"
-              //   ref={videoFullHdRef => this.videoFullHdRef = videoFullHdRef}
-              // >
-              //   <source src={this.props.videoFullHd} type="video/mp4"/>
-              //   Sorry. Your browser does not support the video tag.
-              // </video>
-
-              <Vimeo
-                video={503395940}
-                className="w-full h-auto relative z-10 block"
-                width={'100%'}
-                height={'100%'}
-                responsive={true}
+              <video 
+                controls={true}
+                preload="metadata"
+                className="w-full home-video object-cover relative z-10 block"
                 ref={videoFullHdRef => this.videoFullHdRef = videoFullHdRef}
-              />
+              >
+                <source src={this.props.videoFullHd} type="video/mp4"/>
+                Sorry. Your browser does not support the video tag.
+              </video>
+
+              // <Vimeo
+              //   video={503395940}
+              //   className="w-full h-auto relative z-10 block"
+              //   width={'100%'}
+              //   height={'100%'}
+              //   responsive={true}
+              //   ref={videoFullHdRef => this.videoFullHdRef = videoFullHdRef}
+              // />
             )}
           </motion.div>
         </div>
