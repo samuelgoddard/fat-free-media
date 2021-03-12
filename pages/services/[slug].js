@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 import { renderMetaTags, Image } from "react-datocms";
 import Header from "../../components/header";
 import Layout from "../../components/layout";
@@ -252,9 +251,6 @@ export async function getStaticProps({ params }) {
       slug: params.slug,
     },
   })
-  
-  // key is needed here
-  data.key = params.slug 
 
   return {
       props: {

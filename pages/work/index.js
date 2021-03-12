@@ -1,6 +1,5 @@
 import Head from "next/head";
-import Link from "next/link";
-import { renderMetaTags, Image } from "react-datocms";
+import { renderMetaTags } from "react-datocms";
 import Header from "../../components/header";
 import Layout from "../../components/layout";
 import { request } from "../../lib/datocms";
@@ -11,9 +10,8 @@ import Footer from "../../components/footer";
 import BigX from "../../components/big-x";
 import { motion } from "framer-motion"
 import FilterLink from "../../components/filter-link";
-import { fade, reveal, scaleDown } from "../../helpers/transitionHelper"
-import { useContext } from 'react'
-import { SmoothScrollContext, SmoothScrollProvider } from '../../contexts/SmoothScroll.context'
+import { fade, reveal } from "../../helpers/transitionHelper"
+import { SmoothScrollProvider } from '../../contexts/SmoothScroll.context'
 var at = require('lodash/at');
 
 export default function Work({ data: { site, work, disciplines, workLanding } }) {
@@ -50,11 +48,6 @@ export default function Work({ data: { site, work, disciplines, workLanding } })
                       return (
                         <li key={i} className="text-base md:text-3xl xl:text-4xl leading-tight tracking-tighter relative pr-2 md:pr-4 flex  overflow-hidden">
                           <motion.span variants={reveal}>
-                            {/* <Link href={`/disciplines/${discipline.slug}`}>
-                              <a aria-label={`Navigate to ${discipline.title} Discipline page`} className="flex">
-                                {discipline.title} <span className="block text-xl tracking-normal -mt-1 ml-1">(3)</span>
-                              </a>
-                            </Link> */}
                             <FilterLink link={`/disciplines/${discipline.slug}`} a11yText={`Navigate to ${discipline.title} Discipline page`} text={discipline.title} amount={discipline.amountOfProjects} />
                           </motion.span>
                           { i !== (disciplines.length - 1) &&(

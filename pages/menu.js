@@ -1,8 +1,6 @@
 import Head from "next/head";
-import { renderMetaTags, Image } from "react-datocms";
+import { renderMetaTags } from "react-datocms";
 import Header from '../components/header'
-import Link from "next/link";
-import { NextSeo } from 'next-seo';
 import Layout from "../components/layout";
 import { request } from "../lib/datocms";
 import { metaTagsFragment, responsiveImageFragment } from "../lib/fragments";

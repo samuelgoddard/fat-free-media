@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 import { renderMetaTags, Image } from "react-datocms";
 import Layout from "../components/layout";
 import Header from "../components/header";
@@ -34,10 +33,9 @@ export default function About({ data: { site, about, team, services } }) {
           <Header theme="white" />
           <motion.div variants={fade} className="mb-20 md:mb-20 overflow-hidden relative">
             <AboutHero 
+              metaText={about.heroMetaText}
+              text={about.heroText}
               defaultVideo={about.defaultHeroVideoUrl}
-              feelingVideo={about.feelingHeroVideoUrl}
-              heartVideo={about.heartHeroVideoUrl}
-              changeVideo={about.changeHeroVideoUrl}
             />
 
             <Container thin>
@@ -371,6 +369,8 @@ const ABOUT_QUERY = `
         ...metaTagsFragment
       }
       title
+      heroMetaText
+      heroText
       ourTeamText
       aboutText
       defaultHeroVideoUrl

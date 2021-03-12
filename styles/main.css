@@ -70,31 +70,31 @@
 
 @screen md {
   .home-video {
-    height: 550px;
+    height: 550px !important;
   }
 }
 
 @screen lg {
   .home-video {
-    height: 620px;
+    height: 620px !important;
   }
 }
 
 @screen xl {
   .home-video {
-    height: 730px;
+    height: 730px !important;
   }
 }
 
 @screen 2xl {
   .home-video {
-    height: 830px;
+    height: 830px !important;
   }
 }
 
 @screen 3xl {
   .home-video {
-    height: 920px;
+    height: 920px !important;
   }
 }
 
@@ -352,4 +352,46 @@ html.has-scroll-dragging {
 
 .marquee {
   margin-right: 0 !important;
+}
+
+* {
+    -webkit-overflow-scrolling: touch
+}
+
+.about-hero strong {
+  @apply font-normal text-yellow;
+}
+
+.video-modal {
+  width: 280px !important;
+}
+
+@screen sm {
+  .video-modal {
+    width: 550px !important;
+  }
+}
+
+@screen md {
+  .video-modal {
+    width: 700px !important;
+  }
+}
+
+@screen lg {
+  .video-modal {
+    width: 850px !important;
+  }
+}
+
+@screen xl {
+  .video-modal {
+    width: 1200px !important;
+  }
+}
+
+@screen 2xl {
+  .video-modal {
+    width: 1400px !important;
+  }
 }

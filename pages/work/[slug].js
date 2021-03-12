@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 import { renderMetaTags, Image } from "react-datocms";
 import Header from "../../components/header";
 import Layout from "../../components/layout";
@@ -12,9 +11,8 @@ import BigX from "../../components/big-x";
 import VideoRevealer from "../../components/video-revealer";
 import Carousel from "../../components/carousel";
 import { motion } from "framer-motion"
-import { fade, reveal, scaleDown } from "../../helpers/transitionHelper"
+import { fade, reveal } from "../../helpers/transitionHelper"
 import {  SmoothScrollProvider } from '../../contexts/SmoothScroll.context'
-// import Marquee from 'react-double-marquee';
 import Marquee from "react-fast-marquee";
 
 export default function WorkSingle({ data: { site, work } }) {

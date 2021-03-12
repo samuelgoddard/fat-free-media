@@ -1,16 +1,14 @@
 import Head from "next/head";
-import Link from "next/link";
 import { request } from "../lib/datocms";
 import Header from "../components/header";
 import Layout from "../components/layout";
-import { renderMetaTags, useQuerySubscription } from "react-datocms";
-import { metaTagsFragment, responsiveImageFragment } from "../lib/fragments";
+import { renderMetaTags } from "react-datocms";
+import { metaTagsFragment } from "../lib/fragments";
 import Container from "../components/container";
 import Footer from "../components/footer";
 import BigX from "../components/big-x";
 import ShapeSquare from "../components/shape-square";
 import ShapeSquareOutline from "../components/shape-square-outline";
-import FancyLink from "../components/fancy-link";
 import Form from "../components/form.js"
 import FancyLinkExternal from "../components/fancy-link-external";
 import { motion } from "framer-motion"
@@ -61,7 +59,6 @@ export default function Index({ data: { site, contact, disciplines } }) {
                               <FancyLinkExternal link={`mailto:${contact.emailAddress}`} text={contact.emailAddress} a11yText="Email Us" />
                             </motion.div>
                           </div>
-
 
                           <div className="w-full max-w-xs">
                             <Form />

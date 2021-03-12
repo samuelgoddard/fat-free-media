@@ -140,7 +140,7 @@ export const aboutRevealLast = {
 	initial: { opacity: 0 },
   enter: { 
     opacity: 1,
-    transition: { duration: 1.5, ease: [0.83, 0, 0.17, 1], delay: 2.75 }
+    transition: { duration: 1.5, ease: [0.83, 0, 0.17, 1], delay: 0.3 }
   },
 	exit: {
     opacity: 0,
@@ -152,7 +152,7 @@ export const aboutRevealLastFull = {
 	initial: { opacity: 0 },
   enter: { 
     opacity: 1,
-    transition: { duration: 1.5, ease: [0.83, 0, 0.17, 1], delay: 2.75 }
+    transition: { duration: 1.5, ease: [0.83, 0, 0.17, 1], delay: 0.55 }
   },
 	exit: {
     opacity: 0,

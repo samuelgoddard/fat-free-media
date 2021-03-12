@@ -1,11 +1,9 @@
-import { useEffect } from 'react';
 import Head from "next/head";
-import Link from "next/link";
 import Header from '../components/header'
 import { request } from "../lib/datocms";
 import Layout from "../components/layout";
 import { renderMetaTags, useQuerySubscription } from "react-datocms";
-import { metaTagsFragment, responsiveImageFragment } from "../lib/fragments";
+import { metaTagsFragment } from "../lib/fragments";
 import Container from "../components/container";
 import Footer from "../components/footer";
 import BigX from "../components/big-x";
@@ -15,7 +13,6 @@ import FancyLink from "../components/fancy-link";
 import { motion } from "framer-motion"
 import { reveal, fade, scaleDown } from "../helpers/transitionHelper"
 import { SmoothScrollProvider } from '../contexts/SmoothScroll.context'
-// import ReactPlayer from 'react-player'
 
 export default function Index({ subscription }) {
   const {

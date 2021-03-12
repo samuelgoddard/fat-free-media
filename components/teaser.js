@@ -17,8 +17,7 @@ class Teaser extends Component {
       if (playPromise !== undefined) {
         playPromise.then(_ => {
         })
-        .catch(error => {
-        });
+        .catch(error => {});
       }
     }
   };
@@ -29,8 +28,7 @@ class Teaser extends Component {
       if ( pausePromise !== undefined) {
         pausePromise.then(_ => {
         })
-        .catch(error => {
-        });
+        .catch(error => {});
       }
     }
   };
