@@ -139,7 +139,7 @@ export const menuMovementThree = {
 export const aboutRevealLast = {
 	initial: { opacity: 0 },
   enter: { 
-    opacity: 0.5,
+    opacity: 1,
     transition: { duration: 1.5, ease: [0.83, 0, 0.17, 1], delay: 2.75 }
   },
 	exit: {

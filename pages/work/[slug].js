@@ -390,15 +390,15 @@ export default function WorkSingle({ data: { site, work } }) {
                   <Container thin>
                     <div className="flex flex-wrap relative z-10 border-t border-dotted border-off-black border-opacity-50 pt-12 md:pt-20 xl:pt-24">
                       <div className="w-full md:w-5/12 mb-4 md:mb-0">
-                        <span className="block text-xs uppercase tracking-tighter leading-none mb-1">With thanks —</span>
+                        <span className="block text-xs uppercase tracking-tighter leading-none mb-1">The Team —</span>
                         <h2 className="text-4xl md:text-5xl xl:text-6xl leading-none tracking-tighter">The Credits</h2>
                       </div>
                       <div className="w-full md:w-7/12 text-lg md:text-xl xl:text-2xl leading-snug tracking-tighter">
                         {
                           work.credits.map((block, i) => (
                             <div key={i} className="flex flex-wrap items-start max-w-xl mb-2 md:mb-3">
-                              <span className="block w-5/12 text-xs uppercase tracking-tighter leading-none">{ block.title }</span>
-                              <span className="block w-7/12 text-right text-lg font-mono ml-auto">{ block.name }</span>
+                              <span className="block w-5/12 text-xs uppercase tracking-tighter leading-none mt-1 pt-px">{ block.title }</span>
+                              <span className="block w-7/12 text-right text-base font-mono ml-auto">{ block.name }</span>
                             </div>
                           ))
                         }

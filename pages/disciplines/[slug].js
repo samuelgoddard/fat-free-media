@@ -18,6 +18,7 @@ var at = require('lodash/at');
 
 export default function Work({ data: { site, work, current, allDisciplines } }) {
   const metaTags = current.seo.concat(site.favicon);
+  const fullWorkLength = work.length;
 
   return (
     <SmoothScrollProvider options={{ smooth: true, lerp: 0.13 }}>
@@ -95,7 +96,7 @@ export default function Work({ data: { site, work, current, allDisciplines } }) 
                                 {discipline.title} <span className="block text-xl tracking-normal -mt-1 ml-1">(3)</span>
                               </a>
                             </Link> */}
-                            <FilterLink link={`/disciplines/${discipline.slug}`} a11yText={`Navigate to ${discipline.title} Discipline page`} text={discipline.title} active={active} amount={12} />
+                            <FilterLink link={`/disciplines/${discipline.slug}`} a11yText={`Navigate to ${discipline.title} Discipline page`} text={discipline.title} active={active} amount={discipline.amountOfProjects} />
                           </motion.span>
                           { i !== (allDisciplines.length - 1) &&(
                             <motion.span variants={reveal}>
@@ -108,7 +109,7 @@ export default function Work({ data: { site, work, current, allDisciplines } }) 
 
                     <li className="text-2xl md:text-3xl xl:text-4xl leading-none tracking-tighter block pb-3 md:pb-4 ml-auto overflow-hidden absolute bottom-0 right-0">
                       <motion.span variants={reveal}>
-                        <FilterLink link={`/work`} a11yText={`Navigate to Work page`} text={"All"} amount={12} active={false} />
+                        <FilterLink link={`/work`} a11yText={`Navigate to Work page`} text={"All"} amount={fullWorkLength} active={false} />
                       </motion.span>
                     </li>
                   </ul>
@@ -166,6 +167,7 @@ const DISCIPLINE_QUERY = `
     allDisciplines {
       title
       slug
+      amountOfProjects
     }
     current: discipline(filter: {slug: {eq: $slug}}) {
       title

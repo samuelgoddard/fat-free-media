@@ -19,6 +19,7 @@ var at = require('lodash/at');
 export default function Work({ data: { site, work, disciplines, workLanding } }) {
   const metaTags = workLanding.seo.concat(site.favicon);
 
+  const fullWorkLength = work.length;
   const gridMainPosts = at(work, [0,2,3,5,7]);
   const gridSidebarPosts = at(work, [1,4,6]);
   const morePosts = work.slice(8);
@@ -54,7 +55,7 @@ export default function Work({ data: { site, work, disciplines, workLanding } })
                                 {discipline.title} <span className="block text-xl tracking-normal -mt-1 ml-1">(3)</span>
                               </a>
                             </Link> */}
-                            <FilterLink link={`/disciplines/${discipline.slug}`} a11yText={`Navigate to ${discipline.title} Discipline page`} text={discipline.title} amount={7} />
+                            <FilterLink link={`/disciplines/${discipline.slug}`} a11yText={`Navigate to ${discipline.title} Discipline page`} text={discipline.title} amount={discipline.amountOfProjects} />
                           </motion.span>
                           { i !== (disciplines.length - 1) &&(
                             <motion.span variants={reveal}>
@@ -67,7 +68,7 @@ export default function Work({ data: { site, work, disciplines, workLanding } })
 
                     <li className="text-2xl md:text-3xl xl:text-4xl leading-none tracking-tighter block pb-3 md:pb-4 ml-auto overflow-hidden absolute bottom-0 right-0">
                       <motion.span variants={reveal}>
-                        <FilterLink link={`/work`} a11yText={`Navigate to Work page`} text={"All"} amount={12} active={true} />
+                        <FilterLink link={`/work`} a11yText={`Navigate to Work page`} text={"All"} amount={fullWorkLength} active={true} />
                       </motion.span>
                     </li>
                   </ul>
@@ -192,6 +193,7 @@ const WORK_QUERY = `
       id
       slug
       title
+      amountOfProjects
     }
     workLanding {
       seo: _seoMetaTags {

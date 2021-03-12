@@ -92,10 +92,14 @@ export default function Footer({ hideMarquee, disciplines }) {
         <div className="w-full md:w-1/2 py-12 md:py-20 xl:py-32 bg-orange text-off-white flex items-center">
           <div className="max-w-2xl px-6 mx-auto text-center">
             <span className="block mb-3 md:mb-6 text-4xl md:text-4xl lg:text-5xl xl:text-6xl leading-none tracking-tighter">Stay in the loop</span>
-            <p className="font-mono text-sm mb-4 md:mb-6 max-w-sm md:max-w-xs xl:max-w-lg mx-auto">When we've got something great to say, we write a newsletter for brand teams. We curate the best of video, creativity and insights to inspire and delight.</p>                          
+            <p className="font-mono text-sm mb-4 md:mb-6 max-w-sm md:max-w-xs xl:max-w-lg mx-auto">When we've got something great to say, we write a newsletter for brand teams. We curate the best of video, creativity and insights to inspire and delight.</p>
             
-            <div id="mc_embed_signup">
-              <form className="newsletter-form max-w-xs w-full mx-auto relative validate" action="https://fatfreemedia.us2.list-manage.com/subscribe/post?u=0707fd5fce6636484cfe36669&amp;id=f4fff79bc3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" noValidate>
+            <div className="text-lg md:text-xl">
+              <FancyLinkExternal link="https://fatfreemedia.us2.list-manage.com/subscribe/post?u=0707fd5fce6636484cfe36669&amp;id=f4fff79bc3" a11yText="Sign up to our newsletter!" text="Sign up to our Newsletter" newTab />
+            </div>
+
+            <div id="mc_embed_signup">              
+              {/* <form className="newsletter-form max-w-xs w-full mx-auto relative validate" action="https://fatfreemedia.us2.list-manage.com/subscribe/post?u=0707fd5fce6636484cfe36669&amp;id=f4fff79bc3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" noValidate>
                 <div id="mc_embed_signup_scroll">
                   <div className="mc-field-group">
                     <label htmlFor="mce-EMAIL" className="sr-only">Email Address</label>
@@ -114,7 +118,7 @@ export default function Footer({ hideMarquee, disciplines }) {
                     <span className="-mt-2 block">→</span>
                   </button>
                 </div>
-              </form>
+              </form> */}
             </div>
           </div>
         </div>

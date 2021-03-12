@@ -1,10 +1,8 @@
 import { Component } from "react";
-import styles from './button.module.css'
 import { Image } from "react-datocms";
 import Link from 'next/link'
 import { motion } from "framer-motion"
-import { reveal, scaleDown } from "../helpers/transitionHelper"
-import cn from 'classnames'
+import { reveal } from "../helpers/transitionHelper"
 
 class Teaser extends Component {
   constructor(props){
@@ -13,11 +11,28 @@ class Teaser extends Component {
   }
 
   playVideo = () => {
-    !this.props.videoAlwaysOn && this.videoRef.play();
+    if (!this.props.videoAlwaysOn) {
+      var playPromise = this.videoRef.play();
+
+      if (playPromise !== undefined) {
+        playPromise.then(_ => {
+        })
+        .catch(error => {
+        });
+      }
+    }
   };
 
   pauseVideo = () => {
-    !this.props.videoAlwaysOn && this.videoRef.pause();
+    if (!this.props.videoAlwaysOn) {
+      var pausePromise = this.videoRef.pause();
+      if ( pausePromise !== undefined) {
+        pausePromise.then(_ => {
+        })
+        .catch(error => {
+        });
+      }
+    }
   };
 
   render() {
@@ -41,7 +56,7 @@ class Teaser extends Component {
             )}
             { this.props.video && (
               <div className={`transform transition ease-in-out duration-500 absolute top-0 left-0 right-0 bottom-0 ${this.props.videoAlwaysOn ? 'opacity-100' : 'hidden md:block opacity-0 group-hover:opacity-100' }`}>
-                <video loop={true} autoplay={this.props.videoAlwaysOn ? 'autoplay' : false } muted preload="none" className="w-full h-full object-cover z-10" ref={videoRef => this.videoRef = videoRef}>
+                <video loop={true} autoPlay={this.props.videoAlwaysOn ? 'autoplay' : false } muted preload="none" className="w-full h-full object-cover z-10" ref={videoRef => this.videoRef = videoRef}>
                   <source src={ this.props.video } type="video/mp4" />
                   
                   Sorry. Your browser does not support the video tag.
