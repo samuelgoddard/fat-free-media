@@ -8,24 +8,22 @@ export const SmoothScrollProvider = ({ children, options }) => {
   const [scroll, setScroll] = useState(null)
 
   useEffect(() => {
-    setTimeout(()=>{
-      if (!scroll) {
-        ;(async () => {
-          try {
-            const LocomotiveScroll = (await import('locomotive-scroll')).default
+    if (!scroll) {
+      ;(async () => {
+        try {
+          const LocomotiveScroll = (await import('locomotive-scroll')).default
 
-            setScroll(
-              new LocomotiveScroll({
-                el: document.querySelector('[data-scroll-container]') ?? undefined,
-                ...options,
-              })
-            )
-          } catch (error) {
-            throw Error(`[SmoothScrollProvider]: ${error}`)
-          }
-        })()
-      }
-    }, 200)
+          setScroll(
+            new LocomotiveScroll({
+              el: document.querySelector('[data-scroll-container]') ?? undefined,
+              ...options,
+            })
+          )
+        } catch (error) {
+          throw Error(`[SmoothScrollProvider]: ${error}`)
+        }
+      })()
+    }
 
     return () => {
       scroll && scroll.destroy()

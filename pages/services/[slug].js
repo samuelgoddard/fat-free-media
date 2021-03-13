@@ -9,9 +9,11 @@ import Footer from "../../components/footer";
 import BigX from "../../components/big-x";
 import BeliefHover from "../../components/belief-hover";
 import CircleInfinity from "../../components/circle-infinity";
+import AboutHero from "../../components/about-hero";
 import FancyLink from "../../components/fancy-link";
 import VideoRevealer from "../../components/video-revealer";
 import { motion } from "framer-motion"
+import Carousel from "../../components/carousel";
 import { fade } from "../../helpers/transitionHelper"
 import {  SmoothScrollProvider } from '../../contexts/SmoothScroll.context'
 
@@ -31,10 +33,10 @@ export default function ServiceSingle({ data: { site, service } }) {
           className=""
         >
           <motion.div variants={fade} className=" overflow-hidden relative">
-            <Header theme="off-black" />
+            <Header theme="white" />
             <BigX color="text-white" />
             <div className="relative">
-              <Container>
+              {/* <Container>
                 <div className="pt-40 md:pt-48 xl:pt-56 2xl:pt-64 relative pb-8 md:pb-16 xl:pb-20" data-scroll data-scroll-speed="1.4">
                   <div className="flex flex-wrap items-center justify-center md:-mx-2 lg:-mx-8">
                     <div className="w-auto md:w-2/12 lg:w-3/12 md:px-2 lg:px-8 hidden md:block" style={shapeColour}>
@@ -46,13 +48,19 @@ export default function ServiceSingle({ data: { site, service } }) {
                     </div>
                   </div>
                 </div>
-              </Container>
+              </Container> */}
 
-              <Container thin>
+            <AboutHero 
+              metaText={service.heroHeading}
+              text={service.heroText}
+              defaultImage={service.heroImage}
+            />
+
+              {/* <Container thin>
                 <div className="relative pb-12 md:pb-12 xl:pb-12" data-scroll data-scroll-speed="1.4">
                   <div className="text-xl md:text-xl xl:text-2xl leading-none w-full tracking-tighter max-w-sm md:max-w-xl xl:max-w-xl uppercase" dangerouslySetInnerHTML={{ __html: service.heroText }}></div>
                 </div>
-              </Container>
+              </Container> */}
 
               <div className="relative pb-12 md:pb-20 xl:pb-32">
                 {
@@ -100,6 +108,125 @@ export default function ServiceSingle({ data: { site, service } }) {
                           />
                         </Container>
                       }
+                      {
+                          block._modelApiKey === 'quote' &&
+                          <div>
+                            { block.metaText && (
+                              <Container thin>
+                                <span className="block text-xs uppercase tracking-tighter leading-none mb-4 md:mb-6 xl:mb-6">{ block.metaText } —</span>
+                              </Container>
+                            )}
+                            <Container>
+                              <div className="relative">
+                                <div className="w-full h-full absolute top-0 left-0 right-0 bottom-0 flex flex-wrap items-center justify-center">
+                                  <span data-scroll data-scroll-speed="2.75" className="block w-32 md:w-48 xl:w-64 h-32 md:h-48 xl:h-64 bg-yellow rounded-full"></span>
+                                </div>
+                                <span className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl 3xl:text-8xl leading-none w-full tracking-tighter pr-6 md:pr-16 z-10 block mb-8 md:mb-5 relative">“ { block.text } ”</span>
+                              </div>
+                            </Container>
+                            <Container thin>
+                              <div className="flex">
+                                <div className="ml-auto">
+                                  <span className="text-2xl md:text-2xl lg:text-3xl xl:text-4xl 3xl:text-5xl leading-none tracking-tighter block mb-2">– { block.authorName }</span>
+                                  { block.authorJobTitle && (
+                                    <span className="block text-base uppercase tracking-tighter leading-none ml-6 md:ml-6 xl:ml-8">{ block.authorJobTitle }</span>
+                                  )}
+                                </div>
+                              </div>
+                            </Container>
+                          </div>
+                        }
+                        {
+                          block._modelApiKey === 'callout_yellow' &&
+                          <div className="bg-yellow yellow-highlight pt-8 pb-16 md:pt-12 md:pb-20 lg:pt-16 lg:pb-24 xl:pt-20 xl:pb-32 overflow-hidden relative text-black">
+                            <div data-scroll data-scroll-speed="-1.5">
+                              <BigX color="text-yellow-dark" />
+                            </div>
+                            <Container>
+                              <div className="flex flex-wrap items-start 2xl:items-center md:-mx-12 relative z-20">
+                                <div className="w-full md:w-1/2 md:px-12 mb-6 md:mb-0" data-scroll data-scroll-speed="0.25">
+                                  <Image
+                                    data={{
+                                      ...block.image.responsiveImage,
+                                      alt: block.image.alt ? block.image.alt : block.image.title,
+                                    }}
+                                    className="w-full relative z-0"
+                                  />
+                                </div>
+                                <div className="w-full md:w-1/2 md:px-12" data-scroll data-scroll-speed="1.05">
+                                  { block.metaText && (
+                                    <span className="block text-xs uppercase tracking-tighter leading-none mb-6 md:mb-10">{ block.metaText } —</span>
+                                  )}
+                                  <div className="text-2xl md:text-3xl xl:text-4xl leading-none tracking-tighter pr-8 md:pr-8 lg:pr-16 xl:pr-20 mb-6 md:mb-10 content" dangerouslySetInnerHTML={{ __html: block.text }}></div>
+                                </div>
+                              </div>
+                            </Container>
+                          </div>
+                        }
+                        {
+                          block._modelApiKey === 'images2_square' &&
+                          <div className="overflow-hidden">
+                            <Container>
+                              <div className="flex flex-wrap -mx-5 md:-mx-8 xl:-mx-12">
+                                { block.images.map((image, i) => (
+                                  <div key={i} className="w-1/2 px-5 md:px-8 xl:px-12">
+                                    <Image
+                                      data={{
+                                        ...image.responsiveImage,
+                                        alt: image.alt ? image.alt : image.title,
+                                      }}
+                                      className="w-full"
+                                    />
+                                  </div>
+                                ))}
+                              </div>
+                            </Container>
+                          </div>
+                        }
+                        {
+                          block._modelApiKey === 'images_carousel' &&
+                          <div className="overflow-hidden">
+                            <Container>
+                              <Carousel images={block.images}/>
+                            </Container>
+                          </div>
+                        }
+                        {
+                          block._modelApiKey === 'images3_square' &&
+                          <div>
+                            <div className="flex flex-wrap -mx-24 md:-mx-48 xl:-mx-64">
+                              { block.images.map((image, i) => (
+                                <div key={i} className="w-1/3 px-5 md:px-8 xl:px-12">
+                                  <Image
+                                    data={{
+                                      ...image.responsiveImage,
+                                      alt: image.alt ? image.alt : image.title,
+                                    }}
+                                    className="w-full"
+                                  />
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        }
+                        {
+                          block._modelApiKey === 'images4_square' &&
+                          <div>
+                            <div className="flex flex-wrap -mx-16 md:-mx-24 xl:-mx-32">
+                              { block.images.map((image, i) => (
+                                <div key={i} className="w-1/4 px-5 md:px-8 xl:px-12">
+                                  <Image
+                                    data={{
+                                      ...image.responsiveImage,
+                                      alt: image.alt ? image.alt : image.title,
+                                    }}
+                                    className="w-full"
+                                  />
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        }
                     </div>
                   ))
                 }
@@ -206,6 +333,13 @@ const SERVICE_SINGLE_QUERY = `
       }
       heroHeading
       heroText
+      heroImage {
+        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1500, h: 1000 }) {
+          ...responsiveImageFragment
+        }
+        title
+        alt
+      }
       slug
       contentBlocks {
         ... on TextRecord {
@@ -231,6 +365,71 @@ const SERVICE_SINGLE_QUERY = `
           _modelApiKey
           videoUrlAutoplayingCover
           videoUrl1080p
+        }
+        ... on QuoteRecord {
+          id
+          _modelApiKey
+          metaText
+          text
+          authorName
+          authorJobTitle
+        }
+        ... on ImagesCarouselRecord {
+          id
+          _modelApiKey
+          images {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1500, h: 1000 }) {
+              ...responsiveImageFragment
+            }
+            title
+            alt
+          }
+        }
+        ... on Images2SquareRecord {
+          id
+          _modelApiKey
+          images {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1200, h: 1200 }) {
+              ...responsiveImageFragment
+            }
+            title
+            alt
+          }
+        }
+        ... on Images3SquareRecord {
+          id
+          _modelApiKey
+          images {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1200, h: 1200 }) {
+              ...responsiveImageFragment
+            }
+            title
+            alt
+          }
+        }
+        ... on Images4SquareRecord {
+          id
+          _modelApiKey
+          images {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1200, h: 1200 }) {
+              ...responsiveImageFragment
+            }
+            title
+            alt
+          }
+        }
+        ... on CalloutYellowRecord {
+          id
+          _modelApiKey
+          metaText
+          image {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1200, h: 1200 }) {
+              ...responsiveImageFragment
+            }
+            title
+            alt
+          }
+          text
         }
       }
       services {

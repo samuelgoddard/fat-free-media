@@ -78,6 +78,9 @@ export default function WorkSingle({ data: { site, work } }) {
                                   { block.heading && (
                                     <h2 className="text-4xl md:text-5xl xl:text-6xl leading-none tracking-tighter">{ block.heading }</h2>
                                   )}
+                                  { block.headingMetaBullets && (
+                                    <div className="content text-xl md:text-2xl tracking-tighter leading-tight max" dangerouslySetInnerHTML={{ __html: block.headingMetaBullets}}></div>
+                                  )}
                                 </div>
                               </div>
                               <div className="w-full md:w-2/3 md:px-5">
@@ -379,6 +382,36 @@ export default function WorkSingle({ data: { site, work } }) {
                             />
                           </Container>
                         }
+                        {
+                          block._modelApiKey === 'supporting_silent_video_portrait' &&
+                          <Container>
+                            <video loop={true} autoPlay={'autoplay'} muted preload="meta" className="mx-auto max-w-full object-cover z-10 portrait-video">
+                              <source src={ block.videoUrl } type="video/mp4" />
+                              
+                              Sorry. Your browser does not support the video tag.
+                            </video>
+                          </Container>
+                        }
+                        {
+                          block._modelApiKey === 'supporting_silent_video_square' &&
+                          <Container>
+                            <video loop={true} autoPlay={'autoplay'} muted preload="meta" className="mx-auto max-w-full object-cover z-10 square-video">
+                              <source src={ block.videoUrl } type="video/mp4" />
+                              
+                              Sorry. Your browser does not support the video tag.
+                            </video>
+                          </Container>
+                        }
+                        {
+                          block._modelApiKey === 'supporting_silent_video_landscape' &&
+                          <Container>
+                            <video loop={true} autoPlay={'autoplay'} muted preload="meta" className="mx-auto max-w-full object-cover z-10 md:w-8/12">
+                              <source src={ block.videoUrl } type="video/mp4" />
+                              
+                              Sorry. Your browser does not support the video tag.
+                            </video>
+                          </Container>
+                        }
                       </div>
                     ))
                   }
@@ -457,6 +490,7 @@ const WORK_SINGLE_QUERY = `
           id
           _modelApiKey
           headingMetaText
+          headingMetaBullets
           heading
           text
         }
@@ -607,6 +641,21 @@ const WORK_SINGLE_QUERY = `
           _modelApiKey
           videoUrlAutoplayingCover
           videoUrl1080p
+        }
+        ... on SupportingSilentVideoPortraitRecord {
+          id
+          _modelApiKey
+          videoUrl
+        }
+        ... on SupportingSilentVideoSquareRecord {
+          id
+          _modelApiKey
+          videoUrl
+        }
+        ... on SupportingSilentVideoLandscapeRecord {
+          id
+          _modelApiKey
+          videoUrl
         }
         ... on QuoteRecord {
           id

@@ -98,6 +98,44 @@
   }
 }
 
+.square-video {
+  width: 320px;
+  height: 320px;
+}
+
+@screen md {
+  .square-video {
+    width: 480px;
+    height: 480px;
+  }
+}
+
+@screen xl {
+  .square-video {
+    width: 640px;
+    height: 640px;
+  }
+}
+
+.portrait-video {
+  width: 320px;
+  height: 370px;
+}
+
+@screen md {
+  .portrait-video {
+    width: 480px;
+    height: 570px;
+  }
+}
+
+@screen xl {
+  .portrait-video {
+    width: 640px;
+    height: 750px;
+  }
+}
+
 html.has-scroll-smooth {
   overflow: hidden;
 }
@@ -394,4 +432,12 @@ html.has-scroll-dragging {
   .video-modal {
     width: 1400px !important;
   }
+}
+
+.hero-bg-image > picture {
+  @apply absolute top-0 left-0 right-0 bottom-0 w-full h-full object-cover !important;
+}
+
+.hero-bg-image > picture > img {
+  @apply absolute top-0 left-0 right-0 bottom-0 w-full h-full object-cover !important;
 }
