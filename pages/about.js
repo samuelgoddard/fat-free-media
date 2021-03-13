@@ -129,7 +129,7 @@ export default function About({ data: { site, about, team, services } }) {
                                         <div className="relative overflow-hidden mb-4 lg:mb-8 w-full">
                                           <span className="block text-xs uppercase leading-none">Biography</span>
                                         </div>
-                                        <div dangerouslySetInnerHTML={{ __html: team.fullBio ? team.fullBio : team.shortBio }} className="font-mono leading-tight text-sm md:text-base content mb-3 md:mb-5 w-full lg:w-10/12"></div>
+                                        <div dangerouslySetInnerHTML={{ __html: team.fullBio ? team.fullBio : team.shortBio }} className="font-mono leading-tight text-sm md:text-base content mb-3 md:mb-5 w-full lg:w-10/12 modal-bio overflow-scroll"></div>
                                       </div>
                                       
                                       { team.linkedinUrl || team.instagramUrl ? (

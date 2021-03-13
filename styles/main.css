@@ -441,3 +441,15 @@ html.has-scroll-dragging {
 .hero-bg-image > picture > img {
   @apply absolute top-0 left-0 right-0 bottom-0 w-full h-full object-cover !important;
 }
+
+.modal-bio {
+  height: 200px;
+  overflow: scroll;
+}
+
+@screen lg {
+  .modal-bio {
+    height: auto;
+    overflow: scroll;
+  }
+}
