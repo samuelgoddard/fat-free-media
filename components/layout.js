@@ -13,7 +13,7 @@ export default function Layout({ children, preview }) {
       }
 
       gtag('js', new Date())
-      gtag('config', process.env.GOOGLE_ANALYTICS_ID, {
+      gtag('config', 'UA-58771627-1', {
         page_location: window.location.href,
         page_path: window.location.pathname,
         page_title: window.document.title,
@@ -38,7 +38,7 @@ export default function Layout({ children, preview }) {
         </div>
       )}
       <Head>
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_ID}`}></script>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=UA-58771627-1`}></script>
       </Head>
       {children}
     </>
