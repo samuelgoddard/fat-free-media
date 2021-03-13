@@ -8,7 +8,7 @@ import Container from "../../components/container";
 import Footer from "../../components/footer";
 import BigX from "../../components/big-x";
 import BeliefHover from "../../components/belief-hover";
-import CircleInfinity from "../../components/circle-infinity";
+// import CircleInfinity from "../../components/circle-infinity";
 import AboutHero from "../../components/about-hero";
 import FancyLink from "../../components/fancy-link";
 import VideoRevealer from "../../components/video-revealer";
@@ -19,7 +19,7 @@ import {  SmoothScrollProvider } from '../../contexts/SmoothScroll.context'
 
 export default function ServiceSingle({ data: { site, service } }) {
   const metaTags = service._seoMetaTags.concat(site.favicon);
-  let shapeColour = { color: service.shapeColour.hex };
+  // let shapeColour = { color: service.shapeColour.hex };
 
   return (
     <SmoothScrollProvider options={{ smooth: true, lerp: 0.13 }}>
@@ -34,7 +34,7 @@ export default function ServiceSingle({ data: { site, service } }) {
         >
           <motion.div variants={fade} className=" overflow-hidden relative">
             <Header theme="white" />
-            <BigX color="text-white" />
+            {/* <BigX color="text-white" /> */}
             <div className="relative">
               {/* <Container>
                 <div className="pt-40 md:pt-48 xl:pt-56 2xl:pt-64 relative pb-8 md:pb-16 xl:pb-20" data-scroll data-scroll-speed="1.4">
