@@ -4,22 +4,22 @@ import Head from "next/head";
 export default function Layout({ children, preview }) {
   
   // GTAG Analytics
-  useEffect(() => {
-    if (process.env.NODE_ENV === 'development') {
-      window.dataLayer = window.dataLayer || []
+  // useEffect(() => {
+  //   if (process.env.NODE_ENV === 'development') {
+  //     window.dataLayer = window.dataLayer || []
       
-      function gtag() {
-        dataLayer.push(arguments)
-      }
+  //     function gtag() {
+  //       dataLayer.push(arguments)
+  //     }
 
-      gtag('js', new Date())
-      gtag('config', 'UA-58771627-1', {
-        page_location: window.location.href,
-        page_path: window.location.pathname,
-        page_title: window.document.title,
-      })
-    }
-  }, [])
+  //     gtag('js', new Date())
+  //     gtag('config', 'UA-58771627-1', {
+  //       page_location: window.location.href,
+  //       page_path: window.location.pathname,
+  //       page_title: window.document.title,
+  //     })
+  //   }
+  // }, [])
 
   return (
     <>
@@ -37,9 +37,9 @@ export default function Layout({ children, preview }) {
           </>
         </div>
       )}
-      <Head>
+      {/* <Head>
         <script async src={`https://www.googletagmanager.com/gtag/js?id=UA-58771627-1`}></script>
-      </Head>
+      </Head> */}
       {children}
     </>
   )
