@@ -422,7 +422,7 @@ export default function WorkSingle({ data: { site, work } }) {
                     <div className="flex flex-wrap relative z-10 border-t border-dotted border-off-black border-opacity-50 pt-12 md:pt-20 xl:pt-24">
                       <div className="w-full md:w-5/12 mb-4 md:mb-0">
                         <span className="block text-xs uppercase tracking-tighter leading-none mb-1">The Team —</span>
-                        <h2 className="text-4xl md:text-5xl xl:text-6xl leading-none tracking-tighter">The Credits</h2>
+                        <h2 className="text-4xl md:text-5xl xl:text-6xl leading-none tracking-tighter">Credits</h2>
                       </div>
                       <div className="w-full md:w-7/12 text-lg md:text-xl xl:text-2xl leading-snug tracking-tighter">
                         {
