@@ -316,7 +316,7 @@ export default function ServiceSingle({ data: { site, service } }) {
                           } else if (i === 9) {
                             scrollAmount = -0.9;
                             paddingClass = 'pl-0 md:pl-8 xl:pl-12';
-                            alignClass = 'justify-center'
+                            alignClass = 'md:justify-center'
                           }
 
                           return ( 
