@@ -131,13 +131,13 @@ export default function Index({ subscription }) {
                     <div className="w-full md:w-1/3 md:px-8">
                       <div className={`h-full md:border-l border-dotted border-off-black border-opacity-50 ${ paddingClass} ${ i !== 2 ? 'border-b md:border-b-0 md:pl-8' : 'md:border-b-0 md:border-r md:px-8'}`}>
                         <div className="flex flex-wrap -mx-4 md:mx-0" data-scroll data-scroll-speed={scrollSpeed}>
-                          <div className={`${color} w-16 md:w-full`}>
+                          <div className={`${color} w-16 md:w-full md:mb-4 xl:mb-6`}>
                             <CircleInfinity />
                           </div>
                           <div className="flex-1 md:w-full px-2 md:px-0 relative z-10 ml-2 md:ml-0">
-                            <h3 className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter w-full md:w-32 xl:w-48 ">{ item.heading }</h3>
+                            <h3 className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter w-full md:w-32 xl:w-48 md:mb-8 xl:mb-12">{ item.heading }</h3>
                             
-                            <div className="font-mono text-sm xl:text-base mb-4 md:mb-6 w-11/12 md:w-full" dangerouslySetInnerHTML={{ __html: item.text }}></div>
+                            <div className="font-mono text-sm xl:text-base mb-4 md:mb-6 w-11/12 md:w-full md:max-w-xs" dangerouslySetInnerHTML={{ __html: item.text }}></div>
 
                             <span className="text-lg xl:text-xl">
                               <FancyLink link={`/services/${item.serviceLink.slug}`} text="Learn more" a11yText={`Navigate to ${item.serviceLink.title} page`} />
