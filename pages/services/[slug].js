@@ -213,6 +213,36 @@ export default function ServiceSingle({ data: { site, service } }) {
                           </div>
                         }
                         {
+                          block._modelApiKey === 'supporting_silent_video_portrait' &&
+                          <Container>
+                            <video loop={true} autoPlay={'autoplay'} muted preload="meta" className="mx-auto max-w-full object-cover z-10 portrait-video">
+                              <source src={ block.videoUrl } type="video/mp4" />
+                              
+                              Sorry. Your browser does not support the video tag.
+                            </video>
+                          </Container>
+                        }
+                        {
+                          block._modelApiKey === 'supporting_silent_video_square' &&
+                          <Container>
+                            <video loop={true} autoPlay={'autoplay'} muted preload="meta" className="mx-auto max-w-full object-cover z-10 square-video">
+                              <source src={ block.videoUrl } type="video/mp4" />
+                              
+                              Sorry. Your browser does not support the video tag.
+                            </video>
+                          </Container>
+                        }
+                        {
+                          block._modelApiKey === 'supporting_silent_video_landscape' &&
+                          <Container>
+                            <video loop={true} autoPlay={'autoplay'} muted preload="meta" className="mx-auto max-w-full object-cover z-10 md:w-8/12">
+                              <source src={ block.videoUrl } type="video/mp4" />
+                              
+                              Sorry. Your browser does not support the video tag.
+                            </video>
+                          </Container>
+                        }
+                        {
                           block._modelApiKey === 'images4_square' &&
                           <div>
                             <div className="flex flex-wrap -mx-16 md:-mx-24 xl:-mx-32">
@@ -433,6 +463,21 @@ const SERVICE_SINGLE_QUERY = `
             alt
           }
           text
+        }
+        ... on SupportingSilentVideoPortraitRecord {
+          id
+          _modelApiKey
+          videoUrl
+        }
+        ... on SupportingSilentVideoSquareRecord {
+          id
+          _modelApiKey
+          videoUrl
+        }
+        ... on SupportingSilentVideoLandscapeRecord {
+          id
+          _modelApiKey
+          videoUrl
         }
       }
       services {
