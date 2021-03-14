@@ -135,7 +135,7 @@ export default function Index({ subscription }) {
                             <CircleInfinity />
                           </div>
                           <div className="flex-1 md:w-full px-2 md:px-0 relative z-10 ml-2 md:ml-0">
-                            <h3 className="text-3xl md:text-3xl xl:text-5xl leading-none tracking-tighter w-full md:w-32 xl:w-48 ">{ item.heading }</h3>
+                            <h3 className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter w-full md:w-32 xl:w-48 ">{ item.heading }</h3>
                             
                             <div className="font-mono text-sm xl:text-base mb-4 md:mb-6 w-11/12 md:w-full" dangerouslySetInnerHTML={{ __html: item.text }}></div>
 
