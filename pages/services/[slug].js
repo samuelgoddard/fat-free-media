@@ -49,12 +49,14 @@ export default function ServiceSingle({ data: { site, service } }) {
                   </div>
                 </div>
               </Container> */}
-              <div className="mb-16 md:mb-16 xl:mb-24">
-                <AboutHero 
-                  metaText={service.heroHeading}
-                  text={service.heroText}
-                  defaultImage={service.heroImage}
-                />
+              <div className="">
+                <div className="relative z-0" data-scroll-sticky data-scroll data-scroll-target="#scroll-container">
+                  <AboutHero 
+                    metaText={service.heroHeading}
+                    text={service.heroText}
+                    defaultImage={service.heroImage}
+                  />
+                </div>
               </div>
 
               {/* <Container thin>
@@ -63,7 +65,7 @@ export default function ServiceSingle({ data: { site, service } }) {
                 </div>
               </Container> */}
 
-              <div className="relative pb-12 md:pb-20 xl:pb-32">
+              <div className="relative pb-12 md:pb-20 xl:pb-32 relative z-20 bg-off-white pt-16 md:pt-16 xl:pt-24">
                 {
                   service.contentBlocks.map((block) => (
                     <div key={block.id} className="pb-12 md:pb-16 xl:pb-20" data-scroll data-scroll-speed="1.6">
@@ -234,7 +236,7 @@ export default function ServiceSingle({ data: { site, service } }) {
               </div>
               
               { service.services.length > 0 && (
-                <div className="bg-yellow text-black yellow-highlight py-12 md:py-24 xl:py-32">
+                <div className="bg-yellow text-black yellow-highlight py-12 md:py-24 xl:py-32 relative z-20">
                   <Container>
                     <ul>
                       {
@@ -305,7 +307,7 @@ export default function ServiceSingle({ data: { site, service } }) {
                 </div>
               )}
 
-              <div className="bg-off-black pt-6 md:pt-8 pb-8 md:pb-10 block text-center text-off-white text-4xl md:text-5xl xl:text-6xl tracking-tighter leading-none">
+              <div className="bg-off-black pt-6 md:pt-8 pb-8 md:pb-10 block text-center text-off-white text-4xl md:text-5xl xl:text-6xl tracking-tighter leading-none relative z-20">
                 <FancyLink link="/contact" a11yText="Navigate to contact page" text="Let's talk about it" thicc />
               </div>
               <Footer hideMarquee />
