@@ -21,6 +21,7 @@ module.exports = {
     extend: {
       colors: {
         'off-black': '#373c42',
+        'off-black-dark': '#292e36',
         'off-white': '#EAE8E4',
         orange: {
           light: '#ffb288',
@@ -41,11 +42,16 @@ module.exports = {
         }
       },
       fontSize: {
-        '5xl': '2.95rem',
-        '6xl': '3.45rem',
-        '7xl': '4.5rem',
-        '8xl': '6.25rem',
-        '9xl': '7rem',
+        '4xl': '2.5rem',
+        '5xl': '3rem',
+        '6xl': '3.7rem',
+        '7xl': '4.65rem',
+        '8xl': '6.55rem',
+        '9xl': '7.35rem',
+      },
+      lineHeight: {
+        'negative': '0.95',
+        'minimal': '1.19',
       },
       spacing: {
         '72': '18rem',

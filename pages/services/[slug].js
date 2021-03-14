@@ -32,7 +32,7 @@ export default function ServiceSingle({ data: { site, service } }) {
           exit="exit"
           className=""
         >
-          <motion.div variants={fade} className=" overflow-hidden relative">
+          <motion.div variants={fade} className=" overflow-hidden relative border-t-4 border-off-black-dark">
             <Header theme="white" />
             {/* <BigX color="text-white" /> */}
             <div className="relative">
@@ -49,12 +49,13 @@ export default function ServiceSingle({ data: { site, service } }) {
                   </div>
                 </div>
               </Container> */}
-
-            <AboutHero 
-              metaText={service.heroHeading}
-              text={service.heroText}
-              defaultImage={service.heroImage}
-            />
+              <div className="mb-16 md:mb-16 xl:mb-24">
+                <AboutHero 
+                  metaText={service.heroHeading}
+                  text={service.heroText}
+                  defaultImage={service.heroImage}
+                />
+              </div>
 
               {/* <Container thin>
                 <div className="relative pb-12 md:pb-12 xl:pb-12" data-scroll data-scroll-speed="1.4">
@@ -65,22 +66,22 @@ export default function ServiceSingle({ data: { site, service } }) {
               <div className="relative pb-12 md:pb-20 xl:pb-32">
                 {
                   service.contentBlocks.map((block) => (
-                    <div key={block.id} className="pb-8 md:pb-16 xl:pb-20" data-scroll data-scroll-speed="1.6">
+                    <div key={block.id} className="pb-12 md:pb-16 xl:pb-20" data-scroll data-scroll-speed="1.6">
                       {
                         block._modelApiKey === 'text' &&
                         <Container thin>
                           <div className="flex flex-wrap md:-mx-5">
                             <div className="w-full md:w-1/3 md:px-5">
-                              <div className="w-full max-w-xs">
+                              <div className="w-full max-w-xs lg:pr-8">
                                 { block.headingMetaText && (
-                                  <span className="block text-xs uppercase tracking-tighter leading-none">— { block.headingMetaText }</span>
+                                  <span className="block text-xs uppercase tracking-tighter leading-none mb-1 md:mb-3">— { block.headingMetaText }</span>
                                 )}
                                 { block.heading && (
                                   <h2 className="text-4xl md:text-5xl xl:text-6xl leading-none tracking-tighter">{ block.heading }</h2>
                                 )}
                               </div>
                             </div>
-                            <div className="w-full md:w-2/3 md:px-5">
+                            <div className="w-11/12 md:w-1/2 lg:w-7/12 max-w-2xl md:px-5 md:ml-auto md:mr-10 lg:mr-16 md:mt-8">
                               <div className="content text-xl md:text-2xl tracking-tighter leading-tight max-w-3xl" dangerouslySetInnerHTML={{ __html: block.text }}></div>
                             </div>
                           </div>
@@ -250,20 +251,20 @@ export default function ServiceSingle({ data: { site, service } }) {
                             alignClass = 'justify-start'
                           } else if (i === 1) {
                             scrollAmount = 0.95;
-                            paddingClass = 'pl-12 md:pl-48 xl:pl-64';
-                            alignClass = 'justify-center'
+                            paddingClass = 'pl-0 md:pl-48 xl:pl-64';
+                            alignClass = 'md:justify-center'
                           } else if (i === 2) {
                             scrollAmount = -0.45;
                             paddingClass = 'pr-0 md:pr-12 xl:pr-16';
-                            alignClass = 'justify-center'
+                            alignClass = 'md:justify-center'
                           } else if (i === 3) {
                             scrollAmount = 0.65;
                             paddingClass = 'pr-0 md:pr-24 xl:pr-32';
-                            alignClass = 'justify-end'
+                            alignClass = 'md:justify-end'
                           } else if (i === 4) {
                             scrollAmount = -0.96;
                             paddingClass = 'pr-0 md:pr-16 xl:pr-24';
-                            alignClass = 'justify-center'
+                            alignClass = 'md:justify-center'
                           } else if (i === 5) {
                             scrollAmount = 0.85;
                             paddingClass = 'pl-0 md:pl-16 xl:pl-24';
@@ -271,7 +272,7 @@ export default function ServiceSingle({ data: { site, service } }) {
                           } else if (i === 6) {
                             scrollAmount = -0.45;
                             paddingClass = 'pl-0 md:pr-16 xl:pr-20';
-                            alignClass = 'justify-end'
+                            alignClass = 'md:justify-end'
                           } else if (i === 7) {
                             scrollAmount = -0.95;
                             paddingClass = 'pl-0 md:pl-12 xl:pl-16';
@@ -279,7 +280,7 @@ export default function ServiceSingle({ data: { site, service } }) {
                           } else if (i === 8) {
                             scrollAmount = 0.75;
                             paddingClass = 'pl-0 md:pl-8 xl:pl-12';
-                            alignClass = 'justify-center'
+                            alignClass = 'md:justify-center'
                           } else if (i === 9) {
                             scrollAmount = -0.9;
                             paddingClass = 'pl-0 md:pl-8 xl:pl-12';
@@ -304,7 +305,7 @@ export default function ServiceSingle({ data: { site, service } }) {
                 </div>
               )}
 
-              <div className="bg-off-black pt-6 md:pt-8 pb-6 md:pb-10 block text-center text-off-white text-4xl md:text-5xl xl:text-6xl tracking-tighter leading-none">
+              <div className="bg-off-black pt-6 md:pt-8 pb-8 md:pb-10 block text-center text-off-white text-4xl md:text-5xl xl:text-6xl tracking-tighter leading-none">
                 <FancyLink link="/contact" a11yText="Navigate to contact page" text="Let's talk about it" thicc />
               </div>
               <Footer hideMarquee />

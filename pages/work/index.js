@@ -33,7 +33,7 @@ export default function Work({ data: { site, work, disciplines, workLanding } })
           exit="exit"
           className=""
         >
-          <motion.div variants={fade} className=" overflow-hidden relative">
+          <motion.div variants={fade} className="overflow-hidden relative border-t-4 border-off-black-dark">
             <Header theme="off-black" />
             <BigX color="text-white" />
             <div className="pt-40 md:pt-48 xl:pt-56 relative">
@@ -95,7 +95,7 @@ export default function Work({ data: { site, work, disciplines, workLanding } })
 
                           return (
                             <div key={i} className={`${widthClass} md:px-4 lg:px-8 `}>
-                              <div className={`mb-8 md:mb-16 ${innerSpacingClass}`}>
+                              <div className={`mb-12 md:mb-20 xl:mb-24 ${innerSpacingClass}`}>
                                 <Teaser 
                                   link={`/work/${work.slug}`}
                                   image={image}
@@ -122,8 +122,8 @@ export default function Work({ data: { site, work, disciplines, workLanding } })
                         }
                         
                         return (
-                          <div key={i} className={`${widthClass} md:px-4 lg:px-8`}>
-                            <div className="mb-8 md:mb-16">
+                          <div key={i} className={`${widthClass} md:pl-4 lg:pl-8`}>
+                            <div className="mb-12 md:mb-20 xl:mb-24">
                               <Teaser 
                                 link={`/work/${work.slug}`}
                                 image={image}
@@ -140,7 +140,7 @@ export default function Work({ data: { site, work, disciplines, workLanding } })
                   </div>
                     
                   <div className="border-b border-black mb-8">
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-3 pb-0">More Work</h2>
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-3 pb-0 tracking-tighter">More Work</h2>
                   </div>
                   <div className="flex flex-wrap md:-mx-4 lg:-mx-8">
                     {morePosts.map((work, i) => {
@@ -150,7 +150,7 @@ export default function Work({ data: { site, work, disciplines, workLanding } })
 
                       return (
                         <div key={i} className={`${widthClass} md:px-4 lg:px-8 `}>
-                          <div className={`mb-8 md:mb-16 ${innerSpacingClass}`}>
+                          <div className={`mb-12 md:mb-20 ${innerSpacingClass}`}>
                             <Teaser 
                               link={`/work/${work.slug}`}
                               image={image}

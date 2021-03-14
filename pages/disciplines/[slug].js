@@ -28,7 +28,7 @@ export default function Work({ data: { site, work, current, allDisciplines } }) 
           exit="exit"
           className=""
         >
-          <motion.div variants={fade} className=" overflow-hidden relative">
+          <motion.div variants={fade} className=" overflow-hidden relative border-t-4 border-off-black-dark">
             <Header theme="off-black" />
             <BigX color="text-white" />
             <div className="pt-40 md:pt-48 xl:pt-56 relative">
@@ -46,13 +46,13 @@ export default function Work({ data: { site, work, current, allDisciplines } }) 
                         active = true;
                       }
                       return (
-                        <li key={i} className="text-base md:text-3xl xl:text-4xl leading-tight tracking-tighter relative pr-2 md:pr-4 flex  overflow-hidden">
+                        <li key={i} className={`text-base md:text-3xl xl:text-4xl leading-tight tracking-tighter relative pr-2 md:pr-4 flex  overflow-hidden`}>
                           <motion.span variants={reveal}>
-                            <FilterLink link={`/disciplines/${discipline.slug}`} a11yText={`Navigate to ${discipline.title} Discipline page`} text={discipline.title} active={active} amount={discipline.amountOfProjects} />
+                            <FilterLink link={`/disciplines/${discipline.slug}`} a11yText={`Navigate to ${discipline.title} Discipline page`} text={discipline.title} active={active} amount={discipline.amountOfProjects} extraClasses={active ? 'opacity-100' : 'transition ease-in-out duration-300 opacity-50 hover:opacity-100 focus:opacity-100'}/>
                           </motion.span>
                           { i !== (allDisciplines.length - 1) &&(
                             <motion.span variants={reveal}>
-                              <span className="block text-2xl md:text-3xl xl:text-4xl tracking-normal leading-none mt-1 md:mt-3 ml-2 md:ml-4">&bull;</span>
+                              <span className={`block text-2xl md:text-3xl xl:text-4xl tracking-normal leading-none mt-1 md:mt-3 ml-2 md:ml-4 ${ active ? 'opacity-100' : 'opacity-50' }`}>&bull;</span>
                             </motion.span>
                           )}
                         </li>

@@ -345,8 +345,8 @@ html.has-scroll-dragging {
 
 .embla {
   overflow: hidden;
-  margin-left: -20vw;
-  margin-right: -20vw;
+  margin-left: -38vw;
+  margin-right: -38vw;
 }
 
 @screen md {

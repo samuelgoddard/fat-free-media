@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { Image } from "react-datocms";
 import Link from 'next/link'
+import FancyLink from "../components/fancy-link";
 import { motion } from "framer-motion"
 import { reveal } from "../helpers/transitionHelper"
 
@@ -20,14 +21,14 @@ class TeaserFull extends Component {
 
   render() {
     return (
-      <Link href={this.props.link}>
-        <a
-          aria-label="Navigate to Work Item"
-          className="flex flex-wrap group items-center"
-          onMouseEnter={this.playVideo}
-          onMouseLeave={this.pauseVideo}
-        >
-          <div className="relative overflow-hidden mb-3 w-full md:w-8/12">
+      <div className="flex flex-wrap items-center">
+        <Link href={this.props.link}>
+          <a
+            aria-label="Navigate to Work Item"
+            className="relative overflow-hidden mb-3 w-full md:w-8/12 block z-10 group"
+            onMouseEnter={this.playVideo}
+            onMouseLeave={this.pauseVideo}
+          >
             { this.props.image && (
               <Image
                 data={{
@@ -46,25 +47,25 @@ class TeaserFull extends Component {
                 </video>
               </div>
             )}
-          </div>
-          <div className="w-full md:w-4/12">
-            <div className="w-full md:pl-12">
-              <div className="relative overflow-hidden mb-3 md:mb-5">
-                <motion.span variants={reveal} className="block text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl leading-none tracking-tighter max-w-md">{ this.props.title }</motion.span>
-              </div>
+          </a>
+        </Link>
+        <div className="w-full md:w-4/12">
+          <div className="w-full md:pl-12">
+            <div className="relative overflow-hidden mb-3 md:mb-5">
+              <motion.span variants={reveal} className="block text-3xl md:text-4xl xl:text-4xl 2xl:text-5xl leading-minimal tracking-tighter max-w-md">{ this.props.title }</motion.span>
+            </div>
 
-              { this.props.text && (
-                <div className="w-full">
-                  <span className="font-mono text-sm mb-5 md:mb-8 content block max-w-xs">{ this.props.text }</span>
-                </div>
-              )}
-              <div className="relative overflow-hidden">
-                <motion.span variants={reveal} className="block underline text-lg md:text-xl">Learn more</motion.span>
+            { this.props.text && (
+              <div className="w-full">
+                <span className="font-mono text-sm lg:text-base mb-5 md:mb-8 content block max-w-xs pt-1 md:pt-1 lg:pt-3">{ this.props.text }</span>
               </div>
+            )}
+            <div className="relative text-lg md:text-xl">
+              <FancyLink link={this.props.link} a11yText="Navigate to Work Item" text="Learn More" />
             </div>
           </div>
-        </a>
-      </Link>
+        </div>
+      </div>
     )
   }
 }

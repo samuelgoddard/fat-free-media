@@ -41,7 +41,7 @@ export default function MenuItem({link, animation, image, video, heading, text})
               }}
             >
               <div className="relative overflow-hidden mb-2 md:mb-3">
-                <motion.h3 variants={reveal} className="text-3xl md:text-3xl lg:text-4xl xl:text-5xl leading-none tracking-tighter mb-0">{ heading }</motion.h3>
+                <motion.h3 variants={reveal} className="text-4xl md:text-3xl lg:text-4xl xl:text-5xl leading-none tracking-tighter mb-0">{ heading }</motion.h3>
               </div>
 
               <div className="relative overflow-hidden">

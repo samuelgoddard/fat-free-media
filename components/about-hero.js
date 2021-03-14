@@ -14,11 +14,11 @@ class AboutHero extends Component {
 
   render(){
     return (
-      <div className="bg-off-black text-white pt-40 md:pt-48 xl:pt-56 pb-8 md:pb-32 xl:pb-48 mb-8 md:mb-20 relative overflow-hidden">
+      <div className="bg-off-black text-white pt-40 md:pt-48 xl:pt-56 pb-8 md:pb-32 xl:pb-48 relative overflow-hidden">
         <Container thinner>
-          <div className="relative z-20">
+          <div className="relative z-30">
             { this.props.metaText && (
-              <div className="relative overflow-hidden mb-3 md:mb-0" data-scroll data-scroll-speed="0.9">
+              <div className="relative overflow-hidden mb-4 md:mb-6">
                 <motion.span variants={aboutRevealLastFull} className="block text-md md:text-lg xl:text-xl uppercase tracking-tighter leading-none">{ this.props.metaText }</motion.span>
               </div>
             )}
@@ -44,11 +44,14 @@ class AboutHero extends Component {
           </div>
           
           { this.props.defaultVideo && (
-            <video loop={true} playsInline autoPlay="autoplay" muted className={`absolute top-0 left-0 transition ease-in-out duration-500 right-0 bottom-0 w-full h-full object-cover opacity-100 z-10 }`}>
-              <source src={this.props.defaultVideo} type="video/mp4" />
-              
-              Sorry. Your browser does not support the video tag.
-            </video>
+            <>
+              <div className="bg-off-black absolute top-0 left-0 right-0 bottom-0 w-full h-full z-20 opacity-25"></div>
+              <video loop={true} playsInline autoPlay="autoplay" muted className={`absolute top-0 left-0 transition ease-in-out duration-500 right-0 bottom-0 w-full h-full object-cover opacity-100 z-10 }`}>
+                <source src={this.props.defaultVideo} type="video/mp4" />
+                
+                Sorry. Your browser does not support the video tag.
+              </video>
+            </>
           )}
 
           { !this.props.defaultVideo && this.props.defaultImage && (

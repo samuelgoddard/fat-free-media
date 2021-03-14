@@ -35,7 +35,7 @@ export default function Index({ subscription }) {
         >
           <Header theme="off-black" />
           
-          <motion.div variants={fade} className="mb-16 md:mb-20 pt-32 md:pt-48 xl:pt-56 overflow-hidden relative">
+          <motion.div variants={fade} className="mb-16 md:mb-20 pt-32 md:pt-56 xl:pt-64 overflow-hidden relative border-t-4 border-off-black-dark">
             <BigX color="text-white" />
             <Container thin>
 
@@ -43,9 +43,6 @@ export default function Index({ subscription }) {
                 initial="initial"
                 animate="enter"
                 exit="exit"
-                variants={{
-                  enter: { transition: { staggerChildren: 0.1 } }
-                }}
                 className="w-full mb-12 md:mb-10 xl:mb-0 relative z-10"
               >
                 <div className="mb-5">
@@ -56,7 +53,7 @@ export default function Index({ subscription }) {
                     </div>
                   </div>
                   <div className="relative overflow-hidden" data-scroll data-scroll-speed="1">
-                    <motion.span variants={reveal} className="block font-mono text-lg md:text-xl xl:text-2xl leading-none mb-1">2006—{ new Date().getFullYear() } </motion.span>
+                    <motion.span variants={reveal} className="block font-mono text-lg md:text-xl xl:text-2xl leading-none mb-1">2006—{ new Date().getFullYear().toString().substr(2, 2) } </motion.span>
                   </div>
                   <div className="relative overflow-hidden" data-scroll data-scroll-speed="1">
                     <motion.span variants={reveal} className="block text-xs uppercase tracking-tighter leading-none">{ home.heroMetaText }</motion.span>
@@ -68,19 +65,16 @@ export default function Index({ subscription }) {
                 initial="initial"
                 animate="enter"
                 exit="exit"
-                variants={{
-                  enter: { transition: { delayChildren: 0.35 } }
-                }}
                 className="w-full mb-12 md:mb-10 xl:mb-0 relative z-10"
               >
-                <motion.h1 variants={reveal} className="text-5xl md:text-6xl xl:text-7xl leading-none w-full max-w-4xl tracking-tighter pr-12 xl:pr-0 split" data-scroll data-scroll-speed="1.35">{ home.heroHeading }</motion.h1>
+                <motion.h1 variants={reveal} className="text-5xl md:text-6xl xl:text-7xl leading-negative w-full max-w-4xl tracking-tighter pr-12 xl:pr-0 split" data-scroll data-scroll-speed="1.35">{ home.heroHeading }</motion.h1>
               </motion.div>
             </Container>
 
             <Container bleed>
-              <div className="w-full mb-16 xl:mb-24 relative z-10" data-scroll data-scroll-speed="1.3">
+              <div className="w-full mb-16 md:mb-24 xl:mb-24 relative z-10" data-scroll data-scroll-speed="1.3">
                 <div className="relative overflow-hidden">
-                  <motion.div variants={reveal} className="text-right px-6 md:px-0 mb-2 md:mb-4 text-workLanding">
+                  <motion.div variants={reveal} className="text-right px-6 md:px-0 mb-2 md:mb-4 text-xl text-workLanding">
                     <FancyLink link={`/work`} text="See Our Work" a11yText="Navigate to Our Work Page" />
                   </motion.div>
                 </div>
@@ -97,15 +91,15 @@ export default function Index({ subscription }) {
             <Container thin>
               <div className="w-full mb-12 md:mb-16 xl:mb-24 relative z-10" data-scroll data-scroll-speed="1">
                 <div className="flex flex-wrap">
-                  <div className="w-full md:w-full max-w-sm">
-                    <span className="block text-xs uppercase tracking-tighter leading-none">Small but mighty —</span>
-                    <h2 className="text-4xl md:text-5xl xl:text-6xl leading-none tracking-tighter">We do three things</h2>
+                  <div className="w-11/12 md:w-full max-w-sm">
+                    <span className="block text-xs uppercase mb-1 md:mb-3 tracking-tighter leading-none">Small but mighty —</span>
+                    <h2 className="text-5xl md:text-6xl xl:text-7xl leading-none tracking-tighter">We do three things</h2>
                   </div>
 
-                  <div className="w-full md:w-1/2 max-w-md">
-                    <p className="text-lg md:text-xl leading-snug tracking-tight mb-4 md:mb-6">We believe that every moment with a viewer is a privilege, and brands deserve creative bravery without the ego. That’s why you won’t find clickbait or talking heads in our portfolio.</p>
+                  <div className="w-full md:w-5/12 xl:w-6/12 md:ml-auto xl:mx-auto max-w-xl mt-3">
+                    <p className="text-xl lg:text-2xl leading-tight tracking-tight mb-4 md:mb-6">We believe that every moment with a viewer is a privilege, and brands deserve creative bravery without the ego. That’s why you won’t find clickbait or talking heads in our portfolio.</p>
 
-                    <span className="text-lg">
+                    <span className="text-xl xl:text-2xl">
                       <FancyLink link="/contact" text="Contact us" a11yText="Navigate to contact us page" />
                     </span>
                   </div>
@@ -113,39 +107,39 @@ export default function Index({ subscription }) {
               </div>
 
               <div className="w-full mb-12 md:mb-16 xl:mb-24 2xl:mb-32 3xl:mb-40 relative z-10">
-                <div className="flex flex-wrap">
+                <div className="flex flex-wrap border-dotted border-off-black border-opacity-50 border-t md:border-0 md:-mx-8">
 
                 {home.whatWeDoBlocks.map((item, i) => {
                   let color = 'text-orange';
                   let scrollSpeed = 1.25;
-                  let paddingClass = 'py-6 md:py-10';
+                  let paddingClass = 'py-8 md:py-10';
                   
                   if (i === 0) { 
                     color = 'text-orange';
                     scrollSpeed = 1.25;
-                    paddingClass = 'py-6 md:py-10';
+                    paddingClass = 'py-8 md:py-10';
                   } else if (i === 1 ) {
                     color = 'text-green';
                     scrollSpeed = 2.25;
-                    paddingClass = 'py-6 md:pb-10 md:pt-64';
+                    paddingClass = 'py-8 md:pb-10 md:pt-64';
                   } else if (i === 2 ) {
                     color = 'text-purple'
                     scrollSpeed = 1.75;
-                    paddingClass = 'py-6 md:pb-10 md:pt-32';
+                    paddingClass = 'py-8 md:pb-10 md:pt-32';
                   }
                   return (
                     <div className="w-full md:w-1/3 md:px-8">
-                      <div className={`h-full border-b md:border-b-0 md:border-l border-dotted border-off-black border-opacity-50 md:px-8 ${ paddingClass}`}>
+                      <div className={`h-full md:border-l border-dotted border-off-black border-opacity-50 ${ paddingClass} ${ i !== 2 ? 'border-b md:border-b-0 md:pl-8' : 'md:border-b-0 md:border-r md:px-8'}`}>
                         <div className="flex flex-wrap -mx-4 md:mx-0" data-scroll data-scroll-speed={scrollSpeed}>
-                          <div className={`${color} w-full`}>
+                          <div className={`${color} w-16 md:w-full`}>
                             <CircleInfinity />
                           </div>
-                          <div className="flex-1 md:w-full px-2 md:px-0 relative z-10">
-                            <h3 className="text-3xl md:text-3xl xl:text-4xl leading-none tracking-tighter">{ item.heading }</h3>
+                          <div className="flex-1 md:w-full px-2 md:px-0 relative z-10 ml-2 md:ml-0">
+                            <h3 className="text-3xl md:text-3xl xl:text-5xl leading-none tracking-tighter w-full md:w-32 xl:w-48 ">{ item.heading }</h3>
                             
-                            <div className="font-mono text-sm mb-4 md:mb-6" dangerouslySetInnerHTML={{ __html: item.text }}></div>
+                            <div className="font-mono text-sm xl:text-base mb-4 md:mb-6 w-11/12 md:w-full" dangerouslySetInnerHTML={{ __html: item.text }}></div>
 
-                            <span className="text-lg">
+                            <span className="text-lg xl:text-xl">
                               <FancyLink link={`/services/${item.serviceLink.slug}`} text="Learn more" a11yText={`Navigate to ${item.serviceLink.title} page`} />
                             </span>
                           </div>

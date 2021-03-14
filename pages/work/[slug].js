@@ -29,30 +29,30 @@ export default function WorkSingle({ data: { site, work } }) {
           exit="exit"
           className=""
         >
-          <motion.div variants={fade} className=" overflow-hidden relative">
+          <motion.div variants={fade} className=" overflow-hidden relative border-t-4 border-off-black-dark">
             <Header theme="off-black" workBack />
             <BigX color="text-white" left />
             <div className="relative">
               <Container>
-                <div className="text-center pt-40 md:pt-48 xl:pt-56 relative pb-8 md:pb-16 xl:pb-20">
-                  <div className="relative overflow-hidden mb-2 md:mb-0" data-scroll data-scroll-speed="1.6">
-                    <motion.span variants={reveal} className="block md:text-lg uppercase tracking-tighter leading-none">{ work.heroHeading }</motion.span>
+                <div className="text-center pt-48 md:pt-56 xl:pt-64 relative pb-16 md:pb-16 xl:pb-24">
+                  <div className="relative mb-2 lg:mb-0" data-scroll data-scroll-speed="1.4">
+                    <motion.span variants={reveal} className="block md:text-lg xl:text-xl md:-mb-2 uppercase tracking-tighter leading-none">{ work.heroHeading }</motion.span>
                   </div>
-                  <h1 data-scroll data-scroll-speed="1.2" className="text-6xl md:text-7xl xl:text-8xl leading-none w-full tracking-tighter mb-4 md:mb-6 xl:mb-8 max-w-md md:max-w-xl xl:max-w-3xl mx-auto">Fat Free x { work.heroMeta }</h1>
+                  <h1 data-scroll data-scroll-speed="1" className="text-6xl md:text-8xl xl:text-9xl leading-negative w-full tracking-tighter mb-4 md:mb-6 xl:mb-8 max-w-md md:max-w-xl xl:max-w-5xl mx-auto"><span className="block">Fat Free x</span>{ work.heroMeta }</h1>
               </div>
               </Container>
 
-              <div data-scroll data-scroll-speed="1" className="border-t border-b border-off-black pt-3 pb-4">
-                <div className="w-full whitespace-no-wrap text-3xl md:text-4xl xl:text-5xl tracking-tighter leading-tight">
+              <div data-scroll data-scroll-speed="1" className="border-t border-b border-off-black pt-1 pb-2">
+                <div className="w-full whitespace-no-wrap text-4xl md:text-5xl xl:text-6xl tracking-tighter leading-tight align-top">
                   <Marquee pauseOnHover={false} gradient={false} speed={75}>
                     {work.tickerText.map((ticker, i) => (
-                      <span className="inline-block"key={i}><span className="inline mx-1 md:mx-2">{ ticker.text }</span> <span className="inline mx-1 md:mx-2 md:mr-3">•</span></span>
+                      <span className="inline-block align-"key={i}><span className="inline mx-2 md:mx-2">{ ticker.text }</span> <span className="inline-block mx-2 md:mx-2 align-top mt-5 md:mt-6 xl:mt-8 md:mr-3 w-3 md:w-4 rounded-full h-3 md:h-4 bg-off-black"></span></span>
                     ))}
                     {work.tickerText.map((ticker, i) => (
-                      <span className="inline-block"key={i}><span className="inline mx-1 md:mx-2">{ ticker.text }</span> <span className="inline mx-1 md:mx-2">•</span></span>
+                      <span className="inline-block align-"key={i}><span className="inline mx-2 md:mx-2">{ ticker.text }</span> <span className="inline-block mx-2 md:mx-2 align-top mt-5 md:mt-6 xl:mt-8 w-3 md:w-4 rounded-full h-3 md:h-4 bg-off-black"></span></span>
                     ))}
                     {work.tickerText.map((ticker, i) => (
-                      <span className="inline-block"key={i}><span className="inline mx-1 md:mx-2">{ ticker.text }</span> <span className="inline mx-1 md:mx-2">•</span></span>
+                      <span className="inline-block align-"key={i}><span className="inline mx-2 md:mx-2">{ ticker.text }</span> <span className="inline-block mx-2 md:mx-2 align-top mt-5 md:mt-6 xl:mt-8 w-3 md:w-4 rounded-full h-3 md:h-4 bg-off-black"></span></span>
                     ))}
                   </Marquee>
                 </div>
@@ -65,25 +65,22 @@ export default function WorkSingle({ data: { site, work } }) {
                 <div className="relative pb-0 md:pb-20 xl:pb-24">
                   {
                     work.contentBlocks.map((block, i) => (
-                      <div key={block.id} className={`pb-16 md:pb-24 xl:pb-32 ${(i === 0 && block._modelApiKey === 'text') ? 'pt-12 md:pt-24 xl:pt-32' : 'md:-mt-8 xl:-mt-12'}`} data-scroll data-scroll-speed="1.6">
+                      <div key={block.id} className={`pb-20 md:pb-32 xl:pb-32 ${(i === 0 && block._modelApiKey === 'text') ? 'pt-12 md:pt-24 xl:pt-32' : 'md:-mt-8 xl:-mt-12'}`} data-scroll data-scroll-speed="1.6">
                         {
                           block._modelApiKey === 'text' &&
                           <Container thin>
                             <div className="flex flex-wrap md:-mx-5">
                               <div className="w-full md:w-1/3 md:px-5">
-                                <div className="w-full max-w-xs">
+                                <div className="w-full max-w-xs lg:pr-8">
                                   { block.headingMetaText && (
-                                    <span className="block text-xs uppercase tracking-tighter leading-none">— { block.headingMetaText }</span>
+                                    <span className="block text-xs uppercase tracking-tighter leading-none mb-1 md:mb-3">— { block.headingMetaText }</span>
                                   )}
                                   { block.heading && (
                                     <h2 className="text-4xl md:text-5xl xl:text-6xl leading-none tracking-tighter">{ block.heading }</h2>
                                   )}
-                                  { block.headingMetaBullets && (
-                                    <div className="content text-xl md:text-2xl tracking-tighter leading-tight max" dangerouslySetInnerHTML={{ __html: block.headingMetaBullets}}></div>
-                                  )}
                                 </div>
                               </div>
-                              <div className="w-full md:w-2/3 md:px-5">
+                              <div className="w-11/12 md:w-1/2 lg:w-7/12 max-w-2xl md:px-5 md:ml-auto md:mr-10 lg:mr-16 md:mt-8">
                                 <div className="content text-xl md:text-2xl tracking-tighter leading-tight max-w-3xl" dangerouslySetInnerHTML={{ __html: block.text }}></div>
                               </div>
                             </div>
@@ -322,7 +319,7 @@ export default function WorkSingle({ data: { site, work } }) {
                           <div>
                             { block.metaText && (
                               <Container thin>
-                                <span className="block text-xs uppercase tracking-tighter leading-none mb-4 md:mb-6 xl:mb-6">{ block.metaText } —</span>
+                                <span className="block text-xs uppercase tracking-tighter leading-none mb-6 md:mb-8 xl:mb-10">{ block.metaText } —</span>
                               </Container>
                             )}
                             <Container>
@@ -330,15 +327,15 @@ export default function WorkSingle({ data: { site, work } }) {
                                 <div className="w-full h-full absolute top-0 left-0 right-0 bottom-0 flex flex-wrap items-center justify-center">
                                   <span data-scroll data-scroll-speed="2.75" className="block w-32 md:w-48 xl:w-64 h-32 md:h-48 xl:h-64 bg-yellow rounded-full"></span>
                                 </div>
-                                <span className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl 3xl:text-8xl leading-none w-full tracking-tighter pr-6 md:pr-16 z-10 block mb-8 md:mb-5 relative">“ { block.text } ”</span>
+                                <span className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl 3xl:text-7xl leading-none w-full tracking-tighter pr-6 md:pr-16 z-10 block mb-10 md:mb-12 xl:mb-16 relative about-text">“ { block.text } ”</span>
                               </div>
                             </Container>
                             <Container thin>
                               <div className="flex">
                                 <div className="ml-auto">
-                                  <span className="text-2xl md:text-2xl lg:text-3xl xl:text-4xl 3xl:text-5xl leading-none tracking-tighter block mb-2">– { block.authorName }</span>
+                                  <span className="text-2xl md:text-2xl lg:text-3xl xl:text-4xl 3xl:text-5xl leading-none tracking-tighter block mb-4">– { block.authorName }</span>
                                   { block.authorJobTitle && (
-                                    <span className="block text-base uppercase tracking-tighter leading-none ml-6 md:ml-6 xl:ml-8">{ block.authorJobTitle }</span>
+                                    <span className="block text-base uppercase tracking-tighter leading-none ml-4 md:ml-6 xl:ml-6">{ block.authorJobTitle }</span>
                                   )}
                                 </div>
                               </div>
@@ -359,14 +356,14 @@ export default function WorkSingle({ data: { site, work } }) {
                                       ...block.image.responsiveImage,
                                       alt: block.image.alt ? block.image.alt : block.image.title,
                                     }}
-                                    className="w-full relative z-0"
+                                    className="w-full relative z-0 mb-3 md:mb-0"
                                   />
                                 </div>
                                 <div className="w-full md:w-1/2 md:px-12" data-scroll data-scroll-speed="1.05">
                                   { block.metaText && (
                                     <span className="block text-xs uppercase tracking-tighter leading-none mb-6 md:mb-10">{ block.metaText } —</span>
                                   )}
-                                  <div className="text-2xl md:text-3xl xl:text-4xl leading-none tracking-tighter pr-8 md:pr-8 lg:pr-16 xl:pr-20 mb-6 md:mb-10 content" dangerouslySetInnerHTML={{ __html: block.text }}></div>
+                                  <div className="font-mono text-2xl md:text-3xl 2xl:text-4xl leading-none pr-8 md:pr-8 lg:pr-16 xl:pr-20 mb-6 md:mb-10 content" dangerouslySetInnerHTML={{ __html: block.text }}></div>
                                 </div>
                               </div>
                             </Container>
@@ -417,19 +414,19 @@ export default function WorkSingle({ data: { site, work } }) {
                   }
                 </div>
 
-                <div className="mb-16 md:mb-16 xl:mb-24" data-scroll data-scroll-speed="1.25">
+                <div className="md:-mt-16 lg:-mt-24 xl:-mt-32 mb-16 md:mb-16" data-scroll data-scroll-speed="1.25">
                   <Container thin>
                     <div className="flex flex-wrap relative z-10 border-t border-dotted border-off-black border-opacity-50 pt-12 md:pt-20 xl:pt-24">
                       <div className="w-full md:w-5/12 mb-4 md:mb-0">
                         <span className="block text-xs uppercase tracking-tighter leading-none mb-1">The Team —</span>
-                        <h2 className="text-4xl md:text-5xl xl:text-6xl leading-none tracking-tighter">Credits</h2>
+                        <h2 className="text-5xl md:text-6xl xl:text-7xl leading-none tracking-tighter">Credits</h2>
                       </div>
                       <div className="w-full md:w-7/12 text-lg md:text-xl xl:text-2xl leading-snug tracking-tighter">
                         {
                           work.credits.map((block, i) => (
-                            <div key={i} className="flex flex-wrap items-start max-w-xl mb-2 md:mb-3">
-                              <span className="block w-5/12 text-xs uppercase tracking-tighter leading-none mt-1 pt-px">{ block.title }</span>
-                              <span className="block w-7/12 text-right text-base font-mono ml-auto">{ block.name }</span>
+                            <div key={i} className="md:flex md:flex-wrap items-start md:max-w-2xl md:ml-auto mb-3 md:mb-3 border-b border-dotted border-off-black border-opacity-50 pt-1 md:pt-0 pb-4 md:pb-0 md:border-b-0">
+                              <span className="block md:w-5/12 text-xs uppercase tracking-tighter leading-none mt-1 pt-px mb-2 md:mb-0">{ block.title }</span>
+                              <span className="block md:w-7/12 md:text-right text-lg md:text-lg font-mono ml-auto">{ block.name }</span>
                             </div>
                           ))
                         }

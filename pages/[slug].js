@@ -27,7 +27,7 @@ export default function ServiceSingle({ data: { site, legal } }) {
           exit="exit"
           className=""
         >
-          <motion.div variants={fade} className=" overflow-hidden relative">
+          <motion.div variants={fade} className=" overflow-hidden relative border-t-4 border-off-black-dark">
             <Header theme="off-black" />
             <BigX color="text-white" />
             <div className="relative">

@@ -22,7 +22,7 @@ export default function Layout({ children, preview }) {
   // }, [])
 
   return (
-    <>
+    <div>
       { preview && (
         <div className="fixed top-0 left-0 right-0 bg-red-500 z-50 text-center text-white py-2">
           <>
@@ -41,6 +41,6 @@ export default function Layout({ children, preview }) {
         <script async src={`https://www.googletagmanager.com/gtag/js?id=UA-58771627-1`}></script>
       </Head> */}
       {children}
-    </>
+    </div>
   )
   }

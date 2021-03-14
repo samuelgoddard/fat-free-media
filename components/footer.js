@@ -8,17 +8,17 @@ import FancyLinkExternal from "../components/fancy-link-external";
 
 export default function Footer({ hideMarquee, disciplines }) {
   return (
-    <footer>
+    <footer className="relative z-20">
       { !hideMarquee && (
         <>
         { disciplines && (
-          <div className="border-t border-off-black py-3">
-            <div className="w-full whitespace-no-wrap text-3xl md:text-4xl xl:text-5xl tracking-tighter leading-tight">
+          <div className="border-t border-off-black pt-1 pb-2">
+            <div className="w-full whitespace-no-wrap text-4xl md:text-5xl xl:text-6xl tracking-tighter leading-tight">
               <Marquee pauseOnHover={true} gradient={false} speed={75}>
                 {disciplines.map((discipline, i) => (
                   <span className="block" key={i} className="mb-1 md:mb-2">
                     <FancyLink link={`/disciplines/${discipline.slug}`} a11yText={`Navigate to ${discipline.title} work`} text={discipline.title} extraClasses="mx-2 md:mx-3"/>
-                    <span className="inline mx-2 md:mx-3">•</span>
+                    <span className="inline-block mx-3 md:mx-3 align-top mt-8 md:mt-8 xl:mt-10 w-3 md:w-4 rounded-full h-3 md:h-4 bg-off-black"></span>
                   </span>
                 ))}
               </Marquee>
@@ -30,12 +30,14 @@ export default function Footer({ hideMarquee, disciplines }) {
 
       <div className="flex flex-wrap">
         <div className="w-full md:w-1/2 py-12 md:py-20 xl:pt-32 bg-green text-white relative overflow-hidden">
-          <div data-scroll data-scroll-speed="1.75">
-            <BigX color="text-green-dark" left bottom />
+          <div className="relative z-0">
+            <div data-scroll data-scroll-speed="1.75">
+              <BigX color="text-green-dark" left bottom />
+            </div>
           </div>
-          <div className="max-w-xl px-6 md:mx-auto flex flex-wrap relative z-10">
+          <div className="max-w-xl px-6 md:mx-auto flex flex-wrap">
             <nav className="w-full mb-6 md:mb-10 xl:mb-16">
-              <span className="block text-xs font-mono uppercase tracking-tight leading-none mb-5">What Now?</span>
+              <span className="block text-xs font-mono uppercase tracking-tight leading-none mb-5 relative z-30">What Now?</span>
               <ul>
                 <ShowreelModal>
                   <div className="flex flex-wrap w-full">
@@ -43,7 +45,7 @@ export default function Footer({ hideMarquee, disciplines }) {
                       <video 
                         controls={true}
                         preload="metadata"
-                        className="w-full home-video object-cover relative z-10 block"
+                        className="w-full home-video object-cover block"
                       >
                         <source src="https://player.vimeo.com/external/521509719.hd.mp4?s=e8606428a6bbe63e4ffa0029463f09267de421d0&profile_id=175" type="video/mp4"/>
                         Sorry. Your browser does not support the video tag.
@@ -52,12 +54,12 @@ export default function Footer({ hideMarquee, disciplines }) {
                   </div>
                 </ShowreelModal>
 
-                <li className="block text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl text-off-white w-full">                
+                <li className="block text-3xl md:text-3xl xl:text-4xl 2xl:text-5xl text-off-white w-full relative z-30">
                   <FancyLink link="/work" a11yText="Navigate to about work page" text="See Our Portfolio" opaque circleColor="text-off-black opacity-0" number="02"/>
                 </li>
 
 
-                <li className="block text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl text-off-white w-full">
+                <li className="block text-3xl md:text-3xl xl:text-4xl 2xl:text-5xl text-off-white w-full relative z-30">
                   <FancyLink link="/contact" a11yText="Navigate to contact page" text="Get In Touch" opaque circleColor="text-off-black opacity-0" number="03"/>
                 </li>
               </ul>
@@ -67,10 +69,10 @@ export default function Footer({ hideMarquee, disciplines }) {
 
         <div className="w-full md:w-1/2 py-12 md:py-20 xl:py-32 bg-orange text-off-white flex items-center">
           <div className="max-w-2xl px-6 mx-auto text-center">
-            <span className="block mb-3 md:mb-6 text-4xl md:text-4xl lg:text-5xl xl:text-6xl leading-none tracking-tighter">Stay in the loop</span>
-            <p className="font-mono text-sm mb-4 md:mb-6 max-w-sm md:max-w-xs xl:max-w-lg mx-auto">When we've got something great to say, we write a newsletter for brand teams. We curate the best of video, creativity and insights to inspire and delight.</p>
+            <span className="block mb-6 md:mb-8 text-5xl md:text-5xl lg:text-6xl xl:text-6xl leading-none tracking-tighter">Stay in the loop</span>
+            <p className="font-mono text-sm xl:text-base mb-6 md:mb-6 max-w-sm md:max-w-xs xl:max-w-lg mx-auto">When we've got something great to say, we write a newsletter for brand teams. We curate the best of video, creativity and insights to inspire and delight.</p>
             
-            <div className="text-lg md:text-xl">
+            <div className="text-lg md:text-xl xl:text-2xl">
               <FancyLinkExternal link="https://fatfreemedia.us2.list-manage.com/subscribe/post?u=0707fd5fce6636484cfe36669&amp;id=f4fff79bc3" a11yText="Sign up to our newsletter!" text="Sign up to our Newsletter" newTab />
             </div>
 
@@ -140,7 +142,7 @@ export default function Footer({ hideMarquee, disciplines }) {
         </Container>
       </div>
 
-      <div className="bg-off-black text-white pt-4 pb-5">
+      <div className="bg-off-black-dark text-white pt-4 pb-5">
         <Container>
           <div className="flex flex-wrap items-center">
             <div className="w-full md:flex-1 mb-3 md:mb-0">

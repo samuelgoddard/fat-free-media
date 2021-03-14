@@ -64,10 +64,10 @@ class Teaser extends Component {
           </div>
           <div className="flex flex-wrap items-center">
             <div className="relative overflow-hidden flex-1">
-              <motion.span variants={reveal} className="block text-2xl md:text-2xl xl:text-3xl leading-none tracking-tighter">{ this.props.title }</motion.span>
+              <motion.span variants={reveal} className="block text-2xl md:text-2xl xl:text-3xl leading-minimal tracking-tighter">{ this.props.title }</motion.span>
             </div>
             { this.props.meta && (
-              <div className="relative overflow-hidden flex-1 text-right">
+              <div className="relative overflow-hidden w-5/12 text-right">
                 <motion.span variants={reveal} className="block text-xs uppercase tracking-tighter leading-none">{ this.props.meta }</motion.span>
               </div>
             )}
