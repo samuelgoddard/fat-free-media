@@ -27,7 +27,7 @@ export default function Menu({ data: { site, home, about, work, contact } }) {
           animate="enter"
           exit="exit"
         >
-          <motion.div variants={fade} className="bg-orange text-off-white min-h-screen flex flex-wrap items-center md:items-end overflow-hidden relative pb-16 md:pb-0">
+          <motion.div variants={fade} className="bg-orange text-off-white min-h-screen flex flex-wrap items-center md:items-end overflow-hidden relative pb-20 md:pb-0">
             <Header theme="white" activeMenu />
 
             <motion.div

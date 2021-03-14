@@ -27,7 +27,7 @@ export default function BeliefHover({ alignClass, scrollAmount, index, title, pa
           </div>
           <div className="relative z-10 py-3 md:py-0">
             <button className="flex flex-wrap focus:border-none focus:outline-none tracking-tighter">
-              <span className="text-base md:text-xl lg:text-2xl mr-2 lg:mr-3 mt-1 tracking-normal">{ index }</span> <span>{ title }</span>
+              <span className="text-base md:text-xl lg:text-2xl mr-2 lg:mr-3 mt-1 tracking-normal">{ index }</span> <span className="flex-1 text-left">{ title }</span>
             </button>
             { text && (
               <div className="text-sm w-10/12 block leading-snug tracking-normal font-mono md:hidden mt-4" dangerouslySetInnerHTML={{ __html: text }}></div>
