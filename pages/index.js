@@ -35,7 +35,7 @@ export default function Index({ subscription }) {
         >
           <Header theme="off-black" />
           
-          <motion.div variants={fade} className="mb-16 md:mb-20 pt-32 md:pt-56 xl:pt-64 overflow-hidden relative border-t-4 border-off-black-dark">
+          <motion.div variants={fade} className="mb-16 md:mb-20 pt-32 md:pt-56 xl:pt-64 overflow-hidden relative">
             <BigX color="text-white" />
             <Container thin>
 

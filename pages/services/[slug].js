@@ -32,7 +32,7 @@ export default function ServiceSingle({ data: { site, service } }) {
           exit="exit"
           className=""
         >
-          <motion.div variants={fade} className=" overflow-hidden relative border-t-4 border-off-black-dark">
+          <motion.div variants={fade} className=" overflow-hidden relative">
             <Header theme="white" />
             {/* <BigX color="text-white" /> */}
             <div className="relative">

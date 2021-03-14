@@ -27,7 +27,7 @@ export default function Index({ data: { site, contact, disciplines } }) {
           animate="enter"
           exit="exit"
         >
-          <motion.div variants={fade} className="mb-16 md:mb-20 pt-32 md:pt-48 xl:pt-56 overflow-hidden relative border-t-4 border-off-black-dark">
+          <motion.div variants={fade} className="mb-16 md:mb-20 pt-32 md:pt-48 xl:pt-56 overflow-hidden relative">
             <Header theme="off-black" contact />
             <BigX color="text-white" />
             <Container thin>

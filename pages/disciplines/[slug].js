@@ -28,7 +28,7 @@ export default function Work({ data: { site, work, current, allDisciplines } }) 
           exit="exit"
           className=""
         >
-          <motion.div variants={fade} className=" overflow-hidden relative border-t-4 border-off-black-dark">
+          <motion.div variants={fade} className=" overflow-hidden relative">
             <Header theme="off-black" />
             <BigX color="text-white" />
             <div className="pt-40 md:pt-48 xl:pt-56 relative">

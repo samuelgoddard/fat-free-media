@@ -31,7 +31,7 @@ export default function About({ data: { site, about, team, services } }) {
           className="mb-20 md:mb-20"
         >
           <Header theme="white" />
-          <motion.div variants={fade} className="mb-20 md:mb-20 overflow-hidden relative border-t-4 border-off-black-dark">
+          <motion.div variants={fade} className="mb-20 md:mb-20 overflow-hidden relative">
             <div className="relative z-0" data-scroll-sticky data-scroll data-scroll-target="#scroll-container">
               <AboutHero 
                 metaText={about.heroMetaText}
