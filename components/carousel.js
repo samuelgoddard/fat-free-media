@@ -20,7 +20,7 @@ const EmblaCarousel = ({ images }) => {
 
               <figure className="w-full">
                 { image.alt ? (
-                  <figcaption className="uppercase text-sm md:text-base tracking-tighter leading-none mb-3 md:mb-4">{image.alt}</figcaption>
+                  <figcaption className="uppercase text-sm md:text-base tracking-tighter leading-none mb-3 md:mb-4">{ image.title ? image.title : image.alt }</figcaption>
                 ) : <div className="block mb-3 md:mb-4 h-3 md:h-4"></div>}
                 <Image
                   data={{
