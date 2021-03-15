@@ -40,7 +40,7 @@ class TeaserFull extends Component {
             )}
             { this.props.video && (
               <div className={`transform transition ease-in-out duration-500 absolute top-0 left-0 right-0 bottom-0 ${this.props.videoAlwaysOn ? 'opacity-100' : 'hidden md:block opacity-0 group-hover:opacity-100' }`}>
-                <video loop={true} autoPlay={this.props.videoAlwaysOn ? 'autoplay' : false } muted preload="none" className="w-full h-full object-cover z-10" ref={videoRef => this.videoRef = videoRef}>
+                <video loop={true} autoPlay={this.props.videoAlwaysOn ? 'autoplay' : false } muted preload="meta" className="w-full h-full object-cover z-10" ref={videoRef => this.videoRef = videoRef}>
                   <source src={ this.props.video } type="video/mp4" />
                   
                   Sorry. Your browser does not support the video tag.

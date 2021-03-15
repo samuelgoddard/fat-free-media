@@ -496,7 +496,7 @@ const WORK_SINGLE_QUERY = `
           _modelApiKey
           metaText
           image {
-            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1200, h: 1200 }) {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1200, h: 1200, auto: format }) {
               ...responsiveImageFragment
             }
             title
@@ -508,7 +508,7 @@ const WORK_SINGLE_QUERY = `
           id
           _modelApiKey
           image {
-            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1500, h: 740 }) {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1500, h: 740, auto: format }) {
               ...responsiveImageFragment
             }
             title
@@ -519,7 +519,7 @@ const WORK_SINGLE_QUERY = `
           id
           _modelApiKey
           images {
-            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1500, h: 1000 }) {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1200, h: 720, auto: format }) {
               ...responsiveImageFragment
             }
             title
@@ -530,7 +530,7 @@ const WORK_SINGLE_QUERY = `
           id
           _modelApiKey
           images {
-            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1200, h: 1200 }) {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 900, h: 900, auto: format }) {
               ...responsiveImageFragment
             }
             title
@@ -541,7 +541,7 @@ const WORK_SINGLE_QUERY = `
           id
           _modelApiKey
           images {
-            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1200, h: 1200 }) {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 900, h: 900, auto: format }) {
               ...responsiveImageFragment
             }
             title
@@ -552,7 +552,7 @@ const WORK_SINGLE_QUERY = `
           id
           _modelApiKey
           images {
-            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1200, h: 1200 }) {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 900, h: 900, auto: format }) {
               ...responsiveImageFragment
             }
             title
@@ -563,14 +563,14 @@ const WORK_SINGLE_QUERY = `
           id
           _modelApiKey
           image1 {
-            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1200, h: 1200 }) {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 900, h: 900, auto: format }) {
               ...responsiveImageFragment
             }
             title
             alt
           }
           image2 {
-            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 900, h: 1400 }) {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 700, h: 1200, auto: format }) {
               ...responsiveImageFragment
             }
             title
@@ -581,14 +581,14 @@ const WORK_SINGLE_QUERY = `
           id
           _modelApiKey
           image1 {
-            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 900, h: 1400 }) {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 700, h: 1200, auto: format }) {
               ...responsiveImageFragment
             }
             title
             alt
           }
           image2 {
-            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1200, h: 1200 }) {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 900, h: 900, auto: format }) {
               ...responsiveImageFragment
             }
             title
@@ -599,14 +599,14 @@ const WORK_SINGLE_QUERY = `
           id
           _modelApiKey
           image1 {
-            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1200, h: 800 }) {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1200, h: 800, auto: format }) {
               ...responsiveImageFragment
             }
             title
             alt
           }
           image2 {
-            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1200, h: 1200 }) {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 900, h: 900, auto: format }) {
               ...responsiveImageFragment
             }
             title
@@ -618,14 +618,14 @@ const WORK_SINGLE_QUERY = `
           id
           _modelApiKey
           image1 {
-            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1200, h: 1200 }) {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 900, h: 900, auto: format }) {
               ...responsiveImageFragment
             }
             title
             alt
           }
           image2 {
-            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1200, h: 800 }) {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1200, h: 800, auto: format }) {
               ...responsiveImageFragment
             }
             title
