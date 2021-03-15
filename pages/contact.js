@@ -40,8 +40,8 @@ export default function Index({ data: { site, contact, disciplines } }) {
                   <div className="w-full md:w-1/3 md:px-8">
                     <div className=" pt-10 pb-8 md:py-10 border-b md:border-b-0 md:border-l border-dotted border-off-black border-opacity-50 md:pl-8">
                       <div className="flex flex-wrap -mx-4 md:mx-0" data-scroll data-scroll-speed="1.25">
-                        <div className="md:flex w-auto md:w-full px-4 md:px-0 relative z-0 md:mb-5">
-                          <div className="w-auto relative mb-8 md:mb-8 group">
+                        <div className="md:flex w-auto md:w-full px-4 md:px-0 relative z-0 md:mb-5 group">
+                          <div className="w-auto relative mb-8 md:mb-8">
                             <ShapeSquare classes="w-10 md:w-16 xl:w-20" wrapperClasses="transform transition ease-in-out duration-300 group-hover:rotate-45 group-hover:translate-x-8 group-hover:translate-y-6" color="text-orange" />
                             <ShapeSquareOutline classes="w-10 md:w-16 xl:w-20 absolute top-0 right-0 bottom-0 -mr-3 md:-mr-6 xl:-mr-8 mt-2 md:mt-4 xl:mt-5" />
                           </div>
@@ -71,8 +71,8 @@ export default function Index({ data: { site, contact, disciplines } }) {
                   <div className=" w-full md:w-1/3 md:px-8">
                     <div className="pt-10 pb-8 md:pb-10 md:pt-48 border-b md:border-b-0 md:border-l border-dotted border-off-black border-opacity-50 md:pl-8 h-full">
                       <div className="flex flex-wrap -mx-4 md:mx-0" data-scroll data-scroll-speed="2.25">
-                        <div className="md:flex w-auto md:w-full px-4 md:px-0 relative z-0 md:mb-5">
-                          <div className="w-full md:w-auto relative mb-10 md:mb-12 group">
+                        <div className="md:flex w-auto md:w-full px-4 md:px-0 relative z-0 md:mb-5 group">
+                          <div className="w-full md:w-auto relative mb-10 md:mb-12">
                             <ShapeSquare classes="w-10 md:w-16 xl:w-20 absolute top-0 right-0 bottom-0 -mr-3 md:-mr-6 xl:-mr-6 mt-5 md:mt-4 xl:mt-5" color="text-green" wrapperClasses="transform transition ease-in-out duration-300 group-hover:-rotate-45 group-hover:-translate-x-2 group-hover:translate-y-3 group-hover:scale-75" />
 
                             <ShapeSquareOutline classes="w-10 md:w-16 xl:w-20 ml-5 -mt-5" wrapperClasses="transform rotate-45" />
@@ -98,8 +98,8 @@ export default function Index({ data: { site, contact, disciplines } }) {
                   <div className="w-full md:w-1/3 md:px-8">
                     <div className=" h-full pt-10 pb-8 md:pb-10 md:pt-24 md:border-b-0 md:border-l md:border-r border-dotted border-off-black border-opacity-50 md:px-8">
                       <div className="flex flex-wrap -mx-4 md:mx-0" data-scroll data-scroll-speed="1.75">
-                        <div className="md:flex w-auto md:w-full px-4 md:px-0 relative z-0 mb-4 md:mb-5">
-                          <div className="w-auto relative md:mb-5 group">
+                        <div className="md:flex w-auto md:w-full px-4 md:px-0 relative z-0 mb-4 md:mb-5 group">
+                          <div className="w-auto relative md:mb-5">
                             <ShapeSquare classes="w-8 md:w-12 xl:w-16 ml-2" color="text-purple" wrapperClasses="transform transition ease-in-out duration-300 group-hover:scale-125 group-hover:rotate-45" />
                             <ShapeSquareOutline classes="w-10 md:w-16 xl:w-20 absolute top-0 right-0 bottom-0 -mt-1 md:-mt-2 -mr-1 md:-mr-2" />
                           </div>
