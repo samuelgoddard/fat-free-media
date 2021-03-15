@@ -82,8 +82,8 @@ function MyApp({ Component, pageProps }) {
       </div>
 
       <Head>
-        <link rel="canonical" href={`https://fat-free.vercel.app${router.asPath}`} />
-        {/* <script async src={`https://www.googletagmanager.com/gtag/js?id=UA-58771627-1`}></script> */}
+        <link rel="canonical" href={`https://hellofatfree.com${router.asPath}`} />
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=UA-58771627-1`}></script>
         <script type="application/ld+json" 
           dangerouslySetInnerHTML={{ 
             __html: schema
