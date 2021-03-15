@@ -18,6 +18,8 @@ export default class Form extends Component {
         action="https://formspree.io/f/xrgowpqn"
         className="contact-form"
       >
+        <input type="text" name="_gotcha" className="hidden" />
+
         <div className="mb-4">
           <label className="sr-only" htmlFor="name">Name</label>
           <input className="appearance-none w-full py-3 px-4 leading-tight border-transparent border-2 focus:outline-none focus:border-green text-xl transition ease-in-out duration-200 textb-off-lack" id="name" type="text" placeholder="Name" name="name" required />
