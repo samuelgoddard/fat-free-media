@@ -91,7 +91,7 @@ export default function ServiceSingle({ data: { site, service } }) {
                       }
                       {
                         block._modelApiKey === 'image' &&
-                        <Container>
+                        <Container bleed>
                           <Image
                             data={{
                               ...block.image.responsiveImage,
@@ -103,7 +103,7 @@ export default function ServiceSingle({ data: { site, service } }) {
                       }
                       {
                         block._modelApiKey === 'video' &&
-                        <Container>
+                        <Container bleed>
                           <VideoRevealer 
                             text="WATCH"
                             videoAutoplayUrl={block.videoUrlAutoplayingCover}
@@ -214,7 +214,7 @@ export default function ServiceSingle({ data: { site, service } }) {
                         }
                         {
                           block._modelApiKey === 'supporting_silent_video_portrait' &&
-                          <Container>
+                          <Container bleed>
                             <video loop={true} autoPlay={'autoplay'} muted preload="meta" className="mx-auto max-w-full object-cover z-10 portrait-video">
                               <source src={ block.videoUrl } type="video/mp4" />
                               
@@ -224,7 +224,7 @@ export default function ServiceSingle({ data: { site, service } }) {
                         }
                         {
                           block._modelApiKey === 'supporting_silent_video_square' &&
-                          <Container>
+                          <Container bleed>
                             <video loop={true} autoPlay={'autoplay'} muted preload="meta" className="mx-auto max-w-full object-cover z-10 square-video">
                               <source src={ block.videoUrl } type="video/mp4" />
                               
@@ -234,7 +234,7 @@ export default function ServiceSingle({ data: { site, service } }) {
                         }
                         {
                           block._modelApiKey === 'supporting_silent_video_landscape' &&
-                          <Container>
+                          <Container bleed>
                             <video loop={true} autoPlay={'autoplay'} muted preload="meta" className="mx-auto max-w-full object-cover z-10 md:w-8/12">
                               <source src={ block.videoUrl } type="video/mp4" />
                               

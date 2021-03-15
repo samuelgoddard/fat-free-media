@@ -88,7 +88,7 @@ export default function WorkSingle({ data: { site, work } }) {
                         }
                         {
                           block._modelApiKey === 'image' &&
-                          <Container>
+                          <Container bleed>
                             <Image
                               data={{
                                 ...block.image.responsiveImage,
@@ -101,7 +101,7 @@ export default function WorkSingle({ data: { site, work } }) {
                         {
                           block._modelApiKey === 'images2_square' &&
                           <div className="overflow-hidden">
-                            <Container>
+                            <Container bleed>
                               <div className="flex flex-wrap -mx-5 md:-mx-8 xl:-mx-12">
                                 { block.images.map((image, i) => (
                                   <div key={i} className="w-1/2 px-5 md:px-8 xl:px-12">
@@ -164,7 +164,7 @@ export default function WorkSingle({ data: { site, work } }) {
                         }
                         {
                           block._modelApiKey === 'image_grid_left' &&
-                          <Container>
+                          <Container bleed>
                             <div className="flex flex-wrap md:-mx-12 xl:-mx-24">
                               <div className="w-full md:w-1/2 md:pl-12 xl:pl-24 mb-12 md:mb-0" data-scroll data-scroll-speed="0.5">
                                 <figure className="w-full">
@@ -201,7 +201,7 @@ export default function WorkSingle({ data: { site, work } }) {
                         }
                         {
                           block._modelApiKey === 'image_grid_right' &&
-                          <Container>
+                          <Container bleed>
                             <div className="flex flex-wrap md:-mx-12 xl:-mx-24">
                               <div className="w-full md:w-1/2 px-8 md:px-12 xl:px-24" data-scroll data-scroll-speed="1.6">
                                 <div className="md:pt-24 xl:pt-32 md:px-12 mx-auto">
@@ -381,7 +381,7 @@ export default function WorkSingle({ data: { site, work } }) {
                         }
                         {
                           block._modelApiKey === 'supporting_silent_video_portrait' &&
-                          <Container>
+                          <Container bleed>
                             <video loop={true} autoPlay={'autoplay'} muted preload="meta" className="mx-auto max-w-full object-cover z-10 portrait-video">
                               <source src={ block.videoUrl } type="video/mp4" />
                               
@@ -391,7 +391,7 @@ export default function WorkSingle({ data: { site, work } }) {
                         }
                         {
                           block._modelApiKey === 'supporting_silent_video_square' &&
-                          <Container>
+                          <Container bleed>
                             <video loop={true} autoPlay={'autoplay'} muted preload="meta" className="mx-auto max-w-full object-cover z-10 square-video">
                               <source src={ block.videoUrl } type="video/mp4" />
                               
@@ -401,7 +401,7 @@ export default function WorkSingle({ data: { site, work } }) {
                         }
                         {
                           block._modelApiKey === 'supporting_silent_video_landscape' &&
-                          <Container>
+                          <Container bleed>
                             <video loop={true} autoPlay={'autoplay'} muted preload="meta" className="mx-auto max-w-full object-cover z-10 md:w-8/12">
                               <source src={ block.videoUrl } type="video/mp4" />
                               

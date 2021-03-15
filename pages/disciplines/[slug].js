@@ -11,6 +11,7 @@ import BigX from "../../components/big-x";
 import FilterLink from "../../components/filter-link";
 import { motion } from "framer-motion"
 import { fade, reveal } from "../../helpers/transitionHelper"
+import Collapsible from "../../components/collapsible";
 import { SmoothScrollProvider } from '../../contexts/SmoothScroll.context'
 
 export default function Work({ data: { site, work, current, allDisciplines } }) {
@@ -38,17 +39,16 @@ export default function Work({ data: { site, work, current, allDisciplines } }) 
                 </div>
 
                 <nav className="border-t border-b border-off-black py-2 mb-8 md:mb-12 xl:mb-20 md:pb-6 relative">
-                  <ul className="flex flex-wrap pr-8 md:pr-16 xl:pr-20">
-                  
+                  <ul className="hidden md:flex flex-wrap pr-8 md:pr-16 xl:pr-20 pb-2 md:pb-0">
                     {allDisciplines.map((discipline, i) => {
                       let active = false; 
                       if (discipline.slug === current.slug) {
                         active = true;
                       }
                       return (
-                        <li key={i} className={`text-base md:text-3xl xl:text-4xl leading-tight tracking-tighter relative pr-2 md:pr-4 flex  overflow-hidden`}>
+                        <li key={i} className={`text-base md:text-3xl xl:text-4xl leading-tight tracking-tighter relative pr-2 md:pr-4 flex `}>
                           <motion.span variants={reveal}>
-                            <FilterLink link={`/disciplines/${discipline.slug}`} a11yText={`Navigate to ${discipline.title} Discipline page`} text={discipline.title} active={active} amount={discipline.amountOfProjects} extraClasses={active ? 'opacity-100' : 'transition ease-in-out duration-300 opacity-50 hover:opacity-100 focus:opacity-100'}/>
+                            <FilterLink link={`/disciplines/${discipline.slug}`} noPad a11yText={`Navigate to ${discipline.title} Discipline page`} text={discipline.title} active={active} amount={discipline.amountOfProjects} extraClasses={active ? 'opacity-100' : 'transition ease-in-out duration-300 opacity-50 hover:opacity-100 focus:opacity-100'}/>
                           </motion.span>
                           { i !== (allDisciplines.length - 1) &&(
                             <motion.span variants={reveal}>
@@ -65,6 +65,33 @@ export default function Work({ data: { site, work, current, allDisciplines } }) 
                       </motion.span>
                     </li>
                   </ul>
+
+                  <div className="block md:hidden">
+                    <Collapsible buttonText="Filter">
+                      <ul className="flex flex-wrap pr-8 md:pr-16 xl:pr-20 pb-2 md:pb-0">
+                      
+                        {allDisciplines.map((discipline, i) => {
+                          let active = false; 
+                          if (discipline.slug === current.slug) {
+                            active = true;
+                          }
+                          return (
+                            <li key={i} className={`text-lg md:text-3xl xl:text-4xl leading-tight tracking-tighter relative pr-2 md:pr-4 flex w-full`}>
+                              <motion.span variants={reveal} className="block">
+                                <FilterLink link={`/disciplines/${discipline.slug}`} noPad a11yText={`Navigate to ${discipline.title} Discipline page`} text={discipline.title} active={active} amount={discipline.amountOfProjects} extraClasses={active ? 'opacity-100' : 'transition ease-in-out duration-300 opacity-50 hover:opacity-100 focus:opacity-100'}/>
+                              </motion.span>
+                            </li>
+                          )
+                        })}
+
+                        <li className="text-2xl md:text-3xl xl:text-4xl leading-none tracking-tighter block pb-3 md:pb-4 ml-auto overflow-hidden absolute bottom-0 right-0">
+                          <motion.span variants={reveal} className="block">
+                            <FilterLink link={`/work`} a11yText={`Navigate to Work page`} text={"All"} amount={fullWorkLength} active={false} />
+                          </motion.span>
+                        </li>
+                      </ul>
+                    </Collapsible>
+                  </div>
                 </nav>
 
                 <div className="overflow-hidden mb-12 md:mb-20 xl:mb-24 3xl:mb-32">

@@ -12,6 +12,7 @@ import { motion } from "framer-motion"
 import FilterLink from "../../components/filter-link";
 import { fade, reveal } from "../../helpers/transitionHelper"
 import { SmoothScrollProvider } from '../../contexts/SmoothScroll.context'
+import Collapsible from "../../components/collapsible";
 var at = require('lodash.at');
 
 export default function Work({ data: { site, work, disciplines, workLanding } }) {
@@ -42,8 +43,7 @@ export default function Work({ data: { site, work, disciplines, workLanding } })
                   <motion.h1 variants={reveal} className="text-6xl md:text-7xl xl:text-8xl 3xl:text-9xl leading-none w-full max-w-4xl tracking-tighter mb-0 pb-0">Our Work</motion.h1>
                 </div>
                 <nav className="border-t border-b border-off-black py-2 mb-8 md:mb-12 xl:mb-20 md:pb-6 relative">
-                  <ul className="flex flex-wrap pr-8 md:pr-16 xl:pr-20">
-                  
+                  <ul className="hidden md:flex flex flex-wrap pr-8 md:pr-16 xl:pr-20">
                     {disciplines.map((discipline, i) => {
                       return (
                         <li key={i} className="text-base md:text-3xl xl:text-4xl leading-tight tracking-tighter relative pr-2 md:pr-4 flex  overflow-hidden">
@@ -65,6 +65,28 @@ export default function Work({ data: { site, work, disciplines, workLanding } })
                       </motion.span>
                     </li>
                   </ul>
+                  
+                  <div className="block md:hidden">
+                    <Collapsible buttonText="Filter">
+                      <ul className="flex flex-wrap pr-8 md:pr-16 xl:pr-20 pb-2 md:pb-0">
+                        {disciplines.map((discipline, i) => {
+                          return (
+                            <li key={i} className="text-base md:text-3xl xl:text-4xl leading-tight tracking-tighter relative pr-2 md:pr-4 flex  w-full">
+                              <motion.span variants={reveal} className="block">
+                                <FilterLink link={`/disciplines/${discipline.slug}`} noPad a11yText={`Navigate to ${discipline.title} Discipline page`} text={discipline.title} amount={discipline.amountOfProjects} />
+                              </motion.span>
+                            </li>
+                          )
+                        })}
+
+                        <li className="text-2xl md:text-3xl xl:text-4xl leading-none tracking-tighter block pb-3 md:pb-4 ml-auto absolute bottom-0 right-0">
+                          <motion.span variants={reveal} className="block">
+                            <FilterLink link={`/work`} a11yText={`Navigate to Work page`} text={"All"} amount={fullWorkLength} active={true} />
+                          </motion.span>
+                        </li>
+                      </ul>
+                    </Collapsible>
+                  </div>
                 </nav>
 
                 <div className="overflow-hidden mb-12 md:mb-20 xl:mb-24 3xl:mb-32">

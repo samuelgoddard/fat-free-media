@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-export default function FilterLink({link, a11yText, text, noCircle, thicc, circleColor, active, amount, extraClasses}) {
+export default function FilterLink({link, a11yText, text, noCircle, thicc, circleColor, active, amount, extraClasses, noPad}) {
   return (
     <Link href={link}>
       <a aria-label={a11yText} className={`tracking-tight items-center group block mr-6 md:mr-8 xl:mr-8 ${extraClasses}`}>
-        <div className="flex items-center relative mb-2 pt-2">
+        <div className={`flex items-center relative ${noPad ? 'mb-1 pt-2' : 'mb-2 pt-2'}`}>
           <span className=" z-10 relative">
             <span className="block">{ text }</span>
             { amount && (

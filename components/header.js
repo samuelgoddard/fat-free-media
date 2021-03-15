@@ -61,7 +61,7 @@ export default function Header({theme, contact, activeMenu, workBack}) {
                 <motion.div variants={scaleDown}>
                   <Link href={ activeMenu ? "/" : "/menu"}><a aria-label={ activeMenu ? "Navigate to home page" : "Navigate to menu" } className={`inline-block w-12 md:w-16 relative group transition ease-in-our duration-300 burger-wrap ${ theme === 'white' ? 'hover:text-white focus:text-white' : 'hover:text-orange focus:text-orange' }`}>
                     { !activeMenu ? (
-                      <div className={`burger absolute top-0 left-0 z-10 mt-4 md:mt-5 ml-4 md:ml-4 ${ theme === 'white' ? 'text-off-black' : 'text-off-white' }`}>
+                      <div className={`burger absolute top-0 left-0 z-10 mt-4 md:mt-5 ml-3 md:ml-4 ${ theme === 'white' ? 'text-off-black' : 'text-off-white' }`}>
                         <span></span>
                         <span></span>
                         <span></span>

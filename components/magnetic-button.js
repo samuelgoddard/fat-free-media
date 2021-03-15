@@ -1,5 +1,5 @@
 import { Component } from "react";
-import gsap from 'gsap';
+import { gsap } from 'gsap';
 
 class MagneticButton extends Component {
   constructor(props){

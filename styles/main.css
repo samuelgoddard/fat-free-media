@@ -156,8 +156,8 @@ html.has-scroll-dragging {
 }
 
 .burger {
-  width: 15px;
-  height: 15px;
+  width: 24px;
+  height: 24px;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -200,7 +200,7 @@ html.has-scroll-dragging {
 }
 
 .burger span:nth-child(2), .burger span:nth-child(3) {
-  top: 6px;
+  top: 7px;
   width: 80%;
   left: auto;
   right: 0;
@@ -211,7 +211,7 @@ html.has-scroll-dragging {
 }
 
 .burger span:nth-child(4) {
-  top: 12px;
+  top: 14px;
   left: auto;
   right: 0;
 
