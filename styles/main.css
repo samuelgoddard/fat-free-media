@@ -462,6 +462,16 @@ html.has-scroll-dragging {
   animation: bounceLeft 2.25s infinite;
 }
 
+.animate-bounce-rightsmall {
+  animation: bounceRightSmall 5s infinite;
+}
+
+.animate-bounce-leftsmall {
+  animation: bounceLeftSmall 5s infinite;
+}
+
+.animate-delay
+
 @keyframes bounceLeft {
   0%, 100% {
     transform: translateX(-50%);
@@ -482,4 +492,52 @@ html.has-scroll-dragging {
     transform: translateX(0);
     animationTimingFunction: cubic-bezier(0, 0, 0.2, 1);
   }
+}
+
+@keyframes bounceLeftSmall {
+  0%, 100% {
+    transform: translateY(-50%);
+    animationTimingFunction: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animationTimingFunction: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@screen md {
+  @keyframes bounceLeftSmall {
+    0%, 100% {
+      transform: translateX(-50%);
+      animationTimingFunction: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+      transform: translateX(0);
+      animationTimingFunction: cubic-bezier(0, 0, 0.2, 1);
+    }
+  } 
+}
+
+@keyframes bounceRightSmall {
+  0%, 100% {
+    transform: translateY(75%);
+    animationTimingFunction: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animationTimingFunction: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@screen md {
+  @keyframes bounceRightSmall {
+    0%, 100% {
+      transform: translateX(75%);
+      animationTimingFunction: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+      transform: translateX(0);
+      animationTimingFunction: cubic-bezier(0, 0, 0.2, 1);
+    }
+  } 
 }
