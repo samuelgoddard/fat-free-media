@@ -453,3 +453,33 @@ html.has-scroll-dragging {
     overflow: scroll;
   }
 }
+
+.animate-bounce-right {
+  animation: bounceRight 2.25s infinite;
+}
+
+.animate-bounce-left {
+  animation: bounceLeft 2.25s infinite;
+}
+
+@keyframes bounceLeft {
+  0%, 100% {
+    transform: translateX(-50%);
+    animationTimingFunction: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateX(0);
+    animationTimingFunction: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes bounceRight {
+  0%, 100% {
+    transform: translateX(75%);
+    animationTimingFunction: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateX(0);
+    animationTimingFunction: cubic-bezier(0, 0, 0.2, 1);
+  }
+}

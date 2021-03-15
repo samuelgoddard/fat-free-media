@@ -46,10 +46,10 @@ export default function Index({ subscription }) {
                 className="w-full mb-5 md:mb-10 xl:mb-0 relative z-10"
               >
                 <div className="mb-2 md:mb-5">
-                  <div className="relative overflow-hidden mb-2" data-scroll data-scroll-speed="1">
+                  <div className="relative mb-2" data-scroll data-scroll-speed="1">
                     <div className="flex">
-                      <motion.div variants={scaleDown} className="w-5 h-5 bg-off-black rounded-full"></motion.div>
-                      <motion.div variants={scaleDown} className="w-5 h-5 -ml-2 bg-transparent border border-off-black rounded-full"></motion.div>
+                      <motion.div variants={scaleDown} className="w-5 h-5 bg-off-black rounded-full animate-bounce-right"></motion.div>
+                      <motion.div variants={scaleDown} className="w-5 h-5 -ml-2 bg-transparent border border-off-black rounded-full animate-bounce-left"></motion.div>
                     </div>
                   </div>
                   <div className="relative overflow-hidden" data-scroll data-scroll-speed="1">

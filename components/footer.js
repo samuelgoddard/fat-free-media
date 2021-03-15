@@ -127,7 +127,7 @@ export default function Footer({ hideMarquee, disciplines }) {
             </nav>
 
             <nav className="w-full lg:w-5/12 lg:px-4">
-              <span className="block text-xs font-mono uppercase tracking-tight leading-none lg:text-right mb-3">Lets talk</span>
+              <span className="block text-xs font-mono uppercase tracking-tight leading-none lg:text-right mb-3">Let's talk</span>
               <ul className="lg:text-right">
                 <li className="inline-block mr-3 lg:mr-0 lg:ml-3 text-xl md:text-2xl 3xl:text-3xl">
                   <FancyLinkExternal link="tel:0115 857 7502" a11yText="Call us" text="0115 857 7502" />
