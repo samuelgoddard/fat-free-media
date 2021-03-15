@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
-
+  
   return (
     <>
       <div className="fixed top-0 left-0 right-0 w-full h-1 bg-off-black-dark z-40 py-px"></div>
