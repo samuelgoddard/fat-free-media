@@ -3,11 +3,10 @@ import { renderMetaTags } from "react-datocms";
 import Header from "../components/header";
 import Layout from "../components/layout";
 import { request } from "../lib/datocms";
-import { metaTagsFragment, responsiveImageFragment } from "../lib/fragments";
+import { metaTagsFragment } from "../lib/fragments";
 import Container from "../components/container";
 import Footer from "../components/footer";
 import BigX from "../components/big-x";
-import CircleInfinity from "../components/circle-infinity";
 import FancyLink from "../components/fancy-link";
 import { motion } from "framer-motion"
 import { fade } from "../helpers/transitionHelper"

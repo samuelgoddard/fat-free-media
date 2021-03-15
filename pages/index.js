@@ -43,9 +43,9 @@ export default function Index({ subscription }) {
                 initial="initial"
                 animate="enter"
                 exit="exit"
-                className="w-full mb-12 md:mb-10 xl:mb-0 relative z-10"
+                className="w-full mb-5 md:mb-10 xl:mb-0 relative z-10"
               >
-                <div className="mb-5">
+                <div className="mb-2 md:mb-5">
                   <div className="relative overflow-hidden mb-2" data-scroll data-scroll-speed="1">
                     <div className="flex">
                       <motion.div variants={scaleDown} className="w-5 h-5 bg-off-black rounded-full"></motion.div>
@@ -67,14 +67,14 @@ export default function Index({ subscription }) {
                 exit="exit"
                 className="w-full mb-12 md:mb-10 xl:mb-0 relative z-10"
               >
-                <motion.h1 variants={reveal} className="text-5xl md:text-6xl xl:text-7xl leading-negative w-full max-w-4xl tracking-tighter pr-12 xl:pr-0 split" data-scroll data-scroll-speed="1.35">{ home.heroHeading }</motion.h1>
+                <motion.h1 variants={reveal} className="text-4xl md:text-6xl xl:text-7xl leading-negative w-full max-w-4xl tracking-tighter pr-12 xl:pr-0 split" data-scroll data-scroll-speed="1.35">{ home.heroHeading }</motion.h1>
               </motion.div>
             </Container>
 
             <Container bleed>
               <div className="w-full mb-16 md:mb-24 xl:mb-24 relative z-10" data-scroll data-scroll-speed="1.3">
-                <div className="relative overflow-hidden">
-                  <motion.div variants={reveal} className="text-right px-6 md:px-0 mb-2 md:mb-4 text-xl text-workLanding">
+                <div className="relative">
+                  <motion.div variants={reveal} className="text-right px-6 md:px-0 mb-2 md:mb-4 text-lg md:text-xl text-workLanding">
                     <FancyLink link={`/work`} text="See Our Work" a11yText="Navigate to Our Work Page" />
                   </motion.div>
                 </div>

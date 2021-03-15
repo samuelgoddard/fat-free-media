@@ -9,7 +9,7 @@ export default function Header({theme, contact, activeMenu, workBack}) {
   return (
     <header className={`absolute top-0 left-0 right-0 z-40 text-${theme} transition-colors ease-in-out duration-300`}>
       <Container>
-        <div className="flex flex-wrap items-center pt-10">
+        <div className="flex flex-wrap items-center pt-8 md:pt-10">
           <div className="w-auto">
             <div className="relative overflow-hidden flex flex-wrap items-center">
               <motion.div variants={reveal}>
@@ -57,7 +57,7 @@ export default function Header({theme, contact, activeMenu, workBack}) {
                 </div>
               )}
               
-              <div className="relative mx-2 md:mx-4 mr-0 xl:mr-0">
+              <div className="relative mx-2 md:mx-4 mr-0 xl:mr-0 -mb-2 md:mb-0">
                 <motion.div variants={scaleDown}>
                   <Link href={ activeMenu ? "/" : "/menu"}><a aria-label={ activeMenu ? "Navigate to home page" : "Navigate to menu" } className={`inline-block w-12 md:w-16 relative group transition ease-in-our duration-300 burger-wrap ${ theme === 'white' ? 'hover:text-white focus:text-white' : 'hover:text-orange focus:text-orange' }`}>
                     { !activeMenu ? (
