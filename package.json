@@ -15,7 +15,7 @@
     "embla-carousel": "^4.1.5",
     "framer-motion": "^3.2.2-rc.1",
     "gsap": "^3.6.0",
-    "locomotive-scroll": "^4.0.6",
+    "locomotive-scroll": "^4.1.0",
     "lodash.at": "^4.6.0",
     "next": "^10.0.7",
     "postcss-import": "^14.0.0",
