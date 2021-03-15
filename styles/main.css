@@ -470,8 +470,6 @@ html.has-scroll-dragging {
   animation: bounceLeftSmall 5s infinite;
 }
 
-.animate-delay
-
 @keyframes bounceLeft {
   0%, 100% {
     transform: translateX(-50%);
@@ -520,7 +518,7 @@ html.has-scroll-dragging {
 
 @keyframes bounceRightSmall {
   0%, 100% {
-    transform: translateY(75%);
+    transform: translateY(35%);
     animationTimingFunction: cubic-bezier(0.8, 0, 1, 1);
   }
   50% {
@@ -532,7 +530,7 @@ html.has-scroll-dragging {
 @screen md {
   @keyframes bounceRightSmall {
     0%, 100% {
-      transform: translateX(75%);
+      transform: translateX(35%);
       animationTimingFunction: cubic-bezier(0.8, 0, 1, 1);
     }
     50% {
