@@ -369,12 +369,12 @@ const ABOUT_QUERY = `
       slug
       jobTitle
       image {
-        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 600, h: 850 }) {
+        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 600, h: 850, auto: format }) {
           ...responsiveImageFragment
         }
       }
       mobileImage: image {
-        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 600, h: 320 }) {
+        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 600, h: 320, auto: format }) {
           ...responsiveImageFragment
         }
       }
@@ -401,7 +401,7 @@ const ABOUT_QUERY = `
       heartHeroVideoUrl
       changeHeroVideoUrl
       calloutImage {
-        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 800, h: 1050 }) {
+        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 800, h: 1050, auto: format }) {
           ...responsiveImageFragment
         }
         title

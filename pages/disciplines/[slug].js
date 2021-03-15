@@ -139,21 +139,21 @@ const DISCIPLINE_QUERY = `
         slug
       }
       teaserImageSquare: teaserImage {
-        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 900, h: 900 }) {
+        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 900, h: 900, auto: format }) {
           ...responsiveImageFragment
         }
         title
         alt
       }
       teaserImageLandscape: teaserImage {
-        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1100, h: 620 }) {
+        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 1100, h: 620, auto: format }) {
           ...responsiveImageFragment
         }
         title
         alt
       }
       teaserImagePortrait: teaserImage {
-        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 600, h: 1000 }) {
+        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 600, h: 1000, auto: format }) {
           ...responsiveImageFragment
         }
         title

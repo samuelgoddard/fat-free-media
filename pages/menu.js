@@ -145,7 +145,7 @@ const MENU_QUERY = `
         ...metaTagsFragment
       }
       menuImage {
-        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 720, h: 1000 }) {
+        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 620, h: 900, auto: format }) {
           ...responsiveImageFragment
         }
         title
@@ -156,7 +156,7 @@ const MENU_QUERY = `
     }
     about {
       menuImage {
-        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 720, h: 1000 }) {
+        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 620, h: 900, auto: format }) {
           ...responsiveImageFragment
         }
         title
@@ -167,7 +167,7 @@ const MENU_QUERY = `
     }
     work: workLanding {
       menuImage {
-        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 720, h: 1000 }) {
+        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 620, h: 900, auto: format }) {
           ...responsiveImageFragment
         }
         title
@@ -178,7 +178,7 @@ const MENU_QUERY = `
     }
     contact {
       menuImage {
-        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 720, h: 1000 }) {
+        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 620, h: 900, auto: format }) {
           ...responsiveImageFragment
         }
         title
