@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
       }
 
       gtag('js', new Date())
-      gtag('config', 'UA-58771627-1', {
+      gtag('config', 'UA-1410304-1', {
         page_location: window.location.href,
         page_path: window.location.pathname,
         page_title: window.document.title,
@@ -83,7 +83,7 @@ function MyApp({ Component, pageProps }) {
 
       <Head>
         <link rel="canonical" href={`https://hellofatfree.com${router.asPath}`} />
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=UA-58771627-1`}></script>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=UA-1410304-1`}></script>
         <script type="application/ld+json" 
           dangerouslySetInnerHTML={{ 
             __html: schema
