@@ -84,6 +84,17 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <link rel="canonical" href={`https://hellofatfree.com${router.asPath}`} />
         <script async src={`https://www.googletagmanager.com/gtag/js?id=UA-1410304-1`}></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', 'UA-1410304-1');
+              `,
+          }}
+        />
+
         <script type="application/ld+json" 
           dangerouslySetInnerHTML={{ 
             __html: schema
