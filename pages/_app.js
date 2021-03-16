@@ -3,27 +3,20 @@ import '../styles/main.css'
 import { AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/router'
 import Head from "next/head";
+import * as gtag from '../lib/gtag'
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
 
-  // GTAG Analytics
   useEffect(() => {
-    if (process.env.NODE_ENV === 'development') {
-      window.dataLayer = window.dataLayer || []
-      
-      function gtag() {
-        dataLayer.push(arguments)
-      }
-
-      gtag('js', new Date())
-      gtag('config', 'UA-1410304-1', {
-        page_location: window.location.href,
-        page_path: window.location.pathname,
-        page_title: window.document.title,
-      })
+    const handleRouteChange = (url) => {
+      gtag.pageview(url)
     }
-  }, [])
+    router.events.on('routeChangeComplete', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
 
   const schema = `
     {
@@ -83,17 +76,6 @@ function MyApp({ Component, pageProps }) {
 
       <Head>
         <link rel="canonical" href={`https://hellofatfree.com${router.asPath}`} />
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=UA-1410304-1`}></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-                  gtag('config', 'UA-1410304-1');
-              `,
-          }}
-        />
 
         <script type="application/ld+json" 
           dangerouslySetInnerHTML={{ 
