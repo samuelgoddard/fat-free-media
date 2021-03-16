@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../styles/main.css'
 import { AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/router'
