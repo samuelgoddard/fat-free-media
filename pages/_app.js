@@ -8,22 +8,22 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter()
 
   // GTAG Analytics
-  // useEffect(() => {
-  //   if (process.env.NODE_ENV === 'development') {
-  //     window.dataLayer = window.dataLayer || []
+  useEffect(() => {
+    if (process.env.NODE_ENV === 'development') {
+      window.dataLayer = window.dataLayer || []
       
-  //     function gtag() {
-  //       dataLayer.push(arguments)
-  //     }
+      function gtag() {
+        dataLayer.push(arguments)
+      }
 
-  //     gtag('js', new Date())
-  //     gtag('config', 'UA-58771627-1', {
-  //       page_location: window.location.href,
-  //       page_path: window.location.pathname,
-  //       page_title: window.document.title,
-  //     })
-  //   }
-  // }, [])
+      gtag('js', new Date())
+      gtag('config', 'UA-58771627-1', {
+        page_location: window.location.href,
+        page_path: window.location.pathname,
+        page_title: window.document.title,
+      })
+    }
+  }, [])
 
   const schema = `
     {
@@ -83,7 +83,7 @@ function MyApp({ Component, pageProps }) {
 
       <Head>
         <link rel="canonical" href={`https://hellofatfree.com${router.asPath}`} />
-        {/* <script async src={`https://www.googletagmanager.com/gtag/js?id=UA-58771627-1`}></script> */}
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=UA-58771627-1`}></script>
         <script type="application/ld+json" 
           dangerouslySetInnerHTML={{ 
             __html: schema
