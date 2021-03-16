@@ -51,7 +51,7 @@ module.exports = {
       },
       lineHeight: {
         'negative': '0.95',
-        'minimal': '1.19',
+        'minimal': '1.23',
       },
       spacing: {
         '72': '18rem',

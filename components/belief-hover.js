@@ -15,7 +15,7 @@ export default function BeliefHover({ alignClass, scrollAmount, index, title, pa
     <li className={`pb-4 lg:pb-6 pt-3 lg:pt-4 text-3xl md:text-4xl lg:text-4xl xl:text-5xl tracking-tighter leading-tight block border-b border-black relative ${paddingClass} ${ modalIsOpen ? 'z-50' : 'z-0' }`}>
       <div className={`relative flex flex-wrap ${alignClass}`} data-scroll data-scroll-direction="horizontal" data-scroll-speed={scrollAmount}>
         <div className="relative z-50" onMouseEnter={openModal} onMouseLeave={closeModal}>
-          <div className={`absolute top-0 left-0 bottom-0 right-0 z-50 -mt-24 lg:-mt-32 xl:-mt-40 ml-12 w-56 md:w-64 xl:w-96 2xl:w-96 h-56 md:h-64 xl:h-96 2xl:h-96 hidden md:flex flex-wrap items-center justify-center transition ease-in-out duration-300 transform ${modalIsOpen ? 'scale-100 opacity-100' : 'scale-0 opacity-100'}`}>
+          <div className={`absolute top-0 left-0 bottom-0 right-0 z-50 -mt-24 lg:-mt-32 xl:-mt-40 ml-12 w-56 md:w-64 xl:w-96 2xl:w-96 h-56 md:h-64 xl:h-96 2xl:h-96 hidden md:flex flex-wrap items-center justify-center transition ease-in-out duration-500 transform ${modalIsOpen ? 'scale-100 opacity-100' : 'scale-0 opacity-100'}`}>
             <div className="text-center p-8 xl:p-12 relative z-20">
               <span className="block text-xl lg:text-2xl xl:text-3xl tracking-tight leading-none mb-5 uppercase">{ title }</span>
               { text && (

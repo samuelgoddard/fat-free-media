@@ -38,7 +38,7 @@ export default function WorkSingle({ data: { site, work } }) {
                   <div className="relative mb-2 lg:mb-0" data-scroll data-scroll-speed="1.4">
                     <motion.span variants={reveal} className="block md:text-lg xl:text-xl md:-mb-2 uppercase tracking-tighter leading-none">{ work.heroHeading }</motion.span>
                   </div>
-                  <h1 data-scroll data-scroll-speed="1" className="text-6xl md:text-8xl xl:text-9xl leading-negative w-full tracking-tighter mb-4 md:mb-6 xl:mb-8 max-w-md md:max-w-xl xl:max-w-5xl mx-auto"><span className="block">Fat Free x</span>{ work.heroMeta }</h1>
+                  <h1 data-scroll data-scroll-speed="1" className="text-6xl md:text-8xl xl:text-9xl leading-negative w-full tracking-tighter mb-4 md:mb-6 xl:mb-8 mx-auto"><span className="block">Fat Free x</span>{ work.heroMeta }</h1>
               </div>
               </Container>
 
@@ -176,7 +176,7 @@ export default function WorkSingle({ data: { site, work } }) {
                                     className="w-full mb-3"
                                   />
                                   { block.image1.alt && (
-                                    <figcaption className="block md:upright md:absolute top-0 right-0 md:-mr-6 z-0 uppercase text-sm md:text-base tracking-tighter leading-none">{block.image1.alt}</figcaption>
+                                    <figcaption className="block md:upright md:absolute top-0 right-0 md:-mr-6 z-0 uppercase text-sm md:text-base tracking-tighter leading-none px-6 md:px-0">{block.image1.alt}</figcaption>
                                   )}
                                 </figure>
                               </div>
@@ -191,7 +191,7 @@ export default function WorkSingle({ data: { site, work } }) {
                                       className="w-full mb-3"
                                     />
                                     { block.image2.alt && (
-                                      <figcaption className="block text-sm md:text-base uppercase tracking-tighter leading-none text-right">{block.image2.alt}</figcaption>
+                                      <figcaption className="block text-sm md:text-base uppercase tracking-tighter leading-none text-right px-6 md:px-0">{block.image2.alt}</figcaption>
                                     )}
                                   </figure>
                                 </div>
@@ -214,7 +214,7 @@ export default function WorkSingle({ data: { site, work } }) {
                                       className="w-full mb-3"
                                     />
                                     { block.image1.alt && (
-                                      <figcaption className="block text-sm md:text-base uppercase tracking-tighter leading-none text-right">{block.image1.alt}</figcaption>
+                                      <figcaption className="px-6 md:px-0 block text-sm md:text-base uppercase tracking-tighter leading-none text-right">{block.image1.alt}</figcaption>
                                     )}
                                   </figure>
                                 </div>
@@ -229,7 +229,7 @@ export default function WorkSingle({ data: { site, work } }) {
                                     className="w-full mb-3"
                                   />
                                   { block.image2.alt && (
-                                    <figcaption className="block md:upright md:absolute top-0 left-0 md:-ml-6 z-0 uppercase text-sm md:text-base tracking-tighter leading-none">{block.image2.alt}</figcaption>
+                                    <figcaption className="px-6 md:px-0 block md:upright md:absolute top-0 left-0 md:-ml-6 z-0 uppercase text-sm md:text-base tracking-tighter leading-none">{block.image2.alt}</figcaption>
                                   )}
                                 </figure>
                               </div>
@@ -349,7 +349,7 @@ export default function WorkSingle({ data: { site, work } }) {
                               <BigX color="text-yellow-dark" />
                             </div>
                             <Container>
-                              <div className="flex flex-wrap items-start 2xl:items-center md:-mx-12 relative z-20">
+                              <div className="flex flex-wrap items-center md:-mx-12 relative z-20">
                                 <div className="w-full md:w-1/2 md:px-12 mb-6 md:mb-0" data-scroll data-scroll-speed="0.25">
                                   <Image
                                     data={{
@@ -382,7 +382,7 @@ export default function WorkSingle({ data: { site, work } }) {
                         {
                           block._modelApiKey === 'supporting_silent_video_portrait' &&
                           <Container bleed>
-                            <video loop={true} autoPlay={'autoplay'} muted preload="meta" className="mx-auto max-w-full object-cover z-10 portrait-video">
+                            <video loop={true} autoPlay={'autoplay'} playsInline muted preload="meta" className="mx-auto max-w-full object-cover z-10 portrait-video">
                               <source src={ block.videoUrl } type="video/mp4" />
                               
                               Sorry. Your browser does not support the video tag.
@@ -392,7 +392,7 @@ export default function WorkSingle({ data: { site, work } }) {
                         {
                           block._modelApiKey === 'supporting_silent_video_square' &&
                           <Container bleed>
-                            <video loop={true} autoPlay={'autoplay'} muted preload="meta" className="mx-auto max-w-full object-cover z-10 square-video">
+                            <video loop={true} autoPlay={'autoplay'} playsInline muted preload="meta" className="mx-auto max-w-full object-cover z-10 square-video">
                               <source src={ block.videoUrl } type="video/mp4" />
                               
                               Sorry. Your browser does not support the video tag.
@@ -402,7 +402,7 @@ export default function WorkSingle({ data: { site, work } }) {
                         {
                           block._modelApiKey === 'supporting_silent_video_landscape' &&
                           <Container bleed>
-                            <video loop={true} autoPlay={'autoplay'} muted preload="meta" className="mx-auto max-w-full object-cover z-10 md:w-8/12">
+                            <video loop={true} autoPlay={'autoplay'} playsInline muted preload="meta" className="mx-auto max-w-full object-cover z-10 md:w-8/12">
                               <source src={ block.videoUrl } type="video/mp4" />
                               
                               Sorry. Your browser does not support the video tag.

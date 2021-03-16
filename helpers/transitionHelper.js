@@ -66,14 +66,12 @@ export const scaleDownSmall = {
 }
 
 export const xAnimation = {
-	initial: { opacity: 0, scale: 0.9 },
+	initial: { opacity: 0 },
   enter: { 
     opacity: 0.65,
-    scale: 1,
     transition: { duration: 0.6, ease: [0.83, 0, 0.17, 1] }
   },
 	exit: {
-    scale: 0.9,
     opacity: 0,
 		transition: { duration: 0.6, ease: [0.83, 0, 0.17, 1] }
 	}

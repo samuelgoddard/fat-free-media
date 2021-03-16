@@ -35,7 +35,7 @@ export default function Work({ data: { site, work, current, allDisciplines } }) 
             <div className="pt-40 md:pt-48 xl:pt-56 relative">
               <Container>
                 <div className="relative overflow-hidden mb-4 md:mb-6 xl:mb-8">
-                  <motion.h1 variants={reveal} className="text-6xl md:text-7xl xl:text-8xl 3xl:text-9xl leading-tight w-full max-w-4xl tracking-tighter mb-0 pb-0">{current.title}</motion.h1>
+                  <motion.h1 variants={reveal} className="text-6xl md:text-7xl xl:text-8xl 3xl:text-9xl leading-none w-full max-w-4xl tracking-tighter mb-0 pb-0">{ current.title }</motion.h1>
                 </div>
 
                 <nav className="border-t border-b border-off-black py-2 mb-8 md:mb-12 xl:mb-20 md:pb-6 relative">
@@ -143,7 +143,7 @@ const DISCIPLINE_QUERY = `
         ...metaTagsFragment
       }
     }
-    allDisciplines {
+    allDisciplines(orderBy: position_ASC) {
       title
       slug
       amountOfProjects

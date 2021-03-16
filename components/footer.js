@@ -12,9 +12,21 @@ export default function Footer({ hideMarquee, disciplines }) {
       { !hideMarquee && (
         <>
         { disciplines && (
-          <div className="border-t border-off-black pt-1 pb-2">
-            <div className="w-full whitespace-no-wrap text-4xl md:text-5xl xl:text-6xl tracking-tighter leading-tight">
+          <div className="border-t border-off-black pt-1 pb-2 relative overflow-hidden z-0">
+            <div className="w-full whitespace-no-wrap text-4xl md:text-5xl xl:text-6xl tracking-tighter leading-tight relative overflow-hidden z-0">
               <Marquee pauseOnHover={true} gradient={false} speed={75}>
+                {disciplines.map((discipline, i) => (
+                  <span className="block" key={i} className="mb-1 md:mb-2">
+                    <FancyLink link={`/disciplines/${discipline.slug}`} a11yText={`Navigate to ${discipline.title} work`} text={discipline.title} extraClasses="mx-2 md:mx-3"/>
+                    <span className="inline-block mx-3 md:mx-3 align-top mt-8 md:mt-8 xl:mt-10 w-3 md:w-4 rounded-full h-3 md:h-4 bg-off-black"></span>
+                  </span>
+                ))}
+                {disciplines.map((discipline, i) => (
+                  <span className="block" key={i} className="mb-1 md:mb-2">
+                    <FancyLink link={`/disciplines/${discipline.slug}`} a11yText={`Navigate to ${discipline.title} work`} text={discipline.title} extraClasses="mx-2 md:mx-3"/>
+                    <span className="inline-block mx-3 md:mx-3 align-top mt-8 md:mt-8 xl:mt-10 w-3 md:w-4 rounded-full h-3 md:h-4 bg-off-black"></span>
+                  </span>
+                ))}
                 {disciplines.map((discipline, i) => (
                   <span className="block" key={i} className="mb-1 md:mb-2">
                     <FancyLink link={`/disciplines/${discipline.slug}`} a11yText={`Navigate to ${discipline.title} work`} text={discipline.title} extraClasses="mx-2 md:mx-3"/>
@@ -31,13 +43,13 @@ export default function Footer({ hideMarquee, disciplines }) {
       <div className="flex flex-wrap">
         <div className="w-full md:w-1/2 py-12 md:py-20 xl:pt-32 bg-green text-white relative overflow-hidden">
           <div className="relative z-0">
-            <div data-scroll data-scroll-speed="1.75">
+            <div className="hidden md:block" data-scroll data-scroll-speed="1.25">
               <BigX color="text-green-dark" left bottom />
             </div>
           </div>
-          <div className="max-w-xl px-6 md:mx-auto flex flex-wrap">
+          <div className="max-w-xl px-6 md:mx-auto flex flex-wrap relative z-40">
             <nav className="w-full mb-6 md:mb-10 xl:mb-16">
-              <span className="block text-xs font-mono uppercase tracking-tight leading-none mb-5 relative z-30">What Now?</span>
+              <span className="block text-xs font-mono uppercase tracking-tight leading-none mb-5">What Now?</span>
               <ul>
                 <ShowreelModal>
                   <div className="flex flex-wrap w-full">
@@ -54,13 +66,13 @@ export default function Footer({ hideMarquee, disciplines }) {
                   </div>
                 </ShowreelModal>
 
-                <li className="block text-3xl md:text-3xl xl:text-4xl 2xl:text-5xl text-off-white w-full relative z-30">
-                  <FancyLink link="/work" a11yText="Navigate to about work page" text="See Our Portfolio" opaque circleColor="text-off-black opacity-0" number="02"/>
+                <li className="block text-3xl md:text-3xl xl:text-4xl 2xl:text-5xl text-off-white w-full">
+                  <FancyLink extraClasses="block" link="/work" a11yText="Navigate to about work page" text="See Our Portfolio" opaque circleColor="text-off-black opacity-0" number="02"/>
                 </li>
 
 
-                <li className="block text-3xl md:text-3xl xl:text-4xl 2xl:text-5xl text-off-white w-full relative z-30">
-                  <FancyLink link="/contact" a11yText="Navigate to contact page" text="Get In Touch" opaque circleColor="text-off-black opacity-0" number="03"/>
+                <li className="block text-3xl md:text-3xl xl:text-4xl 2xl:text-5xl text-off-white w-full">
+                  <FancyLink extraClasses="block" link="/contact" a11yText="Navigate to contact page" text="Get In Touch" opaque circleColor="text-off-black opacity-0" number="03"/>
                 </li>
               </ul>
             </nav>

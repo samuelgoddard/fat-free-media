@@ -43,12 +43,12 @@ export default function Work({ data: { site, work, disciplines, workLanding } })
                   <motion.h1 variants={reveal} className="text-6xl md:text-7xl xl:text-8xl 3xl:text-9xl leading-none w-full max-w-4xl tracking-tighter mb-0 pb-0">Our Work</motion.h1>
                 </div>
                 <nav className="border-t border-b border-off-black py-2 mb-8 md:mb-12 xl:mb-20 md:pb-6 relative">
-                  <ul className="hidden md:flex flex flex-wrap pr-8 md:pr-16 xl:pr-20">
+                  <ul className="hidden md:flex flex-wrap pr-8 md:pr-16 xl:pr-20 pb-2 md:pb-0">
                     {disciplines.map((discipline, i) => {
                       return (
                         <li key={i} className="text-base md:text-3xl xl:text-4xl leading-tight tracking-tighter relative pr-2 md:pr-4 flex  overflow-hidden">
                           <motion.span variants={reveal}>
-                            <FilterLink link={`/disciplines/${discipline.slug}`} a11yText={`Navigate to ${discipline.title} Discipline page`} text={discipline.title} amount={discipline.amountOfProjects} />
+                            <FilterLink link={`/disciplines/${discipline.slug}`} a11yText={`Navigate to ${discipline.title} Discipline page`} text={discipline.title} noPad amount={discipline.amountOfProjects} />
                           </motion.span>
                           { i !== (disciplines.length - 1) &&(
                             <motion.span variants={reveal}>
@@ -204,7 +204,7 @@ const WORK_QUERY = `
         ...metaTagsFragment
       }
     }
-    disciplines: allDisciplines {
+    disciplines: allDisciplines(orderBy: position_ASC) {
       id
       slug
       title

@@ -263,11 +263,6 @@ module.exports = {
         permanent: true,
       },
       {
-        source: '/work/wattbike-home-advantage',
-        destination: '/work/wattbike-multi-channel-product-launch',
-        permanent: true,
-      },
-      {
         source: '/work/ec-climate-change',
         destination: '/work',
         permanent: true,

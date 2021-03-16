@@ -101,7 +101,7 @@ class VideoRevealer extends Component {
             )}
           </motion.div>
         </div>
-        <div className="h-12 md:h-64 w-64 bg-orange absolute bottom-0 left-0 md:left-auto md:right-0 z-0 -m-5"></div>
+        <div className="h-5 md:h-64 w-64 bg-orange absolute bottom-0 left-0 md:left-auto md:right-0 z-0 -m-5 -mb-3 md:-m-5"></div>
       </div>
     )
   }

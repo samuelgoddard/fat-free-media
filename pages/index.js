@@ -93,7 +93,7 @@ export default function Index({ subscription }) {
                 <div className="flex flex-wrap">
                   <div className="w-11/12 md:w-full max-w-sm">
                     <span className="block text-xs uppercase mb-1 md:mb-3 tracking-tighter leading-none">Small but mighty —</span>
-                    <h2 className="text-5xl md:text-6xl xl:text-7xl leading-none tracking-tighter">We do three things</h2>
+                    <h2 className="text-4xl md:text-6xl xl:text-7xl leading-none tracking-tighter">We do three things</h2>
                   </div>
 
                   <div className="w-full md:w-5/12 xl:w-6/12 md:ml-auto xl:mx-auto max-w-xl mt-3">
