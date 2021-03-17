@@ -37,8 +37,8 @@ export default function Work({ data: { site, work, disciplines, workLanding } })
           <motion.div variants={fade} className="overflow-hidden relative">
             <Header theme="off-black" />
             <BigX color="text-white" />
-            <div className="pt-40 md:pt-48 xl:pt-56 relative">
-              <Container>
+            <div className="pt-40 md:pt-48 xl:pt-56 2xl:pt-80 relative">
+              <Container fullBleed>
                 <div className="relative overflow-hidden mb-4 md:mb-6 xl:mb-8">
                   <motion.h1 variants={reveal} className="text-6xl md:text-7xl xl:text-8xl 3xl:text-9xl leading-none w-full max-w-4xl tracking-tighter mb-0 pb-0">Our Work</motion.h1>
                 </div>
@@ -89,7 +89,7 @@ export default function Work({ data: { site, work, disciplines, workLanding } })
                   </div>
                 </nav>
 
-                <div className="overflow-hidden mb-12 md:mb-20 xl:mb-24 3xl:mb-32">
+                <div className="overflow-hidden mb-12 md:mb-20 xl:mb-24 2xl:mb-32 3xl:mb-32">
                   <div className="flex flex-wrap md:-mx-4 lg:-mx-8 2xl:-mx-12 mb-6 md:mb-8 xl:mb-16">
                     <div className="w-full md:w-7/12 lg:w-8/12 md:px-4 lg:px-8 2xl:px-12">
                       <div className="flex flex-wrap md:-mx-4 lg:-mx-8">
@@ -117,7 +117,7 @@ export default function Work({ data: { site, work, disciplines, workLanding } })
 
                           return (
                             <div key={i} className={`${widthClass} md:px-4 lg:px-8 `}>
-                              <div className={`mb-12 md:mb-20 xl:mb-24 ${innerSpacingClass}`}>
+                              <div className={`mb-12 md:mb-20 xl:mb-24 2xl:mb-32 ${innerSpacingClass}`}>
                                 <Teaser 
                                   link={`/work/${work.slug}`}
                                   image={image}
@@ -145,7 +145,7 @@ export default function Work({ data: { site, work, disciplines, workLanding } })
                         
                         return (
                           <div key={i} className={`${widthClass} md:pl-4 lg:pl-8`}>
-                            <div className="mb-12 md:mb-20 xl:mb-24">
+                            <div className="mb-12 md:mb-20 xl:mb-24 2xl:mb-32">
                               <Teaser 
                                 link={`/work/${work.slug}`}
                                 image={image}

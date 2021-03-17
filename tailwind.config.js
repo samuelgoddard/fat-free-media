@@ -45,9 +45,10 @@ module.exports = {
         '4xl': '2.5rem',
         '5xl': '3rem',
         '6xl': '3.7rem',
-        '7xl': '4.65rem',
+        '7xl': '5.125rem',
         '8xl': '6.55rem',
         '9xl': '7.35rem',
+        '10xl': '8.5rem',
       },
       maxHeight: {
         'half-screen': '50vh',
@@ -57,6 +58,7 @@ module.exports = {
         'minimal': '1.23',
       },
       spacing: {
+        '7': '1.75rem',
         '72': '18rem',
         '80': '20rem',
         '96': '24rem',

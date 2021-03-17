@@ -27,12 +27,12 @@ export default function Index({ data: { site, contact, disciplines } }) {
           animate="enter"
           exit="exit"
         >
-          <motion.div variants={fade} className="mb-16 md:mb-20 pt-32 md:pt-48 xl:pt-56 overflow-hidden relative">
+          <motion.div variants={fade} className="mb-16 md:mb-20 pt-32 md:pt-48 xl:pt-56 2xl:pt-80 overflow-hidden relative">
             <Header theme="off-black" contact />
             <BigX color="text-white" />
             <Container thin>
               <div className="w-full mb-12 md:mb-24 xl:mb-32 relative z-10 overflow-hidden" data-scroll data-scroll-speed="1.35">
-                <motion.h1 variants={reveal} className="text-6xl md:text-7xl xl:text-8xl leading-none w-full tracking-tighter text-center mb-0 pb-0 px-8 md:px-0">Let's talk about it</motion.h1>
+                <motion.h1 variants={reveal} className="text-6xl md:text-7xl xl:text-8xl 2xl:text-9xl leading-none w-full tracking-tighter text-center mb-0 pb-0 px-8 md:px-0">Let's talk about it</motion.h1>
               </div>
 
               <div className="w-full mb-12 md:mb-24 xl:mb-32 relative z-10">

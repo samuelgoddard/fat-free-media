@@ -34,11 +34,11 @@ export default function WorkSingle({ data: { site, work } }) {
             <BigX color="text-white" left />
             <div className="relative">
               <Container>
-                <div className="text-center pt-48 md:pt-56 xl:pt-64 relative pb-16 md:pb-16 xl:pb-24">
+                <div className="text-center pt-48 md:pt-56 xl:pt-64 2xl:pt-80 relative pb-16 md:pb-16 xl:pb-24">
                   <div className="relative mb-2 lg:mb-0" data-scroll data-scroll-speed="1.4">
                     <motion.span variants={reveal} className="block md:text-lg xl:text-xl md:-mb-2 uppercase tracking-tighter leading-none">{ work.heroHeading }</motion.span>
                   </div>
-                  <h1 data-scroll data-scroll-speed="1" className="text-6xl md:text-8xl xl:text-9xl leading-negative w-full tracking-tighter mb-4 md:mb-6 xl:mb-8 mx-auto"><span className="block">Fat Free x</span>{ work.heroMeta }</h1>
+                  <h1 data-scroll data-scroll-speed="1" className="text-6xl md:text-8xl xl:text-9xl 2xl:text-10xl leading-negative w-full tracking-tighter mb-4 md:mb-6 xl:mb-8 mx-auto"><span className="block">Fat Free x</span>{ work.heroMeta }</h1>
               </div>
               </Container>
 
@@ -71,17 +71,17 @@ export default function WorkSingle({ data: { site, work } }) {
                           <Container thin>
                             <div className="flex flex-wrap md:-mx-5">
                               <div className="w-full md:w-1/3 md:px-5">
-                                <div className="w-full max-w-xs lg:pr-8">
+                                <div className="w-full max-w-xs 2xl:max-w-lg lg:pr-8">
                                   { block.headingMetaText && (
                                     <span className="block text-xs uppercase tracking-tighter leading-none mb-1 md:mb-3">— { block.headingMetaText }</span>
                                   )}
                                   { block.heading && (
-                                    <h2 className="text-4xl md:text-5xl xl:text-6xl leading-none tracking-tighter">{ block.heading }</h2>
+                                    <h2 className="text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl leading-none tracking-tighter">{ block.heading }</h2>
                                   )}
                                 </div>
                               </div>
                               <div className="w-11/12 md:w-1/2 lg:w-7/12 max-w-2xl md:px-5 md:ml-auto md:mr-10 lg:mr-16 md:mt-8">
-                                <div className="content text-xl md:text-2xl tracking-tighter leading-tight max-w-3xl" dangerouslySetInnerHTML={{ __html: block.text }}></div>
+                                <div className="content text-xl md:text-2xl 2xl:text-3xl tracking-tighter leading-tight max-w-3xl" dangerouslySetInnerHTML={{ __html: block.text }}></div>
                               </div>
                             </div>
                           </Container>
@@ -371,7 +371,7 @@ export default function WorkSingle({ data: { site, work } }) {
                         }
                         {
                           block._modelApiKey === 'video' &&
-                          <Container bleed>
+                          <Container fullBleed>
                             <VideoRevealer 
                               text="WATCH"
                               videoAutoplayUrl={block.videoUrlAutoplayingCover}

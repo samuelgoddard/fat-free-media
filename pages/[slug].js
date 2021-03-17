@@ -31,7 +31,7 @@ export default function ServiceSingle({ data: { site, legal } }) {
             <BigX color="text-white" />
             <div className="relative">
               <Container>
-                <div className="pt-40 md:pt-48 xl:pt-56 2xl:pt-64 relative pb-8 md:pb-16 xl:pb-20" data-scroll data-scroll-speed="1.4">
+                <div className="pt-40 md:pt-48 xl:pt-56 2xl:pt-64 2xl:pt-80 relative pb-8 md:pb-16 xl:pb-20" data-scroll data-scroll-speed="1.4">
                   <div className="flex flex-wrap items-center justify-center md:-mx-2 lg:-mx-8">
                     <div className="flex-1 text-center md:px-2 lg:px-8">
                       <h1 className="text-6xl md:text-7xl xl:text-8xl 2xl:text-9xl leading-none w-full tracking-tighter mt-8 mx-auto md:mx-0">{ legal.title }</h1>

@@ -39,7 +39,7 @@ export default function Menu({ data: { site, home, about, work, contact } }) {
               <BigX color="text-orange-darker " />
             </motion.div>
 
-            <Container>
+            <Container fullBleed>
               <div className="relative z-10 hidden md:flex flex-wrap w-full">
                 <div className="h-full w-full md:w-1/4">
                   <MenuItem

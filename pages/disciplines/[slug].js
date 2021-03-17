@@ -32,8 +32,8 @@ export default function Work({ data: { site, work, current, allDisciplines } }) 
           <motion.div variants={fade} className=" overflow-hidden relative">
             <Header theme="off-black" />
             <BigX color="text-white" />
-            <div className="pt-40 md:pt-48 xl:pt-56 relative">
-              <Container>
+            <div className="pt-40 md:pt-48 xl:pt-56 2xl:pt-80 relative">
+              <Container fullBleed>
                 <div className="relative overflow-hidden mb-4 md:mb-6 xl:mb-8">
                   <motion.h1 variants={reveal} className="text-6xl md:text-7xl xl:text-8xl 3xl:text-9xl leading-none w-full max-w-4xl tracking-tighter mb-0 pb-0">{ current.title }</motion.h1>
                 </div>

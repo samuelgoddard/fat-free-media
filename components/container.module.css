@@ -49,3 +49,11 @@
     @apply px-8;
   }
 }
+
+.container--full-bleed {
+  @apply px-6 max-w-none mx-auto w-full;
+
+  @screen md {
+    @apply px-8;
+  }
+}

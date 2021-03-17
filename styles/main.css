@@ -88,13 +88,13 @@
 
 @screen 2xl {
   .home-video {
-    height: 830px !important;
+    height: 900px !important;
   }
 }
 
 @screen 3xl {
   .home-video {
-    height: 920px !important;
+    height: 1150px !important;
   }
 }
 
@@ -156,8 +156,8 @@ html.has-scroll-dragging {
 }
 
 .burger {
-  width: 24px;
-  height: 24px;
+  /* width: 24px;
+  height: 24px; */
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -168,10 +168,15 @@ html.has-scroll-dragging {
   transition: .5s ease-in-out;
   cursor: pointer;
 
-  @screen md {
-    width: 31px;
-    height: 31px;
+  /* @screen md {
+    width: 31px !important;
+    height: 31px !important;
   }
+
+  @screen 2xl {
+    width: 40px !important;
+    height: 40px !important;
+  } */
 }
 
 .burger span {

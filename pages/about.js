@@ -52,7 +52,7 @@ export default function About({ data: { site, about, team, services } }) {
                     </div>
 
                     <div className="w-11/12 md:w-5/12 xl:w-6/12 md:ml-auto xl:ml-auto md:mr-6 lg:mr-12 max-w-xl md:mt-6">
-                      <div dangerouslySetInnerHTML={{ __html: about.ourTeamText }} className="text-xl lg:text-2xl leading-tight tracking-tight mb-4 md:mb-6 max-w-lg"></div>
+                      <div dangerouslySetInnerHTML={{ __html: about.ourTeamText }} className="text-xl lg:text-2xl xl:text-3xl leading-tight tracking-tight mb-4 md:mb-6 max-w-lg"></div>
                     </div>
                   </div>
                 </div>
@@ -239,7 +239,7 @@ export default function About({ data: { site, about, team, services } }) {
               <div data-scroll data-scroll-speed="-1.25">
                 <BigX color="text-yellow-dark" />
               </div>
-              <Container>
+              <Container >
                 <div className="flex flex-wrap items-center md:-mx-12 relative z-20">
                   <div className="w-full md:w-1/2 md:px-12 mb-6 md:mb-0" data-scroll data-scroll-speed="0.25">
                     <Image
@@ -268,7 +268,7 @@ export default function About({ data: { site, about, team, services } }) {
 
             { about.beliefs.length > 0 && (
                 <div className="bg-yellow text-black yellow-highlight pb-12 md:pb-24 xl:pb-32 -mt-1 relative z-20">
-                  <Container thin>
+                  <Container fullBleed>
                   <div className="relative overflow-hidden mb-6 md:mb-12 xl:mb-12">
                     <motion.span variants={reveal} className="block text-xs uppercase tracking-tighter leading-none">Our beliefs —</motion.span>
                   </div>

@@ -14,7 +14,7 @@ class AboutHero extends Component {
 
   render(){
     return (
-      <div className="bg-off-black text-white pt-40 md:pt-48 xl:pt-56 pb-8 md:pb-32 xl:pb-48 relative overflow-hidden">
+      <div className="bg-off-black text-white pt-40 md:pt-48 xl:pt-56 2xl:pt-64 pb-8 md:pb-32 xl:pb-48 2xl:pb-56 relative overflow-hidden">
         <Container thinner>
           <div className="relative z-30">
             { this.props.metaText && (
@@ -23,7 +23,7 @@ class AboutHero extends Component {
               </div>
             )}
 
-            <motion.div variants={ aboutRevealLast} className="text-4xl md:text-5xl xl:text-6xl leading-none w-full max-w-4xl tracking-tighter pr-12 xl:pr-0 mb-10 md:mb-0 about-hero" dangerouslySetInnerHTML={{ __html: this.props.text }}></motion.div>
+            <motion.div variants={ aboutRevealLast} className="text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl leading-none w-full max-w-4xl 2xl:max-w-6xl tracking-tighter pr-12 xl:pr-0 mb-10 md:mb-0 about-hero" dangerouslySetInnerHTML={{ __html: this.props.text }}></motion.div>
 
             {/* <h1 className="text-4xl md:text-5xl xl:text-6xl leading-none w-full max-w-4xl tracking-tighter pr-12 xl:pr-0 mb-10 md:mb-0" data-scroll data-scroll-speed="1.1">
               

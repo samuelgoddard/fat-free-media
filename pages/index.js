@@ -35,7 +35,7 @@ export default function Index({ subscription }) {
         >
           <Header theme="off-black" />
           
-          <motion.div variants={fade} className="mb-16 md:mb-20 pt-32 md:pt-56 xl:pt-64 overflow-hidden relative">
+          <motion.div variants={fade} className="mb-16 md:mb-20 pt-32 md:pt-56 xl:pt-64 2xl:pt-80 overflow-hidden relative">
             <BigX color="text-white" />
             <Container thin>
 
@@ -65,13 +65,13 @@ export default function Index({ subscription }) {
                 initial="initial"
                 animate="enter"
                 exit="exit"
-                className="w-full mb-12 md:mb-10 xl:mb-0 relative z-10"
+                className="w-full mb-12 md:mb-10 xl:mb-0 2xl:mb-12 relative z-10"
               >
-                <motion.h1 variants={reveal} className="text-4xl md:text-6xl xl:text-7xl leading-negative w-full max-w-4xl tracking-tighter pr-12 xl:pr-0 split" data-scroll data-scroll-speed="1.35">{ home.heroHeading }</motion.h1>
+                <motion.h1 variants={reveal} className="text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl leading-none w-full max-w-4xl 2xl:max-w-6xl tracking-tighter pr-12 xl:pr-0 split" data-scroll data-scroll-speed="1.35">{ home.heroHeading }</motion.h1>
               </motion.div>
             </Container>
 
-            <Container bleed>
+            <Container fullBleed>
               <div className="w-full mb-16 md:mb-24 xl:mb-24 relative z-10" data-scroll data-scroll-speed="1.3">
                 <div className="relative">
                   <motion.div variants={reveal} className="text-right px-6 md:px-0 mb-2 md:mb-4 text-lg md:text-xl text-workLanding">
@@ -89,15 +89,15 @@ export default function Index({ subscription }) {
             </Container>
 
             <Container thin>
-              <div className="w-full mb-12 md:mb-16 xl:mb-24 relative z-10" data-scroll data-scroll-speed="1">
+              <div className="w-full mb-12 md:mb-16 xl:mb-24 2xl:mb-40 relative z-10" data-scroll data-scroll-speed="1">
                 <div className="flex flex-wrap">
-                  <div className="w-11/12 md:w-full max-w-sm">
+                  <div className="w-11/12 md:w-full max-w-sm 2xl:max-w-xl">
                     <span className="block text-xs uppercase mb-1 md:mb-3 tracking-tighter leading-none">Small but mighty —</span>
-                    <h2 className="text-4xl md:text-6xl xl:text-7xl leading-none tracking-tighter">We do three things</h2>
+                    <h2 className="text-4xl md:text-6xl 2xl:text-7xl leading-none tracking-tighter">We do three things</h2>
                   </div>
 
                   <div className="w-full md:w-5/12 xl:w-6/12 md:ml-auto xl:mx-auto max-w-xl mt-3">
-                    <p className="text-xl lg:text-2xl leading-tight tracking-tight mb-4 md:mb-6">We believe that every moment with a viewer is a privilege, and brands deserve creative bravery without the ego. That’s why you won’t find clickbait or talking heads in our portfolio.</p>
+                    <p className="text-xl lg:text-2xl 2xl:text-3xl leading-tight tracking-tight mb-4 md:mb-6">We believe that every moment with a viewer is a privilege, and brands deserve creative bravery without the ego. That’s why you won’t find clickbait or talking heads in our portfolio.</p>
 
                     <span className="text-xl xl:text-2xl">
                       <FancyLink link="/contact" text="Contact us" a11yText="Navigate to contact us page" />
@@ -106,7 +106,7 @@ export default function Index({ subscription }) {
                 </div>
               </div>
 
-              <div className="w-full mb-12 md:mb-16 xl:mb-24 2xl:mb-32 3xl:mb-40 relative z-10">
+              <div className="w-full mb-12 md:mb-16 xl:mb-24 2xl:mb-40 3xl:mb-48 relative z-10">
                 <div className="flex flex-wrap border-dotted border-off-black border-opacity-50 border-t md:border-0 md:-mx-8">
 
                 {home.whatWeDoBlocks.map((item, i) => {

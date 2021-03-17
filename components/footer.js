@@ -41,7 +41,7 @@ export default function Footer({ hideMarquee, disciplines }) {
       )}
 
       <div className="flex flex-wrap">
-        <div className="w-full md:w-1/2 py-12 md:py-20 xl:pt-32 bg-green text-white relative overflow-hidden">
+        <div className="w-full md:w-1/2 py-12 md:py-20 xl:pt-32 2xl:pt-40 3xl:pt-48 3xl:pb-32 bg-green text-white relative overflow-hidden">
           <div className="relative z-0">
             <div className="hidden md:block" data-scroll data-scroll-speed="1.25">
               <BigX color="text-green-dark" left bottom />
@@ -66,12 +66,12 @@ export default function Footer({ hideMarquee, disciplines }) {
                   </div>
                 </ShowreelModal>
 
-                <li className="block text-3xl md:text-3xl xl:text-4xl 2xl:text-5xl text-off-white w-full">
+                <li className="block text-3xl md:text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl text-off-white w-full">
                   <FancyLink extraClasses="block" link="/work" a11yText="Navigate to about work page" text="See Our Portfolio" opaque circleColor="text-off-black opacity-0" number="02"/>
                 </li>
 
 
-                <li className="block text-3xl md:text-3xl xl:text-4xl 2xl:text-5xl text-off-white w-full">
+                <li className="block text-3xl md:text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl text-off-white w-full">
                   <FancyLink extraClasses="block" link="/contact" a11yText="Navigate to contact page" text="Get In Touch" opaque circleColor="text-off-black opacity-0" number="03"/>
                 </li>
               </ul>
@@ -79,7 +79,7 @@ export default function Footer({ hideMarquee, disciplines }) {
           </div>
         </div>
 
-        <div className="w-full md:w-1/2 py-12 md:py-20 xl:py-32 bg-orange text-off-white flex items-center">
+        <div className="w-full md:w-1/2 py-12 md:py-20 xl:py-32 2xl:py-48 3xl:py-56 bg-orange text-off-white flex items-center">
           <div className="max-w-2xl px-6 mx-auto text-center">
             <span className="block mb-6 md:mb-8 text-5xl md:text-5xl lg:text-6xl xl:text-6xl leading-none tracking-tighter">Stay in the loop</span>
             <p className="font-mono text-sm xl:text-base mb-6 md:mb-6 max-w-sm md:max-w-xs xl:max-w-lg mx-auto">When we've got something great to say, we write a newsletter for brand teams. We curate the best of video, creativity and insights to inspire and delight.</p>
@@ -115,7 +115,7 @@ export default function Footer({ hideMarquee, disciplines }) {
       </div>
 
       <div className="bg-off-white text-off-black py-6 md:py-8">
-        <Container>
+        <Container fullBleed>
           <div className="flex flex-wrap items-center lg:-mx-4">
             <nav className="w-full lg:w-7/12 lg:px-4 mb-5 lg:mb-0">
               <span className="block text-xs font-mono uppercase tracking-tight leading-none mb-3">Useful Links</span>
@@ -155,7 +155,7 @@ export default function Footer({ hideMarquee, disciplines }) {
       </div>
 
       <div className="bg-off-black-dark text-white pt-4 pb-5">
-        <Container>
+        <Container fullBleed>
           <div className="flex flex-wrap items-center">
             <div className="w-full md:flex-1 mb-3 md:mb-0">
               <small className="tracking-tight block leading-tight">&copy; { new Date().getFullYear() } by Fat Free Media Ltd, Video Strategy &amp; Production, Nottingham, UK, All rights reserved.</small>

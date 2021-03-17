@@ -68,13 +68,13 @@ export default function ServiceSingle({ data: { site, service, services } }) {
               <div className="relative pb-12 md:pb-20 xl:pb-32 relative z-20 bg-off-white pt-16 md:pt-16 xl:pt-24">
                 {
                   service.contentBlocks.map((block) => (
-                    <div key={block.id} className="pb-12 md:pb-16 xl:pb-20" data-scroll data-scroll-speed="1.6">
+                    <div key={block.id} className="pb-12 md:pb-16 xl:pb-20 2xl:pb-32" data-scroll data-scroll-speed="1.6">
                       {
                         block._modelApiKey === 'text' &&
                         <Container thin>
                           <div className="flex flex-wrap md:-mx-5">
                             <div className="w-full md:w-1/3 md:px-5">
-                              <div className="w-full max-w-xs lg:pr-8">
+                              <div className="w-full max-w-xs 2xl:max-w-lg lg:pr-8">
                                 { block.headingMetaText && (
                                   <span className="block text-xs uppercase tracking-tighter leading-none mb-1 md:mb-3">— { block.headingMetaText }</span>
                                 )}
@@ -84,7 +84,7 @@ export default function ServiceSingle({ data: { site, service, services } }) {
                               </div>
                             </div>
                             <div className="w-11/12 md:w-1/2 lg:w-7/12 max-w-2xl md:px-5 md:ml-auto md:mr-10 lg:mr-16 md:mt-8">
-                              <div className="content text-xl md:text-2xl tracking-tighter leading-tight max-w-3xl" dangerouslySetInnerHTML={{ __html: block.text }}></div>
+                              <div className="content text-xl md:text-2xl 2xl:text-3xl tracking-tighter leading-tight max-w-3xl" dangerouslySetInnerHTML={{ __html: block.text }}></div>
                             </div>
                           </div>
                         </Container>
@@ -267,7 +267,7 @@ export default function ServiceSingle({ data: { site, service, services } }) {
               
               { service.services.length > 0 && (
                 <div className="bg-yellow text-black yellow-highlight py-12 md:py-24 xl:py-32 relative z-20">
-                  <Container>
+                  <Container fullBleed>
                     <ul>
                       {
                         service.services.map((block, i) => {
@@ -283,11 +283,11 @@ export default function ServiceSingle({ data: { site, service, services } }) {
                             alignClass = 'justify-start'
                           } else if (i === 1) {
                             scrollAmount = 0.95;
-                            paddingClass = 'pl-0 md:pl-48 xl:pl-64';
+                            paddingClass = 'pl-0 md:pl-48 xl:pl-72 2xl:pl-80';
                             alignClass = 'md:justify-center'
                           } else if (i === 2) {
                             scrollAmount = -0.45;
-                            paddingClass = 'pr-0 md:pr-12 xl:pr-16';
+                            paddingClass = 'pr-0 md:pr-48 xl:pr-64';
                             alignClass = 'md:justify-center'
                           } else if (i === 3) {
                             scrollAmount = 0.65;
@@ -315,7 +315,7 @@ export default function ServiceSingle({ data: { site, service, services } }) {
                             alignClass = 'md:justify-center'
                           } else if (i === 9) {
                             scrollAmount = -0.9;
-                            paddingClass = 'pl-0 md:pl-8 xl:pl-12';
+                            paddingClass = 'pl-0 md:pr-48 xl:pr-72 2xl:pr-80';
                             alignClass = 'md:justify-center'
                           }
 

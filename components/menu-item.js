@@ -11,7 +11,7 @@ export default function MenuItem({link, animation, image, video, heading, text})
           <div className="transition-transform ease-in-out duration-500 md:transform group-hover:-translate-y-12 group-focus:-translate-y-12">
             
             <div className="relative overflow-hidden transform skew-y-2">
-              <div className="relative transition ease-in-out duration-500 opacity-75 group-hover:opacity-100 group-focus:opacity-100 mb-10 hidden md:block z-0 w-10/12 transform scale-105 group-hover:scale-110">
+              <div className="relative transition ease-in-out duration-500 opacity-75 group-hover:opacity-100 group-focus:opacity-100 mb-10 2xl:mb-16 hidden md:block z-0 w-10/12 transform scale-105 group-hover:scale-110">
                 <Image
                   data={{
                     ...image.responsiveImage,
@@ -41,7 +41,7 @@ export default function MenuItem({link, animation, image, video, heading, text})
               }}
             >
               <div className="relative overflow-hidden mb-2 md:mb-3">
-                <motion.h3 variants={reveal} className="text-4xl md:text-3xl lg:text-4xl xl:text-5xl leading-none tracking-tighter mb-0">{ heading }</motion.h3>
+                <motion.h3 variants={reveal} className="text-4xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl leading-none tracking-tighter mb-0">{ heading }</motion.h3>
               </div>
 
               <div className="relative overflow-hidden">

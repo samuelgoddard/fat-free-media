@@ -64,7 +64,7 @@ class Teaser extends Component {
           </div>
           <div className="flex flex-wrap items-center">
             <div className="relative overflow-hidden flex-1">
-              <motion.span variants={reveal} className="block text-2xl md:text-2xl xl:text-3xl leading-minimal tracking-tighter">{ this.props.title }</motion.span>
+              <motion.span variants={reveal} className="block text-2xl md:text-2xl xl:text-3xl 2xl:text-4xl leading-minimal tracking-tighter">{ this.props.title }</motion.span>
             </div>
             { this.props.meta && (
               <div className="relative overflow-hidden w-5/12 text-right">

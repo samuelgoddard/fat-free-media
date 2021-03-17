@@ -27,7 +27,7 @@ export default function ShowreelModal({ children }) {
 
   return (
     <>
-      <li className="block text-3xl md:text-3xl xl:text-4xl 2xl:text-5xl text-off-white w-full ml-6 md:ml-8 relative z-30">
+      <li className="block text-3xl md:text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl text-off-white w-full ml-6 md:ml-8 relative z-30">
         <button aria-label="View Our Showreel" className={`tracking-tight inline-block items-center group focus:outline-none`} onClick={openModal}>
           <div className="flex items-center relative mb-2 pt-2">
             <span className="block relative z-30">
