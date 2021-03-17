@@ -554,3 +554,13 @@ html.has-scroll-dragging {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+img {
+  transition: opacity 1000ms ease 0s !important;
+}
+
+
+
+_::-webkit-full-page-media, _:future, :root .hidesafari {
+    display: none;
+}
