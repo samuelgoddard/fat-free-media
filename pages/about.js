@@ -189,7 +189,7 @@ export default function About({ data: { site, about, team, services } }) {
                   <div className="w-full h-full absolute top-0 left-0 right-0 bottom-0 flex flex-wrap items-center justify-center">
                     <span data-scroll data-scroll-speed="2.75" className="block w-32 md:w-48 xl:w-64 h-32 md:h-48 xl:h-64 bg-yellow rounded-full"></span>
                   </div>
-                  <span className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-none w-full tracking-tighter pr-8 md:pr-16 z-10 block pb-8 md:pb-5 relative" dangerouslySetInnerHTML={{ __html: about.aboutText }}></span>
+                  <span className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-mini w-full tracking-tighter pr-8 md:pr-16 z-10 block pb-8 md:pb-5 relative" dangerouslySetInnerHTML={{ __html: about.aboutText }}></span>
                 </div>
               </Container>
             </div>
@@ -254,7 +254,7 @@ export default function About({ data: { site, about, team, services } }) {
                     { about.calloutMetaText && (
                       <span className="block text-xs uppercase tracking-tighter leading-none mb-6 md:mb-10">{ about.calloutMetaText } —</span>
                     )}
-                    <p className="font-mono text-2xl md:text-3xl 2xl:text-4xl leading-none pr-8 md:pr-8 lg:pr-16 xl:pr-20 mb-6 md:mb-10 content">{ about.calloutHeading }</p>
+                    <p className="font-mono text-2xl md:text-3xl 2xl:text-4xl leading-minimal pr-8 md:pr-8 lg:pr-16 xl:pr-20 mb-6 md:mb-10 content">{ about.calloutHeading }</p>
 
                     {/* <FancyLink href="/"><a aria-label="Navigate to Start a project" className="underline tracking-tight text-lg inline-block items-center">Start a project</a></FancyLink> */}
                     

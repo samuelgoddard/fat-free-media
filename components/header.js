@@ -21,7 +21,7 @@ export default function Header({theme, contact, activeMenu, workBack}) {
               </motion.div>
 
               { workBack && (
-                <div className="relative ml-6 md:ml-12 md:text-lg pb-1">
+                <div className="relative ml-6 md:ml-12 md:text-lg pb-1 text-xl xl:text-xl 3xl:text-2xl">
                   <motion.div variants={reveal}>
                     <FancyLink link="/work" text="Back to all work" a11yText="Navigate back to all work" circleColor={ theme === 'white' ? 'text-orange-darker' : 'text-yellow'} />
                   </motion.div>

@@ -12,7 +12,7 @@ const EmblaCarousel = ({ images }) => {
 
 
   return (
-    <div className="embla" ref={emblaRef} data-scroll data-scroll-speed="1" data-scroll-direction="horizontal">
+    <div className="embla" ref={emblaRef}>
       <div className="embla__container">
         {images.map((image, i) => {
           return (

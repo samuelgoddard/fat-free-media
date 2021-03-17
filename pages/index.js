@@ -67,7 +67,7 @@ export default function Index({ subscription }) {
                 exit="exit"
                 className="w-full mb-12 md:mb-10 xl:mb-0 2xl:mb-12 relative z-10"
               >
-                <motion.h1 variants={reveal} className="text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl leading-none w-full max-w-4xl 2xl:max-w-6xl tracking-tighter pr-12 xl:pr-0 split" data-scroll data-scroll-speed="1.35">{ home.heroHeading }</motion.h1>
+                <motion.h1 variants={reveal} className="text-4xl md:text-6xl xl:text-7xl 3xl:text-8xl leading-none w-full max-w-4xl 3xl:max-w-6xl tracking-tighter pr-12 xl:pr-0 split" data-scroll data-scroll-speed="1.35">{ home.heroHeading }</motion.h1>
               </motion.div>
             </Container>
 

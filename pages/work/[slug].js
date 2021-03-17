@@ -38,7 +38,7 @@ export default function WorkSingle({ data: { site, work } }) {
                   <div className="relative mb-2 lg:mb-0" data-scroll data-scroll-speed="1.4">
                     <motion.span variants={reveal} className="block md:text-lg xl:text-xl md:-mb-2 uppercase tracking-tighter leading-none">{ work.heroHeading }</motion.span>
                   </div>
-                  <h1 data-scroll data-scroll-speed="1" className="text-6xl md:text-8xl xl:text-9xl 2xl:text-10xl leading-negative w-full tracking-tighter mb-4 md:mb-6 xl:mb-8 mx-auto"><span className="block">Fat Free x</span>{ work.heroMeta }</h1>
+                  <h1 data-scroll data-scroll-speed="1" className="text-6xl md:text-8xl xl:text-8xl 3xl:text-10xl leading-negative w-full tracking-tighter mb-4 md:mb-6 xl:mb-8 mx-auto"><span className="block">Fat Free x</span>{ work.heroMeta }</h1>
               </div>
               </Container>
 
@@ -65,7 +65,7 @@ export default function WorkSingle({ data: { site, work } }) {
                 <div className="relative pb-0 md:pb-20 xl:pb-24">
                   {
                     work.contentBlocks.map((block, i) => (
-                      <div key={block.id} className={`pb-20 md:pb-32 xl:pb-32 ${(i === 0 && block._modelApiKey === 'text') ? 'pt-12 md:pt-24 xl:pt-32' : 'md:-mt-8 xl:-mt-12'}`} data-scroll data-scroll-speed="1.6">
+                      <div key={block.id} className={`pb-20 md:pb-32 xl:pb-32 2xl:pb-48 ${(i === 0 && block._modelApiKey === 'text') ? 'pt-12 md:pt-24 xl:pt-32' : 'lg:-mt-8 xl:-mt-16 2xl:-mt-24'}`} data-scroll data-scroll-speed="1.6">
                         {
                           block._modelApiKey === 'text' &&
                           <Container thin>
@@ -327,7 +327,7 @@ export default function WorkSingle({ data: { site, work } }) {
                                 <div className="w-full h-full absolute top-0 left-0 right-0 bottom-0 flex flex-wrap items-center justify-center">
                                   <span data-scroll data-scroll-speed="2.75" className="block w-32 md:w-48 xl:w-64 h-32 md:h-48 xl:h-64 bg-yellow rounded-full"></span>
                                 </div>
-                                <span className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl 3xl:text-7xl leading-none w-full tracking-tighter pr-6 md:pr-16 z-10 block mb-10 md:mb-12 xl:mb-16 relative about-text">“ { block.text } ”</span>
+                                <span className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl 3xl:text-7xl leading-mini w-full tracking-tighter pr-6 md:pr-16 z-10 block mb-10 md:mb-12 xl:mb-16 relative about-text">“ { block.text } ”</span>
                               </div>
                             </Container>
                             <Container thin>
@@ -363,7 +363,7 @@ export default function WorkSingle({ data: { site, work } }) {
                                   { block.metaText && (
                                     <span className="block text-xs uppercase tracking-tighter leading-none mb-6 md:mb-10">{ block.metaText } —</span>
                                   )}
-                                  <div className="font-mono text-2xl md:text-3xl 2xl:text-4xl leading-none pr-8 md:pr-8 lg:pr-16 xl:pr-20 mb-6 md:mb-10 content" dangerouslySetInnerHTML={{ __html: block.text }}></div>
+                                  <div className="font-mono text-2xl md:text-3xl 2xl:text-4xl leading-minimal pr-8 md:pr-8 lg:pr-16 xl:pr-20 mb-6 md:mb-10 content" dangerouslySetInnerHTML={{ __html: block.text }}></div>
                                 </div>
                               </div>
                             </Container>

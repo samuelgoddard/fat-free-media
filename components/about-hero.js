@@ -23,7 +23,7 @@ class AboutHero extends Component {
               </div>
             )}
 
-            <motion.div variants={ aboutRevealLast} className="text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl leading-none w-full max-w-4xl 2xl:max-w-6xl tracking-tighter pr-12 xl:pr-0 mb-10 md:mb-0 about-hero" dangerouslySetInnerHTML={{ __html: this.props.text }}></motion.div>
+            <motion.div variants={ aboutRevealLast} className="text-4xl md:text-5xl xl:text-6xl 3xl:text-7xl leading-none w-full max-w-4xl 3xl:max-w-6xl tracking-tighter pr-12 xl:pr-0 mb-10 md:mb-0 about-hero" dangerouslySetInnerHTML={{ __html: this.props.text }}></motion.div>
 
             {/* <h1 className="text-4xl md:text-5xl xl:text-6xl leading-none w-full max-w-4xl tracking-tighter pr-12 xl:pr-0 mb-10 md:mb-0" data-scroll data-scroll-speed="1.1">
               
