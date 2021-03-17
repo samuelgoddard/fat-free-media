@@ -74,7 +74,7 @@ export default function Index({ subscription }) {
             <Container fullBleed>
               <div className="w-full mb-16 md:mb-24 xl:mb-24 relative z-10" data-scroll data-scroll-speed="1.3">
                 <div className="relative">
-                  <motion.div variants={reveal} className="text-right px-6 md:px-0 mb-2 md:mb-4 text-lg md:text-xl text-workLanding">
+                  <motion.div variants={reveal} className="text-right md:px-0 mb-2 md:mb-4 text-lg md:text-xl text-workLanding">
                     <FancyLink link={`/work`} text="See Our Work" a11yText="Navigate to Our Work Page" />
                   </motion.div>
                 </div>

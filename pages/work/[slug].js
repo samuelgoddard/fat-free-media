@@ -43,16 +43,16 @@ export default function WorkSingle({ data: { site, work } }) {
               </Container>
 
               <div data-scroll data-scroll-speed="1" className="border-t border-b border-off-black pt-1 pb-2">
-                <div className="w-full whitespace-no-wrap text-4xl md:text-5xl xl:text-6xl tracking-tighter leading-tight align-top">
+                <div className="w-full whitespace-no-wrap text-3xl md:text-5xl xl:text-6xl tracking-tighter leading-tight align-top">
                   <Marquee pauseOnHover={false} gradient={false} speed={75}>
                     {work.tickerText.map((ticker, i) => (
-                      <span className="inline-block align-"key={i}><span className="inline mx-2 md:mx-2">{ ticker.text }</span> <span className="inline-block mx-2 md:mx-2 align-top mt-5 md:mt-6 xl:mt-8 md:mr-3 w-3 md:w-4 rounded-full h-3 md:h-4 bg-off-black"></span></span>
+                      <span className="inline-block align-"key={i}><span className="inline mx-2 md:mx-2">{ ticker.text }</span> <span className="inline-block mx-2 md:mx-2 align-top mt-4 md:mt-6 xl:mt-8 md:mr-3 w-3 md:w-4 rounded-full h-3 md:h-4 bg-off-black"></span></span>
                     ))}
                     {work.tickerText.map((ticker, i) => (
-                      <span className="inline-block align-"key={i}><span className="inline mx-2 md:mx-2">{ ticker.text }</span> <span className="inline-block mx-2 md:mx-2 align-top mt-5 md:mt-6 xl:mt-8 w-3 md:w-4 rounded-full h-3 md:h-4 bg-off-black"></span></span>
+                      <span className="inline-block align-"key={i}><span className="inline mx-2 md:mx-2">{ ticker.text }</span> <span className="inline-block mx-2 md:mx-2 align-top mt-4 md:mt-6 xl:mt-8 w-3 md:w-4 rounded-full h-3 md:h-4 bg-off-black"></span></span>
                     ))}
                     {work.tickerText.map((ticker, i) => (
-                      <span className="inline-block align-"key={i}><span className="inline mx-2 md:mx-2">{ ticker.text }</span> <span className="inline-block mx-2 md:mx-2 align-top mt-5 md:mt-6 xl:mt-8 w-3 md:w-4 rounded-full h-3 md:h-4 bg-off-black"></span></span>
+                      <span className="inline-block align-"key={i}><span className="inline mx-2 md:mx-2">{ ticker.text }</span> <span className="inline-block mx-2 md:mx-2 align-top mt-4 md:mt-6 xl:mt-8 w-3 md:w-4 rounded-full h-3 md:h-4 bg-off-black"></span></span>
                     ))}
                   </Marquee>
                 </div>
@@ -333,9 +333,9 @@ export default function WorkSingle({ data: { site, work } }) {
                             <Container thin>
                               <div className="flex">
                                 <div className="ml-auto">
-                                  <span className="text-2xl md:text-2xl lg:text-3xl xl:text-4xl 3xl:text-5xl leading-none tracking-tighter block mb-4">– { block.authorName }</span>
+                                  <span className="text-3xl md:text-2xl lg:text-3xl xl:text-4xl 3xl:text-5xl leading-none tracking-tighter block mb-2 md:mb-4">– { block.authorName }</span>
                                   { block.authorJobTitle && (
-                                    <span className="block text-base uppercase tracking-tighter leading-none ml-4 md:ml-6 xl:ml-6">{ block.authorJobTitle }</span>
+                                    <span className="block text-xs text-right md:text-left md:text-base uppercase tracking-tighter leading-none ml-4 md:ml-6 xl:ml-6">{ block.authorJobTitle }</span>
                                   )}
                                 </div>
                               </div>
