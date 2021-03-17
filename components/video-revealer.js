@@ -59,7 +59,7 @@ class VideoRevealer extends Component {
                 className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center z-40"
                 animate={!overlayCollapsed ? open : closedScale}
               >
-                <MagneticButton text={ this.props.text ? this.props.text : "WATCH" } function={this.toggleOverlay} />
+                <MagneticButton text={ "Watch with sound" } function={this.toggleOverlay} />
               </motion.div>
             </div>
           </motion.div>

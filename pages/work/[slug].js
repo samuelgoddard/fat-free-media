@@ -409,6 +409,80 @@ export default function WorkSingle({ data: { site, work } }) {
                             </video>
                           </Container>
                         }
+                        {
+                          block._modelApiKey === 'supporting_silent_video_landscape_square' &&
+                          <Container bleed>
+                            <div className="w-10/12 mx-auto">
+                              <div className="flex flex-wrap md:-mx-8">
+                                <div className="w-full md:w-2/3 md:px-8 mb-8 md:mb-0">
+                                  <video loop={true} autoPlay={'autoplay'} playsInline muted preload="meta" className="max-w-full object-cover z-10 w-full">
+                                    <source src={ block.video1Url } type="video/mp4" />
+                                    
+                                    Sorry. Your browser does not support the video tag.
+                                  </video>
+                                </div>
+
+                                <div className="w-full md:max-w-none md:w-1/3 md:px-8">
+                                  <video loop={true} autoPlay={'autoplay'} playsInline muted preload="meta" className="max-w-full object-cover z-10 w-48 h-48 md:h-full md:w-full mx-auto md:mx-0">
+                                  <source src={ block.video2Url } type="video/mp4" />
+                                  
+                                  Sorry. Your browser does not support the video tag.
+                                </video>
+                                </div>
+                              </div>
+                            </div>
+                          </Container>
+                        }
+
+                        {
+                          block._modelApiKey === 'supporting_silent_video_square_square' &&
+                          <Container bleed>
+                            <div className="w-10/12 mx-auto">
+                              <div className="flex flex-wrap md:-mx-8">
+                                <div className="w-full md:w-1/2 md:px-8 mb-8 md:mb-0">
+                                  <video loop={true} autoPlay={'autoplay'} playsInline muted preload="meta" className="mx-auto max-w-full object-cover z-10 square-video">
+                                    <source src={ block.video1Url } type="video/mp4" />
+                                    
+                                    Sorry. Your browser does not support the video tag.
+                                  </video>
+                                </div>
+
+                                <div className="w-full md:w-1/2 md:px-8">
+                                  <video loop={true} autoPlay={'autoplay'} playsInline muted preload="meta" className="mx-auto max-w-full object-cover z-10 square-video">
+                                  <source src={ block.video2Url } type="video/mp4" />
+                                  
+                                  Sorry. Your browser does not support the video tag.
+                                </video>
+                                </div>
+                              </div>
+                            </div>
+                          </Container>
+                        }
+
+{
+                          block._modelApiKey === 'supporting_silent_video_portrait_portrait' &&
+                          <Container bleed>
+                            <div className="w-10/12 mx-auto">
+                              <div className="flex flex-wrap md:-mx-8">
+                                <div className="w-full md:w-1/2 md:px-8 mb-8 md:mb-0">
+                                  <video loop={true} autoPlay={'autoplay'} playsInline muted preload="meta" className="mx-auto max-w-full object-cover z-10 portrait-video">
+                                    <source src={ block.video1Url } type="video/mp4" />
+                                    
+                                    Sorry. Your browser does not support the video tag.
+                                  </video>
+                                </div>
+
+                                <div className="w-full md:w-1/2 md:px-8">
+                                  <video loop={true} autoPlay={'autoplay'} playsInline muted preload="meta" className="mx-auto max-w-full object-cover z-10 portrait-video">
+                                  <source src={ block.video2Url } type="video/mp4" />
+                                  
+                                  Sorry. Your browser does not support the video tag.
+                                </video>
+                                </div>
+                              </div>
+                            </div>
+                          </Container>
+                        }
                       </div>
                     ))
                   }
@@ -653,6 +727,24 @@ const WORK_SINGLE_QUERY = `
           id
           _modelApiKey
           videoUrl
+        }
+        ... on SupportingSilentVideoLandscapeSquareRecord {
+          id
+          _modelApiKey
+          video1Url
+          video2Url
+        }
+        ... on SupportingSilentVideoSquareSquareRecord {
+          id
+          _modelApiKey
+          video1Url
+          video2Url
+        }
+        ... on SupportingSilentVideoPortraitPortraitRecord {
+          id
+          _modelApiKey
+          video1Url
+          video2Url
         }
         ... on QuoteRecord {
           id

@@ -17,7 +17,7 @@ import Carousel from "../../components/carousel";
 import { fade } from "../../helpers/transitionHelper"
 import {  SmoothScrollProvider } from '../../contexts/SmoothScroll.context'
 
-export default function ServiceSingle({ data: { site, service } }) {
+export default function ServiceSingle({ data: { site, service, services } }) {
   const metaTags = service._seoMetaTags.concat(site.favicon);
   // let shapeColour = { color: service.shapeColour.hex };
 
@@ -337,8 +337,15 @@ export default function ServiceSingle({ data: { site, service } }) {
                 </div>
               )}
 
-              <div className="bg-off-black pt-6 md:pt-8 pb-8 md:pb-10 block text-center text-off-white text-4xl md:text-5xl xl:text-6xl tracking-tighter leading-none relative z-20">
-                <FancyLink link="/contact" a11yText="Navigate to contact page" text="Let's talk about it" thicc />
+              <div className="bg-off-black pt-6 md:pt-8 pb-8 md:pb-10 block text-center text-off-white text-3xl md:text-4xl xl:text-5xl tracking-tighter leading-none relative z-20">
+                <span className="block text-xs uppercase tracking-tighter leading-none w-full mb-1">What else we do</span>
+                { services.map((block, i) => {
+                  return (
+                    <div key={i} className="block">
+                      <FancyLink link={`/services/${block.slug}`} a11yText={`Navigate to ${block.title} page`} text={block.title} thicc />
+                    </div>
+                  )
+                })}
               </div>
               <Footer hideMarquee />
             </div>
@@ -355,6 +362,10 @@ const SERVICE_SINGLE_QUERY = `
       favicon: faviconMetaTags {
         ...metaTagsFragment
       }
+    }
+    services: allServices(orderBy: position_ASC, filter: {slug: {neq: $slug}}) {
+      title
+      slug
     }
     service: service(filter: {slug: {eq: $slug}}) {
       _seoMetaTags {

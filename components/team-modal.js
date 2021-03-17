@@ -9,7 +9,8 @@ const customStyles = {
     bottom                : 'auto',
     marginRight           : '-20%',
     overflow              : 'visible',
-    transform             : 'translate(-50%, -50%)'
+    transform             : 'translate(-50%, -50%)',
+    // maxHeight             : '50vh',
   }
 };
 

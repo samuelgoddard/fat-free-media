@@ -49,6 +49,9 @@ module.exports = {
         '8xl': '6.55rem',
         '9xl': '7.35rem',
       },
+      maxHeight: {
+        'half-screen': '50vh',
+      },
       lineHeight: {
         'negative': '0.95',
         'minimal': '1.23',

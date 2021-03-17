@@ -138,7 +138,7 @@ export default function About({ data: { site, about, team, services } }) {
                                             ...team.image.responsiveImage,
                                             alt: team.image.alt ? team.image.alt : team.image.title,
                                           }}
-                                          className="w-full lg:w-10/12 relative z-0 mb-0 pb-0 hidden lg:block"
+                                          className="w-full lg:w-10/12 relative z-0 mb-0 pb-0 hidden lg:block max-h-half-screen"
                                         />
                                       </div>
                                     </div>
@@ -149,7 +149,7 @@ export default function About({ data: { site, about, team, services } }) {
                                           <div className="relative overflow-hidden mb-4 lg:mb-8 w-full">
                                             <span className="block text-xs uppercase leading-none">Biography</span>
                                           </div>
-                                          <div dangerouslySetInnerHTML={{ __html: team.fullBio ? team.fullBio : team.shortBio }} className="font-mono leading-tight text-sm md:text-base content mb-3 md:mb-5 w-full lg:w-10/12 modal-bio overflow-scroll lg:overflow-none"></div>
+                                          <div dangerouslySetInnerHTML={{ __html: team.fullBio ? team.fullBio : team.shortBio }} className="font-mono leading-tight text-sm md:text-base content mb-3 md:mb-5 w-full lg:w-10/12 modal-bio modal-text-overflow overflow-scroll lg:overflow-none max-h-half-screen"></div>
                                         </div>
                                         
                                         { team.linkedinUrl || team.instagramUrl ? (
@@ -369,7 +369,7 @@ const ABOUT_QUERY = `
       slug
       jobTitle
       image {
-        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 600, h: 850, auto: format }) {
+        responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 600, h: 720, auto: format }) {
           ...responsiveImageFragment
         }
       }

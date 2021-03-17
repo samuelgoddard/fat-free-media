@@ -539,3 +539,13 @@ html.has-scroll-dragging {
     }
   } 
 }
+
+.modal-text-overflow::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.modal-text-overflow {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

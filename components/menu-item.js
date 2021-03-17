@@ -11,7 +11,7 @@ export default function MenuItem({link, animation, image, video, heading, text})
           <div className="transition-transform ease-in-out duration-500 md:transform group-hover:-translate-y-12 group-focus:-translate-y-12">
             
             <div className="relative overflow-hidden transform skew-y-2">
-              <div className="relative transition ease-in-out duration-500 opacity-75 group-hover:opacity-100 group-focus:opacity-100 mb-10 hidden md:block z-0 w-10/12 transform group-hover:scale-105">
+              <div className="relative transition ease-in-out duration-500 opacity-75 group-hover:opacity-100 group-focus:opacity-100 mb-10 hidden md:block z-0 w-10/12 transform scale-105 group-hover:scale-110">
                 <Image
                   data={{
                     ...image.responsiveImage,
