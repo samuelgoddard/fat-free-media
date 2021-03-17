@@ -45,7 +45,7 @@ class VideoRevealer extends Component {
     };
 
     return (
-      <div className="relative">
+      <div className="relative -mx-6 md:mx-0">
         { this.props.metaText && (
           <span className="block upright font-mono text-xs absolute top-0 left-0 -ml-5 z-0 uppercase tracking-wide leading-none">{ this.props.metaText }</span>
         )}
