@@ -85,7 +85,7 @@ export default function Footer({ hideMarquee, disciplines }) {
             <p className="font-mono text-sm xl:text-base mb-6 md:mb-6 max-w-sm md:max-w-xs xl:max-w-lg mx-auto">When we've got something great to say, we write a newsletter for brand teams. We curate the best of video, creativity and insights to inspire and delight.</p>
             
             <div className="text-lg md:text-xl xl:text-2xl">
-              <FancyLinkExternal link="https://www.getrevue.co/profile/hellofatfree" a11yText="Sign up to our newsletter!" text="Sign up to our Newsletter" newTab />
+              <FancyLinkExternal link="https://subscribe.hellofatfree.com" a11yText="Sign up to our newsletter!" text="Sign up to our Newsletter" newTab />
             </div>
 
             <div id="mc_embed_signup">              
