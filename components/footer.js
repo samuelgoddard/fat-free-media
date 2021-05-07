@@ -42,7 +42,7 @@ export default function Footer({ hideMarquee, disciplines }) {
 
       <div className="flex flex-wrap">
         <div className="w-full md:w-1/2 py-12 md:py-20 xl:pt-32 2xl:pt-40 3xl:pt-48 3xl:pb-32 bg-green text-white relative overflow-hidden">
-          <div className="relative z-0">
+          <div className="relative z-0 hidesafari">
             <div className="hidden md:block" data-scroll data-scroll-speed="1.25">
               <BigX color="text-green-dark" left bottom />
             </div>
@@ -85,7 +85,7 @@ export default function Footer({ hideMarquee, disciplines }) {
             <p className="font-mono text-sm xl:text-base mb-6 md:mb-6 max-w-sm md:max-w-xs xl:max-w-lg mx-auto">When we've got something great to say, we write a newsletter for brand teams. We curate the best of video, creativity and insights to inspire and delight.</p>
             
             <div className="text-lg md:text-xl xl:text-2xl">
-              <FancyLinkExternal link="https://fatfreemedia.us2.list-manage.com/subscribe/post?u=0707fd5fce6636484cfe36669&amp;id=f4fff79bc3" a11yText="Sign up to our newsletter!" text="Sign up to our Newsletter" newTab />
+              <FancyLinkExternal link="https://www.getrevue.co/profile/hellofatfree" a11yText="Sign up to our newsletter!" text="Sign up to our Newsletter" newTab />
             </div>
 
             <div id="mc_embed_signup">              
