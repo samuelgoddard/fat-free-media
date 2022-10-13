@@ -15,12 +15,12 @@ import { fade, reveal } from "../../helpers/transitionHelper"
 import {  SmoothScrollProvider } from '../../contexts/SmoothScroll.context'
 import Marquee from "react-fast-marquee";
 
-export default function WorkSingle({ data: { site, work } }) {
+export default function WorkSingle({ data: { site, work }, preview }) {
   const metaTags = work._seoMetaTags.concat(site.favicon);
 
   return (
     <SmoothScrollProvider options={{ smooth: true, lerp: 0.13 }}>
-      <Layout>
+      <Layout preview={preview}>
         <Head>{renderMetaTags(metaTags)}</Head>
         
         <motion.div
@@ -767,16 +767,18 @@ const WORK_SINGLE_QUERY = `
   ${responsiveImageFragment}
 `
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params, preview = false }) {
   const data = await request({
     query: WORK_SINGLE_QUERY,
     variables: {
       slug: params.slug,
     },
+    preview
   })
 
   return {
     props: {
+      preview,
       data,
     },
   }

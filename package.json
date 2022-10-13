@@ -23,7 +23,7 @@
     "postcss-nested": "^5.0.3",
     "react": "^16.14.0",
     "react-collapse": "^5.1.0",
-    "react-datocms": "1.4.5",
+    "react-datocms": "1.6.3",
     "react-dom": "^16.14.0",
     "react-fast-marquee": "^1.1.1",
     "react-modal": "^3.12.1",
