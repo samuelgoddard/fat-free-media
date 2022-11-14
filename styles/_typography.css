@@ -23,6 +23,14 @@ body {
   }
 }
 
+.content--meta > ul li {
+
+  @apply mb-1;
+  @screen md {
+    @apply mb-3;
+  }
+}
+
 .content > p a {
   @apply underline;
 

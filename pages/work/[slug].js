@@ -76,7 +76,12 @@ export default function WorkSingle({ data: { site, work }, preview }) {
                                     <span className="block text-xs uppercase tracking-tighter leading-none mb-1 md:mb-3">— { block.headingMetaText }</span>
                                   )}
                                   { block.heading && (
+                                    <>
                                     <h2 className="text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl leading-none tracking-tighter">{ block.heading }</h2>
+                                    {block.headingMetaBullets && (
+                                      <div className="content content--meta text-lg lg:text-lg xl:text-xl 2xl:text-2xl tracking-tighter leading-tight mt-2 md:mt-6 mb-8 lg:mb-12 2xl:mt-10" dangerouslySetInnerHTML={{ __html: block.headingMetaBullets }}></div>
+                                    )}
+                                    </>
                                   )}
                                 </div>
                               </div>
